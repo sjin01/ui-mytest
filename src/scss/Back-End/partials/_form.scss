@@ -1,0 +1,12 @@
+
+.form-widget,
+.form-control {
+  display: inline-block;
+  //height: 32px;
+  padding: 8px 6px;
+  color: #555;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  vertical-align: middle;
+  @include transition(all ease-in-out .15s);
+}

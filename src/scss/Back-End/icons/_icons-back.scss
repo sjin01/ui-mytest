@@ -1,0 +1,15 @@
+@import "compass/utilities/sprites";
+
+$back-layout: smart;
+$back-spacing: 4px;
+$back-sprite-dimensions: true;  // auto set size of sprite
+
+@import "back/*.png";
+@include all-back-sprites;
+
+.back-icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 4px;
+}
+

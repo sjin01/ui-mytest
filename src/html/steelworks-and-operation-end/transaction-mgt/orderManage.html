@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>中钢信</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/steelworks-and-operation-end/base.css">
+    <link rel="stylesheet" type="text/css" href="../../css/steelworks-and-operation-end/modules/trading-manage.css">
+</head>
+<body>
+<div class="header">
+    <div class="container-24 nav">
+        <span class="grid-4 logo">中钢信</span>
+        <span class="grid-2"><a href="#">资源管理</a></span>
+        <span class="grid-2 selected"><a href="#">交易管理</a></span>
+        <span class="grid-2"><a href="#">渠道管理</a></span>
+        <span class="grid-2"><a href="#">定价管理</a></span>
+        <span class="grid-2"><a href="#">统计分析</a></span>
+        <span class="grid-2"><a href="#">设置中心</a></span>
+        <span class="grid-2 push-4 user personal-menu-root">
+            <i class="icon icon-user mgr-5"></i>戴永明<i class="caret mgl-5"></i>
+            <ul class="personal-menu list-unstyled">
+                <li><a href="#">修改密码</a></li>
+                <li><a href="#">个人信息</a></li>
+            </ul>
+        </span>
+        <span class="grid-2 push-4 logoff">
+            <i class="glyphicon glyphicon-off mgr-5"></i><a href="#">注销</a>
+        </span>
+    </div>
+</div>
+
+<div class="body">
+<div class="container-24">
+<div class="grid-4">
+    <div class="slider">
+        <div class="slider-switch">|||</div>
+        <ul class="list-unstyled">
+            <li class="icon-order-manage selected"><i class="icon"></i>订单管理</li>
+        </ul>
+    </div>
+</div>
+
+<div id="main" class="grid-20">
+<div class="tabs">
+    <span class="grid-3 selected">现货订单</span>
+    <span class="grid-3">定制订单</span>
+</div>
+
+<form class="search-form search-order-manage form-inline">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="form-group col-md-2">
+                <label for="">供应商：</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="">状态：</label>
+                <select class="form-control">
+                    <option>全部</option>
+                </select>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="">订单号：</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group col-md-6 date-section">
+                <label for="">订单日期：</label>
+                <input type="text" class="form-control" placeholder="起始时间">
+                -
+                <input type="text" class="form-control" placeholder="结束时间">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-2">
+                <label for="">品名：</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="">材质：</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="">钢厂：</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group col-md-4 warehouse">
+                <label for="">仓库：</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group col-md-2 form-button-group">
+                <button type="button" class="btn btn-form-clear">清空</button>
+                <button type="button" class="btn btn-form-search">查询</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-3 thickness">
+                <select class="form-control">
+                    <option>厚度：</option>
+                </select>
+                <input type="text" class="form-control">
+                <select class="form-control">
+                    <option><=</option>
+                </select>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group col-md-3 width">
+                <select class="form-control">
+                    <option>宽度：</option>
+                </select>
+                <input type="text" class="form-control">
+                <select class="form-control">
+                    <option><=</option>
+                </select>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group col-md-4 spec-search">
+                <label for="">规格模糊查询：</label>
+                <input type="text" class="form-control">
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-link btn-toggle">
+        收起<span class="faicon faicon-angle-up mgl-5"></span>
+    </button>
+</form>
+
+<div class="table-block">
+<div class="table-top">
+    <div>
+        <label class="mgl-10">
+            <i class="faicon faicon-search mgr-10"></i>
+            查询到<em class="hightlight-orange">454</em>条订单，
+            共计<em class="hightlight-orange">54</em>件<em class="hightlight-orange">23546</em>吨，
+            <em class="hightlight-orange">100000</em>元
+        </label>
+    </div>
+</div>
+
+<div class="table-center">
+<table>
+<tr class="title">
+    <th width="10%">渠道商<span class="caret"></span></th>
+    <th width="14%">订单号<span class="caret"></span></th>
+    <th width="14%">订单日期<span class="caret"></span></th>
+    <th width="7%">提货方式</th>
+    <th width="10%">总数量/重量<span class="caret"></span></th>
+    <th width="10%">总金额<span class="caret"></span></th>
+    <th width="5%">状态<span class="caret"></span></th>
+    <th width="8em">订单备注</th>
+    <th width="20%">操作</th>
+</tr>
+<tr class="odd">
+    <td>找钢网</td>
+    <td>
+        <span class="order-logs-root">
+            <span class="badge badge-zh">订</span>
+            12345678909
+            <span class="order-logs">
+                <span class="arrow-bottom-left"><em>◆</em><i>◆</i></span>
+                <table>
+                    <tr>
+                        <td><label><em>●</em><i>■</i></label></td>
+                        <td>2015-7-23 14:23</td>
+                        <td>找钢网</td>
+                        <td class="logs-operation">提交订单</td>
+                    </tr>
+                    <tr>
+                        <td><label></label></td>
+                        <td>2015-7-23 14:23</td>
+                        <td>邓姗姗</td>
+                        <td class="logs-operation">确认订单</td>
+                    </tr>
+                    <tr>
+                        <td><label></label></td>
+                        <td>2015-7-23 14:23</td>
+                        <td>邓姗姗</td>
+                        <td class="logs-operation">作废订单（客户未按时付款）</td>
+                    </tr>
+                </table>
+            </span>
+        </span>
+    </td>
+    <td>2015-7-23 14:21</td>
+    <td>自提</td>
+    <td>80/1000.112</td>
+    <td>10,000.05</td>
+    <td>待确认</td>
+    <td>
+        <span class="order-remark-logs-root">
+            <div class="remarks">
+                <span class="badge badge-zh">详</span>
+                订单备注订单备注订单备注订单备注订单备注订单备注订单备注订单备注订单备注订单备注
+            </div>
+            <span class="order-remark-logs">
+                <span class="arrow-bottom-left"><em>◆</em><i>◆</i></span>
+                <p>
+                    订单备注订单备注订单备注订单备注订单备注订单备注订单备注订单备注订单备注订单备注
+                    111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+                </p>
+            </span>
+        </span>
+    </td>
+    <td>
+        <button type="button" class="btn btn-link">确认</button>
+        <button type="button" class="btn btn-link" name="cancel">作废</button>
+        <button type="button" class="btn btn-link">
+            明细
+            <i class="faicon faicon-angle-down"></i>
+        </button>
+    </td>
+</tr>
+<tr class="even">
+    <td>找钢网</td>
+    <td>
+        <div class="tooltip">
+            12345678909
+        </div>
+    </td>
+    <td>2015-7-23 14:21</td>
+    <td>自提</td>
+    <td>80/1000.112</td>
+    <td>10,000.05</td>
+    <td>待确认</td>
+    <td>订单备注</td>
+    <td>
+        <button type="button" class="btn btn-link">确认</button>
+        <button type="button" class="btn btn-link" name="cancel">作废</button>
+        <button type="button" class="btn btn-link">明细</button>
+    </td>
+</tr>
+<tr class="odd">
+    <td>找钢网</td>
+    <td>12345678909</td>
+    <td>2015-7-23 14:21</td>
+    <td>自提</td>
+    <td>80/1000.112</td>
+    <td>10,000.05</td>
+    <td>待确认</td>
+    <td>订单备注</td>
+    <td>
+        <button type="button" class="btn btn-link">确认</button>
+        <button type="button" class="btn btn-link" name="cancel">作废</button>
+        <button type="button" class="btn btn-link">明细</button>
+    </td>
+</tr>
+<tr class="even">
+    <td>找钢网</td>
+    <td>12345678909</td>
+    <td>2015-7-23 14:21</td>
+    <td>自提</td>
+    <td>80/1000.112</td>
+    <td>10,000.05</td>
+    <td>待确认</td>
+    <td>订单备注</td>
+    <td>
+        <button type="button" class="btn btn-link">确认</button>
+        <button type="button" class="btn btn-link" name="cancel">作废</button>
+        <button type="button" class="btn btn-link">明细</button>
+    </td>
+</tr>
+<tr class="odd">
+    <td>找钢网</td>
+    <td>12345678909</td>
+    <td>2015-7-23 14:21</td>
+    <td>自提</td>
+    <td>80/1000.112</td>
+    <td>10,000.05</td>
+    <td>待确认</td>
+    <td>订单备注</td>
+    <td>
+        <button type="button" class="btn btn-link">确认</button>
+        <button type="button" class="btn btn-link" name="cancel">作废</button>
+        <button type="button" class="btn btn-link">
+            明细
+            <i class="faicon faicon-angle-up"></i>
+        </button>
+    </td>
+</tr>
+<tr>
+    <td colspan="10">
+        <table class="more-info">
+            <tr>
+                <th width="6%">行号</th>
+                <th width="10%">品名</th>
+                <th width="10%">材质</th>
+                <th width="10%">规格</th>
+                <th width="10%">钢厂</th>
+                <th width="10%">仓库</th>
+                <th width="10%">下单数量</th>
+                <th width="10%">下单重量</th>
+                <th width="10%">单价</th>
+                <th width="14%">资源备注</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>三级螺纹钢</td>
+                <td>HRB400</td>
+                <td>16*9</td>
+                <td>西城</td>
+                <td>铁四局库</td>
+                <td>12</td>
+                <td>35.650</td>
+                <td>2,180.00</td>
+                <td>XXXXXXXXXXXX</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>三级螺纹钢</td>
+                <td>HRB400</td>
+                <td>16*9</td>
+                <td>西城</td>
+                <td>铁四局库</td>
+                <td>12</td>
+                <td>35.650</td>
+                <td>2,180.00</td>
+                <td>XXXXXXXXXXXX</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>三级螺纹钢</td>
+                <td>HRB400</td>
+                <td>16*9</td>
+                <td>西城</td>
+                <td>铁四局库</td>
+                <td>12</td>
+                <td>35.650</td>
+                <td>2,180.00</td>
+                <td>XXXXXXXXXXXX</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>三级螺纹钢</td>
+                <td>HRB400</td>
+                <td>16*9</td>
+                <td>西城</td>
+                <td>铁四局库</td>
+                <td>12</td>
+                <td>35.650</td>
+                <td>2,180.00</td>
+                <td>XXXXXXXXXXXX</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>三级螺纹钢</td>
+                <td>HRB400</td>
+                <td>16*9</td>
+                <td>西城</td>
+                <td>铁四局库</td>
+                <td>12</td>
+                <td>35.650</td>
+                <td>2,180.00</td>
+                <td>XXXXXXXXXXXX</td>
+            </tr>
+        </table>
+    </td>
+</tr>
+<tr class="even">
+    <td>找钢网</td>
+    <td>12345678909</td>
+    <td>2015-7-23 14:21</td>
+    <td>自提</td>
+    <td>80/1000.112</td>
+    <td>10,000.05</td>
+    <td>待确认</td>
+    <td>订单备注</td>
+    <td>
+        <button type="button" class="btn btn-link">确认</button>
+        <button type="button" class="btn btn-link" name="cancel">作废</button>
+        <button type="button" class="btn btn-link">明细</button>
+    </td>
+</tr>
+<tr class="odd">
+    <td>找钢网</td>
+    <td>12345678909</td>
+    <td>2015-7-23 14:21</td>
+    <td>自提</td>
+    <td>80/1000.112</td>
+    <td>10,000.05</td>
+    <td>待确认</td>
+    <td>订单备注</td>
+    <td>
+        <button type="button" class="btn btn-link">确认</button>
+        <button type="button" class="btn btn-link" name="cancel">作废</button>
+        <button type="button" class="btn btn-link">明细</button>
+    </td>
+</tr>
+</table>
+</div>
+<div class="table-bottom"></div>
+</div>
+</div>
+</div>
+<div class="body-footer"></div>
+</div>
+<div class="footer">
+    <div class="container-24"></div>
+</div>
+
+<script src="../../js/libs/require.js"></script>
+<script src="../../js/main.js"></script>
+<script>
+    require(['jquery', 'popup', 'icheck', 'jqTooltip'], function ($, Popup) {
+
+        $("[name='cancel']").click(function () {
+            var popup = new Popup({
+                template: "#cancel-dialog",
+                width: "420px",
+                height: "430px",
+                data: {title: '订单作废'}
+            });
+
+            $('input').iCheck({
+                checkboxClass: 'icheckbox_minimal-green',
+                radioClass: 'iradio_minimal-green',
+                increaseArea: '20%' // optional
+            });
+        });
+
+        var mainHeight = $('#main').css('height');
+        var sliderHeight = $('.slider').css('height');
+        $('.slider').css({
+            height: mainHeight
+        });
+
+        $('.tooltip').jqTooltip({
+            id: 'demo1',
+            //width: 100,
+            //height: 100,
+            //top: true,
+            //right: true,
+            html: 'asdjlfkasjdkfla按时将东方拉斯觉得放辣椒款水电费'
+        });
+
+        $(function () {
+            console.log('浏览器当前窗口可视区域高度：' + $(window).height());                           //浏览器当前窗口可视区域高度
+
+            console.log('浏览器当前窗口文档的高度：' + $(document).height());                        //浏览器当前窗口文档的高度
+
+            console.log('浏览器当前窗口文档body的高度：' + $(document.body).height());                //浏览器当前窗口文档body的高度
+
+            console.log('浏览器当前窗口文档body的总高度：' + $(document.body).outerHeight(true));  //浏览器当前窗口文档body的总高度 包括border padding margin
+
+            console.log('浏览器当前窗口可视区域宽度：' + $(window).width());                            //浏览器当前窗口可视区域宽度
+
+            console.log('浏览器当前窗口文档对象宽度：' + $(document).width());                        //浏览器当前窗口文档对象宽度
+
+            console.log('浏览器当前窗口文档body的宽度：' + $(document.body).width());                //浏览器当前窗口文档body的宽度
+
+            console.log('浏览器当前窗口文档body的总宽度：' + $(document.body).outerWidth(true));  //浏览器当前窗口文档body的总宽度 包括border padding margin
+
+        })
+
+    });
+</script>
+<script type="text/ractive" id="cancel-dialog">
+    <div class="container-fluid cancel-dialog">
+        <div class="row">
+            若确认作废此订单，请选择或输入订单作废原因：
+        </div>
+        <div class="row">
+            <label class=""><input type="radio" name="cancelReason">客户原因要求作废</label>
+        </div>
+        <div class="row">
+            <label class=""><input type="radio" name="cancelReason">客户未按时付款</label>
+        </div>
+        <div class="row">
+            <label class=""><input type="radio" name="cancelReason">我方缺货</label>
+        </div>
+        <div class="row">
+            <label class=""><input type="radio" name="cancelReason">其他</label>
+        </div>
+        <div class="row">
+            <textarea></textarea>
+        </div>
+        <hr/>
+        <div class="row buttons-bar">
+            <button type="button" class="btn btn-form-search no-radius">确认作废</button>
+            <button type="button" class="btn btn-cancel no-radius">取消</button>
+        </div>
+    </div>
+
+
+</script>

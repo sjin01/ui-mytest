@@ -1,0 +1,52 @@
+.setting-group {
+  padding: 0 1em;
+}
+
+.setting-group > .setting {
+  padding: 2em 1em 1em 1em;
+  border-top: 1px solid #dedcdc;
+}
+.setting-group > .setting .title {
+  padding: 1em 0;
+}
+.setting-group > .setting .title > .icon {
+  margin-right: 1em;
+}
+.setting-group > .setting .title > label {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+.setting-group > .setting .content {
+  padding: 0 28px;
+  line-height: 2.5;
+}
+.setting-group > .setting .content .input-group {
+  float: left;
+}
+.setting-group > .setting .content input[type="checkbox"] {
+  top: 1em;
+}
+.setting-group > .setting .content > .date-area > input.form-control {
+  display: inline-block;
+  width: 8em;
+}
+.setting-group > .setting .content > .date-area > label {
+  color: #ccc;
+}
+
+.setting-group > .setting:first-child {
+  border: none;
+}
+
+.setting-group > .default-update-setting .content {
+  padding: 0 0 0 40px;
+  margin-bottom: 6px;
+}
+.setting-group > .default-update-setting .content div {
+  display: inline-block;
+  vertical-align: middle;
+}
+.setting-group > .default-update-setting .content button {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}

@@ -1,0 +1,15 @@
+@import "compass/utilities/sprites";
+
+$login-layout: smart;
+$login-spacing: 4px;
+$login-sprite-dimensions: true;  // auto set size of sprite
+
+@import "login/*.png";
+@include all-login-sprites;
+
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 4px;
+}
+

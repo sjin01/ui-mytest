@@ -1,0 +1,10 @@
+extends ../resource-layout
+block subStyles
+    link(href=relativeRoot + "css/steelwork-operation/modules/base-settings.css", rel="stylesheet", type="text/css")
+
+block side-modules
+    .tabs
+        each tab in supplyTops[0].sides[2].tabs
+            span.grid-3
+                a(href=tab.link) #{tab.name}
+    block content

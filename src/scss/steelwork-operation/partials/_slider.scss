@@ -1,0 +1,119 @@
+$color-selected: #dae1e4;
+
+
+.slider-collapse {
+
+  .slider-switch, li {
+    border: none !important;
+
+    &:hover {
+      background-color: $color-selected !important;
+      border: none !important;
+    }
+  }
+
+  li {
+    &.selected {
+      background-color: $color-selected !important;
+    }
+
+    &:hover {
+      .words {
+        display: inline-block;
+      }
+    }
+
+    .icon {
+      margin: 0 auto !important;
+    }
+
+    .words {
+      display: none;
+      position: absolute;
+      background-color: $color-selected;
+      margin-left: 26px;
+      padding: 0 2em;
+      z-index: 999;
+
+      .faicon {
+        position: absolute;
+        margin-left: -28px;
+        margin-top: 16px;
+        color: $color-selected;
+      }
+    }
+  }
+}
+
+.slider {
+  text-align: center;
+  background: $gray-light;
+  min-height: 400px;
+  margin-bottom: 20px;
+
+  .slider-switch, li {
+    @include transition(all, .15s, ease-in-out);
+  }
+
+  .slider-switch {
+    font-weight: bold;
+    color: $gray-medium;
+    line-height: $collapse-height;
+    cursor: pointer;
+    &:hover {
+      @include selected-border($blue-deep, left);
+    }
+  }
+
+  ul {
+    li {
+      line-height:$slider-height;
+      cursor: pointer;
+      &:hover {
+        @include selected-border($blue-deep, left);
+      }
+    }
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    // resource manage
+    @include add-icon-for-slider(icon-shopping-cart);
+    @include add-icon-for-slider(icon-order);
+    @include add-icon-for-slider(icon-settings);
+
+    @include add-icon-for-slider(icon-buy-spot);
+    @include add-icon-for-slider(icon-buy-ordergoods);
+
+    // transaction manage
+    @include add-icon-for-slider(icon-order-manage);
+    @include add-icon-for-slider(icon-cancel-goods);
+    @include add-icon-for-slider(icon-deal-order);
+    @include add-icon-for-slider(icon-deal-return);
+    @include add-icon-for-slider(icon-deal-adjust);
+    @include add-icon-for-slider(icon-deal-set);
+
+    // channel manage
+    @include add-icon-for-slider(icon-channel-switch);
+    @include add-icon-for-slider(icon-sale-authorization);
+    @include add-icon-for-slider(icon-rebate-settings);
+    @include add-icon-for-slider(icon-finance-settings);
+
+    // pricing manage
+    @include add-icon-for-slider(icon-resource-price);
+    @include add-icon-for-slider(icon-custom-price-makeup);
+    @include add-icon-for-slider(icon-area-price-makeup);
+    @include add-icon-for-slider(icon-pay-price-makeup);
+    @include add-icon-for-slider(icon-channel-price-makeup);
+
+    // setting center
+    @include add-icon-for-slider(icon-account-setting);
+    @include add-icon-for-slider(icon-enterprise-setting);
+    @include add-icon-for-slider(icon-message-setting);
+  }
+}
+

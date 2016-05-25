@@ -1,0 +1,185 @@
+@import "compass/css3";
+
+@mixin vertical-middle($height) {
+  height: $height;
+  line-height: $height;
+}
+
+// show border for selected item
+@mixin selected-border($color, $direction) {
+  background-color: #fff;
+  color: $color;
+  border-#{$direction}: 4px solid $blue-deep;
+}
+
+@mixin button-color($frontColor, $backColor, $borderColor, $hoverColor) {
+  color: $frontColor;
+  background: $backColor;
+  border: 1px solid $borderColor;
+  &:hover {
+    background: $hoverColor;
+  }
+}
+
+// add icon for aside
+@mixin add-icon-for-slider($class) {
+  li.#{$class} {
+    i {
+      @extend .#{$class}-black;
+      margin-right: 1em;
+    }
+    &:hover {
+      i {
+        @extend .#{$class}-blue;
+      }
+    }
+  }
+  li.selected.#{$class} {
+    @include selected-border($blue-deep, left);
+    i {
+      @extend .#{$class}-blue;
+    }
+  }
+}
+
+// Button variants
+//
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// and disabled options for all buttons
+
+@mixin button-variant($color, $background, $border) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+
+  &:focus,
+  &.focus {
+    color: $color;
+    background-color: darken($background, 10%);
+    border-color: darken($border, 25%);
+  }
+  &:hover {
+    color: $color;
+    background-color: darken($background, 10%);
+    border-color: darken($border, 12%);
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    color: $color;
+    background-color: darken($background, 10%);
+    border-color: darken($border, 12%);
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: $color;
+      background-color: darken($background, 17%);
+      border-color: darken($border, 25%);
+    }
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      background-color: $background;
+      border-color: $border;
+    }
+  }
+
+  .badge {
+    color: $background;
+    background-color: $color;
+  }
+}
+
+// Button sizes
+@mixin button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
+  padding: $padding-vertical $padding-horizontal;
+  font-size: $font-size;
+  line-height: $line-height;
+  border-radius: $border-radius;
+}
+
+// Clearfix
+//
+// For modern browsers
+// 1. The space content is one way to avoid an Opera bug when the
+//    contenteditable attribute is included anywhere else in the document.
+//    Otherwise it causes space to appear at the top and bottom of elements
+//    that are clearfixed.
+// 2. The use of `table` rather than `block` is only necessary if using
+//    `:before` to contain the top-margins of child elements.
+//
+// Source: http://nicolasgallagher.com/micro-clearfix-hack/
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+
+// a group css widgets of color
+@mixin color-widgets($color-text, $color-value) {
+  .color-#{$color-text} {
+    color: $color-value !important;
+  }
+  .bgc-#{$color-text} {
+    background-color: $color-value !important;
+  }
+  .border-#{$color-text} {
+    border: 1px solid $color-value !important;
+  }
+}
+
+
+// Text overflow
+// Requires inline-block or block for proper styling
+@mixin text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>中钢信管理平台</title>
+    <link href="../../css/back-end/workspace.css" rel="stylesheet" type="text/css">
+    <script src="../../js/libs/require.js"></script>
+    <script src="../../js/base.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="top_nav">
+        <div class="logo"><img src="../../images/base/logo.png"><span>中钢信</span></div>
+        <ul>
+          <li><a href="/html/backstage-base-data/sku/sku-lib.html">基础数据</a></li>
+          <li><a href="/html/backstage-member/member/member-mgt.html">会员</a></li>
+          <li><a href="#3">销售</a></li>
+          <li><a href="/html/backstage-system/privilege/role-mgt.html">系统</a></li>
+          <li><a href="/html/backstage-interface/interface-setting/interface-setting.html">接口</a></li>
+          <li class="last"><a href="#logout"><i class="i_logout"></i><span class="logout">登出</span></a></li>
+          <li class="last_2">
+            <div class="profile_wrapper"><i class="i_user"></i><a class="user_name">邓姗姗</a>
+              <div class="user_menu"><i class="arrow_down"></i>
+                <div class="arrow_up">
+                  <ul>
+                    <li><a id="passwd_edit">修改密码</a></li>
+                    <li><a class="edit_personInfo">个人信息</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      require(['jquery'], function($) {
+          $(function () {
+              var adjustHeight = function () {
+                  var viewportHeight = $(window).height();
+                  var topNavHeight = $(".top_nav").outerHeight();
+                  var featureNavHeight = $(".feature_nav").outerHeight();
+                  var minHeight = viewportHeight - topNavHeight - featureNavHeight;
+                  var mainContentHeight = $(".main_content").outerHeight();
+                  if (mainContentHeight < minHeight) {
+                      $(".main_content").css("min-height", minHeight);
+                  }
+                  $(".side_nav").css("min-height", $(".main_content").outerHeight() + featureNavHeight + "px");
+              };
+              adjustHeight();
+              $(window).resize(adjustHeight);
+          });
+      });
+      
+      // 公共方法
+      function locate(topName, sideName, tabName, iconClass) {
+          $('.top_nav').find('a').each(function () {
+              var a = this, $a = $(a), name = $a.text();
+              if (topName === $.trim(name)) {
+                  $a.addClass('selected');
+              }
+          });
+      
+          $('.side_nav').find('a').each(function () {
+              var a = this, $a = $(a), name = $a.find('span').text();
+              if (sideName === $.trim(name)) {
+                  $a.addClass('selected');
+                  if (iconClass) {
+                      $a.find('i').removeClass(iconClass+'-gray').addClass(iconClass+'-blue');
+                  }
+              }
+          });
+      
+          $('.feature_nav').find('a').each(function () {
+              var a = this, $a = $(a), name = $a.text();
+              if (tabName === $.trim(name)) {
+                  $a.addClass('selected');
+              }
+          });
+      }
+    </script>
+  </body>
+</html>

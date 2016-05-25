@@ -1,0 +1,38 @@
+.ui_tree {
+  line-height: 26px;
+  margin-left: 10px;
+}
+
+.ui_tree ul {
+  margin-left: 10px;
+}
+
+.ui_tree li a {
+  vertical-align: top;
+  text-decoration: none;
+  color: #000;
+}
+
+.ui_tree li a:hover {
+  text-decoration: underline;
+}
+
+.ui_tree .close_triangle, .ui_tree .open_triangle, .ui_tree .empty_triangle {
+  vertical-align: middle;
+  width: 18px;
+  height: 18px;
+  background: url("images/tree_bg.png") no-repeat;
+  display: inline-block;
+}
+
+.ui_tree .close_triangle {
+  background-position: 6px -17px;
+}
+
+.ui_tree .open_triangle {
+  background-position: 5px 5px;
+}
+
+.ui_tree .empty_triangle {
+  background: none;
+}

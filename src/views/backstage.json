@@ -1,0 +1,283 @@
+{
+  "backstageTops": [
+    {
+      "link": "/html/backstage-base-data/sku/sku-lib.html",
+      "name": "基础数据",
+      "sides": [
+        {
+          "link": "/html/backstage-base-data/sku/sku-lib.html",
+          "name": "SKU",
+          "className": "back-sku",
+          "tabs": [
+            {
+              "link": "/html/backstage-base-data/sku/sku-lib.html",
+              "name": "SKU库"
+            },
+            {
+              "link": "/html/backstage-base-data/sku/sku-auditing.html",
+              "name": "待审核SKU"
+            },
+            {
+              "link": "/html/backstage-base-data/sku/sku-variety.html",
+              "name": "品类"
+            },
+            {
+              "link": "/html/backstage-base-data/sku/sku-brand.html",
+              "name": "品名"
+            },
+            {
+              "link": "/html/backstage-base-data/sku/sku-texture.html",
+              "name": "材质"
+            },
+            {
+              "link": "/html/backstage-base-data/sku/sku-specification.html",
+              "name": "规格"
+            },
+            {
+              "link": "/html/backstage-base-data/sku/sku-steelwork.html",
+              "name": "钢厂"
+            },
+            {
+              "link": "/html/backstage-base-data/sku/sku-alias.html",
+              "name": "别名"
+            }
+          ]
+        },
+        {
+          "link": "/html/backstage-base-data/enterprise/enterprise-list.html",
+          "name": "企业库",
+          "className": "back-enterprise-lib",
+          "tabs": [
+            {
+              "link": "/html/backstage-base-data/enterprise/enterprise-list.html",
+              "name": "合作企业库"
+            }
+          ]
+        },
+        {
+          "link": "/html/backstage-base-data/supplier/supplier-list.html",
+          "name": "供应商",
+          "className": "back-supplier",
+          "tabs": [
+            {
+              "link": "/html/backstage-base-data/supplier/supplier-list.html",
+              "name": "供应商信息"
+            },
+            {
+              "link": "/html/backstage-base-data/supplier/supplier-transfer.html",
+              "name": "供应商转换"
+            },
+            {
+              "link": "/html/backstage-base-data/supplier/channel-mgt.html",
+              "name": "渠道关系管理"
+            }
+          ]
+        },
+        {
+          "link": "/html/backstage-base-data/distributor/distributor-list.html",
+          "name": "渠道商",
+          "className": "back-distributor",
+          "tabs": [
+            {
+              "link": "/html/backstage-base-data/distributor/distributor-list.html",
+              "name": "渠道商信息"
+            },
+            {
+              "link": "/html/backstage-base-data/distributor/distributor-transfer.html",
+              "name": "渠道商转换"
+            }
+          ]
+        },
+        {
+          "link": "/html/backstage-base-data/warehouse/warehouse-list.html",
+          "name": "仓库",
+          "className": "back-warehouse",
+          "tabs": [
+            {
+              "link": "/html/backstage-base-data/warehouse/warehouse-list.html",
+              "name": "仓库信息"
+            },
+            {
+              "link": "/html/backstage-base-data/warehouse/warehouse-transfer.html",
+              "name": "仓库转换"
+            }
+          ]
+        },
+        {
+          "link":"/html/backstage-base-data/settings/settings.html",
+          "name":"常用项设置",
+          "className":"back-settings",
+          "tabs":[
+            {"link":"/html/backstage-base-data/settings/settings.html", "name":"常用项设置"}
+          ]
+        }
+      ]
+    },
+    {
+      "link": "/html/backstage-member/member/member-mgt.html",
+      "name": "会员",
+      "sides": [
+        {
+          "link": "/html/backstage-member/member/member-mgt.html",
+          "name": "会员管理",
+          "className": "back-member",
+          "tabs": [
+            {
+              "link": "/html/backstage-member/member/member-mgt.html",
+              "name": "会员管理"
+            }
+          ]
+        },
+        {
+          "link": "/html/backstage-member/account/account-mgt.html",
+          "name": "账号管理",
+          "className": "back-account",
+          "tabs": [
+            {
+              "link": "/html/backstage-member/account/account-mgt.html",
+              "name": "账号管理"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "link": "#3",
+      "name": "销售",
+      "sides": [
+        {
+          "link": "/html/backstage-member/member/member-mgt.html",
+          "name": "资源管理",
+          "className": "back-member",
+          "tabs": [
+            {
+              "link": "/html/backstage-member/member/member-mgt.html",
+              "name": "可售资源库"
+            }
+          ]
+        },
+        {
+          "link": "/html/backstage-member/account/account-mgt.html",
+          "name": "订单管理",
+          "className": "back-account",
+          "tabs": [
+            {
+              "link": "/html/backstage-member/account/account-mgt.html",
+              "name": "销售订单"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "link": "/html/backstage-system/privilege/role-mgt.html",
+      "name": "系统",
+      "sides": [
+        {
+          "link": "/html/backstage-system/privilege/role-mgt.html",
+          "name": "权限管理",
+          "className": "back-member",
+          "tabs": [
+            {
+              "link": "/html/backstage-system/privilege/role-mgt.html",
+              "name": "角色管理"
+            },
+            {
+              "link": "/html/backstage-system/privilege/privilege-config.html",
+              "name": "权限配置"
+            }
+          ]
+        },
+        {
+          "link": "/html/backstage-system/backstage/operation-account.html",
+          "name": "后台账号管理",
+          "className": "back-backstage",
+          "tabs": [
+            {
+              "link": "/html/backstage-system/backstage/operation-account.html",
+              "name": "运营账号"
+            },
+            {
+              "link": "/html/backstage-system/backstage/interface-account.html",
+              "name": "接口账号"
+            }
+          ]
+        },
+        {
+          "link": "/html/backstage-system/account/account-mgt.html",
+          "name": "会员个性登录",
+          "className": "back-account",
+          "tabs": [
+            {
+              "link": "/html/backstage-system/account/account-mgt.html",
+              "name": "个性化登录"
+            }
+          ]
+        },
+        {
+          "link": "/html/backstage-system/account/account-mgt.html",
+          "name": "参数配置",
+          "className": "back-account",
+          "tabs": [
+            {
+              "link": "/html/backstage-system/account/account-mgt.html",
+              "name": "参数配置"
+            }
+          ]
+        },
+        {
+          "link": "/html/backstage-system/message/platform-notice.html",
+          "name": "消息管理",
+          "className": "back-message",
+          "tabs": [
+            {
+              "link": "/html/backstage-system/message/platform-notice.html",
+              "name": "平台公告管理"
+            },
+            {
+              "link": "/html/backstage-system/message/message-send.html",
+              "name": "消息发送设置"
+            },
+            {
+              "link": "/html/backstage-system/message/sms-notice.html",
+              "name": "短信通知管理"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "link": "/html/backstage-interface/interface-setting/interface-setting.html",
+      "name": "接口",
+      "sides": [
+        {
+          "link": "/html/backstage-interface/interface-setting/interface-setting.html",
+          "name": "接口设置",
+          "className": "back-interface-setting",
+          "tabs": [
+            {
+              "link": "/html/backstage-interface/interface-setting/interface-setting.html",
+              "name": "接口开关设置"
+            }
+          ]
+        },
+        {
+          "link": "/html/backstage-interface/interface-setting/interface-setting.html",
+          "name": "接口日志",
+          "className": "back-interface-log",
+          "tabs": [
+
+          ]
+        },
+        {
+          "link": "/html/backstage-interface/interface-setting/interface-setting.html",
+          "name": "接口报表",
+          "className": "back-interface-report",
+          "tabs": [
+
+          ]
+        }
+      ]
+    }
+  ]
+}

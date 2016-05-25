@@ -1,0 +1,52 @@
+.progress-bar {
+  background-color: #ff5a00;
+}
+
+.account-info-container .row {
+  margin-top: 1em;
+  line-height: 32px;
+}
+.account-info-container .row > label {
+  text-align: right;
+  color: #999;
+  font-weight: normal;
+  padding-left: 0;
+}
+.account-info-container .row button {
+  padding-left: 3em;
+  padding-right: 3em;
+}
+
+.account-security-container {
+  padding-top: 1em;
+}
+.account-security-container .row {
+  margin-top: 1em;
+}
+.account-security-container .row.security-item {
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  line-height: 108px;
+  border: 1px solid #f1f2f3;
+  border-top: none;
+}
+.account-security-container .row.security-item.first {
+  margin-top: 2em;
+  border-top: 1px solid #f1f2f3;
+}
+.account-security-container .row .title {
+  font-size: 1.4em;
+  font-weight: bold;
+  text-align: center;
+}
+.account-security-container .row i {
+  font-size: 40px;
+  margin-top: 5px;
+}
+.account-security-container .row i.glyphicon-ok-sign {
+  color: #5cb85c;
+}
+.account-security-container .row i.glyphicon-exclamation-sign {
+  color: #ff5a00;
+}

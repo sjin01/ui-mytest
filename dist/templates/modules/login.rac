@@ -1,0 +1,25 @@
+
+<script id="header-content" type="text/ractive">
+	<span class="icon {{logo === 'huawei' ? 'login-logo' : 'login-zgx'}}"></span>
+    <span class="vertical-line"></span>
+    <span class="system-name">{{name}}</span>
+</script>
+
+<script id="footer-content" type="text/ractive">
+	<div class="row">
+        <div>
+            <span>Copyright</span>
+            <span>©</span>
+            <span>中钢信 www.qyedi.com 沪ICP备13013915号-17</span>
+        </div>
+        <div>
+            <span class="phone">服务热线：0731-85891029（8:30-17:30）</span>
+            <span>在线咨询：</span>
+        <span>
+            <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=820218063&amp;site=qq&amp;menu=yes">
+                <img border="0" src="http://wpa.qq.com/pa?p=2:820218063:41" alt="点击这里给我发消息" title="点击这里给我发消息">
+            </a>
+        </span>
+        </div>
+    </div>
+</script>

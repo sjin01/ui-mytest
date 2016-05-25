@@ -1,0 +1,72 @@
+extends channel-authorization-layout
+
+block content
+    .main-title 销售区域设置
+    .table-block
+        .table-center
+            table
+                tr.title
+                    th(width='10%') 类型
+                    th(width='10%') 省份
+                    th(width='65%') 城市
+                    th(width='15%') 操作
+                tr.odd
+                    td 自提区域
+                    td 湖南省
+                    td 长沙市、湘潭市、株洲市
+                    td
+                        button.btn.btn-link 修改
+                        button.btn.btn-link 删除
+                tr.even
+                    td 自提区域
+                    td 湖南省
+                    td 长沙市、湘潭市、株洲市
+                    td
+                        button.btn.btn-link 修改
+                        button.btn.btn-link 删除
+                tr.odd
+                    td 自提区域
+                    td 湖南省
+                    td 长沙市、湘潭市、株洲市
+                    td
+                        button.btn.btn-link 修改
+                        button.btn.btn-link 删除
+        .table-bottom
+            button#add-sale-area.btn.btn-primary.btn-lg.no-radius(type='button')
+                span.glyphicon.glyphicon-plus
+                |                         新增销售区域
+    .main-title 销售品类设置
+    .table-block
+        .table-center
+            table
+                tr.title
+                    th(width='10%') 品类
+                    th(width='75%') 二级品类
+                    th(width='15%') 操作
+                tr.odd
+                    td 中厚板
+                    td 螺纹钢、盘钢
+                    td
+                        button.btn.btn-link 修改
+                        button.btn.btn-link 删除
+                tr.even
+                    td 中厚板
+                    td 螺纹钢、盘钢
+                    td
+                        button.btn.btn-link 修改
+                        button.btn.btn-link 删除
+                tr.odd
+                    td 中厚板
+                    td 螺纹钢、盘钢
+                    td
+                        button.btn.btn-link 修改
+                        button.btn.btn-link 删除
+        .table-bottom
+            button#add-sale-variety.btn.btn-primary.btn-lg.no-radius(type='button')
+                span.glyphicon.glyphicon-plus
+                |                         新增销售品类
+
+    script(type='text/javascript').
+        require(['jquery'], function ($) {
+            locate('渠道管理', '渠道授权', '销售设置');
+        });

@@ -1,0 +1,47 @@
+.table-block {
+  border: none;
+}
+.table-block .table-center table {
+  border: 1px solid #f1f2f3;
+}
+.table-block .table-center table input[type="text"] {
+  height: 2em;
+  line-height: 2em;
+  width: 5em;
+  padding: 0;
+  text-align: center;
+}
+
+.unit-set-div {
+  box-sizing: border-box;
+  padding: 2em 0.5em;
+  border-bottom: 1px solid #dedcdc;
+}
+.unit-set-div div {
+  height: 2.5em;
+  line-height: 2.5em;
+}
+.unit-set-div .title {
+  color: #2994cf;
+  font-size: 1.4em;
+}
+.unit-set-div .content span {
+  margin-right: 4em;
+}
+.unit-set-div .content span select {
+  width: 12em;
+}
+.unit-set-div .content span input[type="text"] {
+  width: 6em;
+  vertical-align: middle;
+  margin-right: 0.5em;
+}
+
+.unit-set-buttons {
+  padding: 2em 0.5em 4em 0.5em;
+  text-align: center;
+}
+.unit-set-buttons button {
+  width: 8em;
+  margin: 0 0.5em;
+}

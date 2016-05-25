@@ -1,0 +1,101 @@
+.ui_pagination {
+  text-align: center;
+  padding: 1em;
+  box-sizing: border-box;
+}
+.ui_pagination .page_size {
+  float: left;
+  line-height: 2em;
+}
+.ui_pagination .page_total {
+  float: right;
+  line-height: 2em;
+}
+.ui_pagination .page_total .go_input {
+  outline: none;
+  padding: 0;
+  -webkit-appearance: none;
+  border: 1px solid #cecece;
+  width: 2em;
+  border-radius: 2em;
+  text-align: center;
+  line-height: 2em;
+  height: 2em;
+  display: inline-block;
+  margin: 0 .5em;
+  vertical-align: middle;
+}
+.ui_pagination .page_total .go_btn {
+  display: inline-block;
+  border: 1px solid #cecece;
+  width: 2em;
+  height: 2em;
+  border-radius: 2em;
+  text-align: center;
+  line-height: 2em;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #ea5a5a;
+  margin: 0 .5em;
+  vertical-align: middle;
+}
+.ui_pagination .page_total .go_btn:hover {
+  background-color: #e83434;
+}
+.ui_pagination .pagination {
+  display: inline-block;
+  text-align: center;
+}
+.ui_pagination .pagination li {
+  float: left;
+  cursor: pointer;
+}
+.ui_pagination .pagination li span, .ui_pagination .pagination li a {
+  padding: 0 .5em;
+  height: 2em;
+  margin-left: .5em;
+  display: inline-block;
+  border: 1px solid #cecece;
+  border-radius: 2em;
+  background-color: #fff;
+  line-height: 2em;
+  text-decoration: none;
+  color: #000;
+}
+.ui_pagination .pagination li a.page {
+  border-color: #000;
+}
+.ui_pagination .pagination li a.page:hover {
+  background-color: #ea5a5a;
+  border-color: #ea5a5a;
+  color: #fff;
+}
+.ui_pagination .pagination li.active span {
+  color: #ea5a5a;
+  border-color: #ea5a5a;
+}
+.ui_pagination .pagination li.disabled span {
+  cursor: not-allowed;
+  color: #cecece;
+}
+
+.page_size ul {
+  display: inline-block;
+  vertical-align: bottom;
+}
+.page_size li {
+  float: left;
+  margin-left: .5em;
+  width: 2em;
+  height: 2em;
+  border: 1px solid #cecece;
+  border-radius: 2em;
+  background-color: #fff;
+  cursor: pointer;
+}
+.page_size li.selected {
+  color: #ea5a5a;
+  border-color: #ea5a5a;
+  cursor: not-allowed;
+}

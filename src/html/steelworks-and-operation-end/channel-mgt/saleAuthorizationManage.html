@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<title>中钢信</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/steelworks-and-operation-end/base.css">
+    <link rel="stylesheet" type="text/css" href="../../css/steelworks-and-operation-end/modules/channel-manage.css">
+</head>
+<body>
+	<div class="header">
+		<div class="container-24 nav">
+			<span class="grid-4 logo">中钢信</span>
+			<span class="grid-2">资源管理</span>
+			<span class="grid-2">交易管理</span>
+			<span class="grid-2 selected">渠道管理</span>
+			<span class="grid-2">定价管理</span>
+			<span class="grid-2">统计分析</span>
+			<span class="grid-2">设置中心</span>
+			<span class="grid-2 push-4 user personal-menu-root">
+				<i class="icon icon-user"></i>戴永明<i class="caret mgl-5"></i>
+                <ul class="personal-menu list-unstyled">
+                    <li><a href="#">修改密码</a></li>
+                    <li><a href="#">个人信息</a></li>
+                </ul>
+			</span>
+			<span class="grid-2 push-4 logoff">
+                <i class="glyphicon glyphicon-off mgr-5"></i>注销
+            </span>
+		</div>
+	</div>
+
+	<div class="body">
+		<div class="container-24">
+			<div class="grid-4">
+				<div class="slider">
+					<div class="slider-switch">|||</div>
+					<ul class="list-unstyled">
+						<li class="icon-channel-switch"><i class="icon"></i>渠道开关</li>
+						<li class="icon-sale-authorization selected"><i class="icon"></i>销售授权</li>
+						<li class="icon-rebate-settings"><i class="icon"></i>返利设置</li>
+						<li class="icon-finance-settings"><i class="icon"></i>财务设置</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div id="main" class="grid-20">
+				<div class="tabs">
+					<span class="grid-3 selected">渠道商销售授权</span>
+                    <span class="grid-3">销售设置</span>
+				</div>
+
+                <form id="search-res" class="search-form search-channel form-inline">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <label for="">渠道商名称：</label>
+                                <input type="text" class="form-control">
+
+                                <label for="">类型：</label>
+                                <select class="form-control">
+                                    <option>全部</option>
+                                </select>
+
+                                <label for="">是否系统对接：</label>
+                                <select class="form-control">
+                                    <option>全部</option>
+                                </select>
+
+                                <label for="">状态：</label>
+                                <select class="form-control">
+                                    <option>全部</option>
+                                </select>
+
+                                <button type="button" class="btn btn-form-clear">清空</button>
+                                <button type="button" class="btn btn-form-search">查询</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+				<div class="table-block">
+					<div class="table-center">
+						<table>
+							<tr class="title">
+								<th width="10%">序号</th>
+								<th width="15%">渠道商简称</th>
+								<th width="10%">类型<span class="caret"></span></th>
+								<th width="10%">系统对接<span class="caret"></span></th>
+								<th width="20%">销售区域</th>
+								<th width="15%">销售品类</th>
+								<th width="10%">操作</th>
+							</tr>
+							<tr class="odd">
+								<td>1</td>
+								<td>找钢网</td>
+								<td>电商</td>
+								<td>是</td>
+								<td>全部</td>
+								<td>全部</td>
+								<td>
+                                    <button class="btn btn-link">授权</button>
+                                </td>
+							</tr>
+                            <tr class="even">
+                                <td>1</td>
+                                <td>找钢网</td>
+                                <td>电商</td>
+                                <td>是</td>
+                                <td>全部</td>
+                                <td>全部</td>
+                                <td>
+                                    <button class="btn btn-link">授权</button>
+                                </td>
+                            </tr>
+                            <tr class="odd">
+                                <td>1</td>
+                                <td>找钢网</td>
+                                <td>电商</td>
+                                <td>是</td>
+                                <td>全部</td>
+                                <td>全部</td>
+                                <td>
+                                    <button class="btn btn-link">授权</button>
+                                </td>
+                            </tr>
+                            <tr class="even">
+                                <td>1</td>
+                                <td>找钢网</td>
+                                <td>电商</td>
+                                <td>是</td>
+                                <td>全部</td>
+                                <td>全部</td>
+                                <td>
+                                    <button class="btn btn-link">授权</button>
+                                </td>
+                            </tr>
+
+						</table>
+					</div>
+					<div class="table-bottom"></div>
+				</div>
+			</div>
+
+		</div>
+		
+		<div class="body-footer"></div>
+	</div>
+
+	<div class="footer">
+		<div class="container-24"></div>
+	</div>
+
+</body>
+</html>

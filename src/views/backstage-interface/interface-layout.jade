@@ -1,0 +1,17 @@
+extends ../layouts/backstage-layout
+
+block styles
+    link(href=relativeRoot + "css/back-end/modules/basedata.css", rel="stylesheet", type="text/css")
+    block subStyles
+block scripts
+    block subScripts
+block top-modules
+    .body_box
+        ul.side_nav
+            each side in backstageTops[4].sides
+                li
+                    a(href=side.link)
+                        i(class=['mgr-10', 'back-icon', side.className + '-gray'])
+                        span #{side.name}
+        block side-modules
+

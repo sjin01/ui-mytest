@@ -1,0 +1,131 @@
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 0;
+  vertical-align: text-bottom;
+}
+
+.placeholder { color: #aaa !important; }
+
+.form-control {
+  height: auto;
+}
+
+/* for IE */
+.form-control {
+  padding: .5em 0 .5em .5em;
+}
+
+.search-form {
+  margin-bottom: $default-gap;
+  border: 3px solid $gray-light;
+
+  input[type="text"],
+  select {
+    height: 32px;
+    //line-height: 32px;
+  }
+
+  .row {
+    margin-top: $grid-gutter-width / 2;
+    margin-bottom: $grid-gutter-width / 2;
+  }
+
+  .form-group.col-md-2,
+  .form-group.col-md-3 {
+    > label:first-child {
+      width: 30%;
+      text-align: right;
+    }
+
+    input[type="text"],
+    select {
+      width: 66% !important;
+      padding: 0.5em 0 0.5em 0.5em;
+    }
+
+    .btn-group {
+      width: 66%;
+    }
+
+    .multiselect {
+      width: 100%;
+    }
+  }
+
+  .form-group.col-md-4 {
+    label:first-child {
+      width: 26%;
+      text-align: right;
+    }
+  }
+
+  .zone {
+    select {
+      width: 35%;
+    }
+  }
+
+  .res-spec {
+    .label {
+      width: 26%;
+    }
+
+    select.content,
+    input[type="text"] {
+      width: 23%;
+    }
+  }
+
+  .date-section {
+    label {
+      width: 6em;
+    }
+    input[type="text"] {
+      width: 101px !important;
+    }
+  }
+
+  .checkbox {
+    height: 32px;
+    line-height: 32px;
+
+    label {
+      width: 100% !important;
+      text-align: center !important;
+    }
+
+    input[type="checkbox"] {
+      margin: 0 0.5em 0 0;
+    }
+  }
+
+  .form-button-group {
+    text-align: right;
+
+    a, button {
+      line-height: 1.5;
+      padding-left: 1.5em;
+      padding-right: 1.5em;
+    }
+  }
+
+  .form-group.thickness,
+  .form-group.width,
+  .form-group.length {
+
+    input[type="text"],
+    select {
+      width: 21% !important;
+    }
+
+    select {
+      padding: .5em 0;
+    }
+
+    label,
+    .label {
+      width: 30% !important;
+    }
+  }
+
+}

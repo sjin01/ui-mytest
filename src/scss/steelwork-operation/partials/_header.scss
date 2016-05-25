@@ -1,0 +1,110 @@
+.header {
+  @include vertical-middle($header-height);
+  background: $blue-light;
+
+  .nav {
+    color: white;
+
+    span {
+      @include transition(all, .5s, ease-in-out);
+      font-size: 1.2em;
+      text-align: center;
+      padding: 0;
+
+      &:hover {
+        background: $blue-deep;
+      }
+
+      a {
+        height: 100%;
+      }
+    }
+
+    .logo {
+      height: 60px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      cursor: auto;
+    }
+
+    .selected {
+      background: $blue-deep;
+    }
+
+    .user,
+    .logoff {
+      font-size: 1em;
+      padding: 0;
+    }
+
+    .user {
+      .remarks {
+        position: absolute;
+        display: inline-block;
+        width: 3em;
+        font-size: 1em;
+        transition: none;
+      }
+
+      .caret {
+        margin-left: 4em;
+      }
+    }
+
+    a {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .expand-btn {
+      @include transition(all, .2s, ease-in-out);
+      position: absolute;
+      font-size: 1.5em;
+      padding: 6px;
+      margin-top: 60px;
+      right: 0px;
+      border-radius: 4px;
+      color: #fff;
+      background-color: $blue-deep;
+      opacity: .2;
+      cursor: pointer;
+      z-index: 99999999;
+
+      &:hover {
+        opacity: .8;
+      }
+    }
+
+  }
+}
+
+.personal-menu-root {
+  @include float-root(personal-menu);
+}
+
+.personal-menu {
+  @include float-layer(100%, top, 70%, right, 30%, 1em);
+  border: 1px solid $gray-medium;
+  padding: 0.5em;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+
+  li {
+    height: 2.5em;
+    line-height: 2.5em;
+    border-top: 1px dotted $gray-medium;
+  }
+
+  li:first-child {
+    border-top: none;
+  }
+
+  a {
+    @include link-colors($black-light, $orange-deep);
+    text-decoration: none;
+  }
+}

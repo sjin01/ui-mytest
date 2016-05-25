@@ -1,0 +1,60 @@
+
+<!--
+Created by shijing.guan on 2016/3/7.
+
+--><!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>华伟钢铁</title>
+    <link rel="stylesheet" type="text/css" href="../../css/steelwork-operation/login.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header"></div>
+      <div class="body">
+        <div class="login-form">
+          <div class="title"><span><i class="icon login-title"></i></span><span class="login-title">欢迎登录</span></div>
+          <div class="user-input form-group form-error">
+            <div class="form-row"><span class="form-icon"><i class="icon login-user"></i></span><span class="form-input">
+                <input type="text" placeholder="用户名"></span></div>
+          </div>
+          <div class="password-input form-group">
+            <div class="form-row"><span class="form-icon"><i class="icon login-password"></i></span><span class="form-input">
+                <input type="password" placeholder="输入密码"></span></div>
+          </div>
+          <div class="remeber-me"><a href="#">找回密码</a></div>
+          <div>
+            <button id="loginBtn">登录</button>
+          </div>
+          <div class="error-info"><span><i class="icon login-error"></i></span><span>用户名或密码错误！</span></div>
+        </div>
+      </div>
+      <div class="footer"></div>
+    </div>
+    <script src="../../js/libs/require.js"></script>
+    <script src="../../js/main.js"></script>
+    <script type="text/javascript">
+      require(['jquery', 'tplUtil', 'text!../template/modules/login.rac'], function ($, TplUtil, Templates) {
+      
+          TplUtil.loadTpl({
+              el: '.header',
+              template: $(Templates).filter('#header-content').html(),
+              data: {
+                  name: '华伟薄板',
+                  logo: 'huawei'
+              }
+          });
+      
+          TplUtil.loadTpl({
+              el: '.footer',
+              template: $(Templates).filter('#footer-content').html()
+          });
+      
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+.progress-bar {
+  background-color: #ff5a00;
+}
+
+.account-info-container {
+  .row {
+    margin-top: 1em;
+    line-height: 32px;
+
+    > label {
+      text-align: right;
+      color: #999;
+      font-weight: normal;
+      padding-left: 0;
+    }
+
+    button {
+      padding-left: 3em;
+      padding-right: 3em;
+    }
+  }
+}
+
+.account-security-container {
+  padding-top: 1em;
+
+  .row {
+    margin-top: 1em;
+
+    &.security-item {
+      margin-top: 0;
+      margin-left: 0;
+      margin-right: 0;
+      line-height: 108px;
+      border: 1px solid #f1f2f3;
+      border-top: none;
+    }
+
+    &.security-item.first {
+      margin-top: 2em;
+      border-top: 1px solid #f1f2f3;
+    }
+
+    .title {
+      font-size: 1.4em;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    i {
+      font-size: 40px;
+      margin-top: 5px;
+
+      &.glyphicon-ok-sign {
+        color: #5cb85c;
+      }
+
+      &.glyphicon-exclamation-sign {
+        color: #ff5a00;
+      }
+    }
+  }
+}

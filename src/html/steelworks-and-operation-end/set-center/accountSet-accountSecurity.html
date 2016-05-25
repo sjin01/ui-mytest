@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>中钢信</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/steelworks-and-operation-end/base.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/steelworks-and-operation-end/modules/account-settings.css">
+</head>
+
+<body>
+
+<div class="header"></div>
+
+<div class="body">
+    <div class="container-24">
+
+        <div class="grid-3 no-padding">
+            <div class="slider"></div>
+        </div>
+
+        <div id="main" class="grid-21">
+
+            <div class="tabs"></div>
+
+            <div class="account-security-container container-fluid">
+                <div class="row">
+                    <label class="col-md-2">您的账户安全级别为：</label>
+                    <div class="col-md-2 no-padding">
+                        <div class="progress no-radius">
+                            <div class="progress-bar" style="width: 60%;"></div>
+                        </div>
+                    </div>
+                    <span class="col-md-2 pdl-20 color-orange-light">较高</span>
+                </div>
+                <div class="row">
+                    <span class="col-md-12 color-readonly">建议您启用全部安全设置，以保障账户安全。</span>
+                </div>
+                <div class="row security-item first">
+                    <span class="title col-md-3"><i class="glyphicon glyphicon-ok-sign mgr-20"></i>邮箱验证</span>
+                    <span class="col-md-7">您已验证邮箱：1241*****1412@qq.com，若已停用，请立即更换。</span>
+                    <span class="col-md-2 text-center"><a href="#111">修改</a></span>
+                </div>
+                <div class="row security-item">
+                    <span class="title col-md-3"><i class="glyphicon glyphicon-exclamation-sign mgr-20"></i>手机验证</span>
+                    <span class="col-md-7">验证后，可用于快速找回登录密码，接收关键交易信息。</span>
+                    <span class="col-md-2 text-center"><a href="#222">立即验证</a></span>
+                </div>
+                <div class="row security-item">
+                    <span class="title col-md-3"><i class="glyphicon glyphicon-ok-sign mgr-20"></i>登录密码</span>
+                    <span class="col-md-7">为确保账户安全，建议经常修改密码。</span>
+                    <span class="col-md-2 text-center"><a href="#333">修改</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer"></div>
+
+<script src="../../../js/libs/require.js"></script>
+<script src="../../../js/base.js"></script>
+<script>
+    require(['jquery', 'tplUtil', 'text!../template/modules/base.rac'], function ($, TplUtil, BaseTpl) {
+        var modules = [
+            {name: '资源管理'},
+            {name: '交易管理'},
+            {name: '渠道管理'},
+            {name: '定价管理'},
+            {name: '设置中心', selected: true}
+        ];
+
+        TplUtil.loadTpl({
+            el: '.header',
+            template: $(BaseTpl).filter('#header-content').html(),
+            data: {
+                logoText: '华伟薄板',
+                modules: modules
+            }
+        });
+
+        TplUtil.loadTpl({
+            el: '.footer',
+            template: $(BaseTpl).filter('#footer-content').html()
+        });
+
+        var leftModules = [
+            {name: '账户设置', className: 'icon-account-setting', link: 'accountSettingInfo.html', selected: true},
+            {name: '企业设置', className: 'icon-enterprise-setting', link: 'enterpriseSettingInfo.html'},
+            {name: '消息设置', className: 'icon-message-setting', link: ''}
+        ];
+
+        TplUtil.loadTpl({
+            el: '.slider',
+            template: $(BaseTpl).filter('#slider-content').html(),
+            data: { leftModules: leftModules }
+        });
+
+        var tabModules = [
+            {name: '账户信息', link: 'accountSettingInfo.html'},
+            {name: '账户安全', link: 'accountSettingSecurity.html', selected: true}
+        ];
+
+        TplUtil.loadTpl({
+            el: '.tabs',
+            template: $(BaseTpl).filter('#tabs-content').html(),
+            data: { tabModules: tabModules }
+        });
+
+
+
+    });
+
+</script>
+
+</body>
+</html>

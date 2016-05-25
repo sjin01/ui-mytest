@@ -1,0 +1,9 @@
+extends ../base-data-layout
+
+block side-modules
+    ul.feature_nav
+        each tab in backstageTops[0].sides[4].tabs
+            li
+                a(href=tab.link) #{tab.name}
+    .main_content
+        block content

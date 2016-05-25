@@ -1,0 +1,85 @@
+extends supplier-layout
+
+block content
+    .container-fluid.query-form
+        .row
+            each item in ['供应商', '渠道商']
+                label.mgl-20 #{item}：
+                input.form-widget(type="text")
+            button.btn.btn-gray.mgl-20 清空
+            button.btn.btn-blue.mgl-5 查询
+            button.btn.btn-red.mgl-5 新增
+
+    #skuListBox
+
+    script(type="text/javascript").
+        require(['jquery', 'pagination', 'confirm'], function($, Pagination, Confirm) {
+
+            locate('基础数据', '供应商', '渠道关系管理', 'back-supplier');
+
+            var items = {
+                "total":    5,
+                "sortAsc":  true,
+                "items": [
+                    {"availableQuantity":58,"availableQuantityStr":"58","availableWeight":3,"availableWeightStr":"3.000","className":"型材","brandName":"工字钢","calculateDesc":"磅计","calculateType":2,"cityName":"北京市","createTime":1444962172000,"creator":2,"deleted":false,"deleted_desc":"可用","fromWay":1,"listingFlag":0,"listingFlagName":"未挂单","listingQuantity":58,"listingRatio":100,"listingWeight":3,"meterageType":1,"meterageTypeName":"吨","modifier":11,"modifyTime":1445860189000,"modifyTimeStr":"2015-10-26 19:49:49","resId":446,"resType":1,"salePrice":300024,"salePriceStr":"3000","skuId":10000005,"specificationName":"1.0*1250*C","steelworksName":"泰钢","supResCode":"020020","supplierId":8,"textureName":"HRB400E","unitWeight":0.24,"unitWeightStr":"0.240","warehouseAbbr":"高星","warehouseDisplayName":"高星物流（北京市）","warehouseId":1,"warehouseName":"高星物流"},
+                    {"availableQuantity":58,"availableQuantityStr":"58","availableWeight":3,"availableWeightStr":"3.000","className":"型材","brandName":"工字钢","calculateDesc":"磅计","calculateType":2,"cityName":"北京市","createTime":1444962172000,"creator":2,"deleted":false,"deleted_desc":"可用","fromWay":1,"listingFlag":0,"listingFlagName":"未挂单","listingQuantity":58,"listingRatio":100,"listingWeight":3,"meterageType":1,"meterageTypeName":"吨","modifier":11,"modifyTime":1445860189000,"modifyTimeStr":"2015-10-26 19:49:49","resId":446,"resType":1,"salePrice":300024,"salePriceStr":"3000","skuId":10000005,"specificationName":"1.0*1250*C","steelworksName":"泰钢","supResCode":"020020","supplierId":8,"textureName":"HRB400E","unitWeight":0.24,"unitWeightStr":"0.240","warehouseAbbr":"高星","warehouseDisplayName":"高星物流（北京市）","warehouseId":1,"warehouseName":"高星物流"},
+                    {"availableQuantity":58,"availableQuantityStr":"58","availableWeight":3,"availableWeightStr":"3.000","className":"型材","brandName":"工字钢","calculateDesc":"磅计","calculateType":2,"cityName":"北京市","createTime":1444962172000,"creator":2,"deleted":false,"deleted_desc":"可用","fromWay":1,"listingFlag":0,"listingFlagName":"未挂单","listingQuantity":58,"listingRatio":100,"listingWeight":3,"meterageType":1,"meterageTypeName":"吨","modifier":11,"modifyTime":1445860189000,"modifyTimeStr":"2015-10-26 19:49:49","resId":446,"resType":1,"salePrice":300024,"salePriceStr":"3000","skuId":10000005,"specificationName":"1.0*1250*C","steelworksName":"泰钢","supResCode":"020020","supplierId":8,"textureName":"HRB400E","unitWeight":0.24,"unitWeightStr":"0.240","warehouseAbbr":"高星","warehouseDisplayName":"高星物流（北京市）","warehouseId":1,"warehouseName":"高星物流"},
+                    {"availableQuantity":58,"availableQuantityStr":"58","availableWeight":3,"availableWeightStr":"3.000","className":"型材","brandName":"工字钢","calculateDesc":"磅计","calculateType":2,"cityName":"北京市","createTime":1444962172000,"creator":2,"deleted":false,"deleted_desc":"可用","fromWay":1,"listingFlag":0,"listingFlagName":"未挂单","listingQuantity":58,"listingRatio":100,"listingWeight":3,"meterageType":1,"meterageTypeName":"吨","modifier":11,"modifyTime":1445860189000,"modifyTimeStr":"2015-10-26 19:49:49","resId":446,"resType":1,"salePrice":300024,"salePriceStr":"3000","skuId":10000005,"specificationName":"1.0*1250*C","steelworksName":"泰钢","supResCode":"020020","supplierId":8,"textureName":"HRB400E","unitWeight":0.24,"unitWeightStr":"0.240","warehouseAbbr":"高星","warehouseDisplayName":"高星物流（北京市）","warehouseId":1,"warehouseName":"高星物流"},
+                    {"availableQuantity":58,"availableQuantityStr":"58","availableWeight":3,"availableWeightStr":"3.000","className":"型材","brandName":"工字钢","calculateDesc":"磅计","calculateType":2,"cityName":"北京市","createTime":1444962172000,"creator":2,"deleted":false,"deleted_desc":"可用","fromWay":1,"listingFlag":0,"listingFlagName":"未挂单","listingQuantity":58,"listingRatio":100,"listingWeight":3,"meterageType":1,"meterageTypeName":"吨","modifier":11,"modifyTime":1445860189000,"modifyTimeStr":"2015-10-26 19:49:49","resId":446,"resType":1,"salePrice":300024,"salePriceStr":"3000","skuId":10000005,"specificationName":"1.0*1250*C","steelworksName":"泰钢","supResCode":"020020","supplierId":8,"textureName":"HRB400E","unitWeight":0.24,"unitWeightStr":"0.240","warehouseAbbr":"高星","warehouseDisplayName":"高星物流（北京市）","warehouseId":1,"warehouseName":"高星物流"}
+                ]
+            };
+
+            new Pagination($.extend({
+                target: '#skuListBox',
+                template: '#skuListTpl'
+            }, items));
+
+            $('#skuAddBtn').click(function () {
+                window.location.href = "enterprise-add.html";
+            });
+
+            $('#btnTest').click(function () {
+                new Confirm({
+                    content: '警告测试！',
+                    imgClass: 'exclamation-sign',
+                    imgColor: 'orange'
+                });
+            });
+
+        });
+
+    // 表格的ractive模板
+    script#skuListTpl(type="text/ractive")
+        table.ui_table
+            thead
+                tr
+                    th SKU编码
+                    th 品类
+                    th 品名
+                    th 材质
+                    th 规格
+                    th 钢厂
+                    th 计量方式
+                    th 状态
+                    th 更新时间
+                    th 更新人
+                    th 操作
+            tbody
+                |{{#items:index}}
+                tr(class="{{index % 2 == 0 ? 'even' : 'odd'}}")
+                    td {{skuId}}
+                    td {{className}}
+                    td {{brandName}}
+                    td {{textureName}}
+                    td {{specificationName}}
+                    td {{steelworksName}}
+                    td {{calculateDesc}}
+                    td
+                        |{{#if useStatus==1}}启用{{/if}}
+                        |{{#if useStatus == 0}}<span style="color : red;">停用</span>{{/if}}
+
+                    td {{modifyTime}}
+                    td {{modifierName}}
+                    td
+                        |<a href="javascript:void(0);">{{useStatus==1?'停用':'启用'}}</a>
+                |{{/items}}

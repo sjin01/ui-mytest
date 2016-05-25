@@ -1,0 +1,111 @@
+doctype html
+html
+    head
+        meta(http-equiv="Content-Type", content="text/html; charset=utf-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="renderer", content="webkit")
+        meta(name="viewport", content="width=device-width, user-scalable=no")
+        block title
+            title 中钢信
+        link(href=relativeRoot + "css/steelwork-operation/base.css", rel="stylesheet", type="text/css")
+        block styles
+        script(src=relativeRoot + "js/libs/require.js")
+        script(src=relativeRoot + "js/base.js")
+        block scripts
+    body
+        .header
+            .container-24.nav
+                span.grid-3.logo
+                    block stage
+                each top in supplyTops
+                    span.grid-2
+                        a(href=top.link) #{top.name}
+                .grid-4.pull-right
+                    span.grid-12.user.personal-menu-root
+                        i.icon.icon-user
+                        span.remarks(title='华伟') 华伟
+                        i.caret
+                        ul.personal-menu.list-unstyled
+                            li
+                                a#passwd_edit 修改密码
+                    span.grid-12.logoff
+                        a(href='#logout')
+                            i.glyphicon.glyphicon-off.mgr-5
+                            span 注销
+                    span.faicon.faicon-expand.expand-btn
+        .body
+            .container-24
+                block top-modules
+        .footer
+            .container-24.row
+                div
+                    span Copyright
+                    span ©
+                    span 中钢信 www.qyedi.com 沪ICP备13013915号-17
+                div
+                    span.phone 服务热线：0731-85891029（8:30-17:30）
+                    span 在线咨询：
+                    span
+                        a(target='_blank', href='http://wpa.qq.com/msgrd?v=3&uin=820218063&site=qq&menu=yes')
+                            img(border='0', src='http://wpa.qq.com/pa?p=2:820218063:41', alt='点击这里给我发消息', title='点击这里给我发消息')
+
+        script(type="text/javascript").
+            require(['jquery'], function($) {
+                $(function () {
+                    var adjustHeight = function () {
+                        var $main = $('#main');
+                        var $slider = $('.slider');
+                        if ($main[0] && $slider[0]) {
+                            $slider.css({
+                                'height': $main.css('height')
+                            });
+                        }
+                    };
+                    adjustHeight();
+                    $(window).resize(adjustHeight);
+
+                    var toggleSlider = function () {
+                        $('#main').toggleClass('grid-21').toggleClass('grid-23');
+                        $('.slider-switch').parent().toggleClass('slider-collapse')
+                                .parent().toggleClass('grid-3').toggleClass('grid-1')
+                                .find('.faicon-caret-left').toggleClass('hidden');
+                    };
+                    var toggleHeaderAndBody = function () {
+                        $('.header').find('.container-24').toggleClass('no-max-width');
+                        $('.body').find('.container-24').toggleClass('no-max-width');
+                        $('.expand-btn').toggleClass('faicon-expand').toggleClass('faicon-compress');
+                    };
+
+                    $('.slider-switch').on('click', function () {
+                        toggleSlider();
+                    });
+                    $('.expand-btn').click(function () {
+                        toggleHeaderAndBody();
+                    });
+                });
+            });
+
+            // 公共方法
+            function locate(topName, sideName, tabName) {
+                $('.nav').find('a').each(function () {
+                    var a = this, $a = $(a), name = $a.text();
+                    if (topName === $.trim(name)) {
+                        $a.parent().addClass('selected');
+                    }
+                });
+
+                $('.slider').find('a').each(function () {
+                    var a = this, $a = $(a), name = $a.find('.words').text();
+                    if (sideName === $.trim(name)) {
+                        $a.parent().addClass('selected');
+                    }
+                });
+
+                $('.tabs').find('a').each(function () {
+                    var a = this, $a = $(a), name = $a.text();
+                    if (tabName === $.trim(name)) {
+                        $a.parent().addClass('selected');
+                    }
+                });
+            }
+

@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+.query-member,
+.query-account {
+  .col-md-2 {
+    input[type="text"],
+    select {
+      width: 75%;
+    }
+  }
+
+  .col-md-3 {
+    input[type="text"],
+    select {
+      width: 70%;
+    }
+  }
+
+  .col-md-4 {
+    input[type="text"],
+    select {
+      width: 80%;
+    }
+  }
+
+  .time {
+    select {
+      width: 28%;
+    }
+    input[type="text"] {
+      width: 35%;
+    }
+  }
+}
+
+.content-block {
+  background-color: transparent;
+}

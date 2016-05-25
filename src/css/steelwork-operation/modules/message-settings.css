@@ -1,0 +1,27 @@
+.message-set-table tr td,
+.message-set-table tr th,
+.platform-notice-table tr td,
+.platform-notice-table tr th {
+  padding: 1em;
+}
+.message-set-table tr td:first-child,
+.platform-notice-table tr td:first-child {
+  text-align: left;
+  padding-left: 3em;
+}
+
+.btn-group {
+  width: 100%;
+}
+.btn-group button {
+  width: 100%;
+  border-radius: 0;
+}
+
+.btn-group
+.radio input[type="radio"],
+.radio-inline input[type="radio"],
+.checkbox input[type="checkbox"],
+.checkbox-inline input[type="checkbox"] {
+  position: static;
+}

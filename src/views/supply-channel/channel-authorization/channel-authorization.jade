@@ -1,0 +1,77 @@
+extends channel-authorization-layout
+
+block content
+    form#search-res.search-form.search-channel.form-inline
+        .container-fluid
+            .row
+                .form-group.col-md-12
+                    label(for='') 渠道商名称：
+                    input.form-control(type='text')
+                    label(for='') 类型：
+                    select.form-control
+                        option 全部
+                    label(for='') 是否系统对接：
+                    select.form-control
+                        option 全部
+                    label(for='') 状态：
+                    select.form-control
+                        option 全部
+                    button.btn.btn-form-clear(type='button') 清空
+                    button.btn.btn-form-search(type='button') 查询
+    .table-block
+        .table-center
+            table
+                tr.title
+                    th(width='10%') 序号
+                    th(width='15%') 渠道商简称
+                    th(width='10%')
+                        | 类型
+                        span.caret
+                    th(width='10%')
+                        | 系统对接
+                        span.caret
+                    th(width='20%') 销售区域
+                    th(width='15%') 销售品类
+                    th(width='10%') 操作
+                tr.odd
+                    td 1
+                    td 找钢网
+                    td 电商
+                    td 是
+                    td 全部
+                    td 全部
+                    td
+                        a.btn.btn-link(href="channel-authorization-do.html") 授权
+                tr.even
+                    td 1
+                    td 找钢网
+                    td 电商
+                    td 是
+                    td 全部
+                    td 全部
+                    td
+                        a.btn.btn-link(href="channel-authorization-do.html") 授权
+                tr.odd
+                    td 1
+                    td 找钢网
+                    td 电商
+                    td 是
+                    td 全部
+                    td 全部
+                    td
+                        a.btn.btn-link(href="channel-authorization-do.html") 授权
+                tr.even
+                    td 1
+                    td 找钢网
+                    td 电商
+                    td 是
+                    td 全部
+                    td 全部
+                    td
+                        a.btn.btn-link(href="channel-authorization-do.html") 授权
+        .table-bottom
+
+    script(type='text/javascript').
+        require(['jquery'], function ($) {
+            locate('渠道管理', '渠道授权', '渠道授权');
+        });

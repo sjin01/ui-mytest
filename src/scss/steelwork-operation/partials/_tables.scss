@@ -1,0 +1,211 @@
+// steel sky's tables
+
+// default sets of tables
+table {
+  width: 100%;
+  th,
+  td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 0 2px;
+  }
+}
+
+.table-block {
+  ul, ol {
+    margin-bottom: 0px;
+  }
+}
+
+.table-block {
+  @include border-top-left-radius(4px);
+  @include border-top-right-radius(4px);
+  height: auto;
+  border: 1px solid $gray-light;
+  border-top: 3px solid $blue-deep;
+
+  .table-top, .table-bottom {
+    @include vertical-middle(6em);
+    padding: 0 $default-gap;
+
+    #button-group {
+      display: inline-block;
+      float: right;
+    }
+
+    .button-group{
+      display: inline-block;
+      float: right;
+    }
+  }
+
+  .table-top {
+    border-bottom: 1px solid $gray-light;
+  }
+
+  .table-bottom {
+    background: $gray-light;
+    border-top: 1px solid $gray-light;
+  }
+
+  .table-center {
+    table {
+      width: 100%;
+
+      tr {
+        @include transition(all, .15s, ease-in-out);
+        height: 3em;
+        line-height: 3em;
+        border-bottom: 1px solid $gray-light;
+
+        &.even {
+          background: #fffeed;
+        }
+        &.selected {
+          color: $orange-deep;
+        }
+        &:first-child {
+          border-top: 1px solid $gray-light;
+        }
+        &:hover {
+          background: $gray-lighter;
+        }
+      }
+
+      th {
+        font-weight: bold;
+        background: $gray-light;
+      }
+
+      th, td {
+        text-align: center;
+        vertical-align: middle;
+
+        &.text-left {
+          text-align: left;
+        }
+
+        &.text-right {
+          text-align: right;
+        }
+      }
+
+      table.more-info {
+        width: 100%;
+        border: 2px solid $brand-info;
+
+        th {
+          background: #f5f8fa;
+          border-bottom: none;
+        }
+        td {
+          background: white;
+          border-top: none;
+        }
+      }
+    }
+  }
+}
+
+.table-center .checkbox-group {
+  width: 80%;
+  line-height: 36px;
+  text-align: left;
+  padding-left: 5%;
+  margin-left: auto;
+  margin-right: auto;
+
+  label {
+    font-weight: normal;
+    margin: 0px 0.5em;
+  }
+}
+
+// modify by steel sky
+.ui_table{
+  width: 100%;
+  border: none !important;
+
+  th{
+    text-align:center;
+    font-weight:bold;
+    background-color:#dcefff;
+
+    .sortable,.sort_asc,.sort_desc {
+      cursor: pointer;
+      i {
+        background:image-url("component/table.png") no-repeat;
+        display: inline-block;
+        width: 13px;
+        height: 13px;
+        vertical-align: middle;
+        margin-left: .5em;
+      }
+    }
+    .sortable i {
+      background-position: 0 -34px;
+    }
+    .sort_asc i {
+      background-position: 0 2px;
+    }
+    .sort_desc i {
+      background-position: 0 -15px;
+    }
+  }
+  td {
+    text-align:center;
+  }
+  tr {
+    border-top:1px solid #cecece;
+    line-height:2.5em;
+    &.even{
+      background-color:#edffff;
+    }
+    &.odd{
+      background-color:#fff;
+    }
+  }
+  .check_col {
+    width: 1em;
+    padding-left: 1em;
+  }
+}
+
+.ui_popup_table tr{
+  line-height: 3em;
+}
+.inner_table_wrapper{
+  padding:1em;
+  background-color: #79c4eb;
+}
+
+
+// header-fixed-table
+
+$header-fixed-table-line-height: 30px;
+.header-fixed-table {
+  table {
+    th,
+    td {
+      height: $header-fixed-table-line-height;
+      line-height: $header-fixed-table-line-height;   
+      padding: 0;
+    }
+
+    td {
+      border: 1px solid $gray-light;
+    }
+  }
+
+  .table-body {
+    height: ($header-fixed-table-line-height + 1) * 10;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    tr:first-child {
+      td {
+        border-top: none;
+      }
+    }
+  }
+}

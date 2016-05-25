@@ -1,0 +1,51 @@
+.query_box {
+  line-height: 32px;
+  background-color: #dcefff;
+  padding: 0 2%;
+
+  label {
+    width: 30%;
+    color: #0a83bf;
+  }
+
+  input {
+    height: 18px;
+    padding: 2px 0 2px 2px;
+  }
+
+  .query_btn {
+    margin-right: 20%;
+  }
+}
+
+.query_table {
+  width: 100%;
+  line-height: 2.5em;
+  padding-left: 10px;
+  margin-bottom: 1em;
+  box-sizing: border-box;
+
+  input[type='text'] {
+    vertical-align: middle;
+    line-height: 1.5em;
+    height: 1.5em;
+    width: 10em;
+  }
+
+  select {
+    background-color: #fff;
+    width: 10.5em;
+    height: 2em;
+    border-width: 1px;
+    vertical-align: middle;
+  }
+}
+
+.query-form {
+  margin-bottom: 10px;
+
+  .row {
+    line-height: 3em;
+  }
+
+}

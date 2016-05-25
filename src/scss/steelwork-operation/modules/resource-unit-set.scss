@@ -1,0 +1,60 @@
+@import "../partials/variables";
+@import "../partials/mixins";
+
+.table-block {
+  border: none;
+
+  .table-center {
+    table {
+      border: 1px solid $gray-light;
+    }
+
+    table input[type="text"] {
+      @include vertical-middle(2em);
+      width: 5em;
+      padding: 0;
+      text-align: center;
+    }
+  }
+}
+
+.unit-set-div {
+  box-sizing: border-box;
+  padding: 2em 0.5em;
+  border-bottom: 1px solid $gray-medium;
+
+  div {
+    @include vertical-middle(2.5em);
+  }
+
+  .title {
+    color: $blue-deep;
+    font-size: 1.4em;
+  }
+
+  .content {
+    span {
+      margin-right: 4em;
+
+      select {
+        width: 12em;
+      }
+
+      input[type="text"] {
+        width: 6em;
+        vertical-align: middle;
+        margin-right: 0.5em;
+      }
+    }
+  }
+}
+
+.unit-set-buttons {
+  padding: 2em 0.5em 4em 0.5em;
+  text-align: center;
+
+  button {
+    width: 8em;
+    margin: 0 0.5em;
+  }
+}

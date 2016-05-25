@@ -1,0 +1,90 @@
+.jqSwitch-wrapper {
+  -moz-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+  display: inline-block;
+  position: relative;
+  width: 72px;
+  height: 32px;
+  margin: 0;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.jqSwitch-wrapper input {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.jqSwitch-wrapper input:focus {
+  outline: none;
+}
+
+.wrapper-on-green {
+  color: #38c44d;
+  background-color: #38c44d;
+}
+.wrapper-on-green:hover {
+  background-color: #4acb5e;
+}
+.wrapper-on-green:active {
+  background-color: #32b045;
+}
+
+.wrapper-on-blue {
+  color: #2994cf;
+  background-color: #2994cf;
+}
+.wrapper-on-blue:hover {
+  background-color: #3aa0d8;
+}
+.wrapper-on-blue:active {
+  background-color: #2585ba;
+}
+
+.wrapper-off-green,
+.wrapper-off-blue {
+  color: #7d7c7c;
+  background-color: #7d7c7c;
+}
+.wrapper-off-green:hover,
+.wrapper-off-blue:hover {
+  background-color: #8a8989;
+}
+.wrapper-off-green:active,
+.wrapper-off-blue:active {
+  background-color: #706f6f;
+}
+
+.jqSwitch-wrapper-disabled,
+.jqSwitch-wrapper-readonly {
+  cursor: not-allowed;
+  opacity: .5;
+}
+.jqSwitch-wrapper-disabled .jqSwitch-state,
+.jqSwitch-wrapper-readonly .jqSwitch-state {
+  opacity: .5;
+}
+
+.jqSwitch-state {
+  -moz-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+  display: inline-block;
+  position: absolute;
+  top: 3px;
+  width: 33px;
+  height: 26px;
+  line-height: 26px;
+  text-align: center;
+  border-radius: 50px;
+  background-color: #fff;
+}
+
+.state-on {
+  right: 3px;
+}
+
+.state-off {
+  right: 36px;
+}

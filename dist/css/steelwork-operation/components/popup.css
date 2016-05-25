@@ -1,0 +1,257 @@
+.popup_container {
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+.popup_container * {
+  box-sizing: border-box;
+}
+
+.popup_center {
+  position: relative;
+  margin: 0 auto;
+}
+
+.popup_wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 6px solid #0a83bf;
+  border-top: none;
+}
+
+.popup_close {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  right: 0;
+  top: 0.5em;
+  cursor: pointer;
+  background: url('../../../images/component/popup_bg.png?658e8dc0bf8b9a09b36994abf9242099') no-repeat;
+}
+
+.popup_title {
+  width: 100%;
+  color: #fff;
+  background-color: #0a83bf;
+  font-size: 14px;
+  font-weight: 400;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+}
+
+.popup_content {
+  position: absolute;
+  top: 35px;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+}
+.popup_content .container-fluid {
+  padding: 15px 30px;
+}
+.popup_content .row {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.popup_content .row div {
+  line-height: 32px;
+}
+.popup_content .row .button-group button,
+.popup_content .row .button-group a {
+  width: 6em;
+  margin-right: 1em;
+}
+.popup_content .row .radio-group label {
+  margin-right: 1em;
+}
+.popup_content .checkbox-groups {
+  width: 100%;
+}
+.popup_content .checkbox-groups div {
+  line-height: 32px;
+}
+.popup_content .checkbox-groups div .checkbox-group-1,
+.popup_content .checkbox-groups div .checkbox-group-2 {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.popup_content .checkbox-groups div .checkbox-group-1 {
+  width: 19%;
+}
+.popup_content .checkbox-groups div .checkbox-group-2 {
+  width: 38%;
+}
+.popup_content .buttons-bar {
+  text-align: center;
+}
+.popup_content .buttons-bar button {
+  width: 8em;
+}
+.popup_content .buttons-bar button:first-child {
+  margin-right: 1em;
+}
+.popup_content .default {
+  position: relative;
+  height: 100%;
+  padding: 0;
+}
+.popup_content .default .default-content .label,
+.popup_content .default .default-content .input,
+.popup_content .default .default-content-row .label,
+.popup_content .default .default-content-row .input {
+  padding: 0 0.5em;
+}
+.popup_content .default .default-content .label,
+.popup_content .default .default-content-row .label {
+  text-align: right;
+}
+.popup_content .default .default-content .input,
+.popup_content .default .default-content-row .input {
+  text-align: left;
+}
+.popup_content .default .default-content .input input[type="text"],
+.popup_content .default .default-content .input input[type="password"],
+.popup_content .default .default-content .input select,
+.popup_content .default .default-content-row .input input[type="text"],
+.popup_content .default .default-content-row .input input[type="password"],
+.popup_content .default .default-content-row .input select {
+  display: inline-block;
+  width: 8em;
+  margin: 0;
+}
+.popup_content .default .default-content {
+  position: absolute;
+  top: 0;
+  height: 139px;
+  line-height: 139px;
+  width: 100%;
+  overflow: auto;
+  text-align: center;
+}
+.popup_content .default .default-content > .content-wrapper {
+  display: inline-block;
+  line-height: normal;
+  text-align: left;
+  vertical-align: middle;
+  margin: 0 2em;
+}
+.popup_content .default .default-content-row {
+  height: 4em;
+  line-height: 4em;
+  margin: 2em 4em;
+}
+.popup_content .default .default-content-row input[type="text"],
+.popup_content .default .default-content-row select {
+  display: inline-block;
+  width: 8em;
+  margin: 0;
+}
+.popup_content .default .default-content-row select {
+  margin-top: 1px;
+}
+.popup_content .default .default-button-bar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  height: 60px;
+  line-height: 60px;
+  background-color: #f1f2f3;
+  border-top: 1px solid #dedcdc;
+}
+.popup_content .default .default-button-bar button {
+  width: 8em;
+  margin: 0 0.5em;
+}
+.popup_content .default .emphasize {
+  color: #2994cf;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.popup_content > .content-wrapper {
+  height: 199px;
+  text-align: center;
+}
+.popup_content > .content-wrapper .content-center {
+  height: 139px;
+  line-height: 139px;
+  overflow-y: auto;
+}
+.popup_content > .content-wrapper .content-center-inner {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.8;
+  padding: 1em 2em;
+}
+.popup_content > .content-wrapper .content-bottom {
+  height: 60px;
+  line-height: 60px;
+  border-top: 1px solid #dedcdc;
+}
+.popup_content > .content-wrapper .content-bottom button {
+  min-width: 6em;
+  margin: 0 0.5em;
+}
+
+.inner-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.inner-wrapper .inner-center,
+.inner-wrapper .inner-bottom {
+  position: absolute;
+  width: 100%;
+}
+.inner-wrapper .inner-center {
+  top: 0;
+  bottom: 60px;
+  overflow: auto;
+  text-align: center;
+}
+.inner-wrapper .inner-center > .inner-center-content {
+  display: inline-block;
+  width: 100%;
+  line-height: normal;
+  vertical-align: middle;
+  text-align: left;
+}
+.inner-wrapper .inner-center > .inner-center-content > div {
+  line-height: 32px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.inner-wrapper .inner-center > .inner-center-content > div:before, .inner-wrapper .inner-center > .inner-center-content > div:after {
+  content: " ";
+  display: table;
+}
+.inner-wrapper .inner-center > .inner-center-content > div:after {
+  clear: both;
+}
+.inner-wrapper .inner-center > .inner-center-content > div.second-title {
+  line-height: 1.2;
+  margin-top: 1.5em;
+}
+.inner-wrapper .inner-center > .inner-center-content > div > label {
+  display: inline-block;
+  text-align: right;
+}
+.inner-wrapper .inner-center > .inner-center-content [type="radio"],
+.inner-wrapper .inner-center > .inner-center-content [type="checkbox"] {
+  vertical-align: sub;
+}
+.inner-wrapper .inner-bottom {
+  bottom: 0;
+  height: 60px;
+  line-height: 60px;
+  border-top: 1px solid #f1f2f3;
+  background-color: #f8f9f8;
+}

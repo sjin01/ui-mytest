@@ -1,0 +1,89 @@
+doctype html
+html
+    head
+        meta(http-equiv="Content-Type", content="text/html; charset=utf-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="renderer", content="webkit")
+        meta(name="viewport", content="width=device-width, user-scalable=no")
+        block title
+            title 中钢信管理平台
+        link(href=relativeRoot + "css/back-end/workspace.css", rel="stylesheet", type="text/css")
+        block styles
+        script(src=relativeRoot + "js/libs/require.js")
+        script(src=relativeRoot + "js/base.js")
+        block scripts
+    body
+        .wrapper
+            .top_nav
+                .logo
+                    img(src=relativeRoot + "images/base/logo.png")
+                    span 中钢信
+                ul
+                    each top in backstageTops
+                        li
+                            a(href=top.link) #{top.name}
+                    li.last
+                        a(href="#logout")
+                            i.i_logout
+                            span.logout 登出
+                    li.last_2
+                        .profile_wrapper
+                            i.i_user
+                            a.user_name 邓姗姗
+                            .user_menu
+                                i.arrow_down
+                                .arrow_up
+                                    ul
+                                        li
+                                            a#passwd_edit 修改密码
+                                        li
+                                            a.edit_personInfo 个人信息
+                .clearfix
+            block top-modules
+
+        script(type="text/javascript").
+            require(['jquery'], function($) {
+                $(function () {
+                    var adjustHeight = function () {
+                        var viewportHeight = $(window).height();
+                        var topNavHeight = $(".top_nav").outerHeight();
+                        var featureNavHeight = $(".feature_nav").outerHeight();
+                        var minHeight = viewportHeight - topNavHeight - featureNavHeight;
+                        var mainContentHeight = $(".main_content").outerHeight();
+                        if (mainContentHeight < minHeight) {
+                            $(".main_content").css("min-height", minHeight);
+                        }
+                        $(".side_nav").css("min-height", $(".main_content").outerHeight() + featureNavHeight + "px");
+                    };
+                    adjustHeight();
+                    $(window).resize(adjustHeight);
+                });
+            });
+
+            // 公共方法
+            function locate(topName, sideName, tabName, iconClass) {
+                $('.top_nav').find('a').each(function () {
+                    var a = this, $a = $(a), name = $a.text();
+                    if (topName === $.trim(name)) {
+                        $a.addClass('selected');
+                    }
+                });
+
+                $('.side_nav').find('a').each(function () {
+                    var a = this, $a = $(a), name = $a.find('span').text();
+                    if (sideName === $.trim(name)) {
+                        $a.addClass('selected');
+                        if (iconClass) {
+                            $a.find('i').removeClass(iconClass+'-gray').addClass(iconClass+'-blue');
+                        }
+                    }
+                });
+
+                $('.feature_nav').find('a').each(function () {
+                    var a = this, $a = $(a), name = $a.text();
+                    if (tabName === $.trim(name)) {
+                        $a.addClass('selected');
+                    }
+                });
+            }
+

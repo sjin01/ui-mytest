@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>中钢信</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/steelworks-and-operation-end/base.csscss">
+    <link rel="stylesheet" type="text/css" href="../../css/steelworks-and-operation-end/modules/channel-manage.css">
+</head>
+<body>
+<div class="header">
+    <div class="container-24 nav">
+        <span class="grid-4 logo">中钢信</span>
+        <span class="grid-2">资源管理</span>
+        <span class="grid-2">交易管理</span>
+        <span class="grid-2 selected">渠道管理</span>
+        <span class="grid-2">定价管理</span>
+        <span class="grid-2">统计分析</span>
+        <span class="grid-2">设置中心</span>
+			<span class="grid-2 push-4 user personal-menu-root">
+				<i class="icon icon-user"></i>戴永明<i class="caret mgl-5"></i>
+                <ul class="personal-menu list-unstyled">
+                    <li><a href="#">修改密码</a></li>
+                    <li><a href="#">个人信息</a></li>
+                </ul>
+			</span>
+			<span class="grid-2 push-4 logoff">
+                <i class="glyphicon glyphicon-off mgr-5"></i>注销
+            </span>
+    </div>
+</div>
+
+<div class="body">
+    <div class="container-24">
+        <div class="grid-4">
+            <div class="slider">
+                <div class="slider-switch">|||</div>
+                <ul class="list-unstyled">
+                    <li class="icon-channel-switch"><i class="icon"></i>渠道开关</li>
+                    <li class="icon-sale-authorization selected"><i class="icon"></i>销售授权</li>
+                    <li class="icon-rebate-settings"><i class="icon"></i>返利设置</li>
+                    <li class="icon-finance-settings"><i class="icon"></i>财务设置</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="main" class="grid-20">
+            <div class="tabs">
+                <span class="grid-3">渠道商销售授权</span>
+                <span class="grid-3 selected">销售设置</span>
+            </div>
+
+            <div class="main-title">销售区域设置</div>
+
+            <div class="table-block">
+                <div class="table-center">
+                    <table>
+                        <tr class="title">
+                            <th width="10%">类型</th>
+                            <th width="10%">省份</th>
+                            <th width="65%">城市</th>
+                            <th width="15%">操作</th>
+                        </tr>
+                        <tr class="odd">
+                            <td>自提区域</td>
+                            <td>湖南省</td>
+                            <td>长沙市、湘潭市、株洲市</td>
+                            <td>
+                                <button class="btn btn-link">修改</button>
+                                <button class="btn btn-link">删除</button>
+                            </td>
+                        </tr>
+                        <tr class="even">
+                            <td>自提区域</td>
+                            <td>湖南省</td>
+                            <td>长沙市、湘潭市、株洲市</td>
+                            <td>
+                                <button class="btn btn-link">修改</button>
+                                <button class="btn btn-link">删除</button>
+                            </td>
+                        </tr>
+                        <tr class="odd">
+                            <td>自提区域</td>
+                            <td>湖南省</td>
+                            <td>长沙市、湘潭市、株洲市</td>
+                            <td>
+                                <button class="btn btn-link">修改</button>
+                                <button class="btn btn-link">删除</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="table-bottom">
+                    <button type="button" class="btn btn-primary btn-lg no-radius" id="add-sale-area">
+                        <span class="glyphicon glyphicon-plus"></span>
+                        新增销售区域
+                    </button>
+                </div>
+            </div>
+
+            <div class="main-title">销售品类设置</div>
+
+            <div class="table-block">
+                <div class="table-center">
+                    <table>
+                        <tr class="title">
+                            <th width="10%">品类</th>
+                            <th width="75%">二级品类</th>
+                            <th width="15%">操作</th>
+                        </tr>
+                        <tr class="odd">
+                            <td>中厚板</td>
+                            <td>螺纹钢、盘钢</td>
+                            <td>
+                                <button class="btn btn-link">修改</button>
+                                <button class="btn btn-link">删除</button>
+                            </td>
+                        </tr>
+                        <tr class="even">
+                            <td>中厚板</td>
+                            <td>螺纹钢、盘钢</td>
+                            <td>
+                                <button class="btn btn-link">修改</button>
+                                <button class="btn btn-link">删除</button>
+                            </td>
+                        </tr>
+                        <tr class="odd">
+                            <td>中厚板</td>
+                            <td>螺纹钢、盘钢</td>
+                            <td>
+                                <button class="btn btn-link">修改</button>
+                                <button class="btn btn-link">删除</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="table-bottom">
+                    <button type="button" class="btn btn-primary btn-lg no-radius" id="add-sale-variety">
+                        <span class="glyphicon glyphicon-plus"></span>
+                        新增销售品类
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="body-footer"></div>
+</div>
+
+<div class="footer">
+    <div class="container-24"></div>
+</div>
+
+<script src="../../js/libs/require.js"></script>
+<script src="../../js/main.js"></script>
+<script>
+    require(['jquery', 'popup', 'icheck'], function ($, Popup) {
+        $('#add-sale-area').click(function () {
+            var popup = new Popup({
+                template: "#sale-area-dialog",
+                width: "600px",
+                height: "480px",
+                data: {title: '新增销售区域'}
+            });
+
+            $('input').iCheck({
+                checkboxClass: 'icheckbox_minimal-green',
+                radioClass: 'iradio_minimal-green',
+                increaseArea: '20%' // optional
+            });
+        });
+    });
+</script>
+
+<script type="text/ractive" id="sale-area-dialog">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">区域类型：</div>
+            <div class="col-md-6 radio-group">
+                <label><input type="radio" name="areaType"> 自提区域</label>
+                <label><input type="radio" name="areaType"> 包到区域</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">销售省份：</div>
+            <div class="col-md-4">
+                <select class="form-control no-radius">
+                    <option>选择省份</option>
+                </select>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-md-3">选择销售城市：</div>
+            <div class="col-md-6 button-group">
+                <button type="button" class="btn btn-primary no-radius">全选</button>
+                <button type="button" class="btn btn-default no-radius">反选</button>
+            </div>
+        </div>
+        <div class="checkbox-groups">
+            <div>
+                <label class="checkbox-group-1"><input type="checkbox" name="areaName"> 长沙市</label>
+                <label class="checkbox-group-1"><input type="checkbox" name="areaName"> 长沙市</label>
+                <label class="checkbox-group-1"><input type="checkbox" name="areaName"> 长沙长沙市</label>
+                <label class="checkbox-group-1"><input type="checkbox" name="areaName"> 长沙市</label>
+                <label class="checkbox-group-1"><input type="checkbox" name="areaName"> 长沙市</label>
+            </div>
+            <div>
+                <label class="checkbox-group-1"><input type="checkbox" name="areaName"> 长沙市</label>
+                <label class="checkbox-group-1"><input type="checkbox" name="areaName"> 长沙市</label>
+                <label class="checkbox-group-1"><input type="checkbox" name="areaName"> 长沙市</label>
+                <label class="checkbox-group-1"><input type="checkbox" name="areaName"> 长沙市</label>
+                <label class="checkbox-group-1"><input type="checkbox" name="areaName"> 长沙市</label>
+            </div>
+            <div>
+                <label class="checkbox-group-1"><input type="checkbox" name="areaName"> 长沙市</label>
+                <label class="checkbox-group-1"><input type="checkbox" name="areaName"> 长沙市</label>
+                <label class="checkbox-group-1"><input type="checkbox" name="areaName"> 长沙市</label>
+                <label class="checkbox-group-1"><input type="checkbox" name="areaName"> 长沙市</label>
+                <label class="checkbox-group-1"><input type="checkbox" name="areaName"> 长沙市</label>
+            </div>
+            <div>
+                <label class="checkbox-group-1"><input type="checkbox" name="areaName"> 长沙市</label>
+                <label class="checkbox-group-1"><input type="checkbox" name="areaName"> 长沙市</label>
+                <label class="checkbox-group-1"><input type="checkbox" name="areaName"> 长沙市</label>
+                <label class="checkbox-group-2"><input type="checkbox" name="areaName"> 湘西土家族苗族自治区</label>
+            </div>
+        </div>
+        <hr/>
+        <div class="row buttons-bar">
+            <button type="button" class="btn btn-form-search no-radius">保存</button>
+            <button type="button" class="btn btn-cancel no-radius">取消</button>
+        </div>
+    </div>
+</script>
+
+</body>
+</html>

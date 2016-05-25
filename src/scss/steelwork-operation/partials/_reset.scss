@@ -1,0 +1,8 @@
+﻿body {
+  font-family: 'helvetica neue',tahoma,'hiragino sans gb',stheiti,'wenquanyi micro hei','Microsoft YaHei',SimSun,sans-serif;
+  -ms-text-autospace: ideograph-alpha ideograph-numeric ideograph-parenthesis; /* 5 */
+  text-autospace: ideograph-alpha ideograph-numeric ideograph-parenthesis; /* 5 */
+}
+
+*:after, *:before { display: inline-block; }
+*:after { clear: both; }

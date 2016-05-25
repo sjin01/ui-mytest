@@ -1,0 +1,112 @@
+.ui_table {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #cecece;
+  border-top: none;
+
+  tr {
+    border-top: 1px solid #cecece;
+    line-height: 2.5em;
+
+    &.odd {
+      background-color: #fff;
+    }
+
+    &.even {
+      background-color: #edffff;
+    }
+  }
+
+  thead tr {
+    background-color: #dcefff;
+  }
+
+  th {
+    text-align: center;
+    font-weight: bold;
+
+    .sortable,
+    .sort_asc,
+    .sort_desc {
+      cursor: pointer;
+
+      i {
+        background: image-url("component/table.png") no-repeat;
+        display: inline-block;
+        width: 13px;
+        height: 13px;
+        vertical-align: middle;
+        margin-left: .5em;
+      }
+    }
+
+    .sortable i {
+      background-position: 0 -34px;
+    }
+
+    .sort_asc i {
+      background-position: 0 2px;
+    }
+
+    .sort_desc i {
+      background-position: 0 -15px;
+    }
+  }
+
+  td {
+    text-align: center;
+  }
+
+  .check_col {
+    width: 1em;
+    padding-left: 1em;
+  }
+
+}
+
+.ui_popup_table tr {
+  line-height: 3em;
+}
+
+.inner_table_wrapper {
+  padding: 1em;
+  background-color: #79c4eb;
+}
+
+
+
+
+.table-block {
+  border: 1px solid #f1f2f3;
+  border-radius: 0;
+
+  .table-center {
+
+    width: 100%;
+    tr{
+      height: 3em;
+      line-height: 3em;
+
+      th{
+        font-weight: bold;
+        background: #dcefff;
+      }
+
+      td {
+        text-align: center;
+        vertical-align: middle;
+
+        &.text-left {
+          text-align: left;
+        }
+
+        &.text-right {
+          text-align: right;
+        }
+      }
+    }
+    .even{
+      background: #edffff;
+    }
+  }
+}

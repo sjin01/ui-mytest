@@ -1,0 +1,35 @@
+{
+  "distTops": [
+    {
+      "link": "",
+      "name": "资源采购",
+      "sides": [
+        {
+          "name": "现货",
+          "className": "icon-buy-spot"
+
+        },
+        {
+          "link": "",
+          "name": "订货",
+          "className": "icon-buy-ordergoods",
+          "tabs": [
+            {
+              "link": "/html/dist-resource/dist-ordergoods/dist-ordergoods.html",
+              "name": "订货采购"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "交易管理"
+    },
+    {
+      "name": "统计分析"
+    },
+    {
+      "name": "设置中心"
+    }
+  ]
+}

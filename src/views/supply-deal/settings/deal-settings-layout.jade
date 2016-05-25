@@ -1,0 +1,9 @@
+extends ../deal-layout
+block subStyles
+    block style
+block side-modules
+    .tabs
+        each tab in supplyTops[1].sides[3].tabs
+            span.grid-3
+                a(href=tab.link) #{tab.name}
+    block content

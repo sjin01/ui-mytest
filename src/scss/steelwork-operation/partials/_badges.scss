@@ -1,0 +1,19 @@
+.badge-res {
+  position: absolute;
+  font-family: inherit;
+  font-weight: normal;
+  font-style: normal;
+  width: 20px;
+  height: 20px;
+  padding: 3px;
+  margin: 18px 0 0 4px;
+  border-radius: 50%;
+  background-color: $orange-deep;
+}
+
+.badge-zh {
+  padding: 3px;
+  color: $blue-deep;
+  background-color: white;
+  border: 1px solid $blue-deep;
+}

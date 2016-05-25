@@ -1,0 +1,63 @@
+{
+  "operationTops": [
+    {
+      "name": "资源管理",
+      "link": "/html/steelwork-operation-resource/res-sale/res-sale-list.html",
+      "sides": [
+        {
+          "name": "可售资源",
+          "className": "icon-shopping-cart",
+          "link": "/html/steelwork-operation-resource/res-sale/res-sale-list.html",
+          "tabs": [
+            {
+              "name": "可售资源库",
+              "link": "/html/steelwork-operation-resource/res-sale/res-sale-list.html"
+            },
+            {
+              "name": "待审资源",
+              "link": "/html/steelwork-operation-resource/res-sale/res-audit-list.html"
+            },
+            {
+              "name": "批量导入",
+              "link": "/html/steelwork-operation-resource/res-sale/res-import.html"
+            }
+          ]
+        },
+        {
+          "name": "挂单资源",
+          "className": "icon-order",
+          "link": "/html/steelwork-operation-resource/res-order/res-order-list.html",
+          "tabs": [
+            {
+              "name": "联销挂单资源",
+              "link": "/html/steelwork-operation-resource/res-order/res-order-list.html"
+            }
+          ]
+        },
+        {
+          "name": "资源设置",
+          "className": "icon-settings",
+          "link": "/html/steelwork-operation-resource/res-config/res-config.html",
+          "tabs": [
+            {
+              "name": "基本设置",
+              "link": "/html/steelwork-operation-resource/res-config/res-config.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "交易管理"
+    },
+    {
+      "name": "渠道管理"
+    },
+    {
+      "name": "定价管理"
+    },
+    {
+      "name": "设置中心"
+    }
+  ]
+}

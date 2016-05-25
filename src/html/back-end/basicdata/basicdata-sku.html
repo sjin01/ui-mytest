@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>中钢信管理平台</title>
+    <link href="../../../css/back-end/workspace.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/back-end/modules/basedata.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/components/lightbox.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="wrapper">
+
+    <div class="top_nav"></div>
+
+    <div class="body_box">
+
+        <ul class="side_nav" style="min-height: 681px;"></ul>
+
+        <ul class="feature_nav"></ul>
+
+        <div class="main_content">
+
+            <div class="query-form container-fluid query-sku">
+                <div class="row">
+                    <label for="" class="mgl-20">品类：</label>
+                    <input type="text" class="form-widget">
+
+                    <label for="" class="mgl-20">品名：</label>
+                    <input type="text" class="form-widget">
+
+                    <label for="" class="mgl-20">材质：</label>
+                    <input type="text" class="form-widget">
+
+                    <label for="" class="mgl-20">规格：</label>
+                    <input type="text" class="form-widget">
+
+                    <label for="" class="mgl-20">钢厂：</label>
+                    <input type="text" class="form-widget">
+
+                    <a class="blue_button mgl-20 mgr-5" href="javascript:void(0);" id="skuQueryBtn">查询</a>
+                    <a class="red_button" href="javascript:void(0);" id="skuAddBtn">新增</a>
+
+                    <button class="btn btn-gray mgl-5" id="delete">删除</button>
+                    <button class="btn btn-gray mgl-5" id="create">创建</button>
+                    <button class="btn btn-gray mgl-5" id="validEmail">邮箱验证</button>
+                    <button class="btn btn-gray mgl-5" id="validPhone">手机验证</button>
+                    <button class="btn btn-gray mgl-5" id="info">渠道商详情</button>
+                    <button class="btn btn-gray mgl-5" id="modifyPassword">修改密码</button>
+                    <button class="btn btn-gray mgl-5" id="manager">管理员权限</button>
+                    <button class="btn btn-gray mgl-5" id="toggle">切换客户端</button>
+                    <button class="btn btn-gray mgl-5" id="enterpriseInfo">企业详情</button>
+                    <button class="btn btn-gray mgl-5" id="accountOpened">已开账号</button>
+                </div>
+            </div>
+
+            <div id="skuListBox"></div>
+
+        </div>
+
+    </div>
+</div>
+
+<script src="../../../js/libs/require.js"></script>
+<script src="../../../js/base.js"></script>
+
+<script>
+    require(["jquery", 'tplUtil', "text!../template/modules/workspace.rac", "popup", 'alert', 'confirm', 'pagination', 'lightbox'], function ($, TplUtil, WSTpl, Popup, Alert, Confirm, Pagination) {
+
+        $('#delete').click(function () {
+            new Confirm({
+                title: '删除确认',
+                content: '是否删除文件【营业执照】？',
+                imgClass: 'trash',
+                imgColor: 'red'
+            });
+        });
+
+        $('#create').click(function () {
+            new Alert({
+                title: '提示',
+                content: '会员<span style="color: red;">上海钢富电子商务有限公司</span>已创建成功',
+                imgClass: 'check',
+                imgColor: 'green'
+            });
+        });
+
+        $('#validEmail').click(function () {
+            new Alert({
+                title: '邮箱验证',
+                yesText: '关闭',
+                content: '已发送验证邮箱，请登录邮箱进行验证！',
+                imgClass: 'envelope',
+                imgColor: 'red'
+            })
+        });
+
+        $('#validPhone').click(function () {
+            new Popup({
+                title: '手机验证',
+                template: '#valid-phone-dialog'
+            });
+        });
+
+        $('#info').click(function () {
+            var info = new Popup({
+                title: '渠道商详情',
+                width: '400px',
+                height: '480px',
+                template: '#info-dialog'
+            });
+        });
+
+        $('#modifyPassword').click(function () {
+            new Popup({
+                title: '修改密码',
+                template: '#modify-password-dialog',
+                height: '280px'
+            });
+        });
+
+        $('#manager').click(function () {
+            new Popup({
+                title: '管理员权限（自定义）',
+                template: '#manager-privilege-dialog',
+                width: 560,
+                height: 340
+            });
+        });
+
+        $('#toggle').click(function () {
+            new Popup({
+                title: '切换客户端',
+                template: '#toggle-dialog',
+                width: 560,
+                height: 340
+            });
+        });
+
+        $('#enterpriseInfo').click(function () {
+            new Popup({
+                title: '企业详情',
+                width: 720,
+                height: 500,
+                template: '#enterprise-info-dialog'
+            });
+        });
+
+        $('#accountOpened').click(function () {
+            new Popup({
+                title: '已开账号',
+                width: 720,
+                height: 420,
+                template: '#account-opened-dialog'
+            });
+        });
+
+        var items1 = [
+            { link: '#1', name: '基础数据', selected: true },
+            { link: '#2', name: '会员' },
+            { link: '#3', name: '销售' },
+            { link: '#4', name: '系统' }
+        ],
+        items2 = [
+            { link: 'basicdata-sku.html', name: 'SKU', className: 'back-sku', selected: true },
+            { link: 'basicdata-enterpriselib.html', name: '企业库', className: 'back-enterprise-lib' },
+            { link: 'basicdata-supplier.html', name: '供应商', className: 'back-supplier' },
+            { link: 'basicdata-distributor.html', name: '渠道商', className: 'back-distributor' },
+            { link: 'basicdata-warehouse.html', name: '仓库', className: 'back-warehouse' }
+
+        ],
+        items3 = [
+            { link: '#1', name: 'SKU库', selected: true },
+            { link: '#2', name: '待审核SKU' },
+            { link: '#3', name: '品类' },
+            { link: '#4', name: '品名' },
+            { link: '#4', name: '材质' },
+            { link: '#4', name: '规格' },
+            { link: '#4', name: '钢厂' },
+            { link: '#4', name: '别名' }
+        ];
+
+        TplUtil.loadTpl({
+            el: '.top_nav',
+            template: $(WSTpl).filter('#top-nav').html(),
+            data: {
+                modules: items1
+            }
+        });
+
+        TplUtil.loadTpl({
+            el: '.side_nav',
+            template: $(WSTpl).filter('#side-nav').html(),
+            data: {
+                items: items2
+            }
+        });
+
+        TplUtil.loadTpl({
+            el: '.feature_nav',
+            template: $(WSTpl).filter('#feature-nav').html(),
+            data: {
+                items: items3
+            }
+        });
+
+        var items = {
+            "total":    5,
+            "sortAsc":  true,
+            "items": [
+                {"availableQuantity":58,"availableQuantityStr":"58","availableWeight":3,"availableWeightStr":"3.000","className":"型材","brandName":"工字钢","calculateDesc":"磅计","calculateType":2,"cityName":"北京市","createTime":1444962172000,"creator":2,"deleted":false,"deleted_desc":"可用","fromWay":1,"listingFlag":0,"listingFlagName":"未挂单","listingQuantity":58,"listingRatio":100,"listingWeight":3,"meterageType":1,"meterageTypeName":"吨","modifier":11,"modifyTime":1445860189000,"modifyTimeStr":"2015-10-26 19:49:49","resId":446,"resType":1,"salePrice":300024,"salePriceStr":"3000","skuId":10000005,"specificationName":"1.0*1250*C","steelworksName":"泰钢","supResCode":"020020","supplierId":8,"textureName":"HRB400E","unitWeight":0.24,"unitWeightStr":"0.240","warehouseAbbr":"高星","warehouseDisplayName":"高星物流（北京市）","warehouseId":1,"warehouseName":"高星物流"},
+                {"availableQuantity":58,"availableQuantityStr":"58","availableWeight":3,"availableWeightStr":"3.000","className":"型材","brandName":"工字钢","calculateDesc":"磅计","calculateType":2,"cityName":"北京市","createTime":1444962172000,"creator":2,"deleted":false,"deleted_desc":"可用","fromWay":1,"listingFlag":0,"listingFlagName":"未挂单","listingQuantity":58,"listingRatio":100,"listingWeight":3,"meterageType":1,"meterageTypeName":"吨","modifier":11,"modifyTime":1445860189000,"modifyTimeStr":"2015-10-26 19:49:49","resId":446,"resType":1,"salePrice":300024,"salePriceStr":"3000","skuId":10000005,"specificationName":"1.0*1250*C","steelworksName":"泰钢","supResCode":"020020","supplierId":8,"textureName":"HRB400E","unitWeight":0.24,"unitWeightStr":"0.240","warehouseAbbr":"高星","warehouseDisplayName":"高星物流（北京市）","warehouseId":1,"warehouseName":"高星物流"},
+                {"availableQuantity":58,"availableQuantityStr":"58","availableWeight":3,"availableWeightStr":"3.000","className":"型材","brandName":"工字钢","calculateDesc":"磅计","calculateType":2,"cityName":"北京市","createTime":1444962172000,"creator":2,"deleted":false,"deleted_desc":"可用","fromWay":1,"listingFlag":0,"listingFlagName":"未挂单","listingQuantity":58,"listingRatio":100,"listingWeight":3,"meterageType":1,"meterageTypeName":"吨","modifier":11,"modifyTime":1445860189000,"modifyTimeStr":"2015-10-26 19:49:49","resId":446,"resType":1,"salePrice":300024,"salePriceStr":"3000","skuId":10000005,"specificationName":"1.0*1250*C","steelworksName":"泰钢","supResCode":"020020","supplierId":8,"textureName":"HRB400E","unitWeight":0.24,"unitWeightStr":"0.240","warehouseAbbr":"高星","warehouseDisplayName":"高星物流（北京市）","warehouseId":1,"warehouseName":"高星物流"},
+                {"availableQuantity":58,"availableQuantityStr":"58","availableWeight":3,"availableWeightStr":"3.000","className":"型材","brandName":"工字钢","calculateDesc":"磅计","calculateType":2,"cityName":"北京市","createTime":1444962172000,"creator":2,"deleted":false,"deleted_desc":"可用","fromWay":1,"listingFlag":0,"listingFlagName":"未挂单","listingQuantity":58,"listingRatio":100,"listingWeight":3,"meterageType":1,"meterageTypeName":"吨","modifier":11,"modifyTime":1445860189000,"modifyTimeStr":"2015-10-26 19:49:49","resId":446,"resType":1,"salePrice":300024,"salePriceStr":"3000","skuId":10000005,"specificationName":"1.0*1250*C","steelworksName":"泰钢","supResCode":"020020","supplierId":8,"textureName":"HRB400E","unitWeight":0.24,"unitWeightStr":"0.240","warehouseAbbr":"高星","warehouseDisplayName":"高星物流（北京市）","warehouseId":1,"warehouseName":"高星物流"},
+                {"availableQuantity":58,"availableQuantityStr":"58","availableWeight":3,"availableWeightStr":"3.000","className":"型材","brandName":"工字钢","calculateDesc":"磅计","calculateType":2,"cityName":"北京市","createTime":1444962172000,"creator":2,"deleted":false,"deleted_desc":"可用","fromWay":1,"listingFlag":0,"listingFlagName":"未挂单","listingQuantity":58,"listingRatio":100,"listingWeight":3,"meterageType":1,"meterageTypeName":"吨","modifier":11,"modifyTime":1445860189000,"modifyTimeStr":"2015-10-26 19:49:49","resId":446,"resType":1,"salePrice":300024,"salePriceStr":"3000","skuId":10000005,"specificationName":"1.0*1250*C","steelworksName":"泰钢","supResCode":"020020","supplierId":8,"textureName":"HRB400E","unitWeight":0.24,"unitWeightStr":"0.240","warehouseAbbr":"高星","warehouseDisplayName":"高星物流（北京市）","warehouseId":1,"warehouseName":"高星物流"}
+            ]
+        };
+
+        new Pagination($.extend({
+            target: '#skuListBox',
+            template: '#skuListTpl'
+        }, items));
+
+        $('#skuAddBtn').click(function () {
+            new Alert('新增成功！');
+        });
+
+        $(function () {
+
+            var adjustHeight = function () {
+                var viewportHeight = $(window).height();
+                var topNavHeight = $(".top_nav").outerHeight();
+                var featureNavHeight = $(".feature_nav").outerHeight();
+                var minHeight = viewportHeight - topNavHeight - featureNavHeight;
+                var mainContentHeight = $(".main_content").outerHeight();
+                if (mainContentHeight < minHeight) {
+                    $(".main_content").css("min-height", minHeight);
+                }
+                $(".side_nav").css("min-height", $(".main_content").outerHeight() + featureNavHeight + "px");
+            };
+            adjustHeight();
+            $(window).resize(adjustHeight);
+        });
+
+    });
+</script>
+
+<script type="text/ractive" id="valid-phone-dialog">
+<div class="inner-wrapper">
+    <div class="inner-center">
+        <div class="inner-center-content">
+            <div class="">
+                <label class="col-md-4">手机号：</label>
+                <span class="col-md-8 no-padding">
+                    13511112222
+                    <button class="btn blue_button no-radius mgl-20">获取验证码</button>
+                </span>
+            </div>
+            <div class="">
+                <label class="col-md-4">验证码：</label>
+                <span class="col-md-8 no-padding">
+                    <input type="text" class="form-widget no-radius">
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="inner-bottom text-center">
+        <button class="btn red_button no-radius" on-click="close">关闭</button>
+    </div>
+</div>
+</script>
+
+<script type="text/ractive" id="modify-password-dialog">
+<div class="inner-wrapper">
+    <div class="inner-center">
+        <div class="inner-center-content">
+            <div class="">
+                <label class="col-md-4">原密码：</label>
+                <span class="col-md-8 no-padding">
+                    <input type="text" class="form-widget no-radius">
+                </span>
+            </div>
+            <div class="">
+                <label class="col-md-4">新密码：</label>
+                <span class="col-md-8 no-padding">
+                    <input type="text" class="form-widget no-radius">
+                </span>
+            </div>
+            <div class="">
+                <label class="col-md-4">确认新密码：</label>
+                <span class="col-md-8 no-padding">
+                    <input type="text" class="form-widget no-radius">
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="inner-bottom text-center">
+        <button class="btn red_button no-radius" on-click="close">保存</button>
+        <button class="btn btn-gray mgl-10 no-radius" on-click="close">取消</button>
+    </div>
+</div>
+</script>
+
+<script type="text/ractive" id="manager-privilege-dialog">
+<div class="inner-wrapper">
+    <div class="inner-center">
+        <div class="inner-center-content" style="padding: 0 15px;">
+            <div class="second-title mgl-10" >供应商类型角色：</div>
+            <div class="">
+                <label class="col-md-4 text-left">
+                    <input type="checkbox">
+                    供应商主账号通用包
+                </label>
+                <label class="col-md-4 text-left">
+                    <input type="checkbox">
+                    华伟中板专用包
+                </label>
+                <label class="col-md-4 text-left">
+                    <input type="checkbox">
+                    资源管理员
+                </label>
+            </div>
+            <div class="">
+                <label class="col-md-4 text-left">
+                    <input type="checkbox">
+                    定价管理员
+                </label>
+                <label class="col-md-4 text-left">
+                    <input type="checkbox">
+                    订单管理员
+                </label>
+                <label class="col-md-4 text-left">
+                    <input type="checkbox">
+                    资源管理员
+                </label>
+            </div>
+            <div class="second-title mgl-10 mgt-20" >渠道商类型角色：</div>
+            <div class="">
+                <label class="col-md-4 text-left">
+                    <input type="radio">
+                    渠道商主账号通用包
+                </label>
+                <label class="col-md-4 text-left">
+                    <input type="checkbox">
+                    采购员
+                </label>
+                <label class="col-md-4 text-left">
+                    <input type="radio">
+                    采购管理
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="inner-bottom text-center">
+        <button class="btn red_button no-radius" on-click="close">确定</button>
+        <button class="btn btn-gray mgl-10 no-radius" on-click="close">取消</button>
+    </div>
+</div>
+</script>
+
+<script type="text/ractive" id="enterprise-info-dialog">
+<div class="inner-wrapper">
+    <div class="inner-center">
+        <div class="inner-center-content" style="padding: 0 15px;">
+            <div class="second-title mgl-10" >基本信息：</div>
+            <div class="">
+                <label class="col-md-2">企业全称：</label>
+                <span class="col-md-4">上海钢富电子商务有限公司</span>
+
+                <label class="col-md-2">所在区域：</label>
+                <span class="col-md-4">上海市-上海市-杨浦区</span>
+            </div>
+            <div class="">
+                <label class="col-md-2">企业简称：</label>
+                <span class="col-md-4">找钢网</span>
+
+                <label class="col-md-2">详细地址：</label>
+                <span class="col-md-4">逸仙路25号同济晶都 17F</span>
+            </div>
+            <div class="second-title mgl-10" >企业证件：</div>
+            <div class="">
+                <span class="col-md-3">
+                    <div class="image-upload-container">
+                        <div class="image-container">
+                            <img src="../../../images/base/to-be-upload.png">
+                        </div>
+                        <div class="title">管理员授权委托书</div>
+                    </div>
+                </span>
+
+                <span class="col-md-3">
+                    <div class="image-upload-container">
+                        <div class="image-container">
+                            <a href="../../../images/base/example-1-enlarge.png" data-lightbox="example-1-enlarge" data-title="管理员授权委托书">
+                                <img src="../../../images/base/example-1.png">
+                            </a>
+                            <a href="#del" class="back-icon back-close"></a>
+                            <span class="tip">点击查看大图</span>
+                        </div>
+                        <div class="title">管理员授权委托书</div>
+                    </div>
+                </span>
+
+                <span class="col-md-3">
+                    <div class="image-upload-container">
+                        <div class="image-container">
+                            <a href="../../../images/base/example-1-enlarge.png" data-lightbox="example-1-enlarge" data-title="管理员授权委托书">
+                                <img src="../../../images/base/example-1.png">
+                            </a>
+                            <a href="#del" class="back-icon back-close"></a>
+                            <span class="tip">点击查看大图</span>
+                        </div>
+                        <div class="title">管理员授权委托书</div>
+                    </div>
+                </span>
+
+                <span class="col-md-3">
+                    <div class="image-upload-container">
+                        <div class="image-container">
+                            <img src="../../../images/base/to-be-upload.png">
+                        </div>
+                        <div class="title">管理员授权委托书</div>
+                    </div>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="inner-bottom text-center">
+        <button class="btn red_button no-radius" on-click="close">确定</button>
+        <button class="btn btn-gray mgl-10 no-radius" on-click="close">取消</button>
+    </div>
+</div>
+</script>
+
+<script type="text/ractive" id="toggle-dialog">
+<div class="inner-wrapper">
+    <div class="inner-center">
+        <div class="inner-center-content" style="padding: 0 30px;">
+            <div>
+                <span class="col-md-12 text-left">
+                    您的账号具备两种客户类型权限，请选择想登录的客户端：
+                </span>
+            </div>
+            <div class="">
+                <label class="col-md-12 text-left">
+                    <input type="radio">
+                    供应商销售管理端
+                </label>
+            </div>
+            <div class="">
+                <label class="col-md-12 text-left">
+                    <input type="radio">
+                    渠道商采购管理端
+                </label>
+            </div>
+            <div class="">
+                <label class="col-md-12 text-left" style="font-size: 14px; font-weight: 400; color: #ea5a5a;">
+                    <input type="checkbox">
+                    设为默认客户端？
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="inner-bottom text-center">
+        <button class="btn red_button no-radius" on-click="close">确定切换</button>
+        <button class="btn btn-gray mgl-10 no-radius" on-click="close">取消</button>
+    </div>
+</div>
+</script>
+
+<script type="text/ractive" id="info-dialog">
+<div class="inner-wrapper">
+    <div class="inner-center">
+        <div class="inner-center-content  popup-distributor-info">
+            <div class="">
+                <label class="col-md-4 star-before">所属企业：</label>
+                <span class="col-md-8">
+                    <input type="text" class="form-widget">
+                </span>
+            </div>
+            <div class="">
+                <label class="col-md-4 star-before">渠道商简称：</label>
+                <span class="col-md-8">
+                    <input type="text" class="form-widget">
+                </span>
+            </div>
+            <div class="">
+                <label class="col-md-4 star-before">渠道商类型：</label>
+                <span class="col-md-8">
+                    <select class="form-widget">
+                        <option>电商</option>
+                    </select>
+                </span>
+            </div>
+            <div class="">
+                <label class="col-md-4 star-before">系统对接：</label>
+                <span class="col-md-8">
+                    <select class="form-widget">
+                        <option>是</option>
+                    </select>
+                </span>
+            </div>
+            <div class="">
+                <label class="col-md-4">业务联系人：</label>
+                <span class="col-md-8">
+                    <input type="text" class="form-widget">
+                </span>
+            </div>
+            <div class="">
+                <label class="col-md-4">业务电话：</label>
+                <span class="col-md-8">
+                    <input type="text" class="form-widget">
+                </span>
+            </div>
+            <div class="">
+                <label class="col-md-4">传真电话：</label>
+                <span class="col-md-8">
+                    <input type="text" class="form-widget">
+                </span>
+            </div>
+            <div class="">
+                <label class="col-md-4 star-before">应用状态：</label>
+                <span class="col-md-8">
+                    <label>
+                        <input type="radio" name="isApply" checked> 启用
+                    </label>
+                    <label>
+                        <input type="radio" class="mgl-20" name="isApply"> 禁用
+                    </label>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="inner-bottom text-center">
+        <button class="btn btn-yes no-radius mgr-10" on-click="yes">保存</button>
+        <button class="btn btn-no no-radius" on-click="no">取消</button>
+    </div>
+</div>
+</script>
+
+<script type="text/ractive" id="account-opened-dialog">
+<div class="inner-wrapper">
+    <div class="inner-center">
+        <div class="inner-center-content" style="padding: 0 30px;">
+            <div>
+                <span class="col-md-12 no-padding" style="font-size: 14px; font-weight: 400;">
+                    <span style="color: gray;">会员企业：</span>
+                    <span style="font-weight: bold;">上海钢富电子商务有限公司</span>
+                </span>
+            </div>
+            <div class="header-fixed-table">
+                <div class="table-header">
+                    <table class="ui_table">
+                        <tr>
+                            <th width="10%">序号</th>
+                            <th width="20%">登录名</th>
+                            <th width="20%">姓名</th>
+                            <th width="15%">账号类型</th>
+                            <th width="15%">状态</th>
+                            <th width="20%">创建时间</th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="table-body">
+                    <table class="ui_table">
+                        <tr class>
+                            <td width="10%">1</td>
+                            <td width="20%">找钢网</td>
+                            <td width="20%">洪平</td>
+                            <td width="15%">管理员</td>
+                            <td width="15%">启用</td>
+                            <td width="20%">2015-09-01</td>
+                        </tr>
+                        <tr class>
+                            <td>2</td>
+                            <td>找钢网</td>
+                            <td>洪平</td>
+                            <td>管理员</td>
+                            <td>启用</td>
+                            <td>2015-09-01</td>
+                        </tr>
+                        <tr class>
+                            <td>3</td>
+                            <td>找钢网</td>
+                            <td>洪平</td>
+                            <td>管理员</td>
+                            <td>启用</td>
+                            <td>2015-09-01</td>
+                        </tr>
+                        <tr class>
+                            <td>4</td>
+                            <td>找钢网</td>
+                            <td>洪平</td>
+                            <td>管理员</td>
+                            <td>启用</td>
+                            <td>2015-09-01</td>
+                        </tr>
+                        <tr class>
+                            <td>5</td>
+                            <td>找钢网</td>
+                            <td>洪平</td>
+                            <td>管理员</td>
+                            <td>启用</td>
+                            <td>2015-09-01</td>
+                        </tr>
+                        <tr class>
+                            <td>6</td>
+                            <td>找钢网</td>
+                            <td>洪平</td>
+                            <td>管理员</td>
+                            <td>启用</td>
+                            <td>2015-09-01</td>
+                        </tr>
+                        <tr class>
+                            <td>6</td>
+                            <td>找钢网</td>
+                            <td>洪平</td>
+                            <td>管理员</td>
+                            <td>启用</td>
+                            <td>2015-09-01</td>
+                        </tr>
+                        <tr class>
+                            <td>6</td>
+                            <td>找钢网</td>
+                            <td>洪平</td>
+                            <td>管理员</td>
+                            <td>启用</td>
+                            <td>2015-09-01</td>
+                        </tr>
+                        <tr class>
+                            <td>6</td>
+                            <td>找钢网</td>
+                            <td>洪平</td>
+                            <td>管理员</td>
+                            <td>启用</td>
+                            <td>2015-09-01</td>
+                        </tr>
+                        <tr class>
+                            <td>6</td>
+                            <td>找钢网</td>
+                            <td>洪平</td>
+                            <td>管理员</td>
+                            <td>启用</td>
+                            <td>2015-09-01</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="inner-bottom text-center">
+        <button class="btn btn-gray no-radius" on-click="close">关闭</button>
+    </div>
+</div>
+</script>
+
+<script type="text/ractive" id="skuListTpl">
+<div class="header-fixed-table">
+    <div class="table-header">
+        <table class="ui_table">
+            <tr>
+                <th>SKU编码</th>
+                <th>品类</th>
+                <th>品名</th>
+                <th>材质</th>
+                <th>规格</th>
+                <th>钢厂</th>
+                <th>计量方式</th>
+                <th decorator="sort:状态">状态 </th>
+                <th decorator="sort:更新时间">更新时间 </th>
+                <th>更新人</th>
+                <th>操作</th>
+            </tr>
+        </table>
+    </div>
+    <div class="table-body">
+        <table class="ui_table">
+            {{#items:index}}
+                <tr class={{index%2==0 ? 'even' : 'odd'}}>
+                    <td>{{skuId}}</td>
+                    <td>{{className}}</td>
+                    <td>{{brandName}}</td>
+                    <td>{{textureName}}</td>
+                    <td>{{specificationName}}</td>
+                    <td>{{steelworksName}}</td>
+                    <td>{{calculateDesc}}</td>
+                    <td>
+                        {{#if useStatus == 1}}
+                            启用
+                        {{/if}}
+                        {{#if useStatus == 0}}
+                            <span style="color : red;">停用</span>
+                        {{/if}}
+                    </td>
+                    <td>{{modifyTime}}</td>
+                    <td>{{modifierName}}</td>
+                    <td>
+                        <a href="javascript:void(0);">
+                            {{useStatus==1?'停用':'启用'}}
+                        </a>
+                    </td>
+                </tr>
+            {{/items}}
+        </table>
+    </div>
+</div>
+</script>
+
+</body>
+</html>

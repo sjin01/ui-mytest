@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>中钢信管理平台</title>
+    <link href="../../../css/back-end/workspace.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/back-end/modules/basedata.css" rel="stylesheet" type="text/css">
+    <script src="../../../js/libs/require.js"></script>
+    <script src="../../../js/base.js"></script>
+    <link href="../../../css/components/lightbox.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="top_nav">
+        <div class="logo"><img src="../../../images/base/logo.png"><span>中钢信</span></div>
+        <ul>
+          <li><a href="/html/backstage-base-data/sku/sku-lib.html">基础数据</a></li>
+          <li><a href="/html/backstage-member/member/member-mgt.html">会员</a></li>
+          <li><a href="#3">销售</a></li>
+          <li><a href="/html/backstage-system/privilege/role-mgt.html">系统</a></li>
+          <li><a href="/html/backstage-interface/interface-setting/interface-setting.html">接口</a></li>
+          <li class="last"><a href="#logout"><i class="i_logout"></i><span class="logout">登出</span></a></li>
+          <li class="last_2">
+            <div class="profile_wrapper"><i class="i_user"></i><a class="user_name">邓姗姗</a>
+              <div class="user_menu"><i class="arrow_down"></i>
+                <div class="arrow_up">
+                  <ul>
+                    <li><a id="passwd_edit">修改密码</a></li>
+                    <li><a class="edit_personInfo">个人信息</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="clearfix"></div>
+      </div>
+      <div class="body_box">
+        <ul class="side_nav">
+          <li><a href="/html/backstage-interface/interface-setting/interface-setting.html"><i class="mgr-10 back-icon back-interface-setting-gray"></i><span>接口设置</span></a></li>
+          <li><a href="/html/backstage-interface/interface-setting/interface-setting.html"><i class="mgr-10 back-icon back-interface-log-gray"></i><span>接口日志</span></a></li>
+          <li><a href="/html/backstage-interface/interface-setting/interface-setting.html"><i class="mgr-10 back-icon back-interface-report-gray"></i><span>接口报表</span></a></li>
+        </ul>
+        <ul class="feature_nav">
+          <li><a href="/html/backstage-interface/interface-setting/interface-setting.html">接口开关设置</a></li>
+        </ul>
+        <div class="main_content">
+          <div class="container-fluid query-form">
+            <div class="row">
+              <button name="interface_open" class="btn btn-blue mgl-20">接口开关设置</button>
+              <button name="confirm_save" class="btn btn-blue mgl-20">确认保存</button>
+              <button name="confirm_update" class="btn btn-blue mgl-20">确认修改</button>
+              <button name="modal_sku" class="btn btn-blue mgl-20">Sku审核</button>
+            </div>
+          </div>
+          <script type="text/javascript">
+            require(['jquery', 'popup'], function ($, Popup) {
+                locate('接口', '接口设置', '接口开关设置', 'back-interface-setting');
+            
+                $('.btn[name="interface_open"]').on('click', function () {
+                    var modal = new Popup({
+                        title: '接口开关设置',
+                        width: '472px',
+                        height: '470px',
+                        template: '#interface_open_dialog'
+                    });
+                });
+            
+                $('.btn[name="confirm_save"]').on('click', function (){
+                    var modal = new Popup({
+                        title: '报错提示',
+                        width: '420px',
+                        height: '235px',
+                        template: '#confirm_save_dialog'
+                    });
+                });
+            
+                $('.btn[name="confirm_update"]').on('click', function () {
+                    var modal = new Popup({
+                        title: '报错提示',
+                        width: '420px',
+                        height: '235px',
+                        template: '#confirm_update_dialog'
+                    });
+                });
+            
+                $('.btn[name="modal_sku"]').on('click', function () {
+                    var modal = new Popup({
+                        title: 'SKU审核',
+                        width: '594px',
+                        height: '415px',
+                        template: '#sku_dialog'
+                    });
+                });
+            });
+            
+          </script>
+          <script id="interface_open_dialog" type="text/ractive">
+            <div class="inner-wrapper">
+              <div class="mg-all-20">
+                <div class="fix mgl-5">
+                  <dl class="interface-dl">
+                    <dt>对接企业：</dt>
+                    <dd>江苏华伟特种钢铁有限公司</dd>
+                    <dt>接口类型：</dt>
+                    <dd>供应商</dd>
+                  </dl>
+                </div>
+                <div class="table-block mgt-10">
+                  <table class="table-center">
+                    <tr>
+                      <th width="60%">接口</th>
+                      <th width="40%">状态</th>
+                    </tr>
+                  </table>
+                </div>
+                <div class="table-block table-interface-modal-6">
+                  <table class="table-center">
+                    <tr>
+                      <td class="text-left pdl-25">可售资源同步 0</td>
+                      <td>
+                        <input type="radio">开启
+                        <input type="radio" class="mgl-20">关闭
+                      </td>
+                    </tr>
+                    <tr class="even">
+                      <td class="text-left pdl-25">订单生成（锁货）</td>
+                      <td>
+                        <input type="radio">开启
+                        <input type="radio" class="mgl-20">关闭
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-left pdl-25">订单修改（锁货调整） 2</td>
+                      <td>
+                        <input type="radio">开启
+                        <input type="radio" class="mgl-20">关闭
+                      </td>
+                    </tr>
+                    <tr class="even">
+                      <td class="text-left pdl-25">订单改价（锁价调整）</td>
+                      <td>
+                        <input type="radio">开启
+                        <input type="radio" class="mgl-20">关闭
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-left pdl-25">订单改价（改价审核） 4</td>
+                      <td>
+                        <input type="radio">开启
+                        <input type="radio" class="mgl-20">关闭
+                      </td>
+                    </tr>
+                    <tr class="even">
+                      <td class="text-left pdl-25">订单撤销（释货）</td>
+                      <td>
+                        <input type="radio">开启
+                        <input type="radio" class="mgl-20">关闭
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-left pdl-25">订单撤销（释货） 6</td>
+                      <td>
+                        <input type="radio">开启
+                        <input type="radio" class="mgl-20">关闭
+                      </td>
+                    </tr>
+                    <tr class="even">
+                      <td class="text-left pdl-25">订单撤销（释货）</td>
+                      <td>
+                        <input type="radio">开启
+                        <input type="radio" class="mgl-20">关闭
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-left pdl-25">订单撤销（释货） 8</td>
+                      <td>
+                        <input type="radio">开启
+                        <input type="radio" class="mgl-20">关闭
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="buttons-foot-bar">
+                <button type="button" class="btn btn-form-search no-radius">保存</button>
+                <button type="button" on-click="close" class="btn btn-cancel no-radius">取消</button>
+              </div>
+            </div>
+          </script>
+          <script id="confirm_save_dialog" type="text/ractive">
+            <div class="inner-wrapper">
+              <div class="mg-all-20">
+                <div class="fix message"><span class="message-icon"><i class="mgr-10 back-icon back-icon-query"></i></span><span class="message-content">请确定是否保存接口设置选项？</span></div>
+              </div>
+              <div class="buttons-foot-bar">
+                <button type="button" class="btn btn-form-search no-radius">确定</button>
+                <button type="button" on-click="close" class="btn btn-cancel no-radius">取消</button>
+              </div>
+            </div>
+          </script>
+          <script id="confirm_update_dialog" type="text/ractive">
+            <div class="inner-wrapper">
+              <div class="mg-all-20">
+                <div class="fix message"><span class="message-icon"><i class="mgr-10 back-icon back-icon-del"></i></span><span class="message-content">系统对接修改为【否】将清空该供应商已设置的接口配置信息，是否确定修改？</span></div>
+              </div>
+              <div class="buttons-foot-bar">
+                <button type="button" class="btn btn-form-search no-radius">确定</button>
+                <button type="button" on-click="close" class="btn btn-cancel no-radius">取消</button>
+              </div>
+            </div>
+          </script>
+          <script id="sku_dialog" type="text/ractive">
+            <div class="inner-wrapper">
+              <div class="fix">
+                <div class="mg-all-20 inner-form">
+                  <div class="input-group">
+                    <label class="col-md-2 star-before">品名品名：</label>
+                    <input class="col-md-4 form-widget no-radius">
+                    <label class="col-md-2 star-before">包装：</label>
+                    <input class="col-md-4 form-widget no-radius">
+                  </div>
+                  <div class="input-group">
+                    <label class="col-md-2 star-before">材质：</label>
+                    <input class="col-md-4 form-widget no-radius">
+                    <label class="col-md-2 star-before">质量等级：</label>
+                    <input class="col-md-4 form-widget no-radius">
+                  </div>
+                  <div class="input-group">
+                    <label class="col-md-2 star-before">规格：</label>
+                    <input class="col-md-4 form-widget no-radius">
+                    <label class="col-md-2 star-before">质量标准：</label>
+                    <input class="col-md-4 form-widget no-radius">
+                  </div>
+                  <div class="input-group">
+                    <label class="col-md-2 star-before">钢厂：</label>
+                    <input class="col-md-4 form-widget no-radius">
+                  </div>
+                  <div class="height-77">
+                    <div class="title"><span>品名特殊属性：</span></div>
+                    <div class="input-group">
+                      <label class="col-md-2">切边：</label>
+                      <input value=".hightlight-red" class="col-md-4 form-widget no-radius hightlight-red">
+                      <label class="col-md-2">表面：</label>
+                      <input disabled="disabled" class="col-md-4 form-widget no-radius">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="buttons-foot-bar">
+                <button type="button" class="btn btn-form-search no-radius">确定</button>
+                <button type="button" on-click="close" class="btn btn-cancel no-radius">取消</button>
+              </div>
+            </div>
+          </script>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      require(['jquery'], function($) {
+          $(function () {
+              var adjustHeight = function () {
+                  var viewportHeight = $(window).height();
+                  var topNavHeight = $(".top_nav").outerHeight();
+                  var featureNavHeight = $(".feature_nav").outerHeight();
+                  var minHeight = viewportHeight - topNavHeight - featureNavHeight;
+                  var mainContentHeight = $(".main_content").outerHeight();
+                  if (mainContentHeight < minHeight) {
+                      $(".main_content").css("min-height", minHeight);
+                  }
+                  $(".side_nav").css("min-height", $(".main_content").outerHeight() + featureNavHeight + "px");
+              };
+              adjustHeight();
+              $(window).resize(adjustHeight);
+          });
+      });
+      
+      // 公共方法
+      function locate(topName, sideName, tabName, iconClass) {
+          $('.top_nav').find('a').each(function () {
+              var a = this, $a = $(a), name = $a.text();
+              if (topName === $.trim(name)) {
+                  $a.addClass('selected');
+              }
+          });
+      
+          $('.side_nav').find('a').each(function () {
+              var a = this, $a = $(a), name = $a.find('span').text();
+              if (sideName === $.trim(name)) {
+                  $a.addClass('selected');
+                  if (iconClass) {
+                      $a.find('i').removeClass(iconClass+'-gray').addClass(iconClass+'-blue');
+                  }
+              }
+          });
+      
+          $('.feature_nav').find('a').each(function () {
+              var a = this, $a = $(a), name = $a.text();
+              if (tabName === $.trim(name)) {
+                  $a.addClass('selected');
+              }
+          });
+      }
+    </script>
+  </body>
+</html>

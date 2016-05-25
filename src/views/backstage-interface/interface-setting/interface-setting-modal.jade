@@ -1,0 +1,138 @@
+extends interface-setting-layout
+block content
+    .container-fluid.query-form
+        .row
+            button.btn.btn-blue.mgl-20(name="interface_open") 接口开关设置
+            button.btn.btn-blue.mgl-20(name="confirm_save") 确认保存
+            button.btn.btn-blue.mgl-20(name="confirm_update") 确认修改
+            button.btn.btn-blue.mgl-20(name="modal_sku") Sku审核
+
+    script(type="text/javascript").
+        require(['jquery', 'popup'], function ($, Popup) {
+            locate('接口', '接口设置', '接口开关设置', 'back-interface-setting');
+
+            $('.btn[name="interface_open"]').on('click', function () {
+                var modal = new Popup({
+                    title: '接口开关设置',
+                    width: '472px',
+                    height: '470px',
+                    template: '#interface_open_dialog'
+                });
+            });
+
+            $('.btn[name="confirm_save"]').on('click', function (){
+                var modal = new Popup({
+                    title: '报错提示',
+                    width: '420px',
+                    height: '235px',
+                    template: '#confirm_save_dialog'
+                });
+            });
+
+            $('.btn[name="confirm_update"]').on('click', function () {
+                var modal = new Popup({
+                    title: '报错提示',
+                    width: '420px',
+                    height: '235px',
+                    template: '#confirm_update_dialog'
+                });
+            });
+
+            $('.btn[name="modal_sku"]').on('click', function () {
+                var modal = new Popup({
+                    title: 'SKU审核',
+                    width: '594px',
+                    height: '415px',
+                    template: '#sku_dialog'
+                });
+            });
+        });
+
+    script#interface_open_dialog(type="text/ractive")
+        .inner-wrapper
+            .mg-all-20
+                .fix.mgl-5
+                    dl.interface-dl
+                        dt 对接企业：
+                        dd 江苏华伟特种钢铁有限公司
+                        dt 接口类型：
+                        dd 供应商
+
+                .table-block.mgt-10
+                    table.table-center
+                        tr
+                            th(width="60%") 接口
+                            th(width="40%") 状态
+                .table-block.table-interface-modal-6
+                    table.table-center
+                        each item, index in ['可售资源同步', '订单生成（锁货）', '订单修改（锁货调整）', '订单改价（锁价调整）', '订单改价（改价审核）', '订单撤销（释货）','订单撤销（释货）','订单撤销（释货）','订单撤销（释货）']
+                            if index%2==1
+                                tr.even
+                                    td.text-left.pdl-25 #{item}
+                                    td
+                                        input(type="radio")
+                                        | 开启
+                                        input.mgl-20(type="radio")
+                                        | 关闭
+                            else
+                                tr
+                                    td.text-left.pdl-25 #{item} #{index}
+                                    td
+                                        input(type="radio")
+                                        |开启
+                                        input.mgl-20(type="radio")
+                                        |关闭
+            .buttons-foot-bar
+                button.btn.btn-form-search.no-radius(type="button") 保存
+                button.btn.btn-cancel.no-radius(type="button", on-click="close") 取消
+
+    script#confirm_save_dialog(type="text/ractive")
+        .inner-wrapper
+            .mg-all-20
+                .fix.message
+                    span.message-icon
+                        i.mgr-10.back-icon.back-icon-query
+                    span.message-content 请确定是否保存接口设置选项？
+            .buttons-foot-bar
+                button.btn.btn-form-search.no-radius(type="button") 确定
+                button.btn.btn-cancel.no-radius(type="button", on-click="close") 取消
+
+    script#confirm_update_dialog(type="text/ractive")
+        .inner-wrapper
+            .mg-all-20
+                .fix.message
+                    span.message-icon
+                        i.mgr-10.back-icon.back-icon-del
+                    span.message-content 系统对接修改为【否】将清空该供应商已设置的接口配置信息，是否确定修改？
+            .buttons-foot-bar
+                button.btn.btn-form-search.no-radius(type="button") 确定
+                button.btn.btn-cancel.no-radius(type="button", on-click="close") 取消
+
+    script#sku_dialog(type="text/ractive")
+        .inner-wrapper
+            .fix
+                .mg-all-20.inner-form
+                    each item, index in [{'item1':'品名品名：', 'item2':'包装：'}, {'item1':'材质：', 'item2':'质量等级：'}, {'item1':'规格：', 'item2':'质量标准：'}]
+                        .input-group
+                            label.col-md-2.star-before #{item.item1}
+                            input.col-md-4.form-widget.no-radius
+
+                            label.col-md-2.star-before #{item.item2}
+                            input.col-md-4.form-widget.no-radius
+                    .input-group
+                        label.col-md-2.star-before 钢厂：
+                        input.col-md-4.form-widget.no-radius
+                    .height-77
+                        .title
+                            span 品名特殊属性：
+                        .input-group
+                            label.col-md-2 切边：
+                            input.col-md-4.form-widget.no-radius.hightlight-red(value=".hightlight-red")
+
+                            label.col-md-2 表面：
+                            input.col-md-4.form-widget.no-radius(disabled="disabled")
+
+
+            .buttons-foot-bar
+                button.btn.btn-form-search.no-radius(type="button") 确定
+                button.btn.btn-cancel.no-radius(type="button", on-click="close") 取消

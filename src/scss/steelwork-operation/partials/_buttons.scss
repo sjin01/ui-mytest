@@ -1,0 +1,53 @@
+.button {
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn-sm {
+  padding: 5px 2px;
+}
+
+.button_medium {
+  @extend .button;
+  height: $height-medium;
+  line-height: $height-medium;
+  padding-left: $horizontal-padding;
+  padding-right: $horizontal-padding;
+}
+
+.button_blue_deep {
+  @extend .button_medium;
+  @include button-color(white, $blue-deep, $blue-deep, $blue-deep);
+}
+
+.button_gray_light {
+  @extend .button_medium;
+  @include button-color($gray-deep, $gray-light, $gray-light, $gray-light);
+}
+
+.btn-form-search,
+.btn-orange-deep {
+  @include button-variant(white, $orange-deep, $orange-deep);
+}
+
+.btn-form-clear,
+.btn-orange-lighter {
+  @include button-variant($orange-deep, $orange-lighter, $orange-deep);
+}
+
+.btn-table-operation,
+.btn-blue-lighter {
+  @include button-variant($blue-deep, $blue-lighter, $blue-deep);
+}
+
+.btn-cancel,
+.btn-gray-deep {
+  @include button-variant(white, $gray-deep, $gray-deep);
+}
+
+.btn-common,
+.btn-gray-lighter {
+  @include button-variant($gray-darker, $gray-lighter, $gray-lighter);
+}

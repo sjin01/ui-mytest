@@ -1,0 +1,20 @@
+.footer {
+  text-align: center;
+
+  span {
+    display: inline-block;
+  }
+
+  .row {
+    color: #565657;
+    background-color: $gray-light;
+    padding: 1em;
+    line-height: 2;
+    max-width: none;
+
+    .phone {
+      margin-right: 3em;
+    }
+
+  }
+}

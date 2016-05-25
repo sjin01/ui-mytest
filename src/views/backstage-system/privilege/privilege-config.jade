@@ -1,0 +1,47 @@
+extends privilege-layout
+
+block content
+    .container-fluid
+        .col-md-5.privilege-configure-left
+        .col-md-7.privilege-configure-right.content-block
+            .row
+                label.col-md-2.star-before 会员类型：
+                select.col-md-4.form-widget.no-radius
+                    option 请选择
+            .row
+                label.col-md-2.star-before 模块编码：
+                input.col-md-4.form-widget.no-radius(type='text')
+            .row
+                label.col-md-2 父权限名：
+                input.col-md-4.form-widget.no-radius(type='text')
+            .row
+                label.col-md-2.star-before 权限名称：
+                input.col-md-4.form-widget.no-radius(type='text')
+            .row
+                label.col-md-2.star-before 权限类型：
+                .col-md-4.no-padding
+                    label
+                        input(type='radio')
+                        |                             启用
+                    label.mgl-20
+                        input(type='radio')
+                        |                             停用
+            .row
+                label.col-md-2.star-before 权限代码：
+                input.col-md-6.form-widget.no-radius(type='text')
+            .row
+                label.col-md-2.star-before URL：
+                input.col-md-6.form-widget.no-radius(type='text')
+            .row
+                label.col-md-2.star-before 排序：
+                input.col-md-6.form-widget.no-radius(type='text')
+            .row
+                .col-md-10.text-center
+                    button.btn.blue_button.no-radius.mgr-20 修改权限
+                    button.btn.red_button.no-radius 新增权限
+
+    script(type="text/javascript").
+        require(['jquery', 'pagination'], function($, Pagination) {
+            locate('系统', '权限管理', '权限配置', 'back-privilege');
+        });
+

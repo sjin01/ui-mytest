@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+@import "../partials/variables";
+
+.popup_content > .content-wrapper .content-bottom {
+  background-color: #f8f9f8;
+}
+
+.alert-wrapper,
+.confirm-wrapper {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.btn-yes {
+  background: $red;
+  &:hover {
+    background: #f74343;
+  }
+}
+
+.btn-no {
+  background: $gray;
+  &:hover {
+    background: #AAAAAA;
+  }
+}
+
+.glyphicon {
+  font-size: 35px;
+
+  &.orange {
+    color: orange;
+  }
+
+  &.green {
+    color: green;
+  }
+
+  &.red {
+    color: $red;
+  }
+}

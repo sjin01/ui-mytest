@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>中钢信</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/steelworks-and-operation-end/base.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/steelworks-and-operation-end/modules/resource.css">
+</head>
+<body>
+<div class="header">
+    <div class="container-24 nav">
+        <span class="grid-4 logo">中钢信</span>
+        <span class="grid-2 selected"><a href="#">资源管理</a></span>
+        <span class="grid-2"><a href="#">交易管理</a></span>
+        <span class="grid-2"><a href="#">渠道管理</a></span>
+        <span class="grid-2"><a href="#">定价管理</a></span>
+        <span class="grid-2"><a href="#">统计分析</a></span>
+        <span class="grid-2"><a href="#">设置中心</a></span>
+			<span class="grid-2 push-4 user personal-menu-root">
+				<i class="icon icon-user mgr-5"></i>戴永明<i class="caret mgl-5"></i>
+                <ul class="personal-menu list-unstyled">
+                    <li><a href="#">修改密码</a></li>
+                    <li><a href="#">个人信息</a></li>
+                </ul>
+			</span>
+			<span class="grid-2 push-4 logoff">
+                <i class="glyphicon glyphicon-off mgr-5"></i><a href="#">注销</a>
+            </span>
+    </div>
+</div>
+
+<div class="body">
+    <div class="container-24">
+        <div class="grid-4">
+            <div class="slider">
+                <div class="slider-switch">|||</div>
+                <ul class="list-unstyled">
+                    <li class="icon-shopping-cart selected"><i class="icon"></i>可售资源</li>
+                    <li class="icon-order"><i class="icon"></i>挂单资源</li>
+                    <li class="icon-settings"><i class="icon"></i>资源设置</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="main" class="grid-20">
+            <div class="tabs">
+                <span class="grid-3 selected">可销资源库</span>
+                <span class="grid-3">待审资源<i class="badge badge-res">12</i></span>
+                <span class="grid-3">批量导入</span>
+            </div>
+
+            <form id="search-res" class="search-form form-inline">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="form-group col-md-2">
+                            <label for="">来源：</label>
+                            <select class="form-control">
+                                <option>全部</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="">品类：</label>
+                            <select class="form-control">
+                                <option>建材</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4 zone">
+                            <label for="">地区：</label>
+                            <select class="form-control">
+                                <option>不限省份</option>
+                            </select>
+                            <select class="form-control">
+                                <option>不限城市</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="">仓库：</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="">钢厂：</label>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-2">
+                            <label for="">材质：</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="">材质：</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group col-md-4 res-spec">
+                            <select class="label form-control">
+                                <option>规格1</option>
+                                <option>规格1</option>
+                                <option>规格1</option>
+                                <option>规格1</option>
+                                <option>规格1</option>
+                            </select>
+                            <input type="text" class="form-control">
+                            -
+                            <select class="content form-control">
+                                <option><=</option>
+                            </select>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group col-md-2 checkbox">
+                            <label>
+                                <input type="checkbox" id="only"> 只显示为挂单资源
+                            </label>
+                        </div>
+                        <div class="form-group col-md-2 form-button-group">
+                            <button type="button" class="btn btn-form-clear">清空</button>
+                            <button type="button" class="btn btn-form-search">查询</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div class="table-block">
+                <div class="table-top">
+                    <div>
+                        <label class="mgl-10">
+                            <i class="faicon faicon-search mgr-10"></i>
+                            查询到<em class="hightlight-orange">454</em>条资源，共计<em class="hightlight-orange">54</em>件<em
+                                class="hightlight-orange">23546</em>吨
+                        </label>
+					    	<span id="button-group">
+                                <button type="button" class="btn btn-table-operation">挂单</button>
+						    	<button type="button" class="btn btn-table-operation">删除</button>
+                                <button type="button" class="btn btn-table-operation">一键挂单</button>
+						    	<button type="button" class="btn btn-table-operation">一键删除</button>
+					    	</span>
+                    </div>
+                </div>
+
+                <div class="table-center">
+                    <table>
+                        <tr class="title">
+                            <th width="5%"><input type="checkbox" class="icheck" value="0"></th>
+                            <th width="10%">品名</th>
+                            <th width="10%">材质</th>
+                            <th width="5%">规格</th>
+                            <th width="10%">钢厂</th>
+                            <th width="10%">仓库</th>
+                            <th width="5%">地区</th>
+                            <th width="10%">可售数量</th>
+                            <th width="10%">可售重量</th>
+                            <th width="5%">件重</th>
+                            <th width="10%">记重方式</th>
+                            <th width="10%">状态</th>
+                        </tr>
+                        <tr class="odd selected">
+                            <td><input type="checkbox" value="1"></td>
+                            <td>螺纹钢</td>
+                            <td>HRB400</td>
+                            <td>16*9</td>
+                            <td>湘钢</td>
+                            <td>铁四局库</td>
+                            <td>上海</td>
+                            <td>100</td>
+                            <td>256.800</td>
+                            <td>2.568</td>
+                            <td>理记</td>
+                            <td>已挂单</td>
+                        </tr>
+                        <tr class="even">
+                            <td><input type="checkbox" value="2"></td>
+                            <td>螺纹钢</td>
+                            <td>HRB400</td>
+                            <td>16*9</td>
+                            <td>湘钢</td>
+                            <td>铁四局库</td>
+                            <td>上海</td>
+                            <td>100</td>
+                            <td>256.800</td>
+                            <td>2.568</td>
+                            <td>理记</td>
+                            <td>已挂单</td>
+                        </tr>
+                        <tr class="odd">
+                            <td><input type="radio" value="3" name="iradio"></td>
+                            <td>螺纹钢</td>
+                            <td>HRB400</td>
+                            <td>16*9</td>
+                            <td>湘钢</td>
+                            <td>铁四局库</td>
+                            <td>上海</td>
+                            <td>100</td>
+                            <td>256.800</td>
+                            <td>2.568</td>
+                            <td>理记</td>
+                            <td>已挂单</td>
+                        </tr>
+                        <tr class="even">
+                            <td><input type="radio" value="4" name="iradio"></td>
+                            <td>螺纹钢</td>
+                            <td>HRB400</td>
+                            <td>16*9</td>
+                            <td>湘钢</td>
+                            <td>铁四局库</td>
+                            <td>上海</td>
+                            <td>100</td>
+                            <td>256.800</td>
+                            <td>2.568</td>
+                            <td>理记</td>
+                            <td>已挂单</td>
+                        </tr>
+                        <tr class="odd">
+                            <td><input type="checkbox"></td>
+                            <td>螺纹钢</td>
+                            <td>HRB400</td>
+                            <td>16*9</td>
+                            <td>湘钢</td>
+                            <td>铁四局库</td>
+                            <td>上海</td>
+                            <td>100</td>
+                            <td>256.800</td>
+                            <td>2.568</td>
+                            <td>理记</td>
+                            <td>已挂单</td>
+                        </tr>
+                        <tr class="even">
+                            <td><input type="checkbox"></td>
+                            <td>螺纹钢</td>
+                            <td>HRB400</td>
+                            <td>16*9</td>
+                            <td>湘钢</td>
+                            <td>铁四局库</td>
+                            <td>上海</td>
+                            <td>100</td>
+                            <td>256.800</td>
+                            <td>2.568</td>
+                            <td>理记</td>
+                            <td>已挂单</td>
+                        </tr>
+                        <tr class="odd">
+                            <td><input type="checkbox"></td>
+                            <td>螺纹钢</td>
+                            <td>HRB400</td>
+                            <td>16*9</td>
+                            <td>湘钢</td>
+                            <td>铁四局库</td>
+                            <td>上海</td>
+                            <td>100</td>
+                            <td>256.800</td>
+                            <td>2.568</td>
+                            <td>理记</td>
+                            <td>已挂单</td>
+                        </tr>
+                        <tr class="even">
+                            <td><input type="checkbox"></td>
+                            <td>螺纹钢</td>
+                            <td>HRB400</td>
+                            <td>16*9</td>
+                            <td>湘钢</td>
+                            <td>铁四局库</td>
+                            <td>上海</td>
+                            <td>100</td>
+                            <td>256.800</td>
+                            <td>2.568</td>
+                            <td>理记</td>
+                            <td>已挂单</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="table-bottom"></div>
+            </div>
+        </div>
+    </div>
+    <div class="body-footer"></div>
+</div>
+<div class="footer">
+    <div class="container-24"></div>
+</div>
+
+<script src="../../js/libs/require.js"></script>
+<script src="../../js/main.js"></script>
+<script>
+    require(['jquery', 'icheck'], function() {
+        $('input').iCheck({
+            checkboxClass: 'icheckbox_minimal-green',
+            radioClass: 'iradio_minimal-green',
+            increaseArea: '20%' // optional
+        });
+        /*$('input').on('ifClicked', function(e) {
+         alert($(this).val());
+         });*/
+    });
+</script>
+</body>
+</html>

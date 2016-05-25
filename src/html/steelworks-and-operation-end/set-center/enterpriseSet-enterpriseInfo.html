@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>中钢信</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/steelworks-and-operation-end/base.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/steelworks-and-operation-end/modules/enterprise-settings.css">
+</head>
+
+<body>
+
+<div class="header"></div>
+
+<div class="body">
+    <div class="container-24">
+
+        <div class="grid-3 no-padding">
+            <div class="slider"></div>
+        </div>
+
+        <div id="main" class="grid-21">
+
+            <div class="tabs"></div>
+
+            <div class="enterprise-info-container"></div>
+
+            <div class="enterprise-manager-container">
+                <form>
+                    <fieldset>
+                        <legend>企业授权管理员</legend>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="image-upload-container">
+                                    <i class="image icon icon-unupload"></i>
+                                    <div class="title">管理员授权委托书</div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-10 manager-info">
+                                <div class="row">
+                                    <label class="col-md-2">登录名：</label>
+                                    <span class="col-md-10">stella</span>
+                                </div>
+                                <div class="row">
+                                    <label class="col-md-2">姓名：</label>
+                                    <span class="col-md-10">邓姗姗</span>
+                                </div>
+                                <div class="row">
+                                    <label class="col-md-2">手机：</label>
+                                    <span class="col-md-10">13512345678</span>
+                                </div>
+                                <div class="row">
+                                    <label class="col-md-2">邮箱：</label>
+                                    <span class="col-md-10">51232412@qq.com</span>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+
+            <div class="enterprise-certificate-container">
+                <form>
+                    <fieldset>
+                        <legend>企业证件</legend>
+
+                        <div class="row">
+                            <div class="bar-warning pdl-20">
+                                <i class="icon icon-warning mgr-5"></i>
+                                若有证件信息变更或缺失，请及时联系中钢信客服人员进行更新。
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-3">
+                                <div class="image-upload-container">
+                                    <i class="image icon icon-unupload"></i>
+                                    <div class="title">管理员授权委托书</div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="image-upload-container">
+                                    <div class="image-container">
+                                        <a href="../../../images/base/example-1-enlarge.png" data-lightbox="example-1-enlarge" data-title="管理员授权委托书">
+                                            <img src="../../../images/base/example-1.png">
+                                        </a>
+                                        <span class="tip">点击查看大图</span>
+                                    </div>
+                                    <div class="title">管理员授权委托书</div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="image-upload-container">
+                                    <div class="image-container">
+                                        <a href="../../../images/base/example-1-enlarge.png" data-lightbox="example-1-enlarge" data-title="管理员授权委托书">
+                                            <img src="../../../images/base/example-1.png">
+                                        </a>
+                                        <span class="tip">点击查看大图</span>
+                                    </div>
+                                    <div class="title">管理员授权委托书</div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="image-upload-container">
+                                    <div class="image-container">
+                                        <a href="../../../images/base/example-1-enlarge.png" data-lightbox="example-1-enlarge" data-title="管理员授权委托书">
+                                            <img src="../../../images/base/example-1.png">
+                                        </a>
+                                        <span class="tip">点击查看大图</span>
+                                    </div>
+                                    <div class="title">管理员授权委托书</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="footer"></div>
+
+<script src="../../../js/libs/require.js"></script>
+<script src="../../../js/base.js"></script>
+<script>
+    require(['jquery', 'tplUtil', 'text!../template/modules/base.rac', 'lightbox'], function ($, TplUtil, BaseTpl) {
+        var modules = [
+            {name: '资源管理'},
+            {name: '交易管理'},
+            {name: '渠道管理'},
+            {name: '定价管理'},
+            {name: '设置中心', selected: true}
+        ];
+
+        TplUtil.loadTpl({
+            el: '.header',
+            template: $(BaseTpl).filter('#header-content').html(),
+            data: {
+                logoText: '华伟薄板',
+                modules: modules
+            }
+        });
+
+        TplUtil.loadTpl({
+            el: '.footer',
+            template: $(BaseTpl).filter('#footer-content').html()
+        });
+
+        var leftModules = [
+            {name: '账户设置', className: 'icon-account-setting', link: 'accountSettingInfo.html'},
+            {name: '企业设置', className: 'icon-enterprise-setting', link: 'enterpriseSettingInfo.html', selected: true},
+            {name: '消息设置', className: 'icon-message-setting', link: ''}
+        ];
+
+        TplUtil.loadTpl({
+            el: '.slider',
+            template: $(BaseTpl).filter('#slider-content').html(),
+            data: { leftModules: leftModules }
+        });
+
+        var tabModules = [
+            {name: '企业信息', link: 'enterpriseSettingInfo.html', selected: true},
+            {name: '子账号管理', link: 'enterpriseSettingSubAccountMgt.html'}
+        ];
+
+        TplUtil.loadTpl({
+            el: '.tabs',
+            template: $(BaseTpl).filter('#tabs-content').html(),
+            data: { tabModules: tabModules }
+        });
+
+        // 加载修改界面
+        function loadModifyInterface() {
+            var mInterface = TplUtil.loadTpl({
+                el: '.enterprise-info-container',
+                template: '#enterprise-info-modify'
+            });
+            mInterface.on('modify', function () {
+                mInterface.teardown();
+                loadSaveInterface();
+            });
+
+        }
+
+        // 加载保存界面
+        function loadSaveInterface() {
+            var sInterface = TplUtil.loadTpl({
+                el: '.enterprise-info-container',
+                template: '#enterprise-info-save'
+            });
+            sInterface.on('save', function () {
+                sInterface.teardown();
+                loadModifyInterface();
+            });
+        }
+
+        loadModifyInterface();
+
+    });
+
+</script>
+
+<script id="enterprise-info-modify" type="text/ractive">
+<form>
+<fieldset>
+    <legend>企业基本信息</legend>
+    <div class="row">
+        <label class="col-md-1">会员企业：</label>
+        <span class="col-md-11">江苏华伟特种薄板有限公司</span>
+    </div>
+    <div class="row">
+        <label class="col-md-1">企业简称：</label>
+        <span class="col-md-11">华伟中板</span>
+    </div>
+    <div class="row">
+        <label class="col-md-1">所在区域：</label>
+        <span class="col-md-11">江苏省-苏州市-张家港市</span>
+    </div>
+    <div class="row">
+        <label class="col-md-1">详细地址：</label>
+        <span class="col-md-3">凤凰镇安庆村</span>
+    </div>
+    <div class="row">
+        <span class="col-md-3 col-md-offset-1">
+            <button class="btn btn-primary no-radius" id="modify" on-click="modify">修改</button>
+        </span>
+    </div>
+</fieldset>
+</form>
+
+</script>
+
+<script id="enterprise-info-save" type="text/ractive">
+<form>
+<fieldset>
+    <legend>企业基本信息</legend>
+    <div class="row">
+        <label class="col-md-1">会员企业：</label>
+        <span class="col-md-11">江苏华伟特种薄板有限公司</span>
+    </div>
+    <div class="row">
+        <label class="col-md-1">企业简称：</label>
+        <span class="col-md-5"><input class="form-control no-radius" type="text" value="华伟中板" style="width: 98%;"/></span>
+    </div>
+    <div class="row">
+        <label class="col-md-1">所在区域：</label>
+        <span class="col-md-5 form-inline area">
+            <select class="form-control no-radius">
+                <option>江苏省</option>
+            </select>
+            <select class="form-control no-radius">
+                <option>苏州市</option>
+            </select>
+            <select class="form-control no-radius">
+                <option>张家港市</option>
+            </select>
+        </span>
+    </div>
+    <div class="row">
+        <label class="col-md-1">邮箱：</label>
+        <span class="col-md-11"><input class="form-control no-radius" type="text" value="凤凰镇安庆村" /></span>
+    </div>
+    <div class="row">
+        <span class="col-md-3 col-md-offset-1">
+            <button class="btn btn-form-search no-radius" id="save" on-click="save">保存</button>
+        </span>
+    </div>
+</fieldset>
+</form>
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+.add-res-price-form {
+  margin-bottom: 1.5em;
+  > div {
+    padding: 0;
+
+    > label,
+    > .form-control {
+      display: inline-block;
+    }
+
+    > label {
+      width: 20%;
+      text-align: right;
+      >em {
+        color: red;
+        margin-right: 0.5em;
+      }
+    }
+    > .form-control {
+      width: 70%;
+    }
+
+    > .text-orange {
+      color: #ff5a00;
+    }
+
+  }
+}
+
+@each $rows in 3, 5, 8 {
+  $maxHeight: $rows * 55px;
+  .table-adjust-price-#{$rows} {
+    max-height: $maxHeight;
+  }
+}
+
+.table-center {
+  overflow: auto;
+  tr {
+    cursor: auto !important;
+    border-top: none !important;
+    > td {
+      padding: 1em 1em 1em 1em;
+    }
+
+    &:hover {
+      background-color: white !important;
+    }
+  }
+  tr:first-child + tr > td {
+    padding-top: 1em;
+  }
+}
+
+.quotation-modal{
+
+  margin: 10px;
+
+  .table-block{
+    border-top: none !important;
+
+    .height-165{
+      height:165px;
+    }
+  }
+
+  tr {
+    height:50px;
+    line-height:50px;
+    padding: 0 !important;
+    border-bottom: none !important;
+
+    > td {
+      padding: 7px 7px 0 !important;
+
+      .btn{
+        padding-left: 0!important;
+        padding-right: 0!important;
+      }
+    }
+  }
+
+  .quotation-rule{
+    margin: 10px 7px;
+
+    > textarea {
+      height: 90px !important;
+    }
+  }
+
+  .buttons-foot-bar{
+    padding-top: 1em !important;
+  }
+}
+
+
+
+

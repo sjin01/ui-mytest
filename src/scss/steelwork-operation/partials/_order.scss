@@ -1,0 +1,292 @@
+// huawei order css
+.order-header {
+  padding: 2em 0;
+  border-bottom: 4px solid $gray-medium;
+
+  > span {
+    font-size: 2em;
+    font-weight: 300;
+    color: $gray-medium;
+
+    > span:first-child {
+      color: $blue-light;
+    }
+
+    > .num {
+      color: $orange-deep;
+    }
+  }
+
+  > button {
+    float: right;
+  }
+}
+
+.order-container {
+
+  .vendor-info {
+    font-size: 1.5em;
+    font-weight: 100;
+    padding: 1em;
+
+    .faicon-home {
+      font-size: 1.2em;
+      color: $orange-deep;
+      padding: 3px;
+      margin-right: .5em;
+      vertical-align: middle;
+      border: 2px solid $orange-deep;
+      border-radius: 50%;
+    }
+
+    .title {
+      color: $gray-deep;
+    }
+  }
+
+  .order-info {
+    padding: 1em;
+    border: 1px solid $gray-medium;
+  }
+
+  .purchase-way {
+    width: 100%;
+    padding: .5em;
+
+    label {
+      margin-right: .5em;
+      cursor: pointer;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      vertical-align: text-bottom;
+      margin-right: 2px;
+    }
+
+    .iradio_minimal-green {
+      margin: 0 .5em;
+    }
+  }
+
+  .order-content {
+    margin-top: 1em;
+
+    .order-table {
+      width: 100%;
+      margin-bottom: 1.5em;
+      border-top: 3px solid $blue-deep;
+
+      tr {
+        border: 1px solid $gray-medium;
+      }
+
+      tr:first-child {
+        border: none;
+      }
+
+      th {
+        font-size: 1.2em;
+        font-weight: 500;
+        padding: .5em;
+        color: $blue-deep;
+        text-align: center;
+      }
+
+      td {
+        padding: .5em;
+        text-align: center;
+      }
+
+      .delivery {
+        text-align: left;
+        background-color: $gray-light;
+
+        > span {
+          margin-right: 2em;
+        }
+
+        .title {
+          color: $gray-deep;
+        }
+      }
+
+      .goods-remarks {
+        display: inline-block;
+        width: 80%;
+        line-height: 2em;
+        text-align: left;
+        padding: 2px 8px;
+        margin: .5em;
+        background-color: $orange-lighter;
+        border: 1px solid $orange-light;
+
+        .title {
+          color: $orange-deep;
+          font-weight: 200;
+        }
+      }
+
+      .order-remarks {
+        height: 60px;
+        background-color: $gray-light;
+
+        .remarks-wrapper {
+          display: table;
+          width: 100%;
+          height: 100%;
+
+          .title,
+          .content {
+            display: table-cell;
+            vertical-align: middle;
+          }
+
+          .title {
+            width: 10%;
+          }
+
+          .content {
+            width: 85%;
+
+            textarea {
+              resize: none;
+              width: 100%;
+              height: 100%;
+              border-color: $gray-medium;
+            }
+          }
+        }
+      }
+
+      input[type="text"] {
+        @include vertical-middle(2em);
+        display: inline-block;
+        width: 5em;
+        padding: 0;
+        text-align: center;
+      }
+    }
+  }
+
+  .order-total {
+    height: 45px;
+    line-height: 45px;
+    @include clearfix();
+    background-color: $gray-medium;
+
+    > div {
+      display: inline-block;
+      width: 80%;
+      margin-left: 2em;
+
+      .subtotal,
+      .total {
+        font-size: 1.2em;
+
+        .content {
+          span {
+            color: $orange-deep;
+            margin-right: 0.5em;
+          }
+        }
+      }
+
+      .subtotal {
+        margin-right: 3em;
+      }
+
+      .total {
+        font-weight: 100;
+        float: right;
+        .content {
+          color: $orange-deep;
+          span {
+            font-size: 1.6em;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    > button {
+      display: inline-block;
+      float: right;
+      width: 15%;
+      height: 100%;
+      font-size: 1.5em;
+    }
+  }
+}
+
+// wait pages
+.transit-wrapper {
+  text-align: center;
+  width: 500px;
+  margin: 0 auto;
+
+  .logo {
+    position: relative;
+    margin-bottom: 40px;
+
+    .logo-submitting {
+      margin: 150px auto 20px;
+    }
+
+    .logo-submit-success {
+      font-size: 50px;
+      color: $brand-success;
+      margin: 120px auto 20px;
+
+      &:before {
+        position: relative;
+        top: 10px;
+        left: -10px;
+      }
+
+      span {
+        font-size: 30px;
+      }
+    }
+
+    .logo-submit-success + div {
+      font-size: 1.6em;
+      font-weight: 400;
+    }
+  }
+
+  .button-group {
+
+    button {
+      display: block;
+      margin: 0 auto 10px;
+      width: 140px;
+      font-size: 1.2em;
+    }
+
+    button:first-child {
+      font-size: 1.4em;
+    }
+  }
+
+  .blank-shopcart {
+    margin-top: 45%;
+
+    > div {
+      padding-left: 3em;
+
+      .words {
+        font-size: 1.2em;
+        font-weight: 400;
+        padding-top: 1em;
+      }
+
+      .button {
+        width: 100%;
+        text-align: left;
+        margin-top: 2em;
+      }
+    }
+  }
+
+}

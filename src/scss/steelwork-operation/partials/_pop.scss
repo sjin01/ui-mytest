@@ -1,0 +1,52 @@
+@mixin float-root($className) {
+  position: relative;
+  .#{$className} {
+    display: none;
+  }
+  &:hover {
+    .#{$className} {
+      display: inline-block;
+    }
+  }
+}
+
+@mixin float-layer($width, $upDown, $offset1, $around, $offset2, $arrowSize) {
+  box-sizing: border-box;
+  position: absolute;
+  color: $black-light;
+  font-size: 12px;
+  font-family: "Helvetica Neue", Helvetica, "Microsoft Yahei", Arial, sans-serif;
+  line-height: 2em;
+  padding: 1em;
+  background: white;
+  box-shadow: 0 0 3px #ddd;
+
+  #{$upDown}: $offset1;
+  width: $width;
+  #{$around}: -$width / 5;
+
+  .arrow-#{$upDown}-#{$around} {
+    position: absolute;
+    overflow: hidden;
+    font-style: normal;
+    text-shadow: 0 0 2px #ccc;
+
+    font-size: $arrowSize;
+    width: $arrowSize;
+    height: $arrowSize / 2;
+    bottom: -$arrowSize / 2;
+    #{$around}: $offset2;
+
+    em, i {
+      position: absolute;
+      height: $arrowSize / 2;
+      left: 0;
+      top: -0.9 * 1em / $arrowSize * 1em;
+      color: $gray-medium;
+    }
+    i {
+      text-shadow: none;
+    }
+  }
+}
+

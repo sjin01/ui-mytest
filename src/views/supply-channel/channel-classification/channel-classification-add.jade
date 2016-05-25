@@ -1,0 +1,83 @@
+extends channel-classification-layout
+
+block content
+    .main-title 新增分组/修改渠道规则
+    .container-fluid.pdt-10.pdb-10.pdl-25
+        .row.mgb-15
+            span.col-md-1.line-height-32.pdr-0.text-right.star-before-orange 分组名称：
+            span.col-md-3.pdr-0
+                input.form-control.no-radius.width-full(type='text', name='', id='')
+        .row.mgb-15.form-inline
+            span.col-md-1.line-height-32.pdr-0.text-right.star-before-orange 分组名称：
+            span.col-md-1.col-md-offset-6.line-height-32.pdl-0.pdr-0.text-right 待分组渠道商：
+            span.col-md-4.pdr-0
+                span.col-md-9.pd-all-0
+                    input.form-control.no-radius.width-full(type='text')
+                span.col-md-3.pd-all-0
+                    button.btn.btn-orange-deep.no-radius.width-full(style='margin-left: -1px;') 查询
+        .shift-container.row.mgb-15
+            .left-container.col-md-5.pd-all-10.border-gray-light.bgc-gray-lighter
+                .item.pd-all-10.mg-all-5 上海钢富电子商务有限公司
+                .item.pd-all-10.mg-all-5 北京钢富电子商务有限公司
+                .item.pd-all-10.mg-all-5 湖南钢富电子商务有限公司
+                .item.pd-all-10.mg-all-5 上海钢富电子商务有限公司
+                .item.pd-all-10.mg-all-5 北京钢富电子商务有限公司
+                .item.pd-all-10.mg-all-5 湖南钢富电子商务有限公司
+                .item.pd-all-10.mg-all-5 上海钢富电子商务有限公司
+                .item.pd-all-10.mg-all-5 北京钢富电子商务有限公司
+            .center-container.col-md-2
+                .text-center
+                    .pdt-5.pdb-5.pdl-30.pdr-30
+                        button#shift-left.btn.border-gray-light.bgc-gray-lighter.no-radius.width-full <
+                    .pdt-5.pdb-5.pdl-30.pdr-30
+                        button#shift-right.btn.border-gray-light.bgc-gray-lighter.no-radius.width-full >
+                .text-center
+                    .pdt-5.pdb-5.pdl-30.pdr-30
+                        button#shift-left-all.btn.border-gray-light.bgc-gray-lighter.no-radius.width-full <<
+                    .pdt-5.pdb-5.pdl-30.pdr-30
+                        button#shift-right-all.btn.border-gray-light.bgc-gray-lighter.no-radius.width-full >>
+            .right-container.col-md-5.pd-all-10.border-gray-light.bgc-gray-lighter
+                .item.pd-all-10.mg-all-5 上海钢富电子商务有限公司
+                .item.pd-all-10.mg-all-5 北京钢富电子商务有限公司
+                .item.pd-all-10.mg-all-5 湖南钢富电子商务有限公司
+                .item.pd-all-10.mg-all-5 上海钢富电子商务有限公司
+                .item.pd-all-10.mg-all-5 北京钢富电子商务有限公司
+        .row.mgb-15.text-center
+            a.btn.btn-lg.btn-orange-deep.pdl-30.pdr-30.mg-all-10.no-radius(href="channel-classification.html") 新增
+            a.btn.btn-lg.btn-gray-deep.pdl-30.pdr-30.mg-all-10.no-radius(href="channel-classification.html") 返回
+
+
+    script(type='text/javascript').
+        require(['jquery'], function ($) {
+            locate('渠道管理', '渠道分级', '渠道分级');
+
+            $('.shift-container').on('click', '.item, #shift-left, #shift-left-all, #shift-right, #shift-right-all', function () {
+                var self = $(this);
+
+                if (self.hasClass('item')) {
+                    self.toggleClass('selected');
+                    return;
+                }
+
+                var leftContainer = $('.left-container'),
+                        rightContainer = $('.right-container');
+
+                switch (this.id) {
+                    case 'shift-left':
+                        rightContainer.find('.item.selected').removeClass('selected').appendTo(leftContainer);
+                        break;
+
+                    case 'shift-right':
+                        leftContainer.find('.item.selected').removeClass('selected').appendTo(rightContainer);
+                        break;
+
+                    case 'shift-left-all':
+                        rightContainer.find('.item').removeClass('selected').appendTo(leftContainer);
+                        break;
+
+                    case 'shift-right-all':
+                        leftContainer.find('.item').removeClass('selected').appendTo(rightContainer);
+                        break;
+                }
+            });
+        });

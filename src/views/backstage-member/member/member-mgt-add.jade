@@ -1,0 +1,247 @@
+extends member-layout
+
+block content
+    .container-fluid
+        .main-title 新增会员
+        .second-title 基本信息
+        .content-block.member-base-info
+            .row
+                label.col-md-1.star-before 会员企业：
+                input.form-widget.no-radius.col-md-3(type='text')
+                a.mgl-20(href='#a') 企业详情
+            .row
+                span.col-md-offset-1.col-md-3.color-warning.no-padding 此企业已创建会员！
+            .row
+                label.col-md-1.star-before 会员类型：
+                .col-md-5.no-padding
+                    label.col-md-3.no-padding
+                        input(type='checkbox')
+                        |  供应商
+                    label.col-md-3.no-padding
+                        input(type='checkbox')
+                        |  渠道商
+            .row
+                label.col-md-1.star-before 会员类型：
+                .col-md-5.no-padding
+                    label.col-md-3.no-padding
+                        input(type='radio')
+                        |  启用
+                    label.col-md-3.no-padding
+                        input(type='radio')
+                        |  停用
+                    label.col-md-3.no-padding
+                        input(type='radio')
+                        |  注销
+            .row
+                label.col-md-1 授权委托书：
+                .col-md-5.no-padding
+                    .image-upload-container
+                        .image-container
+                            img(src=relativeRoot + 'images/base/to-be-upload.png')
+        .second-title 管理员账号信息
+        .content-block
+            .row
+                label.col-md-1.star-before 登录名：
+                input.col-md-3.form-widget.no-radius.error(type='text')
+                span.col-md-2.color-warning 登录名已存在！
+                label.col-md-1.star-before 手机：
+                input.col-md-3.form-widget.no-radius(type='text')
+                span.col-md-2.color-orange-deep
+            .row
+                label.col-md-1.star-before 姓名：
+                span.col-md-3.no-padding 洪平
+                span.col-md-2.color-orange-deep
+                label.col-md-1.star-before 邮箱：
+                span.col-md-3.no-padding jerry@126.com
+                span.col-md-2.color-orange-deep
+        .second-title 管理员账号权限
+        .content-block
+            .row
+                label.col-md-6.text-left
+                    input(type='radio')
+                    |                         所选会员类型的默认权限
+            .row
+                label.col-md-6.text-left
+                    input(type='radio')
+                    |                         自定义权限
+            .row
+                span 已选择【华伟中板专用角色包】
+                button.blue_button.btn.mgl-20.no-radius 重现选择
+        div
+            table.authority-table
+                tr.title
+                    th(width='12%') 模块
+                    th(width='12%') 菜单
+                    th(width='12%') 页签
+                    th(width='64%') 操作项
+                tr
+                    td(rowspan='3')
+                        label
+                            input(type='checkbox', name='areaName')
+                            |  长沙市
+                    td
+                        label
+                            input(type='checkbox', name='areaName')
+                            |  长沙市
+                    td
+                        div
+                            label
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                        div
+                            label
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                        div
+                            label
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                    td
+                        div
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  湘西土家族苗族自治区
+                        div
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  张家界市
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  长沙长沙市
+                        div
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                tr
+                    td
+                        label
+                            input(type='checkbox', name='areaName')
+                            |  长沙市
+                    td
+                        label
+                            input(type='checkbox', name='areaName')
+                            |  长沙市
+                    td
+                        div
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  张家界市
+                tr
+                    td
+                        label
+                            input(type='checkbox', name='areaName')
+                            |  长沙市
+                    td
+                        label
+                            input(type='checkbox', name='areaName')
+                            |  长沙市
+                    td
+                        div
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  张家界市
+                tr
+                    td
+                        label
+                            input(type='checkbox', name='areaName')
+                            |  长沙市
+                    td
+                        label
+                            input(type='checkbox', name='areaName')
+                            |  长沙市
+                    td
+                        label
+                            input(type='checkbox', name='areaName')
+                            |  长沙市
+                    td
+                        div
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  张家界市
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  长沙长沙市
+                tr
+                    td(rowspan='2')
+                        label
+                            input(type='checkbox', name='areaName')
+                            |  长沙市
+                    td
+                        label
+                            input(type='checkbox', name='areaName')
+                            |  长沙市
+                    td
+                        label
+                            input(type='checkbox', name='areaName')
+                            |  长沙市
+                    td
+                        div
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                tr
+                    td
+                        label
+                            input(type='checkbox', name='areaName')
+                            |  长沙市
+                    td
+                        div
+                            label
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                        div
+                            label
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                    td
+                        div
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                        div
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+        .row.buttons
+            button.btn.red_button.no-radius 新建会员
+            a.btn.btn-gray.no-radius(href="member-mgt.html") 返回
+
+    script(type="text/javascript").
+        require(['jquery', 'pagination'], function($) {
+
+            locate('会员', '会员管理', '会员管理', 'back-member');
+
+        });

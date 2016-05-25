@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>中钢信</title>
+    <link href="../../../css/steelwork-operation/base.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/steelwork-operation/modules/channel-manage.css" rel="stylesheet" type="text/css">
+    <script src="../../../js/libs/require.js"></script>
+    <script src="../../../js/base.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <div class="container-24 nav"><span class="grid-3 logo"><img src="../../../images/icon/logo-main.png" class="mgr-5">  华伟薄板</span><span class="grid-2"><a href="/html/supply-resource/res-sale/res-sale-list.html">资源管理</a></span><span class="grid-2"><a href="/html/supply-deal/settings/deal-settings.html">交易管理</a></span><span class="grid-2"><a href="/html/supply-channel/channel-authorization/channel-authorization.html">渠道管理</a></span><span class="grid-2"><a href="/html/supply-price/quotation/quotation-add.html">定价管理</a></span><span class="grid-2"><a>设置中心</a></span>
+        <div class="grid-4 pull-right"><span class="grid-12 user personal-menu-root"><i class="icon icon-user"></i><span title="华伟" class="remarks">华伟</span><i class="caret"></i>
+            <ul class="personal-menu list-unstyled">
+              <li><a id="passwd_edit">修改密码</a></li>
+            </ul></span><span class="grid-12 logoff"><a href="#logout"><i class="glyphicon glyphicon-off mgr-5"></i><span>注销</span></a></span><span class="faicon faicon-expand expand-btn"></span></div>
+      </div>
+    </div>
+    <div class="body">
+      <div class="container-24">
+        <div class="grid-3 no-padding">
+          <div class="slider">
+            <div class="slider-switch">|||</div>
+            <ul class="list-unstyled">
+              <li class="icon-sale-authorization"><a href="/html/supply-channel/channel-authorization/channel-authorization.html"><i class="icon"></i><span class="words"><span class="faicon faicon-caret-left hidden"></span><span>渠道授权</span></span></a></li>
+              <li class="icon-channel-price-makeup"><a href="/html/supply-channel/channel-classification/channel-classification.html"><i class="icon"></i><span class="words"><span class="faicon faicon-caret-left hidden"></span><span>渠道分级</span></span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div id="mian" class="grid-21">
+          <div class="tabs"><span class="grid-3"><a href="/html/supply-channel/channel-classification/channel-classification.html">渠道分级</a></span>
+          </div>
+          <form id="search-res" class="search-form search-channel form-inline">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12">
+                  <label for="">分组名称：</label>
+                  <input type="text" class="form-control">
+                  <label for="" class="mgl-15">渠道商：</label>
+                  <input type="text" class="form-control">
+                  <div class="form-button-group pull-right">
+                    <button type="button" class="btn btn-form-clear">清空</button>
+                    <button type="button" class="btn btn-form-search">查询</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="table-block">
+            <div class="table-top">
+              <div>
+                <label class="mgl-10">已创建<em class="hightlight-orange">2</em>条规则</label><span id="button-group"><a href="channel-classification-add.html" class="btn btn-table-operation">新增分组</a></span>
+              </div>
+            </div>
+            <div class="table-center min-height-325a">
+              <table>
+                <tr class="title">
+                  <th width="15%">渠道商编码</th>
+                  <th width="20%">渠道商全称</th>
+                  <th width="10%">渠道商简称</th>
+                  <th width="10%">类型<span class="caret"></span></th>
+                  <th width="10%">系统对接<span class="caret"></span></th>
+                  <th width="15%">开通/关闭时间</th>
+                  <th width="20%">状态<span class="caret"></span></th>
+                </tr>
+                <tr class="odd">
+                  <td>10000017</td>
+                  <td>上海钢富电子商务有限公司</td>
+                  <td>找钢网</td>
+                  <td>电商</td>
+                  <td>是</td>
+                  <td>2015-07-22 10:40</td>
+                  <td><span>待开通</span>|
+                    <button class="btn btn-link">开通渠道</button>
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td>1</td>
+                  <td>找钢网</td>
+                  <td>电商</td>
+                  <td>是</td>
+                  <td>全部</td>
+                  <td>全部</td>
+                  <td>
+                    <button class="btn btn-link">授权</button>
+                  </td>
+                </tr>
+                <tr class="odd">
+                  <td>1</td>
+                  <td>找钢网</td>
+                  <td>电商</td>
+                  <td>是</td>
+                  <td>全部</td>
+                  <td>全部</td>
+                  <td>
+                    <button class="btn btn-link">授权</button>
+                  </td>
+                </tr>
+                <tr class="even">
+                  <td>1</td>
+                  <td>找钢网</td>
+                  <td>电商</td>
+                  <td>是</td>
+                  <td>全部</td>
+                  <td>全部</td>
+                  <td>
+                    <button class="btn btn-link">授权</button>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="table-bottom"></div>
+          </div>
+          <script type="text/javascript">
+            require(['jquery'], function ($) {
+                locate('渠道管理', '渠道分级', '渠道分级');
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="container-24 row">
+        <div><span>Copyright</span><span>©</span><span>中钢信 www.qyedi.com 沪ICP备13013915号-17</span></div>
+        <div><span class="phone">服务热线：0731-85891029（8:30-17:30）</span><span>在线咨询：</span><span><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=820218063&amp;site=qq&amp;menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:820218063:41" alt="点击这里给我发消息" title="点击这里给我发消息"></a></span></div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      require(['jquery'], function($) {
+          $(function () {
+              var adjustHeight = function () {
+                  var $main = $('#main');
+                  var $slider = $('.slider');
+                  if ($main[0] && $slider[0]) {
+                      $slider.css({
+                          'height': $main.css('height')
+                      });
+                  }
+              };
+              adjustHeight();
+              $(window).resize(adjustHeight);
+      
+              var toggleSlider = function () {
+                  $('#main').toggleClass('grid-21').toggleClass('grid-23');
+                  $('.slider-switch').parent().toggleClass('slider-collapse')
+                          .parent().toggleClass('grid-3').toggleClass('grid-1')
+                          .find('.faicon-caret-left').toggleClass('hidden');
+              };
+              var toggleHeaderAndBody = function () {
+                  $('.header').find('.container-24').toggleClass('no-max-width');
+                  $('.body').find('.container-24').toggleClass('no-max-width');
+                  $('.expand-btn').toggleClass('faicon-expand').toggleClass('faicon-compress');
+              };
+      
+              $('.slider-switch').on('click', function () {
+                  toggleSlider();
+              });
+              $('.expand-btn').click(function () {
+                  toggleHeaderAndBody();
+              });
+          });
+      });
+      
+      // 公共方法
+      function locate(topName, sideName, tabName) {
+          $('.nav').find('a').each(function () {
+              var a = this, $a = $(a), name = $a.text();
+              if (topName === $.trim(name)) {
+                  $a.parent().addClass('selected');
+              }
+          });
+      
+          $('.slider').find('a').each(function () {
+              var a = this, $a = $(a), name = $a.find('.words').text();
+              if (sideName === $.trim(name)) {
+                  $a.parent().addClass('selected');
+              }
+          });
+      
+          $('.tabs').find('a').each(function () {
+              var a = this, $a = $(a), name = $a.text();
+              if (tabName === $.trim(name)) {
+                  $a.parent().addClass('selected');
+              }
+          });
+      }
+    </script>
+  </body>
+</html>

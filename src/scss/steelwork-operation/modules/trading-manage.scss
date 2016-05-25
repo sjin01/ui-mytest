@@ -1,0 +1,569 @@
+@import "compass";
+
+@import "../partials/variables";
+@import "../partials/mixins";
+@import "../partials/pop";
+
+.search-order-manage,
+.search-in-stock {
+  position: relative;
+  margin-bottom: 3em;
+
+  .col-md-3 {
+    padding: 0 .5em;
+  }
+
+  .btn-toggle {
+    position: absolute;
+    right: -3px;
+    width: 8em;
+    background-color: $gray-light;
+  }
+}
+
+.search-order-manage {
+
+  .form-group {
+    height: 32px;
+    line-height: 32px;
+    padding: 0;
+
+    label {
+      width: 4em;
+    }
+  }
+
+  .date-section {
+    label {
+      width: 7em;
+    }
+    input[type="text"],
+    select {
+      width: 15em !important;
+    }
+  }
+
+  .width,
+  .thickness {
+    input[type="text"] {
+      width: 48px !important;
+    }
+    select {
+      width: 54px !important;
+      padding: 6px 0px;
+    }
+  }
+
+  .warehouse,
+  .spec-search {
+    label {
+      width: 7em;
+    }
+    input[type="text"],
+    select {
+      width: 208px !important;
+    }
+  }
+
+  .form-button-group {
+    button {
+      width: 70px;
+    }
+  }
+}
+
+.order-logs-root {
+  @include float-root(order-logs);
+  color: $blue-deep;
+}
+.order-logs {
+  @include float-layer(38em, bottom, 2em, left, 2em, 2em);
+  border: 3px solid $gray-medium;
+  table {
+    border-spacing: 0px;
+    border-collapse: initial;
+    padding-left: 1em;
+    width: 100%;
+    tr {
+      border: none;
+      > td {
+        border: none;
+      }
+      > td.logs-operation {
+        text-align: left;
+        padding-left: 2em;
+      }
+      > td:first-child {
+        width: 0px;
+        border-left: 2px solid $gray-medium;
+        label {
+          position: relative;
+          display: inline-block;
+          em, i {
+            display: inline-block;
+            position: absolute;
+          }
+          em {
+            color: $orange-deep;
+            z-index: 100;
+            left: -5px;
+            top: -15px;
+          }
+          i {
+            color: white;
+            z-index: 99;
+            font-size: 1.5em;
+            left: -6px;
+            top: -16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.order-remark-logs-root {
+  @include float-root(order-remark-logs);
+  color: $blue-deep;
+
+  .order-remark-logs {
+    @include float-layer(30em, bottom, 2em, left, 2em, 2em);
+    bottom: 3em;
+    left: -4em;
+    border: 3px solid $gray-medium;
+
+    p {
+      text-align: left;
+      word-break: break-all;
+    }
+  }
+}
+
+.price-logs-root {
+  @include float-root(price-logs);
+
+  .price-logs {
+    @include float-layer(32em, bottom, 2em, right, 2em, 2em);
+    border: 3px solid $gray-medium;
+
+    table {
+      font-style: normal;
+      border-spacing: 0px;
+      border-collapse: initial;
+      padding-left: 1em;
+      width: 100%;
+
+      tr {
+        border: none;
+
+        td {
+          border: none;
+        }
+
+        td:first-child {
+          width: 0px;
+          border-left: 2px solid $gray-medium;
+
+          .current {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            margin: -4px;
+            background-color: $orange-deep;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.cancel-dialog {
+  > div.row {
+    padding: 0px 30px;
+    > label {
+      font-weight: normal;
+      > div {
+        margin-right: 1em;
+      }
+    }
+    > textarea {
+      width: 100%;
+      height: 5em;
+      resize: vertical;
+    }
+  }
+}
+
+button {
+  .badge {
+    font-weight: normal;
+    background-color: $orange-deep !important;
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5em;
+    left: 6px;
+    padding: 0px;
+    vertical-align: baseline;
+  }
+}
+
+.table-center {
+  .in-stock-table {
+    table-layout: fixed;
+  }
+}
+
+
+// 现货交易设置界面
+
+.spot-trading-set-container {
+  .mgl-65{margin-left: 65px}
+
+  .btn-edit{
+    color: $orange-deep;
+    background-color: #f1f9fe;
+    border-color: $orange-deep;
+    &:hover{
+      background-color: #feba95;
+    }
+  }
+
+  .row {
+    margin: 2em 0;
+
+    .col-md-3 {
+      width: 25%;
+    }
+
+    .col-md-10 {
+      width: 83.33333%;
+    }
+
+    .time {
+      width: 60px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .row-title{
+    line-height: 32px;
+    border-bottom: 1px solid #efefef;
+    padding-bottom: 10px;
+    .title{
+      margin-top: 10px;
+      line-height: 14px;
+    }
+  }
+
+  .title {
+    font-size: 16px;
+    font-weight: 600;
+    border-left: 4px solid $orange-deep;
+
+    span{
+      font-size: 12px;
+      color: $orange-deep;
+    }
+  }
+
+  .button-bar {
+    button {
+      font-size: 14px;
+      font-weight: 400;
+      padding-left: 3em;
+      padding-right: 3em;
+    }
+  }
+
+
+  li{
+    list-style: none;
+    line-height: 32px;
+    float: left;
+    margin-right: 30px;
+  }
+
+}
+
+
+// 现货订单
+.spot-order-table {
+  line-height: 1;
+
+  .title,
+  .content-1 {
+    border: 1px solid $gray-medium !important;
+  }
+
+  .title {
+    padding: 0;
+    height: 39px !important;
+    line-height: 39px !important;
+    th {
+      padding: 0 !important;
+    }
+  }
+
+  .content-1 {
+    padding: 0;
+    height: 37px !important;
+    line-height: 37px !important;
+    background-color: #fafbfa;
+    td {
+      padding-top: 0;
+      padding-bottom: 0;
+      .salesman {
+        color: #545353;
+      }
+    }
+  }
+
+  .content-2 {
+    line-height: normal !important;
+    td {
+      padding-top: 24px;
+      padding-bottom: 24px;
+      border: 1px solid $gray-medium;
+      &:first-child {
+        color: #373635;
+      }
+      &.total,
+      &.state {
+        color: #666666;
+      }
+      .remaining-time {
+        color: #727171;
+      }
+      > div {
+        line-height: 1;
+        margin-top: 10px;
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+
+.edit-order-info-container {
+  .main-title {
+    margin-bottom: 0;
+  }
+
+  .main-container {
+    padding: 10px 25px;
+    border: 1px solid $gray-medium;
+
+    > .row {
+
+      &.sub-title {
+        line-height: 3;
+      }
+
+      &.sub-container {
+        line-height: 3;
+        padding: 1em 0;
+        background-color: $gray-lighter;
+        border: 1px solid $gray-medium;
+      }
+
+
+    }
+  }
+}
+
+.order-detail-table {
+  width: 100%;
+  border: 1px solid $gray-medium;
+
+  tr {
+    &:first-child {
+      background-color: $gray-lighter;
+    }
+
+    > td:first-child {
+      text-align: left;
+    }
+  }
+
+  th,
+  td {
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  td {
+    border: 1px solid $gray-medium;
+
+    &.price-before {
+      border-right-color: $orange-deep; 
+    }
+
+    &.price {
+      background-color: $orange-lighter;
+      border-color: $orange-deep;
+    }
+  }
+}
+
+.bottom-bar {
+  height: 50px;
+  line-height: 50px;
+  background-color: $gray-light;
+
+  button {
+    display: inline-block;
+    width: 12.5%;
+    height: 100%;
+    font-size: 1.5em;
+    float: right;
+  }
+}
+
+
+$header-fixed-table-line-height: 30px;
+.header-fixed-table {
+  table {
+    th,
+    td {
+      height: $header-fixed-table-line-height;
+      line-height: $header-fixed-table-line-height;   
+      padding: 0;
+    }
+
+    td {
+      border: 1px solid $gray-light;
+    }
+  }
+
+  .table-body {
+    height: ($header-fixed-table-line-height + 1) * 10;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    tr:first-child {
+      td {
+        border-top: none;
+      }
+    }
+  }
+}
+
+
+// tooltip
+.tooltip {
+  position: relative;
+  overflow: visible;
+  z-index: 1000;
+
+  &:hover {
+    .triangle,
+    .tooltip-container {
+      display: inline-block;
+    }
+  }
+
+  .triangle {
+    position: absolute;
+    display: none;
+    background: image-url('component/tooltip-triangle.png');
+    height: 13px;
+    width: 15px;
+    bottom: 100%;
+    margin-bottom: 4px;
+    right: 50%;
+    margin-right: -8px;
+  }
+
+  .tooltip-container {
+    position: absolute;
+    display: none;
+    background-color: #fff;
+    min-height: 70px;
+    min-width: 350px;
+    padding: 10px;
+    border: 5px solid #d1cfcf;
+    bottom: 100%;
+    margin-bottom: 12px;
+    right: 0;
+    margin-right: -40px;
+
+    .clearfix {
+      position: relative;
+      min-height: 50px;
+      padding: 0;
+      margin: 0;
+
+      > span {
+        display: inline-block;
+        height: 100%;
+
+        &.vertical-line {
+          position: absolute;
+          top: 0;
+          left: 10px;
+          width: 0;
+          border: 1px solid #e1e1e1;
+          .point {
+            position: absolute;
+            display: inline-block;
+            background: image-url('component/tooltip-point.png');
+            width: 13px;
+            height: 13px;
+            top: 50%;
+            margin-top: -7px;
+            left: 50%;
+            margin-left: -7px;
+          }
+        }
+
+        &.content {
+          width: 100%;
+          text-align: left;
+          padding: 10px 0px 10px 32px;
+
+          span {
+            display: inline-block;
+          }
+          .time {
+            color: #646161;
+          }
+          .text {
+            color: #111111;
+            line-height: 1.5;
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.deal-modal{
+  label{
+    font-size: 14px;
+    font-weight: 100;
+  }
+  select{
+    width: 45%!important;
+  }
+
+  .set-box{
+    input[type="checkbox"]{
+      margin-right: 5px;
+    }
+    > div{
+      border: 1px solid #ffab90;
+    }
+    select{
+      width: 65%!important;
+    }
+    input[type="text"]{
+      width: 38%;
+    }
+  }
+}

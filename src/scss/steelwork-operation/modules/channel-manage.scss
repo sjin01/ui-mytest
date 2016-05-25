@@ -1,0 +1,11 @@
+@import "../partials/variables";
+
+.main-title ~ .table-block {
+  border: 1px solid $gray-light;
+  border-radius: 0;
+}
+
+.table-center tr > td > span {
+  display: inline-block;
+  padding: 0px 12px;
+}

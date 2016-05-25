@@ -1,0 +1,99 @@
+.ui_pagination {
+  height: 60px;
+  line-height: 60px;
+  padding: 0em 2em;
+  text-align: center;
+  color: #7d7c7c;
+  background-color: #f1f2f3;
+}
+.ui_pagination ul {
+  padding-left: 0;
+  list-style: none;
+}
+.ui_pagination .page_size {
+  float: left;
+  line-height: 60px;
+}
+.ui_pagination .page_size ul {
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: .5em;
+  line-height: 22px;
+}
+.ui_pagination .page_size ul li {
+  float: left;
+  margin-left: .5em;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  border: 1px solid #dedcdc;
+  background-color: #fff;
+  cursor: pointer;
+}
+.ui_pagination .page_size ul li.selected {
+  color: #2994cf;
+  border-color: #2994cf;
+  cursor: not-allowed;
+}
+.ui_pagination .pagination {
+  display: inline-block;
+  line-height: 60px;
+  margin: 0;
+}
+.ui_pagination .pagination li {
+  float: left;
+  cursor: pointer;
+}
+.ui_pagination .pagination li span,
+.ui_pagination .pagination li a {
+  display: inline-block;
+  padding: 0 .5em;
+  height: 2em;
+  line-height: 22px;
+  margin-left: .5em;
+  border-radius: 2em;
+  border: 1px solid #dedcdc;
+  background-color: #fff;
+  text-decoration: none;
+}
+.ui_pagination .pagination li a.page:hover {
+  color: #fff;
+  background-color: #dedcdc;
+  border-color: #dedcdc;
+}
+.ui_pagination .pagination li.active span {
+  color: #fff;
+  background-color: #dedcdc;
+  border-color: #dedcdc;
+}
+.ui_pagination .pagination li.disabled span {
+  cursor: not-allowed;
+  color: #cecece;
+}
+.ui_pagination .page_total {
+  float: right;
+  line-height: 60px;
+}
+.ui_pagination .page_total .go_input,
+.ui_pagination .page_total .go_btn {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  width: 2em;
+  height: 2em;
+  line-height: 22px;
+  border-radius: 50%;
+  border: 1px solid #dedcdc;
+  margin: 0 .5em .5em .5em;
+}
+.ui_pagination .page_total .go_btn {
+  color: #fff;
+  background-color: #2994cf;
+  border: 1px solid #2994cf;
+  text-decoration: none;
+  cursor: pointer;
+}
+.ui_pagination .page_total .go_btn:hover {
+  border-color: #3aa3dd;
+  background-color: #3aa3dd;
+}

@@ -1,0 +1,8 @@
+extends ../resource-layout
+
+block side-modules
+    .tabs
+        each tab in supplyTops[0].sides[0].tabs
+            span.grid-3
+                a(href=tab.link) #{tab.name}
+    block content

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>中钢信</title>
+    <link href="../../../css/steelwork-operation/base.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/steelwork-operation/modules/price-manage.css" rel="stylesheet" type="text/css">
+    <script src="../../../js/libs/require.js"></script>
+    <script src="../../../js/base.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <div class="container-24 nav"><span class="grid-3 logo"><img src="../../../images/icon/logo-main.png" class="mgr-5">  华伟薄板</span><span class="grid-2"><a href="/html/supply-resource/res-sale/res-sale-list.html">资源管理</a></span><span class="grid-2"><a href="/html/supply-deal/settings/deal-settings.html">交易管理</a></span><span class="grid-2"><a href="/html/supply-channel/channel-authorization/channel-authorization.html">渠道管理</a></span><span class="grid-2"><a href="/html/supply-price/quotation/quotation-add.html">定价管理</a></span><span class="grid-2"><a>设置中心</a></span>
+        <div class="grid-4 pull-right"><span class="grid-12 user personal-menu-root"><i class="icon icon-user"></i><span title="华伟" class="remarks">华伟</span><i class="caret"></i>
+            <ul class="personal-menu list-unstyled">
+              <li><a id="passwd_edit">修改密码</a></li>
+            </ul></span><span class="grid-12 logoff"><a href="#logout"><i class="glyphicon glyphicon-off mgr-5"></i><span>注销</span></a></span><span class="faicon faicon-expand expand-btn"></span></div>
+      </div>
+    </div>
+    <div class="body">
+      <div class="container-24">
+        <div class="grid-3 no-padding">
+          <div class="slider">
+            <div class="slider-switch">|||</div>
+            <ul class="list-unstyled">
+              <li class="icon-resource-price"><a href="/html/supply-price/quotation/quotation-add.html"><i class="icon"></i><span class="words"><span class="faicon faicon-caret-left hidden"></span><span>资源定价</span></span></a></li>
+              <li class="icon-pay-price-makeup"><a><i class="icon"></i><span class="words"><span class="faicon faicon-caret-left hidden"></span><span>支付调价</span></span></a></li>
+              <li class="icon-channel-price-makeup"><a><i class="icon"></i><span class="words"><span class="faicon faicon-caret-left hidden"></span><span>渠道调价</span></span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div id="mian" class="grid-21">
+          <div class="tabs"><span class="grid-3"><a href="/html/supply-price/quotation/quotation-add.html">资源定价</a></span>
+          </div>
+          <form>
+            <div class="main-title">新增定价模板</div>
+            <div class="container-fluid add-res-price-form">
+              <div class="col-sm-4">
+                <label class="star-before">今日基价：</label>
+                <input type="text" value="2016" class="form-control hightlight-orange">
+              </div>
+            </div>
+            <div class="second-title">材质调价</div>
+            <div class="table-block">
+              <div class="table-center table-adjust-price-8">
+                <table>
+                  <tr class="title">
+                    <th width="40%">材质</th>
+                    <th width="40%">调价幅度</th>
+                    <th width="20%">操作</th>
+                  </tr>
+                  <tr>
+                    <td>Q235B-1</td>
+                    <td>
+                      <input type="text" placeholder="限整数，整数为加价，负数为减价" class="form-control">
+                    </td>
+                    <td>
+                      <button class="btn btn-link">删除</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Q235B-1</td>
+                    <td>
+                      <input type="text" placeholder="限整数，整数为加价，负数为减价" class="form-control">
+                    </td>
+                    <td>
+                      <button class="btn btn-link">删除</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="text" class="form-control">
+                    </td>
+                    <td>
+                      <input type="text" placeholder="限整数，整数为加价，负数为减价" class="form-control">
+                    </td>
+                    <td>
+                      <button class="btn btn-link">删除</button>
+                      <button class="btn btn-link">新增行</button>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div class="second-title">规格调价</div>
+            <div class="table-block">
+              <div class="table-center table-adjust-price-8">
+                <table>
+                  <tr class="title">
+                    <th width="18%">规格名称</th>
+                    <th width="18%">规格名称</th>
+                    <th width="18%">规格名称</th>
+                    <th width="26%">规格名称</th>
+                    <th width="20%">规格名称</th>
+                  </tr>
+                  <tr>
+                    <td>厚度</td>
+                    <td>6</td>
+                    <td>7.999</td>
+                    <td>
+                      <input type="text" placeholder="限整数，整数为加价，负数为减价" class="form-control">
+                    </td>
+                    <td>
+                      <button class="btn btn-link">删除</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>厚度</td>
+                    <td>6</td>
+                    <td>7.999</td>
+                    <td>
+                      <input type="text" placeholder="限整数，整数为加价，负数为减价" class="form-control">
+                    </td>
+                    <td>
+                      <button class="btn btn-link">删除</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <select class="form-control">
+                        <option>请选择</option>
+                        <option>厚度</option>
+                        <option>宽度</option>
+                      </select>
+                    </td>
+                    <td>
+                      <input type="text" placeholder="支持三位小数" class="form-control">
+                    </td>
+                    <td>
+                      <input type="text" placeholder="支持三位小数" class="form-control">
+                    </td>
+                    <td>
+                      <input type="text" placeholder="限整数，整数为加价，负数为减价" class="form-control">
+                    </td>
+                    <td>
+                      <button class="btn btn-link">删除</button>
+                      <button class="btn btn-link">新增行</button>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div class="second-title">其他调价</div>
+            <div class="table-block">
+              <div class="table-center table-adjust-price-8">
+                <table>
+                  <tr class="title">
+                    <th width="54%">调价规则</th>
+                    <th width="26%">调价幅度</th>
+                    <th width="20%">操作</th>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="row">
+                        <div class="col-xs-9">
+                          <input type="text" placeholder="请点击新增规则进行设置" class="form-control">
+                        </div>
+                        <div class="col-xs-2">
+                          <button class="btn btn-link">新增规则</button>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <input type="text" placeholder="限整数，整数为加价，负数为减价" class="form-control">
+                    </td>
+                    <td>
+                      <button class="btn btn-link">删除</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="row">
+                        <div class="col-xs-9">
+                          <input type="text" placeholder="请点击新增规则进行设置" class="form-control">
+                        </div>
+                        <div class="col-xs-2">
+                          <button class="btn btn-link">新增规则</button>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <input type="text" placeholder="限整数，整数为加价，负数为减价" class="form-control">
+                    </td>
+                    <td>
+                      <button class="btn btn-link">删除</button>
+                      <button class="btn btn-link">新增行</button>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div class="buttons-foot-bar">
+              <button type="button" class="btn btn-form-search no-radius">新增模板</button>
+              <button type="button" class="btn btn-cancel no-radius">取消</button>
+            </div>
+          </form>
+          <script type="text/javascript">
+            require(['jquery'], function ($) {
+                locate('定价管理', '资源定价', '资源定价','123123');
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="container-24 row">
+        <div><span>Copyright</span><span>©</span><span>中钢信 www.qyedi.com 沪ICP备13013915号-17</span></div>
+        <div><span class="phone">服务热线：0731-85891029（8:30-17:30）</span><span>在线咨询：</span><span><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=820218063&amp;site=qq&amp;menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:820218063:41" alt="点击这里给我发消息" title="点击这里给我发消息"></a></span></div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      require(['jquery'], function($) {
+          $(function () {
+              var adjustHeight = function () {
+                  var $main = $('#main');
+                  var $slider = $('.slider');
+                  if ($main[0] && $slider[0]) {
+                      $slider.css({
+                          'height': $main.css('height')
+                      });
+                  }
+              };
+              adjustHeight();
+              $(window).resize(adjustHeight);
+      
+              var toggleSlider = function () {
+                  $('#main').toggleClass('grid-21').toggleClass('grid-23');
+                  $('.slider-switch').parent().toggleClass('slider-collapse')
+                          .parent().toggleClass('grid-3').toggleClass('grid-1')
+                          .find('.faicon-caret-left').toggleClass('hidden');
+              };
+              var toggleHeaderAndBody = function () {
+                  $('.header').find('.container-24').toggleClass('no-max-width');
+                  $('.body').find('.container-24').toggleClass('no-max-width');
+                  $('.expand-btn').toggleClass('faicon-expand').toggleClass('faicon-compress');
+              };
+      
+              $('.slider-switch').on('click', function () {
+                  toggleSlider();
+              });
+              $('.expand-btn').click(function () {
+                  toggleHeaderAndBody();
+              });
+          });
+      });
+      
+      // 公共方法
+      function locate(topName, sideName, tabName) {
+          $('.nav').find('a').each(function () {
+              var a = this, $a = $(a), name = $a.text();
+              if (topName === $.trim(name)) {
+                  $a.parent().addClass('selected');
+              }
+          });
+      
+          $('.slider').find('a').each(function () {
+              var a = this, $a = $(a), name = $a.find('.words').text();
+              if (sideName === $.trim(name)) {
+                  $a.parent().addClass('selected');
+              }
+          });
+      
+          $('.tabs').find('a').each(function () {
+              var a = this, $a = $(a), name = $a.text();
+              if (tabName === $.trim(name)) {
+                  $a.parent().addClass('selected');
+              }
+          });
+      }
+    </script>
+  </body>
+</html>

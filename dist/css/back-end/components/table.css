@@ -1,0 +1,92 @@
+.ui_table {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #cecece;
+  border-top: none;
+}
+.ui_table tr {
+  border-top: 1px solid #cecece;
+  line-height: 2.5em;
+}
+.ui_table tr.odd {
+  background-color: #fff;
+}
+.ui_table tr.even {
+  background-color: #edffff;
+}
+.ui_table thead tr {
+  background-color: #dcefff;
+}
+.ui_table th {
+  text-align: center;
+  font-weight: bold;
+}
+.ui_table th .sortable,
+.ui_table th .sort_asc,
+.ui_table th .sort_desc {
+  cursor: pointer;
+}
+.ui_table th .sortable i,
+.ui_table th .sort_asc i,
+.ui_table th .sort_desc i {
+  background: url('../../../images/component/table.png?658e8dc0bf8b9a09b36994abf9242099') no-repeat;
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  vertical-align: middle;
+  margin-left: .5em;
+}
+.ui_table th .sortable i {
+  background-position: 0 -34px;
+}
+.ui_table th .sort_asc i {
+  background-position: 0 2px;
+}
+.ui_table th .sort_desc i {
+  background-position: 0 -15px;
+}
+.ui_table td {
+  text-align: center;
+}
+.ui_table .check_col {
+  width: 1em;
+  padding-left: 1em;
+}
+
+.ui_popup_table tr {
+  line-height: 3em;
+}
+
+.inner_table_wrapper {
+  padding: 1em;
+  background-color: #79c4eb;
+}
+
+.table-block {
+  border: 1px solid #f1f2f3;
+  border-radius: 0;
+}
+.table-block .table-center {
+  width: 100%;
+}
+.table-block .table-center tr {
+  height: 3em;
+  line-height: 3em;
+}
+.table-block .table-center tr th {
+  font-weight: bold;
+  background: #dcefff;
+}
+.table-block .table-center tr td {
+  text-align: center;
+  vertical-align: middle;
+}
+.table-block .table-center tr td.text-left {
+  text-align: left;
+}
+.table-block .table-center tr td.text-right {
+  text-align: right;
+}
+.table-block .table-center .even {
+  background: #edffff;
+}

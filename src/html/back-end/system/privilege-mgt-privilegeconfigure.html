@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>中钢信管理平台</title>
+    <link href="../../../css/back-end/workspace.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/back-end/modules/system.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/components/lightbox.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="wrapper">
+
+    <div class="top_nav"></div>
+
+    <div class="body_box">
+
+        <ul class="side_nav" style="min-height: 681px;"></ul>
+
+        <ul class="feature_nav"></ul>
+
+        <div class="main_content container-fluid">
+
+            <div class="col-md-5 privilege-configure-left">
+
+            </div>
+
+            <div class="col-md-7 privilege-configure-right content-block">
+
+                <div class="row">
+                    <label class="col-md-2 star-before">会员类型：</label>
+                    <select class="col-md-4 form-widget no-radius">
+                        <option>请选择</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <label class="col-md-2 star-before">模块编码：</label>
+                    <input type="text" class="col-md-4 form-widget no-radius">
+                </div>
+
+                <div class="row">
+                    <label class="col-md-2">父权限名：</label>
+                    <input type="text" class="col-md-4 form-widget no-radius">
+                </div>
+
+                <div class="row">
+                    <label class="col-md-2 star-before">权限名称：</label>
+                    <input type="text" class="col-md-4 form-widget no-radius">
+                </div>
+
+                <div class="row">
+                    <label class="col-md-2 star-before">权限类型：</label>
+                    <div class="col-md-4 no-padding">
+                        <label class="">
+                            <input type="radio">
+                            启用
+                        </label>
+                        <label class="mgl-20">
+                            <input type="radio">
+                            停用
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label class="col-md-2 star-before">权限代码：</label>
+                    <input type="text" class="col-md-6 form-widget no-radius">
+                </div>
+
+                <div class="row">
+                    <label class="col-md-2 star-before">URL：</label>
+                    <input type="text" class="col-md-6 form-widget no-radius">
+                </div>
+
+                <div class="row">
+                    <label class="col-md-2 star-before">排序：</label>
+                    <input type="text" class="col-md-6 form-widget no-radius">
+                </div>
+
+                <div class="row">
+                    <div class="col-md-10 text-center">
+                        <button class="btn blue_button no-radius mgr-20">修改权限</button>
+                        <button class="btn red_button no-radius">新增权限</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<script src="../../../js/libs/require.js"></script>
+<script src="../../../js/base.js"></script>
+
+<script>
+    require(["jquery", 'tplUtil', "text!../template/modules/workspace.rac", "popup", 'alert', 'pagination', 'lightbox'], function ($, TplUtil, WSTpl, Popup, Alert, Pagination) {
+
+        var items1 = [
+            {link: '#1', name: '基础数据'},
+            {link: '#2', name: '会员'},
+            {link: '#3', name: '销售'},
+            {link: '#4', name: '系统', selected: true}
+        ],
+        items2 = [
+            { link: 'privilege-mgt.html', name: '权限管理', className: 'back-privilege', selected: true},
+            { link: 'backstage-account-mgt.html', name: '后台账号管理', className: 'back-backstage'}
+        ],
+        items3 = [
+            { link: '#1', name: '角色管理'},
+            { link: '#1', name: '权限配置', selected: true}
+        ];
+
+        TplUtil.loadTpl({
+            el: '.top_nav',
+            template: $(WSTpl).filter('#top-nav').html(),
+            data: {
+                modules: items1
+            }
+        });
+
+        TplUtil.loadTpl({
+            el: '.side_nav',
+            template: $(WSTpl).filter('#side-nav').html(),
+            data: {
+                items: items2
+            }
+        });
+
+        TplUtil.loadTpl({
+            el: '.feature_nav',
+            template: $(WSTpl).filter('#feature-nav').html(),
+            data: {
+                items: items3
+            }
+        });
+
+        $(function () {
+
+            var adjustHeight = function () {
+                var viewportHeight = $(window).height();
+                var topNavHeight = $(".top_nav").outerHeight();
+                var featureNavHeight = $(".feature_nav").outerHeight();
+                var minHeight = viewportHeight - topNavHeight - featureNavHeight;
+                var mainContentHeight = $(".main_content").outerHeight();
+                if (mainContentHeight < minHeight) {
+                    $(".main_content").css("min-height", minHeight);
+
+                    var innerHeight = minHeight - 20;
+                    $('.privilege-configure-left').css('min-height', innerHeight);
+                    $('.privilege-configure-right').css('min-height', innerHeight);
+                }
+                $(".side_nav").css("min-height", $(".main_content").outerHeight() + featureNavHeight + "px");
+            };
+            adjustHeight();
+            $(window).resize(adjustHeight);
+        });
+
+    });
+</script>
+
+</body>
+</html>

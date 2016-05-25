@@ -1,0 +1,148 @@
+@import "compass/css3";
+@import "../partials/variables";
+@import "../partials/mixins";
+@import "../partials/pop";
+
+.import-row {
+  margin: 3.5em 2.5em;
+
+  label {
+    font-weight: normal;
+  }
+
+  // for IE
+  input[type="text"],
+  button {
+    height: 32px;
+  }
+}
+
+.import-unit {
+  display: inline-block;
+  line-height: 2.5em;
+
+  input[type="text"] {
+    margin-right: 0;
+    width: 20.8em;
+  }
+
+  a[class^="button"] {
+    margin-left: 0;
+  }
+}
+
+.price-logs-root {
+  @include float-root(price-logs);
+
+  .price-logs {
+    @include float-layer(32em, bottom, 2em, right, 2em, 2em);
+    border: 3px solid $gray-medium;
+
+    table {
+      font-style: normal;
+      border-spacing: 0px;
+      border-collapse: initial;
+      padding-left: 1em;
+      width: 100%;
+
+      tr {
+        border: none;
+
+        td {
+          border: none;
+        }
+
+        td:first-child {
+          width: 0px;
+          border-left: 2px solid $gray-medium;
+
+          .current {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            margin: -4px;
+            background-color: $orange-deep;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.ordergoods{
+  .price{
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 5px;
+    color: $orange-deep;
+  }
+
+  .row{
+    line-height:32px;
+  }
+  label{
+    font-size: 14px;
+    font-weight: 100;
+  }
+
+  li{
+    float: left;
+    margin-right: 30px;
+    list-style: none;
+    span.price{
+      font-size: 12px;
+    }
+    span.nullprice{
+      color: $orange-deep;
+    }
+    input[type="radio"]{
+      margin-right: 5px;
+    }
+  }
+
+  .sub-title{
+    line-height: 14px;
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 10px;
+    border-left: 4px solid $orange-deep;
+  }
+
+  .search-form {
+    label{
+      font-size: 12px;
+    }
+    .btn{
+      float: right;
+      margin-right: 7px;
+      font-size: 14px;
+      padding: 4px 12px;
+    }
+    .price{
+      margin-left: 30px;
+    }
+
+    select.custom{
+      width: 40%!important;
+    }
+    input[type="text"].custom{
+      width: 24%!important;
+    }
+  }
+
+  .table-block{
+    border-top: none;
+    input[type="text"]{
+      padding-left: 28px;
+    }
+
+    tr{line-height: 5em!important;}
+
+    .btn{
+      color: #3aa3dd!important;
+    }
+  }
+
+}
+

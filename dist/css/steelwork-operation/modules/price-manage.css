@@ -1,0 +1,85 @@
+.add-res-price-form {
+  margin-bottom: 1.5em;
+}
+.add-res-price-form > div {
+  padding: 0;
+}
+.add-res-price-form > div > label,
+.add-res-price-form > div > .form-control {
+  display: inline-block;
+}
+.add-res-price-form > div > label {
+  width: 20%;
+  text-align: right;
+}
+.add-res-price-form > div > label > em {
+  color: red;
+  margin-right: 0.5em;
+}
+.add-res-price-form > div > .form-control {
+  width: 70%;
+}
+.add-res-price-form > div > .text-orange {
+  color: #ff5a00;
+}
+
+.table-adjust-price-3 {
+  max-height: 165px;
+}
+
+.table-adjust-price-5 {
+  max-height: 275px;
+}
+
+.table-adjust-price-8 {
+  max-height: 440px;
+}
+
+.table-center {
+  overflow: auto;
+}
+.table-center tr {
+  cursor: auto !important;
+  border-top: none !important;
+}
+.table-center tr > td {
+  padding: 1em 1em 1em 1em;
+}
+.table-center tr:hover {
+  background-color: white !important;
+}
+.table-center tr:first-child + tr > td {
+  padding-top: 1em;
+}
+
+.quotation-modal {
+  margin: 10px;
+}
+.quotation-modal .table-block {
+  border-top: none !important;
+}
+.quotation-modal .table-block .height-165 {
+  height: 165px;
+}
+.quotation-modal tr {
+  height: 50px;
+  line-height: 50px;
+  padding: 0 !important;
+  border-bottom: none !important;
+}
+.quotation-modal tr > td {
+  padding: 7px 7px 0 !important;
+}
+.quotation-modal tr > td .btn {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.quotation-modal .quotation-rule {
+  margin: 10px 7px;
+}
+.quotation-modal .quotation-rule > textarea {
+  height: 90px !important;
+}
+.quotation-modal .buttons-foot-bar {
+  padding-top: 1em !important;
+}

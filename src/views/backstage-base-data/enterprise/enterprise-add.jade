@@ -1,0 +1,61 @@
+extends enterprise-layout
+
+block content
+    .container-fluid
+        .main-title 新增企业
+        .second-title 基本信息
+        .content-block.enterprise-base-info
+            .row
+                label.star-before 企业全称：
+                input.form-widget.no-radius(type="text")
+            .row
+                label.star-before 企业简称：
+                input.form-widget.no-radius(type="text")
+            .row
+                label.star-before 所在地区：
+                select.form-widget.no-radius
+                    option 选择省份
+                select.form-widget.no-radius
+                    option 选择城市
+                select.form-widget.no-radius
+                    option 选择区域
+            .row
+                label.star-before 详细地址：
+                input.form-widget.no-radius.addr(type="text")
+        .second-title 企业证件
+        .content-block.enterprise-certificate
+            .row
+                span.col-md-3
+                    .image-upload-container
+                        .image-container
+                            img(src=relativeRoot + "images/base/to-be-upload.png")
+                        .title 管理员授权委托书
+                span.col-md-3
+                    .image-upload-container
+                        .image-container
+                            a(href=relativeRoot + "images/base/example-1-enlarge.png", data-lightbox="example-1-enlarge", data-title="管理员授权委托书")
+                                img(src=relativeRoot + "images/base/example-1.png")
+                            a.back-icon.back-close(href="#del")
+                            span.tip 点击查看大图
+                        .title 管理员授权委托书
+                span.col-md-3
+                    .image-upload-container
+                        .image-container
+                            img(src=relativeRoot + "images/base/to-be-upload.png")
+                        .title 管理员授权委托书
+                span.col-md-3
+                    .image-upload-container
+                        .image-container
+                            img(src=relativeRoot + "images/base/to-be-upload.png")
+                        .title 管理员授权委托书
+        .row.buttons
+            button.btn.btn-red 保存
+            button.btn.btn-gray 取消
+
+    script(type="text/javascript").
+        require(['jquery', 'lightbox'], function($, Pagination) {
+
+            locate('基础数据', '企业库', '合作企业库', 'back-enterprise-lib');
+
+        });
+

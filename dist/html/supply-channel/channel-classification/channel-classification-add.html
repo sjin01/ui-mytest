@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>中钢信</title>
+    <link href="../../../css/steelwork-operation/base.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/steelwork-operation/modules/channel-manage.css" rel="stylesheet" type="text/css">
+    <script src="../../../js/libs/require.js"></script>
+    <script src="../../../js/base.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <div class="container-24 nav"><span class="grid-3 logo"><img src="../../../images/icon/logo-main.png" class="mgr-5">  华伟薄板</span><span class="grid-2"><a href="/html/supply-resource/res-sale/res-sale-list.html">资源管理</a></span><span class="grid-2"><a href="/html/supply-deal/settings/deal-settings.html">交易管理</a></span><span class="grid-2"><a href="/html/supply-channel/channel-authorization/channel-authorization.html">渠道管理</a></span><span class="grid-2"><a href="/html/supply-price/quotation/quotation-add.html">定价管理</a></span><span class="grid-2"><a>设置中心</a></span>
+        <div class="grid-4 pull-right"><span class="grid-12 user personal-menu-root"><i class="icon icon-user"></i><span title="华伟" class="remarks">华伟</span><i class="caret"></i>
+            <ul class="personal-menu list-unstyled">
+              <li><a id="passwd_edit">修改密码</a></li>
+            </ul></span><span class="grid-12 logoff"><a href="#logout"><i class="glyphicon glyphicon-off mgr-5"></i><span>注销</span></a></span><span class="faicon faicon-expand expand-btn"></span></div>
+      </div>
+    </div>
+    <div class="body">
+      <div class="container-24">
+        <div class="grid-3 no-padding">
+          <div class="slider">
+            <div class="slider-switch">|||</div>
+            <ul class="list-unstyled">
+              <li class="icon-sale-authorization"><a href="/html/supply-channel/channel-authorization/channel-authorization.html"><i class="icon"></i><span class="words"><span class="faicon faicon-caret-left hidden"></span><span>渠道授权</span></span></a></li>
+              <li class="icon-channel-price-makeup"><a href="/html/supply-channel/channel-classification/channel-classification.html"><i class="icon"></i><span class="words"><span class="faicon faicon-caret-left hidden"></span><span>渠道分级</span></span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div id="mian" class="grid-21">
+          <div class="tabs"><span class="grid-3"><a href="/html/supply-channel/channel-classification/channel-classification.html">渠道分级</a></span>
+          </div>
+          <div class="main-title">新增分组/修改渠道规则</div>
+          <div class="container-fluid pdt-10 pdb-10 pdl-25">
+            <div class="row mgb-15"><span class="col-md-1 line-height-32 pdr-0 text-right star-before-orange">分组名称：</span><span class="col-md-3 pdr-0">
+                <input type="text" name="" id="" class="form-control no-radius width-full"></span></div>
+            <div class="row mgb-15 form-inline"><span class="col-md-1 line-height-32 pdr-0 text-right star-before-orange">分组名称：</span><span class="col-md-1 col-md-offset-6 line-height-32 pdl-0 pdr-0 text-right">待分组渠道商：</span><span class="col-md-4 pdr-0"><span class="col-md-9 pd-all-0">
+                  <input type="text" class="form-control no-radius width-full"></span><span class="col-md-3 pd-all-0">
+                  <button style="margin-left: -1px;" class="btn btn-orange-deep no-radius width-full">查询</button></span></span></div>
+            <div class="shift-container row mgb-15">
+              <div class="left-container col-md-5 pd-all-10 border-gray-light bgc-gray-lighter">
+                <div class="item pd-all-10 mg-all-5">上海钢富电子商务有限公司</div>
+                <div class="item pd-all-10 mg-all-5">北京钢富电子商务有限公司</div>
+                <div class="item pd-all-10 mg-all-5">湖南钢富电子商务有限公司</div>
+                <div class="item pd-all-10 mg-all-5">上海钢富电子商务有限公司</div>
+                <div class="item pd-all-10 mg-all-5">北京钢富电子商务有限公司</div>
+                <div class="item pd-all-10 mg-all-5">湖南钢富电子商务有限公司</div>
+                <div class="item pd-all-10 mg-all-5">上海钢富电子商务有限公司</div>
+                <div class="item pd-all-10 mg-all-5">北京钢富电子商务有限公司</div>
+              </div>
+              <div class="center-container col-md-2">
+                <div class="text-center">
+                  <div class="pdt-5 pdb-5 pdl-30 pdr-30">
+                    <button id="shift-left" class="btn border-gray-light bgc-gray-lighter no-radius width-full"><</button>
+                  </div>
+                  <div class="pdt-5 pdb-5 pdl-30 pdr-30">
+                    <button id="shift-right" class="btn border-gray-light bgc-gray-lighter no-radius width-full">></button>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <div class="pdt-5 pdb-5 pdl-30 pdr-30">
+                    <button id="shift-left-all" class="btn border-gray-light bgc-gray-lighter no-radius width-full"><<</button>
+                  </div>
+                  <div class="pdt-5 pdb-5 pdl-30 pdr-30">
+                    <button id="shift-right-all" class="btn border-gray-light bgc-gray-lighter no-radius width-full">>></button>
+                  </div>
+                </div>
+              </div>
+              <div class="right-container col-md-5 pd-all-10 border-gray-light bgc-gray-lighter">
+                <div class="item pd-all-10 mg-all-5">上海钢富电子商务有限公司</div>
+                <div class="item pd-all-10 mg-all-5">北京钢富电子商务有限公司</div>
+                <div class="item pd-all-10 mg-all-5">湖南钢富电子商务有限公司</div>
+                <div class="item pd-all-10 mg-all-5">上海钢富电子商务有限公司</div>
+                <div class="item pd-all-10 mg-all-5">北京钢富电子商务有限公司</div>
+              </div>
+            </div>
+            <div class="row mgb-15 text-center"><a href="channel-classification.html" class="btn btn-lg btn-orange-deep pdl-30 pdr-30 mg-all-10 no-radius">新增</a><a href="channel-classification.html" class="btn btn-lg btn-gray-deep pdl-30 pdr-30 mg-all-10 no-radius">返回</a></div>
+          </div>
+          <script type="text/javascript">
+            require(['jquery'], function ($) {
+                locate('渠道管理', '渠道分级', '渠道分级');
+            
+                $('.shift-container').on('click', '.item, #shift-left, #shift-left-all, #shift-right, #shift-right-all', function () {
+                    var self = $(this);
+            
+                    if (self.hasClass('item')) {
+                        self.toggleClass('selected');
+                        return;
+                    }
+            
+                    var leftContainer = $('.left-container'),
+                            rightContainer = $('.right-container');
+            
+                    switch (this.id) {
+                        case 'shift-left':
+                            rightContainer.find('.item.selected').removeClass('selected').appendTo(leftContainer);
+                            break;
+            
+                        case 'shift-right':
+                            leftContainer.find('.item.selected').removeClass('selected').appendTo(rightContainer);
+                            break;
+            
+                        case 'shift-left-all':
+                            rightContainer.find('.item').removeClass('selected').appendTo(leftContainer);
+                            break;
+            
+                        case 'shift-right-all':
+                            leftContainer.find('.item').removeClass('selected').appendTo(rightContainer);
+                            break;
+                    }
+                });
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="container-24 row">
+        <div><span>Copyright</span><span>©</span><span>中钢信 www.qyedi.com 沪ICP备13013915号-17</span></div>
+        <div><span class="phone">服务热线：0731-85891029（8:30-17:30）</span><span>在线咨询：</span><span><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=820218063&amp;site=qq&amp;menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:820218063:41" alt="点击这里给我发消息" title="点击这里给我发消息"></a></span></div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      require(['jquery'], function($) {
+          $(function () {
+              var adjustHeight = function () {
+                  var $main = $('#main');
+                  var $slider = $('.slider');
+                  if ($main[0] && $slider[0]) {
+                      $slider.css({
+                          'height': $main.css('height')
+                      });
+                  }
+              };
+              adjustHeight();
+              $(window).resize(adjustHeight);
+      
+              var toggleSlider = function () {
+                  $('#main').toggleClass('grid-21').toggleClass('grid-23');
+                  $('.slider-switch').parent().toggleClass('slider-collapse')
+                          .parent().toggleClass('grid-3').toggleClass('grid-1')
+                          .find('.faicon-caret-left').toggleClass('hidden');
+              };
+              var toggleHeaderAndBody = function () {
+                  $('.header').find('.container-24').toggleClass('no-max-width');
+                  $('.body').find('.container-24').toggleClass('no-max-width');
+                  $('.expand-btn').toggleClass('faicon-expand').toggleClass('faicon-compress');
+              };
+      
+              $('.slider-switch').on('click', function () {
+                  toggleSlider();
+              });
+              $('.expand-btn').click(function () {
+                  toggleHeaderAndBody();
+              });
+          });
+      });
+      
+      // 公共方法
+      function locate(topName, sideName, tabName) {
+          $('.nav').find('a').each(function () {
+              var a = this, $a = $(a), name = $a.text();
+              if (topName === $.trim(name)) {
+                  $a.parent().addClass('selected');
+              }
+          });
+      
+          $('.slider').find('a').each(function () {
+              var a = this, $a = $(a), name = $a.find('.words').text();
+              if (sideName === $.trim(name)) {
+                  $a.parent().addClass('selected');
+              }
+          });
+      
+          $('.tabs').find('a').each(function () {
+              var a = this, $a = $(a), name = $a.text();
+              if (tabName === $.trim(name)) {
+                  $a.parent().addClass('selected');
+              }
+          });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+.body {
+  min-height: 590px;
+}
+
+#main {
+  margin-bottom: 20px;
+}
+
+.tabs {
+  $tab-selected-border-width: 4px;
+
+  @include vertical-middle($slider-height + $collapse-height);
+  box-sizing: border-box;
+  text-align: center;
+  border-bottom: 1px solid $gray-light;
+  margin-bottom: $default-gap;
+
+  span {
+    @include vertical-middle($slider-height + $collapse-height);
+    box-sizing: border-box;
+    cursor: pointer;
+    padding: 0 !important;
+
+    &:hover {
+      border-bottom: $tab-selected-border-width solid $orange-deep;
+    }
+  }
+
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .selected {
+    border-bottom: $tab-selected-border-width solid $orange-deep;
+  }
+}
+
+.main-title {
+  @include vertical-middle(4em);
+  color: $blue-deep;
+  font-size: 1.5em;
+  text-align: center;
+  margin-bottom: 1em;
+  border-bottom: 2px solid $blue-deep;
+
+  > .default {
+    color: $gray-dark;
+  }
+}
+
+.main-title ~ .table-block {
+  border: 1px solid $gray-light;
+  border-radius: 0;
+}
+
+.second-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  line-height: 2.5em;
+  padding-left: 1em;
+  margin: 1em 0 0.5em 0;
+  color: $blue-deep;
+  background-color: #fafafa;
+  border: 1px solid $gray-medium;
+  border-left: 3px solid $blue-deep;
+}
+
+.buttons-foot-bar {
+  text-align: center;
+  padding: 2em 0;
+
+  > button {
+    width: 10em;
+    margin: 0 0.5em;
+  }
+}

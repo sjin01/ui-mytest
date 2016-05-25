@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>中钢信</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/steelworks-and-operation-end/base.css">
+</head>
+<body>
+
+<div class="header"></div>
+
+<div class="body">
+    <div class="container-24">
+
+        <div class="grid-3 no-padding">
+            <div class="slider"></div>
+        </div>
+
+        <div id="main" class="grid-21">
+
+            <div class="tabs"></div>
+
+            <div class="main-title">新增/修改支付规则</div>
+
+            <div class="clearfix form-inline pd-all-20">
+                <div class="clearfix mgb-15">
+                    <span class="col-md-4 line-height-32 pdr-0 text-right star-before-orange">资源类型：</span>
+                    <span class="col-md-4 pdr-0">
+                        <select name="" id="" class="form-control no-radius width-full">
+                            <option value="">现货</option>
+                        </select>
+                    </span>
+                </div>
+
+                <div class="clearfix mgb-15">
+                    <span class="col-md-4 line-height-32 pdr-0 text-right star-before-orange">支付方式：</span>
+                    <span class="col-md-4 pdr-0">
+                        <select name="" id="" class="form-control no-radius width-full">
+                            <option value="">请选择</option>
+                        </select>
+                    </span>
+                </div>
+
+                <div class="clearfix mgb-15">
+                    <span class="col-md-4 line-height-32 pdr-0 text-right star-before-orange">调价方式：</span>
+                    <span class="col-md-4 pdr-0">
+                        <select name="" id="" class="form-control no-radius width-full">
+                            <option value="">按金额</option>
+                        </select>
+                    </span>
+                </div>
+
+                <div class="clearfix mgb-15">
+                    <span class="col-md-4 line-height-32 pdr-0 text-right star-before-orange">调价规则：</span>
+                    <span class="col-md-2 pdr-0">
+                        <select name="" id="" class="form-control no-radius width-full">
+                            <option value="">现货</option>
+                        </select>
+                    </span>
+                    <span class="col-md-2 pdr-0">
+                        <input type="text" name="" id="" class="form-control no-radius width-full">
+                    </span>
+                </div>
+
+                <div class="clearfix mgb-15 text-center">
+                    <button class="btn btn-lg btn-orange-deep pdl-30 pdr-30 mg-all-10 no-radius">新增</button>
+                    <button class="btn btn-lg btn-gray-deep pdl-30 pdr-30 mg-all-10 no-radius">返回</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="footer"></div>
+
+<script src="../../../js/libs/require.js"></script>
+<script src="../../../js/base.js"></script>
+<script>
+    require(['jquery', 'popup', 'tplUtil', 'text!../template/modules/base.rac'], function ($, Popup, TplUtil, BaseTpl) {
+
+        var modules = [
+            {name: '资源管理'},
+            {name: '交易管理'},
+            {name: '渠道管理'},
+            {name: '定价管理', selected: true}
+        ];
+
+        TplUtil.loadTpl({
+            el: '.header',
+            template: $(BaseTpl).filter('#header-content').html(),
+            data: {
+                logoText: '华伟薄板',
+                modules: modules
+            }
+        });
+
+        TplUtil.loadTpl({
+            el: '.footer',
+            template: $(BaseTpl).filter('#footer-content').html()
+        });
+
+        var leftModules = [
+            {name: '资源定价', className: 'icon-resource-price', link: '../resource-manage/resourceOrder.html'},
+            {name: '定制加价', className: 'icon-custom-price-makeup', link: '../resource-manage/resourceOnSale.html'},
+            {name: '区域加价', className: 'icon-area-price-makeup', link: '../settings-manage/baseSettings.html'},
+            {name: '支付调价', className: 'icon-pay-price-makeup', link: '../settings-manage/baseSettings.html', selected: true},
+            {name: '渠道调价', className: 'icon-channel-price-makeup', link: '../settings-manage/baseSettings.html'}
+        ];
+
+        TplUtil.loadTpl({
+            el: '.slider',
+            template: $(BaseTpl).filter('#slider-content').html(),
+            data: { leftModules: leftModules }
+        });
+
+        var tabModules = [
+            {selected: true, name: '支付调价'}
+        ];
+
+        TplUtil.loadTpl({
+            el: '.tabs',
+            template: $(BaseTpl).filter('#tabs-content').html(),
+            data: { tabModules: tabModules }
+        });
+    });
+</script>
+
+</body>
+</html>
+

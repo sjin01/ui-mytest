@@ -1,0 +1,213 @@
+@charset "utf-8";
+
+@import "compass";
+
+@import "base/bootstrap/normalize";
+@import "partials/reset";
+
+@import "icons/icons-login";
+
+$header-height: 90px;
+$body-height: 470px;
+$footer-height: 100px;
+$wrapper-height: $header-height + $body-height + $footer-height;
+
+$form-margin: 50px;
+$form-element-height: 40px;
+
+$form-radius: 4px;
+
+$error-color: #fd8761;
+$border-color: #ededed;
+$bg-color: #f4f5f4;
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-size: 12px;
+
+  span {
+    display: inline-block;
+  }
+}
+
+input[type="text"],
+input[type="password"],
+button {
+  height: $form-element-height;
+  line-height: $form-element-height;
+}
+
+.wrapper {
+  width: 100%;
+  height: $wrapper-height;
+}
+
+.header,
+.body,
+.footer {
+  width: 100%;
+}
+
+.content-body{
+  width:1200px;
+  margin: auto;
+}
+.login-meilian{
+  background-image: url('../../images/login-meilian.png');
+  background-repeat: no-repeat;
+  background-position: 0 10px;
+  height: 60px;
+  width: 185px;
+  margin-left: 50px;
+}
+
+.header {
+  height: $header-height;
+  line-height: $header-height;
+  //padding-left: 10%;
+
+  width:1200px;
+  margin: auto;
+
+  .vertical-line {
+    position: relative;
+    top: 16px;
+    width: 0px;
+    height: 36px;
+    margin: 0 6px;
+    border: 1px solid $border-color;
+  }
+
+  .system-name {
+    font-size: 20px;
+    vertical-align: middle;
+  }
+}
+
+.body {
+  position: relative;
+  height: 600px;
+  background: image-url('base/bg-huawei.jpg') no-repeat center;
+
+  .login-form {
+    /*position: absolute;
+    top: $form-margin;
+    bottom: $form-margin;
+    right: 10%;*/
+
+    margin: 120px 0px 120px 800px;
+
+    width: 300px;
+    padding: 30px 25px;
+    background-color: #fff;
+    overflow: hidden;
+    box-shadow: 2px 2px 6px #bbb;
+
+    .title {
+      margin-bottom: 20px;
+
+      .title-text {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 32px;
+        padding-left: 10px;
+      }
+    }
+
+    .error-info {
+      line-height: 40px;
+      color: $error-color;
+    }
+
+    .remeber-me {
+      margin: 20px 0 40px;
+
+      a {
+        color: #565657;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    button {
+      font-size: 14px;
+      width: 100%;
+      border: none;
+      border-radius: 4px;
+      color: #fff;
+      background-color: #3aa4dd;
+    }
+  }
+
+  .form-group {
+    display: table;
+    width: 100%;
+    margin: 20px 0px;
+    border-radius: $form-radius;
+    border: 1px solid $border-color;
+
+    .form-row {
+      display: table-row;
+
+      > span {
+        display: table-cell;
+      }
+
+      .form-icon {
+        text-align: center;
+        width: $form-element-height;
+        background-color: $bg-color;
+        border-right: 1px solid $border-color;
+        border-top-left-radius: $form-radius;
+        border-bottom-left-radius: $form-radius;
+      }
+
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      border: none;
+      padding-left: 12px;
+      border-top-right-radius: $form-radius;
+      border-bottom-right-radius: $form-radius;
+
+    }
+  }
+
+  .form-error {
+    border: 1px solid $error-color;
+  }
+}
+
+.footer {
+  height: $footer-height;
+  color: #565657;
+  text-align: center;
+
+  .row {
+    padding-top: 28px;
+    line-height: 2;
+
+    .phone {
+      margin-right: 3em;
+    }
+
+    a, button {
+      display: inline-block;
+      vertical-align: middle;
+      height: 24px;
+      line-height: 24px;
+    }
+
+  }
+}

@@ -1,0 +1,35 @@
+// header-fixed-table
+
+$header-fixed-table-line-height: 31px;
+.header-fixed-table {
+  table {
+    tr.odd {
+      background-color: #fff;
+    }
+
+    tr.even {
+      background-color: #edffff;
+    }
+
+    th,
+    td {
+      height: $header-fixed-table-line-height;
+      line-height: $header-fixed-table-line-height;
+      padding: 0;
+    }
+
+    th {
+      background-color: #dcefff;
+    }
+  }
+
+  .table-body {
+    height: ($header-fixed-table-line-height + 1) * 6;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    tr:first-child {
+      border-top: none;
+    }
+  }
+}

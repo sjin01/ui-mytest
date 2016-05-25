@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>中钢信</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/steelworks-and-operation-end/base.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/steelworks-and-operation-end/modules/base-settings.css">
+</head>
+
+<body>
+
+<div class="header"></div>
+
+<div class="body">
+    <div class="container-24">
+
+        <div class="grid-3 no-padding">
+            <div class="slider"></div>
+        </div>
+
+        <div id="main" class="grid-21">
+
+            <div class="tabs"></div>
+
+            <div class="setting-group form-horizontal">
+                <div class="setting">
+                    <div class="title"><i class="icon icon-setting-item"></i><label>默认挂单比例</label></div>
+                    <div class="form-group content">
+                        <label class="col-sm-2">挂单比例：</label>
+
+                        <div class="col-sm-2 input-group">
+                            <input type="text" class="percent form-control">
+                            <span class="input-group-addon">%</span>
+                        </div>
+                        <div class="col-sm-2 col-sm-offset-1">
+                            <button type="button" class="btn btn-common no-radius">修改</button>
+                            <button type="button" class="btn btn-primary no-radius">保存</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="setting">
+                    <div class="title"><i class="icon icon-setting-item"></i><label>默认挂单比例</label></div>
+                    <div class="form-group content">
+                        <label class="col-sm-2"><label>每日定时挂单时间：</label></label>
+
+                        <div class="col-sm-4 no-padding date-area">
+                            <input type="text" class="form-control" id="openFrom" placeholder="挂单开始">
+                            <label>-</label>
+                            <input type="text" class="form-control" id="openTo" placeholder="挂单结束">
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="checkbox" class="jqSwitch" id="openTime" name="openTime" value="cb1">
+                            <button class="btn btn-primary btn-sm" id="state">改变checked</button>
+                            <input type="checkbox" class="jqSwitch" id="readonlyCheckbox" value="cb2" readonly checked>
+                            <button class="btn btn-primary btn-sm" id="readonly">改变readonly</button>
+                            <input type="checkbox" class="jqSwitch" id="disabledCheckbox" value="cb3" disabled>
+                            <button class="btn btn-primary btn-sm" id="disabled">改变disabled</button>
+                            <input type="checkbox" class="blueSwitch" id="" value="cb4">
+                            <button class="btn btn-primary btn-sm" id="color"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="setting">
+                    <div class="title"><i class="icon icon-setting-item"></i><label>默认挂单比例</label></div>
+                    <div class="form-group content">
+                        <label class="col-sm-2"><label>每日定时撤单时间：</label></label>
+
+                        <div class="col-sm-4 no-padding date-area">
+                            <input type="text" class="form-control" id="closeFrom" placeholder="撤单开始">
+                            <label>-</label>
+                            <input type="text" class="form-control" id="closeTo" placeholder="撤单结束">
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="checkbox" class="jqSwitch" id="closeTime" name="closeTime" value="cb4" checked>
+                        </div>
+                    </div>
+                </div>
+                <div class="setting default-update-setting">
+                    <div class="title"><i class="icon icon-setting-item"></i><label>挂单资源更新设置</label></div>
+                    <div class="form-group content">
+                        <label>可售库存更新时，挂单资源更新逻辑：</label>
+                    </div>
+                    <div class="form-group content">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> 参考挂单比例，更新挂单资源
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group content">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> 可售库存>=挂单库存时，不更新；可售库存<=挂单库存时，挂单库存=可售库存
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group content">
+                        <button type="button" class="btn btn-primary no-radius">保存更新设置</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer"></div>
+
+<script src="../../../js/libs/require.js"></script>
+<script src="../../../js/base.js"></script>
+<script>
+    require(['jquery', 'tplUtil', 'text!../template/modules/base.rac', 'general', 'pikadaytime', 'jqSwitch'], function ($, TplUtil, BaseTpl, General) {
+        var modules = [
+            {name: '资源管理', selected: true},
+            {name: '交易管理'},
+            {name: '渠道管理'},
+            {name: '定价管理'}
+        ];
+
+        TplUtil.loadTpl({
+            el: '.header',
+            template: $(BaseTpl).filter('#header-content').html(),
+            data: {
+                logoText: '华伟薄板',
+                modules: modules
+            }
+        });
+
+        TplUtil.loadTpl({
+            el: '.footer',
+            template: $(BaseTpl).filter('#footer-content').html()
+        });
+
+        var leftModules = [
+            {name: '可售资源', className: 'icon-shopping-cart', link: '../resource-manage/resourceOrder.html'},
+            {name: '挂单资源', className: 'icon-order', link: '../resource-manage/resourceOnSale.html'},
+            {name: '资源设置', className: 'icon-settings', link: '../settings-manage/baseSettings.html', selected: true}
+        ];
+
+        TplUtil.loadTpl({
+            el: '.slider',
+            template: $(BaseTpl).filter('#slider-content').html(),
+            data: { leftModules: leftModules }
+        });
+
+        var tabModules = [
+            {name: '基本设置', selected: true}
+        ];
+
+        TplUtil.loadTpl({
+            el: '.tabs',
+            template: $(BaseTpl).filter('#tabs-content').html(),
+            data: { tabModules: tabModules }
+        });
+
+        // initiate switch component
+        $('.jqSwitch').jqSwitch();
+
+        $('.jqSwitch').each(function() {
+            var $this = $(this);
+            /*$this.click(function() {
+                alert($this.prop('checked'));
+                alert($this.val());
+            })*/
+        });
+
+        $('.blueSwitch').jqSwitch({
+            onText: '已开',    // default 是
+            offText: '已关',   // default 否
+            theme: 'blue',    // default green
+            hasRadius: false
+        });
+
+        $('#state').click(function() {
+            console.dir($('#openTime'));
+            $('#openTime').trigger('toggleState');
+        });
+
+        $('#readonly').click(function() {
+            console.dir($('#readonlyCheckbox'));
+           $('#readonlyCheckbox').trigger('toggleReadonly');
+        });
+
+        $('#disabled').click(function() {
+            $('#disabledCheckbox').trigger('toggleDisabled');
+        });
+
+        /*
+         * defalut settings
+         * onlyShowTime: false,
+         * showTime: true,
+         * showSeconds: false,
+         * use24hour: true,
+         */
+        var $openFrom = $('#openFrom').pikaday({
+            onlyShowTime: true
+        }),
+        $openTo = $('#openTo').pikaday({
+            onlyShowTime: true
+        }),
+        $closeFrom = $('#closeFrom').pikaday(),
+        $closeTo = $('#closeTo').pikaday();
+
+        General.bindDateRange('#openFrom', '#openTo');
+        General.bindDateRange('#closeFrom', '#closeTo');
+    });
+
+</script>
+</body>
+</html>

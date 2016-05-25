@@ -1,0 +1,9 @@
+extends ../dist-resource-layout
+block subStyles
+    block style
+block side-modules
+    .tabs
+        each tab in distTops[0].sides[1].tabs
+            span.grid-3
+                a(href=tab.link) #{tab.name}
+    block content

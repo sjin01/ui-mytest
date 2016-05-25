@@ -1,0 +1,64 @@
+@import "../partials/variables";
+
+.setting-group {
+  padding: 0 1em;
+}
+
+.setting-group > .setting {
+  padding: 2em 1em 1em 1em;
+  border-top: 1px solid $gray-medium;
+
+  .title {
+    padding: 1em 0;
+
+    > .icon {
+      margin-right: 1em;
+    }
+
+    > label {
+      font-size: 1.3em;
+      font-weight: bold;
+    }
+  }
+  .content {
+    padding: 0 28px;
+    line-height: 2.5;
+
+    .input-group {
+      float: left;
+    }
+
+    input[type="checkbox"] {
+      top: 1em;
+    }
+
+    > .date-area {
+
+      > input.form-control {
+        display: inline-block;
+        width: 8em;
+      }
+
+      > label {
+        color: #ccc;
+      }
+    }
+  }
+}
+.setting-group > .setting:first-child {
+  border: none;
+}
+.setting-group > .default-update-setting {
+  .content {
+    padding: 0 0 0 40px;
+    margin-bottom: 6px;
+    div {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    button {
+      margin-top: 1.5em;
+      margin-bottom: 1.5em;
+    }
+  }
+}

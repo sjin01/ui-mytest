@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<title>中钢信</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/steelworks-and-operation-end/base.css">
+    <link rel="stylesheet" type="text/css" href="../../css/steelworks-and-operation-end/modules/trading-manage.css">
+</head>
+<body>
+	<div class="header">
+		<div class="container-24 nav">
+			<span class="grid-4 logo">中钢信</span>
+			<span class="grid-2"><a href="#">资源管理</a></span>
+			<span class="grid-2 selected"><a href="#">交易管理</a></span>
+			<span class="grid-2"><a href="#">渠道管理</a></span>
+			<span class="grid-2"><a href="#">定价管理</a></span>
+			<span class="grid-2"><a href="#">统计分析</a></span>
+			<span class="grid-2"><a href="#">设置中心</a></span>
+			<span class="grid-2 push-4 user personal-menu-root">
+				<i class="icon icon-user mgr-5"></i>戴永明<i class="caret mgl-5"></i>
+                <ul class="personal-menu list-unstyled">
+                    <li><a href="#">修改密码</a></li>
+                    <li><a href="#">个人信息</a></li>
+                </ul>
+			</span>
+			<span class="grid-2 push-4 logoff">
+                <i class="glyphicon glyphicon-off mgr-5"></i><a href="#">注销</a>
+            </span>
+		</div>
+	</div>
+
+	<div class="body">
+		<div class="container-24">
+			<div class="grid-4">
+                <div class="slider">
+                    <div class="slider-switch">|||</div>
+                    <ul class="list-unstyled">
+                        <li class="icon-shopping-cart selected"><i class="icon"></i>现货采购</li>
+                    </ul>
+                </div>
+			</div>
+			
+			<div id="main" class="grid-20">
+				<div class="tabs">
+					<span class="grid-3 selected">现货订单</span>
+				</div>
+
+                <form class="search-form search-in-stock form-inline">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="form-group col-md-3">
+                                <label for="">品名：</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="">材质：</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="">钢厂：</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="">仓库：</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-3">
+                                <label for="">供应商：</label>
+                                <select class="form-control">
+                                    <option>全部</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-3 thickness">
+                                <label for="">厚度/直径：</label>
+                                <input type="text" class="form-control">
+                                <select class="form-control">
+                                    <option><=</option>
+                                </select>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group col-md-4 zone">
+                                <label for="">交货地：</label>
+                                <select class="form-control">
+                                    <option>不限省份</option>
+                                </select>
+                                <select class="form-control">
+                                    <option>不限城市</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-2 form-button-group">
+                                <button type="button" class="btn btn-form-clear">清空</button>
+                                <button type="button" class="btn btn-form-search">查询</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-3 width">
+                                <label for="">宽度：</label>
+                                <input type="text" class="form-control">
+                                <select class="form-control">
+                                    <option><=</option>
+                                </select>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group col-md-3 length">
+                                <label for="">长度：</label>
+                                <input type="text" class="form-control">
+                                <select class="form-control">
+                                    <option><=</option>
+                                </select>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group col-md-4 spec-search">
+                                <label for="">规格模糊查询：</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-link btn-toggle">
+                        收起<span class="faicon faicon-angle-up mgl-5"></span>
+                    </button>
+                </form>
+
+				<div class="table-block">
+					<div class="table-top">
+					    <div>
+					    	<label class="mgl-10">
+                                <i class="faicon faicon-search mgr-10"></i>
+                                查询到<em class="hightlight-orange">454</em>条订单，
+                                共计<em class="hightlight-orange">54</em>件<em class="hightlight-orange">23546</em>吨，
+                                <em class="hightlight-orange">100000</em>元
+                            </label>
+                            <span id="button-group">
+                                <button type="button" class="btn btn-table-operation">加入采购单</button>
+						    	<button type="button" class="btn btn-table-operation">
+                                    查看采购单<span class="badge">6</span>
+                                </button>
+					    	</span>
+					    </div>
+					</div>
+
+					<div class="table-center">
+						<table class="in-stock-table">
+                            <tr class="title">
+                                <th width="5%"><input type="checkbox"></th>
+                                <th width="25%">货物信息<span class="faicon faicon-sort mgl-5"></span></th>
+                                <th width="">仓库<span class="faicon faicon-sort mgl-5"></span></th>
+                                <th width="">交货地<span class="faicon faicon-sort mgl-5"></span></th>
+                                <th width="">挂单量<span class="faicon faicon-sort mgl-5"></span></th>
+                                <th width="">件重<span class="faicon faicon-sort mgl-5"></span></th>
+                                <th width="">单吨售价<span class="faicon faicon-sort mgl-5"></span></th>
+                                <th width="10%">资源备注</th>
+                                <th width="">操作</th>
+                            </tr>
+							<tr class="odd selected">
+                                <td><input type="checkbox"></td>
+                                <td>螺纹钢
+                                    HRB400
+                                    16*9
+                                    华伟
+                                    理计
+                                </td>
+                                <td>铁四局库（上海）</td>
+                                <td>张家港</td>
+                                <td>256.800 吨</td>
+                                <td>2.568</td>
+                                <td>2100<span class="faicon faicon-signal mgl-5"></span></td>
+                                <td class="remarks" title="锈蚀，低价出售，数量不多，欲购从速">锈蚀，低价出售，数量不多，欲购从速</td>
+								<td>
+                                    <button type="button" class="btn btn-link">采购</button>
+                                </td>
+							</tr>
+                            <tr class="even">
+                                <td><input type="checkbox"></td>
+                                <td>螺纹钢
+                                    HRB400
+                                    16*9
+                                    华伟
+                                    理计
+                                </td>
+                                <td>铁四局库（上海）</td>
+                                <td>张家港</td>
+                                <td>256.800 吨</td>
+                                <td>2.568</td>
+                                <td>2100<span class="faicon faicon-signal mgl-5"></span></td>
+                                <td>呵呵</td>
+                                <td>
+                                    <button type="button" class="btn btn-link orange-deep">已选</button>
+                                </td>
+                            </tr>
+						</table>
+					</div>
+					<div class="table-bottom"></div>
+				</div>
+			</div>
+		</div>
+		<div class="body-footer"></div>
+	</div>
+	<div class="footer">
+		<div class="container-24"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,218 @@
+extends deal-settings-layout
+block style
+
+block content
+
+    .table-block
+        .table-top
+            div
+                label.mgl-10 常规资源设置
+                span.button-group
+                    a(href="javascript:void(0)").btn.btn-table-operation 新增
+        .table-center.min-height-325a
+            table
+                tbody
+                    tr.title
+                        th(width="10%") 钢厂
+                        th(width="10%") 品名
+                        th(width="10%") 材质
+                        th(width="30%") 规格
+                        th(width="25%") 其他
+                        th(width="15%") 操作
+                    each item,index in [{"steel":"华伟","brand":"普板","text":"Q235B（国标）","spec":"【厚度】6,8,10,12,14,16,18,20,22,24,26,28【宽度】1800,2000,2200；【长度】不可选；","other":"品名 计量方式】二切 磅计，四切理计，四毛 磅计；"},{"steel":"华伟","brand":"普板","text":"Q235B（国标）","spec":"【厚度】6,8,10,12,14,16,18,20,22,24,26,28【宽度】1800,2000,2200；【长度】不可选；","other":"品名 计量方式】二切 磅计，四切理计，四毛 磅计；"},{"steel":"华伟","brand":"普板","text":"Q235B（国标）","spec":"【厚度】6,8,10,12,14,16,18,20,22,24,26,28【宽度】1800,2000,2200；【长度】不可选；","other":"品名 计量方式】二切 磅计，四切理计，四毛 磅计；"},{"steel":"华伟","brand":"普板","text":"Q235B（国标）","spec":"【厚度】6,8,10,12,14,16,18,20,22,24,26,28【宽度】1800,2000,2200；【长度】不可选；","other":"品名 计量方式】二切 磅计，四切理计，四毛 磅计；"}]
+                        tr(class=index % 2 == 0 ? "even" : "odd")
+                            td=item.steel
+                            td=item.brand
+                            td=item.text
+                            td=item.spec
+                            td=item.other
+                            td
+                                button(type="button").btn.btn-link 修改
+                                button(type="button").btn.btn-link 删除
+
+    .table-block.mgt-20
+        .table-top
+            div
+                label.mgl-10 定制资源设置
+                span.button-group
+                    a(href="javascript:void(0)").btn.btn-table-operation 新增
+        .table-center.min-height-325a
+            table
+                tbody
+                    tr.title
+                        th(width="10%") 钢厂
+                        th(width="10%") 品名
+                        th(width="10%") 材质
+                        th(width="30%") 规格
+                        th(width="25%") 其他
+                        th(width="15%") 操作
+                    each item,index in [{"steel":"华伟","brand":"普板","text":"Q235B（国标）","spec":"【厚度】6,8,10,12,14,16,18,20,22,24,26,28【宽度】1800,2000,2200；【长度】不可选；","other":"品名 计量方式】二切 磅计，四切理计，四毛 磅计；"},{"steel":"华伟","brand":"普板","text":"Q235B（国标）","spec":"【厚度】6,8,10,12,14,16,18,20,22,24,26,28【宽度】1800,2000,2200；【长度】不可选；","other":"品名 计量方式】二切 磅计，四切理计，四毛 磅计；"},{"steel":"华伟","brand":"普板","text":"Q235B（国标）","spec":"【厚度】6,8,10,12,14,16,18,20,22,24,26,28【宽度】1800,2000,2200；【长度】不可选；","other":"品名 计量方式】二切 磅计，四切理计，四毛 磅计；"},{"steel":"华伟","brand":"普板","text":"Q235B（国标）","spec":"【厚度】6,8,10,12,14,16,18,20,22,24,26,28【宽度】1800,2000,2200；【长度】不可选；","other":"品名 计量方式】二切 磅计，四切理计，四毛 磅计；"}]
+                        tr(class=index % 2 == 0 ? "even" : "odd")
+                            td=item.steel
+                            td=item.brand
+                            td=item.text
+                            td=item.spec
+                            td=item.other
+                            td
+                                button(type="button").btn.btn-link 修改
+                                button(type="button").btn.btn-link 删除
+
+    .container-fluid.spot-trading-set-container.form-inline
+
+        .row.row-title
+            .title.pdl-20.col-xs-6.font-size-14 预付比例
+            .col-xs-6
+                span.float-right
+                    a(href="javascript:void(0)").btn.btn-edit 修改
+        .row
+            .col-md-2.text-right.line-height-32
+                label 可选项设置：
+            .col-md-10
+                input(type="text").form-control
+                span.mgl-5 % （多个值请用逗号间隔，例：20，30）
+        .row
+            .col-md-2.text-right.line-height-32
+                label 默认项设置：
+            .col-md-10
+                select.form-control
+                    option(value="") 请选择
+
+        .row.row-title
+            .title.pdl-20.col-xs-6.font-size-14 起定量
+            .col-xs-6
+                span.float-right
+                    a(href="javascript:void(0)").btn.btn-edit 修改
+        .row
+            .col-md-3.line-height-32
+                input(type="checkbox").form-control.mgl-65
+                label 单条资源起订量（吨）：
+            .col-md-9
+                input(type="text", placeholder="限正整数").form-control
+        .row
+            .col-md-3.line-height-32
+                input(type="checkbox").form-control.mgl-65
+                label 订单起订量（吨）：
+            .col-md-9
+                input(type="text", placeholder="限正整数").form-control
+
+
+        .row.row-title
+            .title.pdl-20.col-xs-6.font-size-14 交货期
+                span （T为订单确认日期）
+            .col-xs-6
+                span.float-right
+                    a(href="javascript:void(0)").btn.btn-edit 修改
+        .row
+            .col-md-2.text-right.line-height-32
+                label 可选项设置：
+            .col-md-10
+                ul.no-padding
+                    each item in ['1','2','3','4','5','6','7']
+                        li
+                            input(type="checkbox")
+                            | T+#{item}天
+        .row
+            .col-md-2.text-right.line-height-32
+                label 默认项设置：
+            .col-md-10
+                select.form-control
+                    option(value="") 请选择
+                span.mgl-5 天
+
+
+
+    script(type='text/javascript').
+        require(['jquery', 'popup'], function ($, Popup) {
+            locate('交易管理', '交易设置', '订货交易设置', '123123');
+
+            var info = new Popup({
+                title: '新增常规资源设置项',
+                width: '400px',
+                height: '700px',
+                template: '#deal-set-modal'
+            });
+        });
+
+
+    // 新增调价规则 modal
+    script#deal-set-modal(type="text/ractive")
+        .deal-modal.pdl-20.pdr-20.form-inline
+
+            .row
+                .col-xs-12
+                    label 钢厂：
+                    select.form-control.no-radius
+                        option(value="") 请选择
+            .row
+                .col-xs-12
+                    label 品名：
+                    select.form-control.no-radius
+                        option(value="") 请选择
+            .row
+                .col-xs-12
+                    label 材质：
+                    select.form-control.no-radius
+                        option(value="") 请选择
+
+            .set-box
+                label 切边：
+                .pdl-10.pdr-10
+                    .row
+                        .col-xs-4
+                            input(type="checkbox")
+                            | 二切
+                        .col-xs-8
+                            label.font-size-12 计量方式：
+                            select.form-control.no-radius
+                    .row
+                        .col-xs-4
+                            input(type="checkbox")
+                            | 四切
+                        .col-xs-8
+                            label.font-size-12 计量方式：
+                            select.form-control.no-radius
+                    .row
+                        .col-xs-4
+                            input(type="checkbox")
+                            | 四毛
+                        .col-xs-8
+                            label.font-size-12 计量方式：
+                            select.form-control.no-radius
+
+            .row
+                .col-xs-12
+                    label 表面：
+                    select.form-control.no-radius
+                        option(value="") 请选择
+
+            .set-box
+                label 规格：
+                .pdl-10.pdr-10
+                    .row
+                        .col-xs-12
+                            input(type="checkbox")
+                            | 厚度
+                            input(type="text").form-control.no-radius.mgl-5
+                            span &nbsp;-&nbsp;
+                            input(type="text").form-control.no-radius
+                    .row
+                        .col-xs-12
+                            input(type="checkbox")
+                            | 宽度
+                            input(type="text").form-control.no-radius.mgl-5
+                            span &nbsp;-&nbsp;
+                            input(type="text").form-control.no-radius
+                    .row
+                        .col-xs-12
+                            input(type="checkbox")
+                            | 长度
+                            input(type="text").form-control.no-radius.mgl-5
+                            span &nbsp;-&nbsp;
+                            input(type="text").form-control.no-radius
+        .buttons-foot-bar
+            button.btn.btn-form-search.no-radius(type="button") 保存
+            button.btn.btn-cancel.no-radius(type="button") 取消
+
+
+
+

@@ -1,0 +1,12 @@
+extends ../base-data-layout
+
+block subScripts
+    link(href=relativeRoot + "css/components/lightbox.css", rel="stylesheet", type="text/css")
+
+block side-modules
+    ul.feature_nav
+        each tab in backstageTops[0].sides[2].tabs
+            li
+                a(href=tab.link) #{tab.name}
+    .main_content
+        block content

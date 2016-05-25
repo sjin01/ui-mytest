@@ -1,0 +1,30 @@
+extends ../layouts/supply-operation-layout
+
+block styles
+    link(href=relativeRoot + "css/steelwork-operation/modules/price-manage.css", rel="stylesheet", type="text/css")
+    block subStyles
+
+block scripts
+    block subScripts
+
+block stage
+    img.mgr-5(src=relativeRoot + "images/icon/logo-main.png")
+    |   华伟薄板
+
+block top-modules
+    .grid-3.no-padding
+        .slider
+            .slider-switch |||
+            ul.list-unstyled
+                each side in supplyTops[3].sides
+                    li(class=side.className)
+                        a(href=side.link)
+                            i.icon
+                            span.words
+                                span.faicon.faicon-caret-left.hidden
+                                span #{side.name}
+
+    #mian.grid-21
+        block side-modules
+
+

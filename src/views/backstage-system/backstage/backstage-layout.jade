@@ -1,0 +1,9 @@
+extends ../system-layout
+
+block side-modules
+    ul.feature_nav
+        each tab in backstageTops[3].sides[1].tabs
+            li
+                a(href=tab.link) #{tab.name}
+    .main_content
+        block content

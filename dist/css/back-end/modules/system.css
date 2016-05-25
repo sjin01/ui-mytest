@@ -1,0 +1,24 @@
+.privilege-configure-left,
+.privilege-configure-right {
+  margin: 10px 5px;
+  background-color: #fff;
+  border: 1px solid #bfbfbf;
+}
+
+.privilege-configure-left {
+  width: 35%;
+}
+
+.privilege-configure-right {
+  width: 63%;
+  padding: 1em 3em;
+}
+.privilege-configure-right > .row {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+.privilege-configure-right > .row > label {
+  text-align: right;
+  font-size: 14px;
+  font-weight: 400;
+}

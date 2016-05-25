@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>中钢信</title>
+    <link href="../../../css/steelwork-operation/base.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/steelwork-operation/modules/resource.css" rel="stylesheet" type="text/css">
+    <script src="../../../js/libs/require.js"></script>
+    <script src="../../../js/base.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <div class="container-24 nav"><span class="grid-3 logo"><img src="../../../images/icon/logo-main.png" class="mgr-5">  华伟薄板</span><span class="grid-2"><a href="">资源采购</a></span><span class="grid-2"><a>交易管理</a></span><span class="grid-2"><a>统计分析</a></span><span class="grid-2"><a>设置中心</a></span>
+        <div class="grid-4 pull-right"><span class="grid-12 user personal-menu-root"><i class="icon icon-user"></i><span title="华伟" class="remarks">华伟</span><i class="caret"></i>
+            <ul class="personal-menu list-unstyled">
+              <li><a id="passwd_edit">修改密码</a></li>
+            </ul></span><span class="grid-12 logoff"><a href="#logout"><i class="glyphicon glyphicon-off mgr-5"></i><span>注销</span></a></span><span class="faicon faicon-expand expand-btn"></span></div>
+      </div>
+    </div>
+    <div class="body">
+      <div class="container-24">
+        <div class="grid-3 no-padding">
+          <div class="slider">
+            <div class="slider-switch">|||</div>
+            <ul class="list-unstyled">
+              <li class="icon-buy-spot"><a><i class="icon"></i><span class="words"><span class="faicon faicon-caret-left hidden"></span><span>现货</span></span></a></li>
+              <li class="icon-buy-ordergoods"><a href=""><i class="icon"></i><span class="words"><span class="faicon faicon-caret-left hidden"></span><span>订货</span></span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div id="mian" class="grid-21">
+          <div class="tabs"><span class="grid-3"><a href="/html/dist-resource/dist-ordergoods/dist-ordergoods.html">订货采购</a></span>
+          </div>
+          <div class="ordergoods">
+            <div class="row">
+              <div class="col-xs-12">
+                <label class="col-md-1 star-before text-right no-padding">供应商：</label>
+                <div class="col-md-3">
+                  <select class="form-control no-radius"></select>
+                </div>
+                <div class="col-md-7"><span><i class="icon icon-warning mgr-5"></i>该供应商的订单起订量为Y吨。</span></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <label class="col-md-1 star-before text-right no-padding">今日基价：</label>
+                <div class="col-md-10">
+                  <ul class="no-padding">
+                    <li>
+                      <input type="radio">【华伟-普板】<span class="price">2000</span>元/吨
+                    </li>
+                    <li>
+                      <input type="radio">【华伟-螺纹钢】<span class="price">2001</span>元/吨
+                    </li>
+                    <li>
+                      <input type="radio">【华伟-螺纹钢】<span class="nullprice">暂无报价</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="row mgt-10">
+              <div class="col-xs-6">
+                <div class="sub-title">订货资源</div>
+              </div>
+            </div>
+            <div class="row mgt-10">
+              <div class="col-xs-12">
+                <div class="search-form form-inline">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="form-group col-md-3">
+                        <label class="star-before">品名：</label>
+                        <select class="form-control no-radius">
+                          <option>请选择</option>
+                        </select>
+                      </div>
+                      <div class="form-group col-md-3">
+                        <label class="star-before">切片：</label>
+                        <select class="form-control no-radius">
+                          <option>请选择</option>
+                        </select>
+                      </div>
+                      <div class="form-group col-md-3">
+                        <label class="star-before">表面：</label>
+                        <select class="form-control no-radius">
+                          <option>请选择</option>
+                        </select>
+                      </div>
+                      <div class="form-group col-md-3">
+                        <label class="star-before">材质：</label>
+                        <select class="form-control no-radius">
+                          <option>请选择</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="form-group col-md-3">
+                        <label class="star-before">厚度：</label>
+                        <select class="form-control no-radius custom">
+                          <option>请选择</option>
+                        </select>
+                        <input type="text" class="form-control no-radius custom">
+                      </div>
+                      <div class="form-group col-md-3">
+                        <label class="star-before">宽度：</label>
+                        <select class="form-control no-radius">
+                          <option>请选择</option>
+                        </select>
+                      </div>
+                      <div class="form-group col-md-3">
+                        <label class="star-before">长度：</label>
+                        <select class="form-control no-radius">
+                          <option>请选择</option>
+                        </select>
+                      </div>
+                      <div class="form-group col-md-3"><span class="price">2900</span>元/吨<a href="javascript:void(0)" class="btn btn-form-search"><i class="icon icon-add mgr-5"></i>新增</a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="table-block">
+              <div class="table-center">
+                <table>
+                  <tbody>
+                    <tr class="title">
+                      <th width="10%">品名</th>
+                      <th width="10%">材质</th>
+                      <th width="10%">规格</th>
+                      <th width="10%">钢厂</th>
+                      <th width="10%">计量方式</th>
+                      <th width="10%">订货单价（元/吨）</th>
+                      <th width="10%">采购量</th>
+                      <th width="10%">金额小计（元）</th>
+                      <th width="5%">操作</th>
+                    </tr>
+                    <tr class="even">
+                      <td>普板（四毛）</td>
+                      <td>Q235</td>
+                      <td>8*1231*L</td>
+                      <td>华伟</td>
+                      <td>理计</td>
+                      <td><span class="price">2900</span></td>
+                      <td>
+                        <input type="text" value="100" class="form-control no-radius">
+                      </td>
+                      <td><span class="price">29000</span></td>
+                      <td>
+                        <button type="button" class="btn btn-link">删除</button>
+                      </td>
+                    </tr>
+                    <tr class="odd">
+                      <td>普板（四毛）</td>
+                      <td>Q235</td>
+                      <td>8*1231*L</td>
+                      <td>华伟</td>
+                      <td>理计</td>
+                      <td><span class="price">2900</span></td>
+                      <td>
+                        <input type="text" value="100" class="form-control no-radius">
+                      </td>
+                      <td><span class="price">29000</span></td>
+                      <td>
+                        <button type="button" class="btn btn-link">删除</button>
+                      </td>
+                    </tr>
+                    <tr class="even">
+                      <td>普板（四毛）</td>
+                      <td>Q235</td>
+                      <td>8*1231*L</td>
+                      <td>华伟</td>
+                      <td>理计</td>
+                      <td><span class="price">2900</span></td>
+                      <td>
+                        <input type="text" value="100" class="form-control no-radius">
+                      </td>
+                      <td><span class="price">29000</span></td>
+                      <td>
+                        <button type="button" class="btn btn-link">删除</button>
+                      </td>
+                    </tr>
+                    <tr class="odd">
+                      <td>普板（四毛）</td>
+                      <td>Q235</td>
+                      <td>8*1231*L</td>
+                      <td>华伟</td>
+                      <td>理计</td>
+                      <td><span class="price">2900</span></td>
+                      <td>
+                        <input type="text" value="100" class="form-control no-radius">
+                      </td>
+                      <td><span class="price">29000</span></td>
+                      <td>
+                        <button type="button" class="btn btn-link">删除</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="buttons-foot-bar">
+              <button class="btn btn-form-search no-radius">填写订单</button>
+            </div>
+          </div>
+          <script type="text/javascript">
+            require(['jquery', 'popup'], function ($, Popup) {
+                locate('资源采购', '订货', '订货采购', '123123');
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="container-24 row">
+        <div><span>Copyright</span><span>©</span><span>中钢信 www.qyedi.com 沪ICP备13013915号-17</span></div>
+        <div><span class="phone">服务热线：0731-85891029（8:30-17:30）</span><span>在线咨询：</span><span><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=820218063&amp;site=qq&amp;menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:820218063:41" alt="点击这里给我发消息" title="点击这里给我发消息"></a></span></div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      require(['jquery'], function($) {
+          $(function () {
+              var adjustHeight = function () {
+                  var $main = $('#main');
+                  var $slider = $('.slider');
+                  if ($main[0] && $slider[0]) {
+                      $slider.css({
+                          'height': $main.css('height')
+                      });
+                  }
+              };
+              adjustHeight();
+              $(window).resize(adjustHeight);
+      
+              var toggleSlider = function () {
+                  $('#main').toggleClass('grid-21').toggleClass('grid-23');
+                  $('.slider-switch').parent().toggleClass('slider-collapse')
+                          .parent().toggleClass('grid-3').toggleClass('grid-1')
+                          .find('.faicon-caret-left').toggleClass('hidden');
+              };
+              var toggleHeaderAndBody = function () {
+                  $('.header').find('.container-24').toggleClass('no-max-width');
+                  $('.body').find('.container-24').toggleClass('no-max-width');
+                  $('.expand-btn').toggleClass('faicon-expand').toggleClass('faicon-compress');
+              };
+      
+              $('.slider-switch').on('click', function () {
+                  toggleSlider();
+              });
+              $('.expand-btn').click(function () {
+                  toggleHeaderAndBody();
+              });
+          });
+      });
+      
+      // 公共方法
+      function locate(topName, sideName, tabName) {
+          $('.nav').find('a').each(function () {
+              var a = this, $a = $(a), name = $a.text();
+              if (topName === $.trim(name)) {
+                  $a.parent().addClass('selected');
+              }
+          });
+      
+          $('.slider').find('a').each(function () {
+              var a = this, $a = $(a), name = $a.find('.words').text();
+              if (sideName === $.trim(name)) {
+                  $a.parent().addClass('selected');
+              }
+          });
+      
+          $('.tabs').find('a').each(function () {
+              var a = this, $a = $(a), name = $a.text();
+              if (tabName === $.trim(name)) {
+                  $a.parent().addClass('selected');
+              }
+          });
+      }
+    </script>
+  </body>
+</html>

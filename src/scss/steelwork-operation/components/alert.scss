@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+@import "../partials/variables";
+@import "../partials/mixins";
+
+.popup_content > .content-wrapper .content-bottom {
+  border: none;
+}
+
+.content-center-inner {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.btn-yes {
+  @include button-variant(white, $orange-deep, $orange-deep);
+}
+
+.btn-no {
+  @include button-variant(white, $gray-deep, $gray-deep);
+}

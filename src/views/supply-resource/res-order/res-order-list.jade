@@ -1,0 +1,201 @@
+extends res-order-layout
+
+block content
+    form#search-res.search-form.form-inline
+        .container-fluid
+            .row
+                .form-group.col-md-2
+                    label(for='') 来源：
+                    select.form-control
+                        option 全部
+                .form-group.col-md-2
+                    label(for='') 品类：
+                    select.form-control
+                        option 建材
+                .form-group.col-md-4.zone
+                    label(for='') 交货地：
+                    select.form-control
+                        option 不限省份
+                    select.form-control
+                        option 不限城市
+                .form-group.col-md-2
+                    label(for='') 仓库：
+                    input.form-control(type='text')
+                .form-group.col-md-2
+                    label(for='') 钢厂：
+                    input.form-control(type='text')
+            .row
+                .form-group.col-md-2
+                    label(for='') 品名：
+                    input.form-control(type='text')
+                .form-group.col-md-2
+                    label(for='') 材质：
+                    input.form-control(type='text')
+                .form-group.col-md-4.res-spec
+                    select.label.form-control
+                        option 直径
+                        option 规格1
+                        option 规格1
+                        option 规格1
+                        option 规格1
+                    input.form-control(type='text')
+                    select.content.form-control
+                        option
+                    input.form-control(type='text')
+                .form-group.col-md-2.checkbox
+                    label
+                        input#only(type='checkbox')
+                        |  只显示为挂单资源
+                .form-group.col-md-2.form-button-group
+                    button.btn.btn-form-clear(type='button') 清空
+                    button.btn.btn-form-search(type='button') 查询
+    .table-block
+        .table-top
+            div
+                label.mgl-10
+                    i.faicon.faicon-search.mgr-10
+                    |                             查询到
+                    em.hightlight-orange 454
+                    | 条资源，共计
+                    em.hightlight-orange 54
+                    | 件
+                    em.hightlight-orange 23546
+                    | 吨
+                span#button-group
+                    button.btn.btn-table-operation(type='button') 按模板调价
+                    a.btn.btn-table-operation.mgl-5(href='res-order-config.html') 统设
+                    button.btn.btn-table-operation(type='button') 撤单
+                    button.btn.btn-table-operation(type='button') 一键撤单
+        .table-center
+            table
+                tr.title
+                    th(width='5%')
+                        input.icheck(type='checkbox', value='0')
+                    th(width='10%') 品名
+                    th(width='10%') 材质
+                    th(width='5%') 规格
+                    th(width='10%') 钢厂
+                    th(width='10%') 仓库
+                    th(width='5%') 地区
+                    th(width='10%') 可售数量
+                    th(width='10%') 可售重量
+                    th(width='5%') 件重
+                    th(width='10%') 记重方式
+                    th(width='10%') 状态
+                tr.odd.selected
+                    td
+                        input(type='checkbox', value='1')
+                    td 螺纹钢
+                    td HRB400
+                    td 16*9
+                    td 湘钢
+                    td 铁四局库
+                    td 上海
+                    td 100
+                    td 256.800
+                    td 2.568
+                    td 理记
+                    td 已挂单
+                tr.even
+                    td
+                        input(type='checkbox', value='2')
+                    td 螺纹钢
+                    td HRB400
+                    td 16*9
+                    td 湘钢
+                    td 铁四局库
+                    td 上海
+                    td 100
+                    td 256.800
+                    td 2.568
+                    td 理记
+                    td 已挂单
+                tr.odd
+                    td
+                        input(type='radio', value='3', name='iradio')
+                    td 螺纹钢
+                    td HRB400
+                    td 16*9
+                    td 湘钢
+                    td 铁四局库
+                    td 上海
+                    td 100
+                    td 256.800
+                    td 2.568
+                    td 理记
+                    td 已挂单
+                tr.even
+                    td
+                        input(type='radio', value='4', name='iradio')
+                    td 螺纹钢
+                    td HRB400
+                    td 16*9
+                    td 湘钢
+                    td 铁四局库
+                    td 上海
+                    td 100
+                    td 256.800
+                    td 2.568
+                    td 理记
+                    td 已挂单
+                tr.odd
+                    td
+                        input(type='checkbox')
+                    td 螺纹钢
+                    td HRB400
+                    td 16*9
+                    td 湘钢
+                    td 铁四局库
+                    td 上海
+                    td 100
+                    td 256.800
+                    td 2.568
+                    td 理记
+                    td 已挂单
+                tr.even
+                    td
+                        input(type='checkbox')
+                    td 螺纹钢
+                    td HRB400
+                    td 16*9
+                    td 湘钢
+                    td 铁四局库
+                    td 上海
+                    td 100
+                    td 256.800
+                    td 2.568
+                    td 理记
+                    td 已挂单
+                tr.odd
+                    td
+                        input(type='checkbox')
+                    td 螺纹钢
+                    td HRB400
+                    td 16*9
+                    td 湘钢
+                    td 铁四局库
+                    td 上海
+                    td 100
+                    td 256.800
+                    td 2.568
+                    td 理记
+                    td 已挂单
+                tr.even
+                    td
+                        input(type='checkbox')
+                    td 螺纹钢
+                    td HRB400
+                    td 16*9
+                    td 湘钢
+                    td 铁四局库
+                    td 上海
+                    td 100
+                    td 256.800
+                    td 2.568
+                    td 理记
+                    td 已挂单
+        .table-bottom
+    script(type='text/javascript').
+        require(['jquery'], function ($) {
+            locate('资源管理', '挂单资源', '联销挂单资源');
+        });

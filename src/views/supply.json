@@ -1,0 +1,120 @@
+{
+  "supplyTops": [
+    {
+      "name": "资源管理",
+      "link": "/html/supply-resource/res-sale/res-sale-list.html",
+      "sides": [
+        {
+          "name": "可售资源",
+          "className": "icon-shopping-cart",
+          "link": "/html/supply-resource/res-sale/res-sale-list.html",
+          "tabs": [
+            {
+              "name": "可售资源库",
+              "link": "/html/supply-resource/res-sale/res-sale-list.html"
+            },
+            {
+              "name": "待审资源",
+              "link": "/html/supply-resource/res-sale/res-audit-list.html"
+            },
+            {
+              "name": "批量导入",
+              "link": "/html/supply-resource/res-sale/res-import.html"
+            }
+          ]
+        },
+        {
+          "name": "挂单资源",
+          "className": "icon-order",
+          "link": "/html/supply-resource/res-order/res-order-list.html",
+          "tabs": [
+            {
+              "name": "联销挂单资源",
+              "link": "/html/supply-resource/res-order/res-order-list.html"
+            }
+          ]
+        },
+        {
+          "name": "资源设置",
+          "className": "icon-settings",
+          "link": "/html/supply-resource/res-config/res-config.html",
+          "tabs": [
+            {
+              "name": "基本设置",
+              "link": "/html/supply-resource/res-config/res-config.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "交易管理",
+      "link" : "/html/supply-deal/settings/deal-settings.html",
+      "sides": [
+        {"name": "订单管理", "className":"icon-deal-order"},
+        {"name": "退货管理", "className":"icon-deal-return"},
+        {"name": "调整单管理", "className":"icon-deal-adjust"},
+        {
+          "name": "交易设置",
+          "className":"icon-deal-set",
+          "link": "/html/supply-deal/settings/deal-settings.html",
+          "tabs":[
+            {"name":"现货交易设置"},
+            {"name":"订货交易设置", "link":"/html/supply-deal/settings/deal-settings.html"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "渠道管理",
+      "link": "/html/supply-channel/channel-authorization/channel-authorization.html",
+      "sides": [
+        {
+          "name": "渠道授权",
+          "className": "icon-sale-authorization",
+          "link": "/html/supply-channel/channel-authorization/channel-authorization.html",
+          "tabs": [
+            {
+              "name": "渠道授权",
+              "link": "/html/supply-channel/channel-authorization/channel-authorization.html"
+            },
+            {
+              "name": "销售设置",
+              "link": "/html/supply-channel/channel-authorization/sale-config.html"
+            }
+          ]
+        },
+        {
+          "name": "渠道分级",
+          "className": "icon-channel-price-makeup",
+          "link": "/html/supply-channel/channel-classification/channel-classification.html",
+          "tabs": [
+            {
+              "name": "渠道分级",
+              "link": "/html/supply-channel/channel-classification/channel-classification.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "定价管理",
+      "link": "/html/supply-price/quotation/quotation-add.html",
+      "sides": [
+        {
+          "name": "资源定价",
+          "className": "icon-resource-price",
+          "link": "/html/supply-price/quotation/quotation-add.html",
+          "tabs": [
+            {"name":"资源定价", "link": "/html/supply-price/quotation/quotation-add.html"}
+          ]
+        },
+        {"name": "支付调价", "className": "icon-pay-price-makeup"},
+        {"name": "渠道调价", "className": "icon-channel-price-makeup"}
+      ]
+    },
+    {
+      "name": "设置中心"
+    }
+  ]
+}

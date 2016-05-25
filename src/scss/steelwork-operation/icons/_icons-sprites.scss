@@ -1,0 +1,15 @@
+@import "compass/utilities/sprites";
+
+$icon-layout: smart;
+$icon-spacing: 4px;
+$icon-sprite-dimensions: true;  // auto set size of sprite
+
+@import "icon/*.png";
+@include all-icon-sprites;
+
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: .2em;
+}
+

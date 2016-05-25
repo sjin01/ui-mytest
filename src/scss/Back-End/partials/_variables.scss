@@ -1,0 +1,27 @@
+
+//** File name for all font files.
+$icon-font-name: "glyphicons-halflings-regular" !default;
+
+//** Element ID within SVG icon file.
+$icon-font-svg-id: "glyphicons_halflingsregular" !default;
+
+$icon-font-path: "../../../fonts/glyphicons/" !default;
+
+// Number of columns in the grid.
+$grid-columns: 12 !default;
+
+$grid-gutter-width: 30px;
+
+// colors
+
+$blue: #0a83bf;
+$blue-hover: darken($blue, 10%);
+
+$red: #ea5a5a;
+$red-hover: darken($red, 10%);
+
+$gray: #bfbfbf;
+$gray-hover: darken($gray, 10%);
+
+$gray-dark: #727171;
+$gray-dark-hover: darken($gray-dark, 10%);

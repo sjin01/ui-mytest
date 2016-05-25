@@ -1,0 +1,40 @@
+.i_user, .i_logout, .arrow_down {
+  display: block;
+  background: image-url("workspace_bg.png") no-repeat;
+}
+
+.i_user {
+  float: left;
+  width: 17px;
+  height: 17px;
+  background-position: 0 0;
+  margin-top: 22px;
+  margin-right: 5px;
+}
+
+.user_name,
+.logout {
+  float: left;
+  display: block;
+  cursor: pointer;
+  max-width: 56px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.i_logout {
+  float: left;
+  width: 18px;
+  height: 16px;
+  margin-top: 23px;
+  margin-right: 5px;
+  background-position: 0 -24px;
+}
+
+.arrow_down {
+  width: 10px;
+  height: 10px;
+  display: block;
+  background-position: 0 -48px;
+}

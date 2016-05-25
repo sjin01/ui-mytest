@@ -1,0 +1,105 @@
+@charset "utf-8";
+
+@import "compass/css3";
+@import "../steelwork-operation/partials/variables";
+
+$switch-width: 72px;
+$switch-height: 32px;
+$switch-gap: 3px;
+$switch-label-width: ($switch-width - ($switch-gap * 2)) / 2;
+$switch-label-height: $switch-height - ($switch-gap * 2);
+
+$on-green: #38c44d;
+$on-green-hover: lighten($on-green, 5%);
+$on-green-active: darken($on-green, 5%);
+
+$on-blue: $blue-deep;
+$on-blue-hover: lighten($on-blue, 5%);
+$on-blue-active: darken($on-blue, 5%);
+
+$off: $gray-deep;
+$off-hover: lighten($off, 5%);
+$off-active: darken($off, 5%);
+
+@mixin switch-colors($normal, $hover: false, $active: false, $visited: false, $focus: false) {
+  color: $normal;
+  background-color: $normal;
+  @if $visited {
+    &:visited { background-color: $visited; }
+  }
+  @if $focus {
+    &:focus { background-color: $focus; }
+  }
+  @if $hover {
+    &:hover { background-color: $hover; }
+  }
+  @if $active {
+    &:active { background-color: $active; }
+  }
+}
+
+.jqSwitch-wrapper {
+  @include transition(all .1s linear);
+  display: inline-block;
+  position: relative;
+  width: $switch-width;
+  height: $switch-height;
+  margin: 0;
+  border-radius: 50px;
+  cursor: pointer;
+
+  input {
+    opacity: 0;
+    filter:alpha(opacity=0);
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.wrapper-on-green {
+  @include switch-colors($on-green, $on-green-hover, $on-green-active);
+}
+
+.wrapper-on-blue {
+  @include switch-colors($on-blue, $on-blue-hover, $on-blue-active);
+}
+
+.wrapper-off-green,
+.wrapper-off-blue {
+  @include switch-colors($off, $off-hover, $off-active);
+}
+
+.jqSwitch-wrapper-disabled,
+.jqSwitch-wrapper-readonly {
+  cursor: not-allowed;
+  opacity: .5;
+
+  .jqSwitch-state {
+    opacity: .5;
+  }
+}
+
+.jqSwitch-state {
+  @include transition(all .1s linear);
+  display: inline-block;
+  position: absolute;
+  top: $switch-gap;
+  width: $switch-label-width;
+  height: $switch-label-height;
+  line-height: $switch-label-height;
+  text-align: center;
+  border-radius: 50px;
+  background-color: #fff;
+}
+
+.state-on {
+  right: $switch-gap;
+}
+
+.state-off {
+  right: $switch-width - $switch-label-width - $switch-gap;
+}
+
+

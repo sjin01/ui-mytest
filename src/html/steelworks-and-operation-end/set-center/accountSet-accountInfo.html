@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>中钢信</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/steelworks-and-operation-end/base.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/steelworks-and-operation-end/modules/account-settings.css">
+</head>
+
+<body>
+
+<div class="header"></div>
+
+<div class="body">
+    <div class="container-24">
+
+        <div class="grid-3 no-padding">
+            <div class="slider"></div>
+        </div>
+
+        <div id="main" class="grid-21">
+
+            <div class="tabs"></div>
+
+            <div class="account-info-container container-fluid">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer"></div>
+
+<script src="../../../js/libs/require.js"></script>
+<script src="../../../js/base.js"></script>
+<script>
+    require(['jquery', 'tplUtil', 'text!../template/modules/base.rac'], function ($, TplUtil, BaseTpl) {
+        var modules = [
+            {name: '资源管理'},
+            {name: '交易管理'},
+            {name: '渠道管理'},
+            {name: '定价管理'},
+            {name: '设置中心', selected: true}
+        ];
+
+        TplUtil.loadTpl({
+            el: '.header',
+            template: $(BaseTpl).filter('#header-content').html(),
+            data: {
+                logoText: '华伟薄板',
+                modules: modules
+            }
+        });
+
+        TplUtil.loadTpl({
+            el: '.footer',
+            template: $(BaseTpl).filter('#footer-content').html()
+        });
+
+        var leftModules = [
+            {name: '账户设置', className: 'icon-account-setting', link: 'accountSettingInfo.html', selected: true},
+            {name: '企业设置', className: 'icon-enterprise-setting', link: 'enterpriseSettingInfo.html'},
+            {name: '消息设置', className: 'icon-message-setting', link: ''}
+        ];
+
+        TplUtil.loadTpl({
+            el: '.slider',
+            template: $(BaseTpl).filter('#slider-content').html(),
+            data: { leftModules: leftModules }
+        });
+
+        var tabModules = [
+            {name: '账户信息', link: 'accountSettingInfo.html', selected: true},
+            {name: '账户安全', link: 'accountSettingSecurity.html'}
+        ];
+
+        TplUtil.loadTpl({
+            el: '.tabs',
+            template: $(BaseTpl).filter('#tabs-content').html(),
+            data: { tabModules: tabModules }
+        });
+
+        // 加载修改界面
+        function loadModifyInterface () {
+            var mInterface = TplUtil.loadTpl({
+                el: '.account-info-container',
+                template: '#account-info-modify'
+            });
+            mInterface.on('modify', function () {
+                mInterface.teardown();
+                loadSaveInterface();
+            });
+
+        }
+
+        // 加载保存界面
+        function loadSaveInterface () {
+            var sInterface = TplUtil.loadTpl({
+                el: '.account-info-container',
+                template: '#account-info-save'
+            });
+            sInterface.on('save', function () {
+                sInterface.teardown();
+                loadModifyInterface();
+            });
+        }
+
+        loadModifyInterface();
+
+    });
+
+</script>
+
+<script id="account-info-modify" type="text/ractive">
+<div class="row">
+    <label class="col-md-1">会员企业：</label>
+    <span class="col-md-3">江苏华伟特种薄板有限公司</span>
+</div>
+<div class="row">
+    <label class="col-md-1">账号类型：</label>
+    <span class="col-md-3">企业账号管理</span>
+</div>
+<div class="row">
+    <label class="col-md-1">登录名：</label>
+    <span class="col-md-3">stella</span>
+</div>
+<div class="row">
+    <label class="col-md-1">姓名：</label>
+    <span class="col-md-3">邓姗姗</span>
+</div>
+<div class="row">
+    <label class="col-md-1">手机：</label>
+    <span class="col-md-3">13549663032</span>
+    <span>未验证</span>
+    <a class="mgl-20" href="#111">立即验证</a>
+</div>
+<div class="row">
+    <label class="col-md-1">邮箱：</label>
+    <span class="col-md-3">50123123@qq.com</span>
+    <span>未验证</span>
+    <a class="mgl-20" href="#222">立即验证</a>
+</div>
+<div class="row">
+    <span class="col-md-3 col-md-offset-1">
+        <button class="btn btn-primary no-radius" id="modify" on-click="modify">修改</button>
+    </span>
+</div>
+
+
+</script>
+
+<script id="account-info-save" type="text/ractive">
+<div class="row">
+    <label class="col-md-1">会员企业：</label>
+    <span class="col-md-3">江苏华伟特种薄板有限公司</span>
+</div>
+<div class="row">
+    <label class="col-md-1">账号类型：</label>
+    <span class="col-md-3">企业账号管理</span>
+</div>
+<div class="row">
+    <label class="col-md-1">登录名：</label>
+    <span class="col-md-3">stella</span>
+</div>
+<div class="row">
+    <label class="col-md-1">姓名：</label>
+    <span class="col-md-3"><input class="form-control no-radius" type="text" value="邓姗姗" /></span>
+</div>
+<div class="row">
+    <label class="col-md-1">手机：</label>
+    <span class="col-md-3"><input class="form-control no-radius" type="text" value="13549663032" /></span>
+</div>
+<div class="row">
+    <label class="col-md-1">邮箱：</label>
+    <span class="col-md-3"><input class="form-control no-radius" type="text" value="50123123@qq.com" /></span>
+</div>
+<div class="row">
+    <span class="col-md-3 col-md-offset-1">
+        <button class="btn btn-form-search no-radius" id="save" on-click="save">保存</button>
+    </span>
+</div>
+
+
+</script>
+
+</body>
+</html>

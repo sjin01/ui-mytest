@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>中钢信管理平台</title>
+    <link href="../../../css/back-end/workspace.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/components/lightbox.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="wrapper">
+
+    <div class="top_nav"></div>
+
+    <div class="body_box">
+
+        <ul class="side_nav" style="min-height: 681px;"></ul>
+
+        <ul class="feature_nav"></ul>
+
+        <div class="main_content container-fluid">
+
+            <div class="main-title">新增账号</div>
+
+            <div class="second-title">账号信息</div>
+
+            <div class="content-block">
+            <form id="accountInfo" method="get" action="">
+                <div class="row">
+                    <label class="col-md-1 star-before">登录名：</label>
+                    <input type="text" class="col-md-3 form-widget no-radius" name="loginName">
+                    <span class="col-md-2 color-warning"></span>
+
+                    <label class="col-md-1 star-before">手机：</label>
+                    <input type="text" class="col-md-3 form-widget no-radius" name="phoneNumber">
+                    <span class="col-md-2 color-warning"></span>
+                </div>
+
+                <div class="row">
+                    <label class="col-md-1 star-before">会员类型：</label>
+                    <input type="text" class="col-md-3 form-widget no-radius" name="memberType">
+                    <span class="col-md-2 color-warning"></span>
+
+                    <label class="col-md-1 star-before">邮箱：</label>
+                    <input type="text" class="col-md-3 form-widget no-radius" name="mail">
+                    <span class="col-md-2 color-warning"></span>
+                </div>
+
+                <div class="row">
+                    <label class="col-md-1 star-before">身份证：</label>
+                    <input type="text" class="col-md-3 form-widget no-radius" name="identitycard">
+                    <span class="col-md-2 color-warning"></span>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-red">验证测试</button>
+                </div>
+            </form>
+            </div>
+
+            <div class="second-title">功能权限</div>
+
+            <div class="content-block">
+                <div class="row">
+                    <label class="col-md-2 text-left">
+                        <input type="checkbox">
+                        SKU管理
+                    </label>
+                    <label class="col-md-2 text-left">
+                        <input type="checkbox">
+                        系统管理
+                    </label>
+                </div>
+            </div>
+
+            <div>
+                <table class="authority-table">
+                    <tr class="title">
+                        <th width="12%">模块</th>
+                        <th width="12%">菜单</th>
+                        <th width="12%">页签</th>
+                        <th width="64%">操作项</th>
+                    </tr>
+                    <tr>
+                        <td rowspan="3"><label><input type="checkbox" name="areaName"> 长沙市</label></td>
+                        <td><label><input type="checkbox" name="areaName"> 长沙市</label></td>
+                        <td>
+                            <div>
+                                <label><input type="checkbox" name="areaName"> 长沙市</label>
+                            </div>
+                            <div>
+                                <label><input type="checkbox" name="areaName"> 长沙市</label>
+                            </div>
+                            <div>
+                                <label><input type="checkbox" name="areaName"> 长沙市</label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="">
+                                <label class="col-md-3"><input type="checkbox" name="areaName"> 长沙市</label>
+                                <label class="col-md-3"><input type="checkbox" name="areaName"> 长沙市</label>
+                                <label class="col-md-3"><input type="checkbox" name="areaName"> 长沙市</label>
+                                <label class="col-md-3"><input type="checkbox" name="areaName"> 湘西土家族苗族自治区</label>
+                            </div>
+                            <div class="">
+                                <label class="col-md-3"><input type="checkbox" name="areaName"> 长沙市</label>
+                                <label class="col-md-3"><input type="checkbox" name="areaName"> 长沙市</label>
+                                <label class="col-md-3"><input type="checkbox" name="areaName"> 张家界市</label>
+                                <label class="col-md-3"><input type="checkbox" name="areaName"> 长沙长沙市</label>
+                            </div>
+                            <div class="">
+                                <label class="col-md-3"><input type="checkbox" name="areaName"> 长沙市</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label><input type="checkbox" name="areaName"> 长沙市</label></td>
+                        <td><label><input type="checkbox" name="areaName"> 长沙市</label></td>
+                        <td>
+                            <div class="">
+                                <label class="col-md-3"><input type="checkbox" name="areaName"> 长沙市</label>
+                                <label class="col-md-3"><input type="checkbox" name="areaName"> 长沙市</label>
+                                <label class="col-md-3"><input type="checkbox" name="areaName"> 长沙市</label>
+                                <label class="col-md-3"><input type="checkbox" name="areaName"> 张家界市</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label><input type="checkbox" name="areaName"> 长沙市</label></td>
+                        <td><label><input type="checkbox" name="areaName"> 长沙市</label></td>
+                        <td>
+                            <div class="">
+                                <label class="col-md-3"><input type="checkbox" name="areaName"> 张家界市</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label><input type="checkbox" name="areaName"> 长沙市</label></td>
+                        <td><label><input type="checkbox" name="areaName"> 长沙市</label></td>
+                        <td><label><input type="checkbox" name="areaName"> 长沙市</label></td>
+                        <td>
+                            <div class="">
+                                <label class="col-md-3"><input type="checkbox" name="areaName"> 长沙市</label>
+                                <label class="col-md-3"><input type="checkbox" name="areaName"> 张家界市</label>
+                                <label class="col-md-3"><input type="checkbox" name="areaName"> 长沙长沙市</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2"><label><input type="checkbox" name="areaName"> 长沙市</label></td>
+                        <td><label><input type="checkbox" name="areaName"> 长沙市</label></td>
+                        <td>
+                            <label><input type="checkbox" name="areaName"> 长沙市</label>
+                        </td>
+                        <td>
+                            <div class="">
+                                <label class="col-md-3"><input type="checkbox" name="areaName"> 长沙市</label>
+                                <label class="col-md-3"><input type="checkbox" name="areaName"> 长沙市</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label><input type="checkbox" name="areaName"> 长沙市</label></td>
+                        <td>
+                            <div>
+                                <label><input type="checkbox" name="areaName"> 长沙市</label>
+                            </div>
+                            <div>
+                                <label><input type="checkbox" name="areaName"> 长沙市</label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="">
+                                <label class="col-md-3"><input type="checkbox" name="areaName"> 长沙市</label>
+                            </div>
+                            <div class="">
+                                <label class="col-md-3"><input type="checkbox" name="areaName"> 长沙市</label>
+                                <label class="col-md-3"><input type="checkbox" name="areaName"> 长沙市</label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="row buttons">
+                <button class="btn blue_button no-radius " id="skuQueryBtn">修改</button>
+                <button class="btn btn-gray no-radius" id="skuAddBtn">返回</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<script src="../../../js/libs/require.js"></script>
+<script src="../../../js/base.js"></script>
+
+<script>
+    require(["jquery", 'tplUtil', "text!../template/modules/workspace.rac", "popup", 'alert', 'pagination', 'general', 'lightbox', 'validate-zh'], function ($, TplUtil, WSTpl, Popup, Alert, Pagination, General) {
+
+        alert(General.identitycard('431103198608100610'));
+
+        $('#accountInfo').validate({
+            debug: true,
+            rules: {
+                loginName: {
+                    required: true,
+                    rangelength: [4,10]
+                },
+                phoneNumber: {
+                    required: true,
+                    byteLength: 10
+                },
+                identitycard: {
+                    identitycard: true
+                }
+            },
+            messages: {
+                loginName: {
+                    required: '登录名不能为空！',
+                    rangelength: '登录名应限制 {0}-{1} 个字符'
+                }
+            }/*,
+            errorPlacement: function (error, element) {
+                element.next().text(error.text());
+            }*/
+        });
+
+        var items1 = [
+            {link: '#1', name: '基础数据'},
+            {link: '#2', name: '会员'},
+            {link: '#3', name: '销售'},
+            {link: '#4', name: '系统', selected: true}
+        ],
+        items2 = [
+            { link: 'privilege-mgt.html', name: '权限管理', className: 'back-privilege'},
+            { link: 'backstage-account-mgt.html', name: '后台账号管理', className: 'back-backstage', selected: true}
+        ],
+        items3 = [
+            { link: '#1', name: '运营账号', selected: true },
+            { link: '#1', name: '接口账号'}
+        ];
+
+        TplUtil.loadTpl({
+            el: '.top_nav',
+            template: $(WSTpl).filter('#top-nav').html(),
+            data: {
+                modules: items1
+            }
+        });
+
+        TplUtil.loadTpl({
+            el: '.side_nav',
+            template: $(WSTpl).filter('#side-nav').html(),
+            data: {
+                items: items2
+            }
+        });
+
+        TplUtil.loadTpl({
+            el: '.feature_nav',
+            template: $(WSTpl).filter('#feature-nav').html(),
+            data: {
+                items: items3
+            }
+        });
+
+        $(function () {
+
+            var adjustHeight = function () {
+                var viewportHeight = $(window).height();
+                var topNavHeight = $(".top_nav").outerHeight();
+                var featureNavHeight = $(".feature_nav").outerHeight();
+                var minHeight = viewportHeight - topNavHeight - featureNavHeight;
+                var mainContentHeight = $(".main_content").outerHeight();
+                if (mainContentHeight < minHeight) {
+                    $(".main_content").css("min-height", minHeight);
+                }
+                $(".side_nav").css("min-height", $(".main_content").outerHeight() + featureNavHeight + "px");
+            };
+            adjustHeight();
+            $(window).resize(adjustHeight);
+        });
+
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>中钢信</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/steelworks-and-operation-end/base.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/steelworks-and-operation-end/modules/message-settings.css">
+
+</head>
+
+<body>
+
+<div class="header"></div>
+
+<div class="body">
+    <div class="container-24">
+
+        <div class="grid-3 no-padding">
+            <div class="slider"></div>
+        </div>
+
+        <div id="main" class="grid-21 main">
+
+            <div class="tabs"></div>
+
+            <div class="clearfix">
+
+                <table class="message-set-table">
+                    <tr class="border-gray-medium bgc-gray-light">
+                        <th width="30%"></th>
+                        <th width="20%">站内信通知</th>
+                        <th width="20%">手机短信</th>
+                        <th width="30%">接收人</th>
+                    </tr>
+                    <tr class="border-gray-medium">
+                        <td><button class="btn btn-primary" id="addMessage">新增消息</button></td>
+                        <td><input type="checkbox" class="blueSwitch" checked></td>
+                        <td><input type="checkbox" class="blueSwitch"></td>
+                        <td>
+                            <select class="muliselect" multiple="multiple">
+                                <option value="1">材质1</option>
+                                <option value="2">材质2</option>
+                                <option value="3">材质3</option>
+                                <option value="4" disabled>材质4</option>
+                                <option value="5">材质5</option>
+                                <option value="6">材质6</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr class="border-gray-medium">
+                        <td>接收中钢信平台公告</td>
+                        <td><input type="checkbox" class="blueSwitch" checked></td>
+                        <td><input type="checkbox" class="blueSwitch"></td>
+                        <td>
+                            <select class="muliselect" multiple="multiple">
+                                <option value="1">材质1</option>
+                                <option value="2">材质2</option>
+                                <option value="3">材质3</option>
+                                <option value="4" disabled>材质4</option>
+                                <option value="5">材质5</option>
+                                <option value="6">材质6</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr class="border-gray-medium">
+                        <td>接收中钢信平台公告</td>
+                        <td><input type="checkbox" class="blueSwitch" checked></td>
+                        <td><input type="checkbox" class="blueSwitch"></td>
+                        <td>
+                            <select name="" id="" class="form-control no-radius">
+                                <option value="">子账号1 子账号2 子账号3</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr class="border-gray-medium">
+                        <td>接收中钢信平台公告</td>
+                        <td><input type="checkbox" class="blueSwitch" checked></td>
+                        <td><input type="checkbox" class="blueSwitch"></td>
+                        <td>
+                            <select name="" id="" class="form-control no-radius">
+                                <option value="">子账号1 子账号2 子账号3</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+<div class="footer"></div>
+
+<script src="../../../js/libs/require.js"></script>
+<script src="../../../js/base.js"></script>
+<script>
+    require(['jquery', 'tplUtil', 'text!../template/modules/base.rac', 'message', 'jqSwitch', 'bootstrap', 'multiselect'],
+            function ($, TplUtil, BaseTpl, Message) {
+
+        $('#addMessage').click(function () {
+            var msg = new Message();
+        });
+
+
+        $('.blueSwitch').jqSwitch({
+            onText: '已开',    // default 是
+            offText: '已关',   // default 否
+            theme: 'blue',    // default green
+            hasRadius: false
+        });
+
+        $('.muliselect').multiselect();
+
+        var modules = [
+            {name: '资源管理'},
+            {name: '交易管理'},
+            {name: '渠道管理'},
+            {name: '定价管理'},
+            {name: '设置中心', selected: true}
+        ];
+
+        TplUtil.loadTpl({
+            el: '.header',
+            template: $(BaseTpl).filter('#header-content').html(),
+            data: {
+                logoText: '华伟薄板',
+                modules: modules
+            }
+        });
+
+        TplUtil.loadTpl({
+            el: '.footer',
+            template: $(BaseTpl).filter('#footer-content').html()
+        });
+
+        var leftModules = [
+            {name: '账户设置', className: 'icon-account-setting', link: 'accountSettingInfo.html'},
+            {name: '企业设置', className: 'icon-enterprise-setting', link: 'enterpriseSettingInfo.html'},
+            {name: '消息设置', className: 'icon-message-setting', link: '', selected: true}
+        ];
+
+        TplUtil.loadTpl({
+            el: '.slider',
+            template: $(BaseTpl).filter('#slider-content').html(),
+            data: { leftModules: leftModules }
+        });
+
+        var tabModules = [
+            {name: '消息接收设置', link: 'accountSettingInfo.html', selected: true},
+        ];
+
+        TplUtil.loadTpl({
+            el: '.tabs',
+            template: $(BaseTpl).filter('#tabs-content').html(),
+            data: { tabModules: tabModules }
+        });
+
+    });
+
+</script>
+
+
+</body>
+</html>

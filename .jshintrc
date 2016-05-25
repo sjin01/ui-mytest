@@ -1,0 +1,17 @@
+{
+    // Environments
+
+    "jquery":         true,
+
+    // enforcing options
+
+
+    // relaxing options
+
+    "asi":          true,
+    "boss":         true,
+    "expr":         true,
+    "lastsemic":    true,
+    "eqnull":       true
+
+}

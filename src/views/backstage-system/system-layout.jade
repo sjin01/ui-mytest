@@ -1,0 +1,16 @@
+extends ../layouts/backstage-layout
+
+block styles
+    block subStyles
+block scripts
+    block subScripts
+block top-modules
+    .body_box
+        ul.side_nav
+            each side in backstageTops[3].sides
+                li
+                    a(href=side.link)
+                        i(class=['mgr-10', 'back-icon', side.className + '-gray'])
+                        span #{side.name}
+        block side-modules
+

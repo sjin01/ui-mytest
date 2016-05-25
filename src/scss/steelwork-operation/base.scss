@@ -1,0 +1,122 @@
+@charset "UTF-8";
+
+@import "compass";
+@import "imports";
+
+#main,
+.main {
+  position: relative;
+}
+
+// ???
+.popup_content .password-block {
+  margin: 0 !important;
+  padding: 2em;
+
+  > div {
+    height: 34px;
+    line-height: 34px;
+    margin-top: 15px;
+    &:first-child {
+      margin: 0;
+    }
+  }
+}
+
+.image-upload-container {
+  width: 141px;
+
+  .image-container {
+    position: relative;
+    border: 1px solid $gray-light;
+
+    .tip {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 20px;
+      line-height: 20px;
+      text-align: center;
+      background-color: $gray-deep;
+      color: #fff;
+      filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+      opacity: 0.8;
+    }
+  }
+
+  .title {
+    text-align: center;
+    margin-top: 1em;
+  }
+}
+
+.bar-warning {
+  width: 100%;
+  height: 3em;
+  line-height: 3em;
+  color: $orange-deep;
+  margin-bottom: 1em;
+  background-color: $orange-lighter;
+  border: 1px solid $orange-deep;
+}
+
+
+// shift container
+$shift-container-height: 371px;
+.shift-container {
+
+  .left-container,
+  .center-container,
+  .right-container {
+    height: $shift-container-height;
+    overflow-y: auto;
+    overflow-x: hidden
+  }
+
+  .center-container {
+    > div {
+      height: $shift-container-height / 2;
+      padding-top: ($shift-container-height / 4) - 42;
+    }
+  }
+
+  .item {
+    cursor: pointer;
+
+    &.selected,
+    &:hover {
+      background-color: $gray-light;
+    }
+    &:active {
+      background-color: darken($gray-light, 10%);
+    }
+  }
+}
+
+// css of tooltip's table
+.vertical-line-point-container {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+
+  .vertical-line {
+    position: absolute;
+    display: inline-block;
+    height: 100%;
+    width: 0;
+    margin: 0 auto;
+  }
+
+  .point {
+    position: absolute;
+    display: inline-block;
+    height: 6px;
+    width: 6px;
+    top: 50%;
+    margin-top: -3px;
+    margin-left: -2px;
+    background-color: $orange-deep;
+    border-radius: 50%;
+  }
+}

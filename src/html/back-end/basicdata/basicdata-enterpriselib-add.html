@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>中钢信管理平台</title>
+    <link href="../../../css/back-end/workspace.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/back-end/modules/basedata.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/components/lightbox.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="wrapper">
+
+    <div class="top_nav"></div>
+
+    <div class="body_box">
+
+        <ul class="side_nav" style="min-height: 681px;"></ul>
+
+        <ul class="feature_nav"></ul>
+
+        <div class="main_content container-fluid">
+
+            <div class="main-title">新增企业</div>
+
+            <div class="second-title">基本信息</div>
+
+            <div class="content-block enterprise-base-info">
+                <div class="row">
+                    <label class="star-before">企业全称：</label>
+                    <input type="text" class="form-widget no-radius">
+                </div>
+                <div class="row">
+                    <label class="star-before">企业简称：</label>
+                    <input type="text" class="form-widget no-radius">
+                </div>
+                <div class="row">
+                    <label class="star-before">所在地区：</label>
+                    <select class="form-widget no-radius">
+                        <option>选择省份</option>
+                    </select>
+                    <select class="form-widget no-radius ">
+                        <option>选择城市</option>
+                    </select>
+                    <select class="form-widget no-radius">
+                        <option>选择区域</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <label class="star-before">详细地址：</label>
+                    <input type="text" class="form-widget no-radius addr">
+                </div>
+            </div>
+
+            <div class="second-title">企业证件</div>
+
+            <div class="content-block enterprise-certificate">
+                <div class="row">
+                    <span class="col-md-3">
+                        <div class="image-upload-container">
+                            <div class="image-container">
+                                <img src="../../../images/base/to-be-upload.png">
+                            </div>
+                            <div class="title">管理员授权委托书</div>
+                        </div>
+                    </span>
+
+                    <span class="col-md-3">
+                        <div class="image-upload-container">
+                            <div class="image-container">
+                                <a href="../../../images/base/example-1-enlarge.png" data-lightbox="example-1-enlarge" data-title="管理员授权委托书">
+                                    <img src="../../../images/base/example-1.png">
+                                </a>
+                                <a href="#del" class="back-icon back-close"></a>
+                                <span class="tip">点击查看大图</span>
+                            </div>
+                            <div class="title">管理员授权委托书</div>
+                        </div>
+                    </span>
+
+                    <span class="col-md-3">
+                        <div class="image-upload-container">
+                            <div class="image-container">
+                                <a href="../../../images/base/example-1-enlarge.png" data-lightbox="example-1-enlarge" data-title="管理员授权委托书">
+                                    <img src="../../../images/base/example-1.png">
+                                </a>
+                                <a href="#del" class="back-icon back-close"></a>
+                                <span class="tip">点击查看大图</span>
+                            </div>
+                            <div class="title">管理员授权委托书</div>
+                        </div>
+                    </span>
+
+                    <span class="col-md-3">
+                        <div class="image-upload-container">
+                            <div class="image-container">
+                                <img src="../../../images/base/to-be-upload.png">
+                            </div>
+                            <div class="title">管理员授权委托书</div>
+                        </div>
+                    </span>
+                </div>
+            </div>
+
+            <div class="row buttons">
+                <button class="btn red_button" id="skuQueryBtn">保存</button>
+                <button class="btn btn-gray" id="skuAddBtn">取消</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<script src="../../../js/libs/require.js"></script>
+<script src="../../../js/base.js"></script>
+
+<script>
+    require(["jquery", 'tplUtil', "text!../template/modules/workspace.rac", "popup", 'alert', 'pagination', 'lightbox'], function ($, TplUtil, WSTpl, Popup, Alert, Pagination) {
+
+        var items1 = [
+            { link: '#1', name: '基础数据', selected: true },
+            { link: '#2', name: '会员' },
+            { link: '#3', name: '销售' },
+            { link: '#4', name: '系统' }
+        ],
+        items2 = [
+            { link: 'basicdata-sku.html', name: 'SKU', className: 'back-sku'},
+            { link: 'basicdata-enterpriselib.html', name: '企业库', className: 'back-enterprise-lib', selected: true },
+            { link: 'basicdata-supplier.html', name: '供应商', className: 'back-supplier' },
+            { link: 'basicdata-distributor.html', name: '渠道商', className: 'back-distributor' },
+            { link: 'basicdata-warehouse.html', name: '仓库', className: 'back-warehouse' }
+
+        ],
+        items3 = [
+            { link: '#1', name: '合作企业库', selected: true }
+        ];
+
+        TplUtil.loadTpl({
+            el: '.top_nav',
+            template: $(WSTpl).filter('#top-nav').html(),
+            data: {
+                modules: items1
+            }
+        });
+
+        TplUtil.loadTpl({
+            el: '.side_nav',
+            template: $(WSTpl).filter('#side-nav').html(),
+            data: {
+                items: items2
+            }
+        });
+
+        TplUtil.loadTpl({
+            el: '.feature_nav',
+            template: $(WSTpl).filter('#feature-nav').html(),
+            data: {
+                items: items3
+            }
+        });
+
+        var items = {
+            "total":    5,
+            "sortAsc":  true,
+            "items": [
+                {"availableQuantity":58,"availableQuantityStr":"58","availableWeight":3,"availableWeightStr":"3.000","className":"型材","brandName":"工字钢","calculateDesc":"磅计","calculateType":2,"cityName":"北京市","createTime":1444962172000,"creator":2,"deleted":false,"deleted_desc":"可用","fromWay":1,"listingFlag":0,"listingFlagName":"未挂单","listingQuantity":58,"listingRatio":100,"listingWeight":3,"meterageType":1,"meterageTypeName":"吨","modifier":11,"modifyTime":1445860189000,"modifyTimeStr":"2015-10-26 19:49:49","resId":446,"resType":1,"salePrice":300024,"salePriceStr":"3000","skuId":10000005,"specificationName":"1.0*1250*C","steelworksName":"泰钢","supResCode":"020020","supplierId":8,"textureName":"HRB400E","unitWeight":0.24,"unitWeightStr":"0.240","warehouseAbbr":"高星","warehouseDisplayName":"高星物流（北京市）","warehouseId":1,"warehouseName":"高星物流"},
+                {"availableQuantity":58,"availableQuantityStr":"58","availableWeight":3,"availableWeightStr":"3.000","className":"型材","brandName":"工字钢","calculateDesc":"磅计","calculateType":2,"cityName":"北京市","createTime":1444962172000,"creator":2,"deleted":false,"deleted_desc":"可用","fromWay":1,"listingFlag":0,"listingFlagName":"未挂单","listingQuantity":58,"listingRatio":100,"listingWeight":3,"meterageType":1,"meterageTypeName":"吨","modifier":11,"modifyTime":1445860189000,"modifyTimeStr":"2015-10-26 19:49:49","resId":446,"resType":1,"salePrice":300024,"salePriceStr":"3000","skuId":10000005,"specificationName":"1.0*1250*C","steelworksName":"泰钢","supResCode":"020020","supplierId":8,"textureName":"HRB400E","unitWeight":0.24,"unitWeightStr":"0.240","warehouseAbbr":"高星","warehouseDisplayName":"高星物流（北京市）","warehouseId":1,"warehouseName":"高星物流"},
+                {"availableQuantity":58,"availableQuantityStr":"58","availableWeight":3,"availableWeightStr":"3.000","className":"型材","brandName":"工字钢","calculateDesc":"磅计","calculateType":2,"cityName":"北京市","createTime":1444962172000,"creator":2,"deleted":false,"deleted_desc":"可用","fromWay":1,"listingFlag":0,"listingFlagName":"未挂单","listingQuantity":58,"listingRatio":100,"listingWeight":3,"meterageType":1,"meterageTypeName":"吨","modifier":11,"modifyTime":1445860189000,"modifyTimeStr":"2015-10-26 19:49:49","resId":446,"resType":1,"salePrice":300024,"salePriceStr":"3000","skuId":10000005,"specificationName":"1.0*1250*C","steelworksName":"泰钢","supResCode":"020020","supplierId":8,"textureName":"HRB400E","unitWeight":0.24,"unitWeightStr":"0.240","warehouseAbbr":"高星","warehouseDisplayName":"高星物流（北京市）","warehouseId":1,"warehouseName":"高星物流"},
+                {"availableQuantity":58,"availableQuantityStr":"58","availableWeight":3,"availableWeightStr":"3.000","className":"型材","brandName":"工字钢","calculateDesc":"磅计","calculateType":2,"cityName":"北京市","createTime":1444962172000,"creator":2,"deleted":false,"deleted_desc":"可用","fromWay":1,"listingFlag":0,"listingFlagName":"未挂单","listingQuantity":58,"listingRatio":100,"listingWeight":3,"meterageType":1,"meterageTypeName":"吨","modifier":11,"modifyTime":1445860189000,"modifyTimeStr":"2015-10-26 19:49:49","resId":446,"resType":1,"salePrice":300024,"salePriceStr":"3000","skuId":10000005,"specificationName":"1.0*1250*C","steelworksName":"泰钢","supResCode":"020020","supplierId":8,"textureName":"HRB400E","unitWeight":0.24,"unitWeightStr":"0.240","warehouseAbbr":"高星","warehouseDisplayName":"高星物流（北京市）","warehouseId":1,"warehouseName":"高星物流"},
+                {"availableQuantity":58,"availableQuantityStr":"58","availableWeight":3,"availableWeightStr":"3.000","className":"型材","brandName":"工字钢","calculateDesc":"磅计","calculateType":2,"cityName":"北京市","createTime":1444962172000,"creator":2,"deleted":false,"deleted_desc":"可用","fromWay":1,"listingFlag":0,"listingFlagName":"未挂单","listingQuantity":58,"listingRatio":100,"listingWeight":3,"meterageType":1,"meterageTypeName":"吨","modifier":11,"modifyTime":1445860189000,"modifyTimeStr":"2015-10-26 19:49:49","resId":446,"resType":1,"salePrice":300024,"salePriceStr":"3000","skuId":10000005,"specificationName":"1.0*1250*C","steelworksName":"泰钢","supResCode":"020020","supplierId":8,"textureName":"HRB400E","unitWeight":0.24,"unitWeightStr":"0.240","warehouseAbbr":"高星","warehouseDisplayName":"高星物流（北京市）","warehouseId":1,"warehouseName":"高星物流"}
+            ]
+        };
+
+        new Pagination($.extend({
+            target: '#skuListBox',
+            template: '#skuListTpl'
+        }, items));
+
+        $('#skuAddBtn').click(function () {
+            new Alert('新增成功！');
+        });
+
+        $(function () {
+
+            var adjustHeight = function () {
+                var viewportHeight = $(window).height();
+                var topNavHeight = $(".top_nav").outerHeight();
+                var featureNavHeight = $(".feature_nav").outerHeight();
+                var minHeight = viewportHeight - topNavHeight - featureNavHeight;
+                var mainContentHeight = $(".main_content").outerHeight();
+                if (mainContentHeight < minHeight) {
+                    $(".main_content").css("min-height", minHeight);
+                }
+                $(".side_nav").css("min-height", $(".main_content").outerHeight() + featureNavHeight + "px");
+            };
+            adjustHeight();
+            $(window).resize(adjustHeight);
+        });
+
+        //弹出修改密码窗口
+        $('#passwd_edit').click(function () {
+            var popup = new Popup({
+                title: '修改密码',
+                template: "#passwdEditTpl"
+            });
+        });
+
+        // 编辑个人信息
+        $('.edit_personInfo').click(function () {
+            var popup2 = new Popup({
+                title: '个人信息',
+                template: "#edit_personInfoTpl"
+            });
+        })
+    });
+</script>
+
+<script type="text/ractive" id="skuListTpl">
+<table class="ui_table"><table class="ui_table">
+    <thead>
+        <tr>
+            <th>SKU编码</th>
+            <th>品类</th>
+            <th>品名</th>
+            <th>材质</th>
+            <th>规格</th>
+            <th>钢厂</th>
+            <th>计量方式</th>
+            <th decorator="sort:状态">状态 </th>
+            <th decorator="sort:更新时间">更新时间 </th>
+            <th>更新人</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#items:index}}
+        <tr class={{index%2==0 ? 'even' : 'odd'}}>
+            <td>{{skuId}}</td>
+            <td>{{className}}</td>
+            <td>{{brandName}}</td>
+            <td>{{textureName}}</td>
+            <td>{{specificationName}}</td>
+            <td>{{steelworksName}}</td>
+            <td>{{calculateDesc}}</td>
+            <td>
+                {{#if useStatus == 1}}
+                    启用
+                {{/if}}
+                {{#if useStatus == 0}}
+                    <span style="color : red;">停用</span>
+                {{/if}}
+            </td>
+            <td>{{modifyTime}}</td>
+            <td>{{modifierName}}</td>
+            <td>
+                <a href="javascript:void(0);">
+                    {{useStatus==1?'停用':'启用'}}
+                </a>
+            </td>
+        </tr>
+        {{/items}}
+    </tbody>
+</table>
+</script>
+
+<script type="text/ractive" id="passwdEditTpl">
+<form name="passwdEditForm" id="passwdEditForm" method="post">
+   <table width="100%" class="ui_popup_table">
+		<tr>
+			<td align="right" width="33%">
+				<label for="passwd_old_label">原密码：</label>
+			</td>
+        	<td>
+				<input name="passwd_old" id="passwd_old" size="16" type="password" />
+			</td>
+		</tr>
+		<tr>
+			<td align="right" width="33%">
+				<label for="passwd_new_label">新密码：</label>
+			</td>
+        	<td>
+				<input name="passwd_new" id="passwd_new" size="16" type="password" />
+			</td>
+		</tr>
+		<tr>
+			<td align="right" width="33%">
+				<label for="passwd_new_confirm_label">确认新密码：</label>
+			</td>
+        	<td>
+				<input name="passwd_new_confirm" id="passwd_new_confirm" size="16" type="password" />
+			</td>
+		</tr>
+   </table>
+</form>
+<div style="margin-top: 20px;margin-left: 140px;">
+    <a class="blue_button" href="javascript:void(0);" on-click="doSavePasswd()">保存</a>
+    <a class="red_button" href="javascript:void(0);" on-click="doCancel()">取消</a>
+</div>
+</script>
+
+<script type="text/ractive" id="edit_personInfoTpl">
+<form name="edit_personInfoForm" id="edit_personInfoForm" method="post">
+    <table width="100%" class="ui_popup_table">
+        <tr>
+            <td align="right" width="33%">
+                <label>登录名：</label>
+            </td>
+            <td>
+                <input type="hidden" id="personId" name="personId" value="{{person.personId}}"/>
+                <input name="userName" size="16" type="text" value="{{person.userName}}" disabled="disabled" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right" width="33%">
+                <label>姓名：</label>
+            </td>
+            <td>
+                <input name="personName" size="16" type="text" value="{{person.personName}}" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right" width="33%">
+                <label>手机：</label>
+            </td>
+            <td>
+                <input name="cellphone" size="16" type="text" value="{{person.cellphone}}" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right" width="33%">
+                <label>邮箱：</label>
+            </td>
+            <td>
+                <input name="email" size="16" type="text" value="{{person.email}}" />
+            </td>
+        </tr>
+    </table>
+    <div style="margin-top: 20px;margin-left: 140px;">
+        <a class="blue_button" href="javascript:void(0);" on-click="doSavePersonInfo()">保存</a>
+        <a class="red_button" href="javascript:void(0);" on-click="doCancel()">取消</a>
+    </div>
+</form>
+</script>
+</body>
+</html>

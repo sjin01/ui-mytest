@@ -1,0 +1,127 @@
+extends dist-ordergoods-layout
+block style
+
+block content
+    .ordergoods
+        .row
+            .col-xs-12
+
+                label.col-md-1.star-before.text-right.no-padding 供应商：
+                .col-md-3
+                    select.form-control.no-radius
+                .col-md-7
+                    span
+                        i.icon.icon-warning.mgr-5
+                        |该供应商的订单起订量为Y吨。
+
+        .row
+            .col-xs-12
+                label.col-md-1.star-before.text-right.no-padding 今日基价：
+                .col-md-10
+                    ul.no-padding
+                        li
+                            input(type="radio")
+                            |【华伟-普板】
+                            span.price 2000
+                            |元/吨
+                        li
+                            input(type="radio")
+                            | 【华伟-螺纹钢】
+                            span.price 2001
+                            | 元/吨
+                        li
+                            input(type="radio")
+                            | 【华伟-螺纹钢】
+                            span.nullprice 暂无报价
+        .row.mgt-10
+            .col-xs-6
+                .sub-title 订货资源
+        .row.mgt-10
+            .col-xs-12
+                .search-form.form-inline
+                    .container-fluid
+                        .row
+                            .form-group.col-md-3
+                                label.star-before 品名：
+                                select.form-control.no-radius
+                                    option 请选择
+                            .form-group.col-md-3
+                                label.star-before 切片：
+                                select.form-control.no-radius
+                                    option 请选择
+                            .form-group.col-md-3
+                                label.star-before 表面：
+                                select.form-control.no-radius
+                                    option 请选择
+                            .form-group.col-md-3
+                                label.star-before 材质：
+                                select.form-control.no-radius
+                                    option 请选择
+                        .row
+                            .form-group.col-md-3
+                                label.star-before 厚度：
+                                select.form-control.no-radius.custom
+                                    option 请选择
+                                input(type="text").form-control.no-radius.custom
+                            .form-group.col-md-3
+                                label.star-before 宽度：
+                                select.form-control.no-radius
+                                    option 请选择
+                            .form-group.col-md-3
+                                label.star-before 长度：
+                                select.form-control.no-radius
+                                    option 请选择
+                            .form-group.col-md-3.float-right
+                                span.price 2900
+                                |元/吨
+                                a(href="javascript:void(0)").btn.btn-form-search
+                                    i.icon.icon-add.mgr-5
+                                    | 新增
+
+        .table-block
+            .table-center
+                table
+                    tbody
+                        tr.title
+                            th(width="10%") 品名
+                            th(width="10%") 材质
+                            th(width="10%") 规格
+                            th(width="10%") 钢厂
+                            th(width="10%") 计量方式
+                            th(width="10%") 订货单价（元/吨）
+                            th(width="10%") 采购量
+                            th(width="10%") 金额小计（元）
+                            th(width="5%") 操作
+                        each item,index in [{"c1":"普板（四毛）","c2":"Q235","c3":"8*1231*L","c4":"华伟","c5":"理计","c6":"2900","c7":"100","c8":"29000"},{"c1":"普板（四毛）","c2":"Q235","c3":"8*1231*L","c4":"华伟","c5":"理计","c6":"2900","c7":"100","c8":"29000"},{"c1":"普板（四毛）","c2":"Q235","c3":"8*1231*L","c4":"华伟","c5":"理计","c6":"2900","c7":"100","c8":"29000"},{"c1":"普板（四毛）","c2":"Q235","c3":"8*1231*L","c4":"华伟","c5":"理计","c6":"2900","c7":"100","c8":"29000"}]
+
+                            tr(class=index % 2 == 0 ? "even" : "odd")
+                                td=item.c1
+                                td=item.c2
+                                td=item.c3
+                                td=item.c4
+                                td=item.c5
+                                td
+                                    span.price #{item.c6}
+                                td
+                                    input(type="text", value="#{item.c7}").form-control.no-radius
+                                td
+                                    span.price #{item.c8}
+                                td
+                                    button(type="button").btn.btn-link 删除
+
+        .buttons-foot-bar
+            button.btn.btn-form-search.no-radius 填写订单
+
+
+
+
+
+    script(type='text/javascript').
+        require(['jquery', 'popup'], function ($, Popup) {
+            locate('资源采购', '订货', '订货采购', '123123');
+        });
+
+
+
+
+

@@ -1,0 +1,118 @@
+extends res-sale-layout
+
+block content
+    .main-title 资源挂单
+    .table-block
+        .table-center
+            table
+                tr.title
+                    th(width='8%') 品名
+                    th(width='8%') 材质
+                    th(width='6%') 规格
+                    th(width='8%') 钢厂
+                    th(width='8%') 仓库
+                    th(width='6%') 地区
+                    th(width='12%') 挂单比例
+                    th(width='12%') 挂单数量
+                    th(width='10%') 挂单重量
+                    th(width='12%') 单吨售价
+                    th(width='8%') 计量方式
+                tr.odd.selected
+                    td 螺纹钢
+                    td HRB400
+                    td 16*9
+                    td 湘钢
+                    td 铁四局库
+                    td 上海
+                    td
+                        input(type='text', value='100')
+                    td
+                        input(type='text', value='80')
+                    td 256.800
+                    td
+                        input(type='text', value='2250.00')
+                    td 理记
+                tr.even
+                    td 螺纹钢
+                    td HRB400
+                    td 16*9
+                    td 湘钢
+                    td 铁四局库
+                    td 上海
+                    td
+                        input(type='text', value='100')
+                    td
+                        input(type='text', value='80')
+                    td 256.800
+                    td
+                        input(type='text', value='2250.00')
+                    td 理记
+                tr.odd
+                    td 螺纹钢
+                    td HRB400
+                    td 16*9
+                    td 湘钢
+                    td 铁四局库
+                    td 上海
+                    td
+                        input(type='text', value='100')
+                    td
+                        input(type='text', value='80')
+                    td 256.800
+                    td
+                        input(type='text', value='2250.00')
+                    td 理记
+                tr.even
+                    td 螺纹钢
+                    td HRB400
+                    td 16*9
+                    td 湘钢
+                    td 铁四局库
+                    td 上海
+                    td
+                        input(type='text', value='100')
+                    td
+                        input(type='text', value='80')
+                    td 256.800
+                    td
+                        input(type='text', value='2250.00')
+                    td 理记
+                tr.odd
+                    td 螺纹钢
+                    td HRB400
+                    td 16*9
+                    td 湘钢
+                    td 铁四局库
+                    td 上海
+                    td
+                        input(type='text', value='100')
+                    td
+                        input(type='text', value='80')
+                    td 256.800
+                    td
+                        input(type='text', value='2250.00')
+                    td 理记
+                tr.even
+                    td 螺纹钢
+                    td HRB400
+                    td 16*9
+                    td 湘钢
+                    td 铁四局库
+                    td 上海
+                    td
+                        input(type='text', value='100')
+                    td
+                        input(type='text', value='80')
+                    td 256.800
+                    td
+                        input(type='text', value='2250.00')
+                    td 理记
+    .unit-set-buttons
+        button#unitSet.btn.btn-form-clear.no-radius(type='button') 统设
+        a.btn.btn-form-search.no-radius(href="../res-order/res-order-list.html") 确认挂单
+        a.btn.btn-cancel.no-radius.mgl-5(href='res-sale-list.html') 返回
+
+    script(type='text/javascript').
+        require(['jquery'], function ($) {
+            locate('资源管理', '可售资源', '可售资源库');
+        });

@@ -1,0 +1,123 @@
+extends res-config-layout
+
+block content
+    .setting-group.form-horizontal
+        .setting
+            .title
+                i.icon.icon-setting-item
+                label 默认挂单比例
+            .form-group.content
+                label.col-sm-2 挂单比例：
+                .col-sm-2.input-group
+                    input.percent.form-control(type='text')
+                    span.input-group-addon %
+                .col-sm-2.col-sm-offset-1
+                    button.btn.btn-common.no-radius(type='button') 修改
+                    button.btn.btn-primary.no-radius(type='button') 保存
+        .setting
+            .title
+                i.icon.icon-setting-item
+                label 默认挂单比例
+            .form-group.content
+                label.col-sm-2
+                    label 每日定时挂单时间：
+                .col-sm-4.no-padding.date-area
+                    input#openFrom.form-control(type='text', placeholder='挂单开始')
+                    label -
+                    input#openTo.form-control(type='text', placeholder='挂单结束')
+                .col-sm-3
+                    input#openTime.jqSwitch(type='checkbox', name='openTime', value='cb1')
+                    button#state.btn.btn-primary.btn-sm 改变checked
+                    input#readonlyCheckbox.jqSwitch(type='checkbox', value='cb2', readonly='', checked='')
+                    button#readonly.btn.btn-primary.btn-sm 改变readonly
+                    input#disabledCheckbox.jqSwitch(type='checkbox', value='cb3', disabled='')
+                    button#disabled.btn.btn-primary.btn-sm 改变disabled
+                    input.blueSwitch(type='checkbox', id='', value='cb4')
+                    button#color.btn.btn-primary.btn-sm
+        .setting
+            .title
+                i.icon.icon-setting-item
+                label 默认挂单比例
+            .form-group.content
+                label.col-sm-2
+                    label 每日定时撤单时间：
+                .col-sm-4.no-padding.date-area
+                    input#closeFrom.form-control(type='text', placeholder='撤单开始')
+                    label -
+                    input#closeTo.form-control(type='text', placeholder='撤单结束')
+                .col-sm-2
+                    input#closeTime.jqSwitch(type='checkbox', name='closeTime', value='cb4', checked='')
+        .setting.default-update-setting
+            .title
+                i.icon.icon-setting-item
+                label 挂单资源更新设置
+            .form-group.content
+                label 可售库存更新时，挂单资源更新逻辑：
+            .form-group.content
+                .checkbox
+                    label
+                        input(type='checkbox')
+                        |  参考挂单比例，更新挂单资源
+            .form-group.content
+                .checkbox
+                    label
+                        input(type='checkbox')
+                        |  可售库存>=挂单库存时，不更新；可售库存
+            .form-group.content
+                button.btn.btn-primary.no-radius(type='button') 保存更新设置
+
+    script(type='text/javascript').
+        require(['jquery', 'general', 'pikadaytime', 'jqSwitch'], function ($, General) {
+            locate('资源管理', '资源设置', '基本设置');
+
+            // initiate switch component
+            $('.jqSwitch').jqSwitch();
+
+            $('.jqSwitch').each(function() {
+                var $this = $(this);
+                /*$this.click(function() {
+                 alert($this.prop('checked'));
+                 alert($this.val());
+                 })*/
+            });
+
+            $('.blueSwitch').jqSwitch({
+                onText: '已开',    // default 是
+                offText: '已关',   // default 否
+                theme: 'blue',    // default green
+                hasRadius: false
+            });
+
+            $('#state').click(function() {
+                console.dir($('#openTime'));
+                $('#openTime').trigger('toggleState');
+            });
+
+            $('#readonly').click(function() {
+                console.dir($('#readonlyCheckbox'));
+                $('#readonlyCheckbox').trigger('toggleReadonly');
+            });
+
+            $('#disabled').click(function() {
+                $('#disabledCheckbox').trigger('toggleDisabled');
+            });
+
+            /*
+             * defalut settings
+             * onlyShowTime: false,
+             * showTime: true,
+             * showSeconds: false,
+             * use24hour: true,
+             */
+            var $openFrom = $('#openFrom').pikaday({
+                        onlyShowTime: true
+                    }),
+                    $openTo = $('#openTo').pikaday({
+                        onlyShowTime: true
+                    }),
+                    $closeFrom = $('#closeFrom').pikaday(),
+                    $closeTo = $('#closeTo').pikaday();
+
+            General.bindDateRange('#openFrom', '#openTo');
+            General.bindDateRange('#closeFrom', '#closeTo');
+        });

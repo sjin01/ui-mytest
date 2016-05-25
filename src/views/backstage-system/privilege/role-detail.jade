@@ -1,0 +1,191 @@
+extends privilege-layout
+
+block content
+    .container-fluid
+        .main-title 角色详情
+        .content-block
+            .row
+                label.col-md-2.star-before 角色名称：
+                input.form-widget.no-radius.col-md-3(type='text', value='供应商通用角色')
+            .row
+                label.col-md-2.star-before 所属会员类型：
+                select.form-widget.no-radius.col-md-3
+                    option 供应商
+        .second-title 角色权限
+        div
+            table.authority-table
+                tr.title
+                    th(width='12%') 模块
+                    th(width='12%') 菜单
+                    th(width='12%') 页签
+                    th(width='64%') 操作项
+                tr
+                    td(rowspan='3')
+                        label
+                            input(type='checkbox', name='areaName')
+                            |  长沙市
+                    td
+                        label
+                            input(type='checkbox', name='areaName')
+                            |  长沙市
+                    td
+                        div
+                            label
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                        div
+                            label
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                        div
+                            label
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                    td
+                        div
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  湘西土家族苗族自治区
+                        div
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  张家界市
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  长沙长沙市
+                        div
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                tr
+                    td
+                        label
+                            input(type='checkbox', name='areaName')
+                            |  长沙市
+                    td
+                        label
+                            input(type='checkbox', name='areaName')
+                            |  长沙市
+                    td
+                        div
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  张家界市
+                tr
+                    td
+                        label
+                            input(type='checkbox', name='areaName')
+                            |  长沙市
+                    td
+                        label
+                            input(type='checkbox', name='areaName')
+                            |  长沙市
+                    td
+                        div
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  张家界市
+                tr
+                    td
+                        label
+                            input(type='checkbox', name='areaName')
+                            |  长沙市
+                    td
+                        label
+                            input(type='checkbox', name='areaName')
+                            |  长沙市
+                    td
+                        label
+                            input(type='checkbox', name='areaName')
+                            |  长沙市
+                    td
+                        div
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  张家界市
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  长沙长沙市
+                tr
+                    td(rowspan='2')
+                        label
+                            input(type='checkbox', name='areaName')
+                            |  长沙市
+                    td
+                        label
+                            input(type='checkbox', name='areaName')
+                            |  长沙市
+                    td
+                        label
+                            input(type='checkbox', name='areaName')
+                            |  长沙市
+                    td
+                        div
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                tr
+                    td
+                        label
+                            input(type='checkbox', name='areaName')
+                            |  长沙市
+                    td
+                        div
+                            label
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                        div
+                            label
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                    td
+                        div
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                        div
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+                            label.col-md-3
+                                input(type='checkbox', name='areaName')
+                                |  长沙市
+        .row.buttons
+            a.btn.blue_button.no-radius(href="role-mgt.html") 修改
+            a.btn.btn-gray.no-radius(href="role-mgt.html") 返回
+
+    script(type="text/javascript").
+        require(['jquery', 'pagination'], function($, Pagination) {
+            locate('系统', '权限管理', '角色管理', 'back-privilege');
+        });
+

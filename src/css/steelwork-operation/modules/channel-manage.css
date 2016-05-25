@@ -1,0 +1,9 @@
+.main-title ~ .table-block {
+  border: 1px solid #f1f2f3;
+  border-radius: 0;
+}
+
+.table-center tr > td > span {
+  display: inline-block;
+  padding: 0px 12px;
+}

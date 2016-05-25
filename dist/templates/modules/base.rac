@@ -1,0 +1,72 @@
+
+<script id="header-content" type="text/ractive">
+	<div class="container-24 nav">
+        <span class="grid-3 logo">
+            <img src="../../../images/icon/logo-main.png" class="mgr-5">{{logoText}}
+        </span>
+
+        {{#each modules}}
+            <span class="grid-2 {{selected ? 'selected' : ''}}"><a href="#">{{name}}</a></span>
+        {{/each}}
+
+        <div class="grid-4 pull-right">
+            <span class="grid-12 user personal-menu-root">
+                <i class="icon icon-user"></i>
+                <span class="remarks" title="华伟">华伟</span>
+                <i class="caret"></i>
+                <ul class="personal-menu list-unstyled">
+                    <li><a id="passwd_edit">修改密码</a></li>
+                </ul>
+            </span>
+            <span class="grid-12 logoff">
+                <a href="/logout">
+                    <i class="glyphicon glyphicon-off mgr-5"></i>注销
+                </a>
+            </span>
+            <span class="faicon faicon-expand expand-btn"></span>
+        </div>
+    </div>
+</script>
+
+<script id="slider-content" type="text/ractive">
+    <div class="slider-switch">|||</div>
+    <ul class="list-unstyled">
+        {{#each leftModules}}
+            <li class="{{className}} {{selected ? 'selected' : ''}}">
+                <a href="{{link}}">
+                    <i class="icon"></i>
+                    <span class="words">
+                        <span class="faicon faicon-caret-left hidden"></span>{{name}}
+                    </span>
+                </a>
+            </li>
+        {{/each}}
+    </ul>
+</script>
+
+<script id="tabs-content" type="text/ractive">
+    {{#each tabModules}}
+        <span class="grid-3 {{selected ? 'selected' : ''}}">
+            <a href="#">{{name}}</a>
+        </span>
+    {{/each}}
+</script>
+
+<script id="footer-content" type="text/ractive">
+	<div class="container-24 row">
+        <div>
+            <span>Copyright</span>
+            <span>©</span>
+            <span>中钢信 www.qyedi.com 沪ICP备13013915号-17</span>
+        </div>
+        <div>
+            <span class="phone">服务热线：0731-85891029（8:30-17:30）</span>
+            <span>在线咨询：</span>
+            <span>
+                <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=820218063&amp;site=qq&amp;menu=yes">
+                    <img border="0" src="http://wpa.qq.com/pa?p=2:820218063:41" alt="点击这里给我发消息" title="点击这里给我发消息">
+                </a>
+            </span>
+        </div>
+    </div>
+</script>

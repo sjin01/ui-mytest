@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>中钢信管理平台</title>
+    <link href="../../../css/back-end/workspace.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/back-end/modules/basedata.css" rel="stylesheet" type="text/css">
+    <script src="../../../js/libs/require.js"></script>
+    <script src="../../../js/base.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="top_nav">
+        <div class="logo"><img src="../../../images/base/logo.png"><span>中钢信</span></div>
+        <ul>
+          <li><a href="/html/backstage-base-data/sku/sku-lib.html">基础数据</a></li>
+          <li><a href="/html/backstage-member/member/member-mgt.html">会员</a></li>
+          <li><a href="#3">销售</a></li>
+          <li><a href="/html/backstage-system/privilege/role-mgt.html">系统</a></li>
+          <li><a href="/html/backstage-interface/interface-setting/interface-setting.html">接口</a></li>
+          <li class="last"><a href="#logout"><i class="i_logout"></i><span class="logout">登出</span></a></li>
+          <li class="last_2">
+            <div class="profile_wrapper"><i class="i_user"></i><a class="user_name">邓姗姗</a>
+              <div class="user_menu"><i class="arrow_down"></i>
+                <div class="arrow_up">
+                  <ul>
+                    <li><a id="passwd_edit">修改密码</a></li>
+                    <li><a class="edit_personInfo">个人信息</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="clearfix"></div>
+      </div>
+      <div class="body_box">
+        <ul class="side_nav">
+          <li><a href="/html/backstage-base-data/sku/sku-lib.html"><i class="mgr-10 back-icon back-sku-gray"></i><span>SKU</span></a></li>
+          <li><a href="/html/backstage-base-data/enterprise/enterprise-list.html"><i class="mgr-10 back-icon back-enterprise-lib-gray"></i><span>企业库</span></a></li>
+          <li><a href="/html/backstage-base-data/supplier/supplier-list.html"><i class="mgr-10 back-icon back-supplier-gray"></i><span>供应商</span></a></li>
+          <li><a href="/html/backstage-base-data/distributor/distributor-list.html"><i class="mgr-10 back-icon back-distributor-gray"></i><span>渠道商</span></a></li>
+          <li><a href="/html/backstage-base-data/warehouse/warehouse-list.html"><i class="mgr-10 back-icon back-warehouse-gray"></i><span>仓库</span></a></li>
+          <li><a href="/html/backstage-base-data/settings/settings.html"><i class="mgr-10 back-icon back-settings-gray"></i><span>常用项设置</span></a></li>
+        </ul>
+        <ul class="feature_nav">
+          <li><a href="/html/backstage-base-data/sku/sku-lib.html">SKU库</a></li>
+          <li><a href="/html/backstage-base-data/sku/sku-auditing.html">待审核SKU</a></li>
+          <li><a href="/html/backstage-base-data/sku/sku-variety.html">品类</a></li>
+          <li><a href="/html/backstage-base-data/sku/sku-brand.html">品名</a></li>
+          <li><a href="/html/backstage-base-data/sku/sku-texture.html">材质</a></li>
+          <li><a href="/html/backstage-base-data/sku/sku-specification.html">规格</a></li>
+          <li><a href="/html/backstage-base-data/sku/sku-steelwork.html">钢厂</a></li>
+          <li><a href="/html/backstage-base-data/sku/sku-alias.html">别名</a></li>
+        </ul>
+        <div class="main_content">
+          <div class="container-fluid query-sku query-form">
+            <div class="row">
+              <label class="mgl-20">编码：</label>
+              <input type="text" class="form-widget">
+              <label class="mgl-20">描述：</label>
+              <input type="text" class="form-widget">
+              <button class="btn btn-blue mgl-20">查询</button>
+              <button class="btn btn-red mgl-5">新增品类</button>
+            </div>
+          </div>
+          <div id="skuListBox"></div>
+          <script type="text/javascript">
+            require(['jquery', 'pagination'], function($, Pagination) {
+            
+                locate('基础数据', 'SKU', '品类', 'back-sku');
+            
+                var items = {
+                    "total":    5,
+                    "sortAsc":  true,
+                    "items": [
+                        {"availableQuantity":58,"availableQuantityStr":"58","availableWeight":3,"availableWeightStr":"3.000","className":"型材","brandName":"工字钢","calculateDesc":"磅计","calculateType":2,"cityName":"北京市","createTime":1444962172000,"creator":2,"deleted":false,"deleted_desc":"可用","fromWay":1,"listingFlag":0,"listingFlagName":"未挂单","listingQuantity":58,"listingRatio":100,"listingWeight":3,"meterageType":1,"meterageTypeName":"吨","modifier":11,"modifyTime":1445860189000,"modifyTimeStr":"2015-10-26 19:49:49","resId":446,"resType":1,"salePrice":300024,"salePriceStr":"3000","skuId":10000005,"specificationName":"1.0*1250*C","steelworksName":"泰钢","supResCode":"020020","supplierId":8,"textureName":"HRB400E","unitWeight":0.24,"unitWeightStr":"0.240","warehouseAbbr":"高星","warehouseDisplayName":"高星物流（北京市）","warehouseId":1,"warehouseName":"高星物流"},
+                        {"availableQuantity":58,"availableQuantityStr":"58","availableWeight":3,"availableWeightStr":"3.000","className":"型材","brandName":"工字钢","calculateDesc":"磅计","calculateType":2,"cityName":"北京市","createTime":1444962172000,"creator":2,"deleted":false,"deleted_desc":"可用","fromWay":1,"listingFlag":0,"listingFlagName":"未挂单","listingQuantity":58,"listingRatio":100,"listingWeight":3,"meterageType":1,"meterageTypeName":"吨","modifier":11,"modifyTime":1445860189000,"modifyTimeStr":"2015-10-26 19:49:49","resId":446,"resType":1,"salePrice":300024,"salePriceStr":"3000","skuId":10000005,"specificationName":"1.0*1250*C","steelworksName":"泰钢","supResCode":"020020","supplierId":8,"textureName":"HRB400E","unitWeight":0.24,"unitWeightStr":"0.240","warehouseAbbr":"高星","warehouseDisplayName":"高星物流（北京市）","warehouseId":1,"warehouseName":"高星物流"},
+                        {"availableQuantity":58,"availableQuantityStr":"58","availableWeight":3,"availableWeightStr":"3.000","className":"型材","brandName":"工字钢","calculateDesc":"磅计","calculateType":2,"cityName":"北京市","createTime":1444962172000,"creator":2,"deleted":false,"deleted_desc":"可用","fromWay":1,"listingFlag":0,"listingFlagName":"未挂单","listingQuantity":58,"listingRatio":100,"listingWeight":3,"meterageType":1,"meterageTypeName":"吨","modifier":11,"modifyTime":1445860189000,"modifyTimeStr":"2015-10-26 19:49:49","resId":446,"resType":1,"salePrice":300024,"salePriceStr":"3000","skuId":10000005,"specificationName":"1.0*1250*C","steelworksName":"泰钢","supResCode":"020020","supplierId":8,"textureName":"HRB400E","unitWeight":0.24,"unitWeightStr":"0.240","warehouseAbbr":"高星","warehouseDisplayName":"高星物流（北京市）","warehouseId":1,"warehouseName":"高星物流"},
+                        {"availableQuantity":58,"availableQuantityStr":"58","availableWeight":3,"availableWeightStr":"3.000","className":"型材","brandName":"工字钢","calculateDesc":"磅计","calculateType":2,"cityName":"北京市","createTime":1444962172000,"creator":2,"deleted":false,"deleted_desc":"可用","fromWay":1,"listingFlag":0,"listingFlagName":"未挂单","listingQuantity":58,"listingRatio":100,"listingWeight":3,"meterageType":1,"meterageTypeName":"吨","modifier":11,"modifyTime":1445860189000,"modifyTimeStr":"2015-10-26 19:49:49","resId":446,"resType":1,"salePrice":300024,"salePriceStr":"3000","skuId":10000005,"specificationName":"1.0*1250*C","steelworksName":"泰钢","supResCode":"020020","supplierId":8,"textureName":"HRB400E","unitWeight":0.24,"unitWeightStr":"0.240","warehouseAbbr":"高星","warehouseDisplayName":"高星物流（北京市）","warehouseId":1,"warehouseName":"高星物流"},
+                        {"availableQuantity":58,"availableQuantityStr":"58","availableWeight":3,"availableWeightStr":"3.000","className":"型材","brandName":"工字钢","calculateDesc":"磅计","calculateType":2,"cityName":"北京市","createTime":1444962172000,"creator":2,"deleted":false,"deleted_desc":"可用","fromWay":1,"listingFlag":0,"listingFlagName":"未挂单","listingQuantity":58,"listingRatio":100,"listingWeight":3,"meterageType":1,"meterageTypeName":"吨","modifier":11,"modifyTime":1445860189000,"modifyTimeStr":"2015-10-26 19:49:49","resId":446,"resType":1,"salePrice":300024,"salePriceStr":"3000","skuId":10000005,"specificationName":"1.0*1250*C","steelworksName":"泰钢","supResCode":"020020","supplierId":8,"textureName":"HRB400E","unitWeight":0.24,"unitWeightStr":"0.240","warehouseAbbr":"高星","warehouseDisplayName":"高星物流（北京市）","warehouseId":1,"warehouseName":"高星物流"}
+                    ]
+                };
+            
+                new Pagination($.extend({
+                    target: '#skuListBox',
+                    template: '#skuListTpl'
+                }, items));
+            
+            });
+            
+          </script>
+          <!-- 表格的ractive模板-->
+          <script id="skuListTpl" type="text/ractive">
+            <table class="ui_table">
+              <thead>
+                <tr>
+                  <th>SKU编码</th>
+                  <th>品类</th>
+                  <th>品名</th>
+                  <th>材质</th>
+                  <th>规格</th>
+                  <th>钢厂</th>
+                  <th>计量方式</th>
+                  <th>状态</th>
+                  <th>更新时间</th>
+                  <th>更新人</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>{{#items:index}}
+                <tr class="{{index % 2 == 0 ? 'even' : 'odd'}}">
+                  <td>{{skuId}}</td>
+                  <td>{{className}}</td>
+                  <td>{{brandName}}</td>
+                  <td>{{textureName}}</td>
+                  <td>{{specificationName}}</td>
+                  <td>{{steelworksName}}</td>
+                  <td>{{calculateDesc}}</td>
+                  <td>
+                    {{#if useStatus==1}}启用{{/if}}
+                    {{#if useStatus == 0}}<span style="color : red;">停用</span>{{/if}}
+                  </td>
+                  <td>{{modifyTime}}</td>
+                  <td>{{modifierName}}</td>
+                  <td><a href="javascript:void(0);">{{useStatus==1?'停用':'启用'}}</a></td>
+                </tr>{{/items}}
+              </tbody>
+            </table>
+          </script>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      require(['jquery'], function($) {
+          $(function () {
+              var adjustHeight = function () {
+                  var viewportHeight = $(window).height();
+                  var topNavHeight = $(".top_nav").outerHeight();
+                  var featureNavHeight = $(".feature_nav").outerHeight();
+                  var minHeight = viewportHeight - topNavHeight - featureNavHeight;
+                  var mainContentHeight = $(".main_content").outerHeight();
+                  if (mainContentHeight < minHeight) {
+                      $(".main_content").css("min-height", minHeight);
+                  }
+                  $(".side_nav").css("min-height", $(".main_content").outerHeight() + featureNavHeight + "px");
+              };
+              adjustHeight();
+              $(window).resize(adjustHeight);
+          });
+      });
+      
+      // 公共方法
+      function locate(topName, sideName, tabName, iconClass) {
+          $('.top_nav').find('a').each(function () {
+              var a = this, $a = $(a), name = $a.text();
+              if (topName === $.trim(name)) {
+                  $a.addClass('selected');
+              }
+          });
+      
+          $('.side_nav').find('a').each(function () {
+              var a = this, $a = $(a), name = $a.find('span').text();
+              if (sideName === $.trim(name)) {
+                  $a.addClass('selected');
+                  if (iconClass) {
+                      $a.find('i').removeClass(iconClass+'-gray').addClass(iconClass+'-blue');
+                  }
+              }
+          });
+      
+          $('.feature_nav').find('a').each(function () {
+              var a = this, $a = $(a), name = $a.text();
+              if (tabName === $.trim(name)) {
+                  $a.addClass('selected');
+              }
+          });
+      }
+    </script>
+  </body>
+</html>

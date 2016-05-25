@@ -1,0 +1,132 @@
+extends res-order-layout
+
+block content
+    .main-title 挂单资源统设
+    .table-block
+        .table-center
+            table
+                tr.title
+                    th(width='8%') 品名
+                    th(width='8%') 材质
+                    th(width='6%') 规格
+                    th(width='8%') 钢厂
+                    th(width='8%') 仓库
+                    th(width='6%') 地区
+                    th(width='12%') 挂单比例
+                    th(width='12%') 挂单数量
+                    th(width='10%') 挂单重量
+                    th(width='12%') 单吨售价
+                    th(width='8%') 计量方式
+                tr.odd.selected
+                    td 螺纹钢
+                    td HRB400
+                    td 16*9
+                    td 湘钢
+                    td 铁四局库
+                    td 上海
+                    td
+                        input(type='text', value='100')
+                    td
+                        input(type='text', value='80')
+                    td 256.800
+                    td
+                        input(type='text', value='2250.00')
+                    td 理记
+                tr.even
+                    td 螺纹钢
+                    td HRB400
+                    td 16*9
+                    td 湘钢
+                    td 铁四局库
+                    td 上海
+                    td
+                        input(type='text', value='100')
+                    td
+                        input(type='text', value='80')
+                    td 256.800
+                    td
+                        input(type='text', value='2250.00')
+                    td 理记
+                tr.odd
+                    td 螺纹钢
+                    td HRB400
+                    td 16*9
+                    td 湘钢
+                    td 铁四局库
+                    td 上海
+                    td
+                        input(type='text', value='100')
+                    td
+                        input(type='text', value='80')
+                    td 256.800
+                    td
+                        input(type='text', value='2250.00')
+                    td 理记
+                tr.even
+                    td 螺纹钢
+                    td HRB400
+                    td 16*9
+                    td 湘钢
+                    td 铁四局库
+                    td 上海
+                    td
+                        input(type='text', value='100')
+                    td
+                        input(type='text', value='80')
+                    td 256.800
+                    td
+                        input(type='text', value='2250.00')
+                    td 理记
+                tr.odd
+                    td 螺纹钢
+                    td HRB400
+                    td 16*9
+                    td 湘钢
+                    td 铁四局库
+                    td 上海
+                    td
+                        input(type='text', value='100')
+                    td
+                        input(type='text', value='80')
+                    td 256.800
+                    td
+                        input(type='text', value='2250.00')
+                    td 理记
+                tr.even
+                    td 螺纹钢
+                    td HRB400
+                    td 16*9
+                    td 湘钢
+                    td 铁四局库
+                    td 上海
+                    td
+                        input(type='text', value='100')
+                    td
+                        input(type='text', value='80')
+                    td 256.800
+                    td
+                        input(type='text', value='2250.00')
+                    td 理记
+    .unit-set-div
+        .title 统设：
+        .form-inline.content
+            span.form-group
+                label 统一调价：
+                select.form-control.no-radius
+                    option 统一加价
+                    option 统一减价
+                input.form-control.no-radius(type='text')
+                | 元
+            span.form-group
+                label 统一调挂单比例：
+                input.form-control.no-radius(type='text')
+                | %（1-100整数）
+    .unit-set-buttons
+        button.btn.btn-form-clear.no-radius(type='button') 预览
+        button.btn.btn-form-search.no-radius(type='button') 确认修改
+        button.btn.btn-cancel.no-radius(type='button') 返回
+
+    script(type='text/javascript').
+        require(['jquery'], function ($) {
+            locate('资源管理', '挂单资源', '联销挂单资源');
+        });

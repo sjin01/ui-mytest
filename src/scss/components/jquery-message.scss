@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+@import "compass";
+
+// message
+.message-container {
+  @include transition(all, .30csss,css ease-in-out);
+  position: absolute;
+  display: none;
+  right: 10px;
+  padding: 5px 10px;
+  z-index: 9;
+  background-color: #fff;
+  box-shadow: 1px 1px 2px #ddd;
+}

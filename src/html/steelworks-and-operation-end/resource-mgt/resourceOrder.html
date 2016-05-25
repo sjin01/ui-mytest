@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>中钢信</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/steelworks-and-operation-end/base.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/steelworks-and-operation-end/modules/resource.css">
+</head>
+
+<body>
+
+    <div class="header"></div>
+
+    <div class="body">
+        <div class="container-24">
+
+            <div class="grid-3 no-padding">
+                <div class="slider"></div>
+            </div>
+
+            <div id="main" class="grid-21">
+
+                <div class="tabs"></div>
+
+                <form id="search-res" class="search-form form-inline">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="form-group col-md-2">
+                                <label for="">来源：</label>
+                                <select class="form-control">
+                                    <option>全部</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="">品类：</label>
+                                <select class="form-control">
+                                    <option>建材</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4 zone">
+                                <label for="">地区：</label>
+                                <select class="form-control">
+                                    <option>不限省份</option>
+                                </select>
+                                <select class="form-control">
+                                    <option>不限城市</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="">仓库：</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="">钢厂：</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-2">
+                                <label for="">材质：</label>
+                                <select class="muliselect" multiple="multiple">
+                                    <option value="1">材质1</option>
+                                    <option value="2">材质2</option>
+                                    <option value="3">材质3</option>
+                                    <option value="4" disabled>材质4</option>
+                                    <option value="5">材质5</option>
+                                    <option value="6">材质6</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="">材质：</label>
+                                <input type="text" class="form-control input-helper">
+                            </div>
+                            <div class="form-group col-md-4 res-spec">
+                                <select class="label form-control">
+                                    <option>规格1</option>
+                                    <option>规格1</option>
+                                    <option>规格1</option>
+                                    <option>规格1</option>
+                                    <option>规格1</option>
+                                </select>
+                                <input type="text" class="form-control">
+                                <select class="content form-control">
+                                    <option><=</option>
+                                </select>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group col-md-2 col-md-offset-2 form-button-group">
+                                <button type="button" class="btn btn-form-clear">清空</button>
+                                <button type="button" class="btn btn-form-search">查询</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="table-block">
+                    <div class="table-top">
+                        <label class="mgl-10">
+                            <i class="faicon faicon-search mgr-10"></i>
+                            查询到
+                            <em class="hightlight-orange">454</em>
+                            条资源，共计
+                            <em class="hightlight-orange">54</em>
+                            件
+                            <em class="hightlight-orange">23546</em>
+                            吨
+                        </label>
+                        <span id="button-group">
+                            <button type="button" class="btn btn-table-operation" id="btn1">统设</button>
+                            <button type="button" class="btn btn-table-operation" id="btn2">删除</button>
+                            <button type="button" class="btn btn-table-operation" id="btn3">一键删除</button>
+                        </span>
+                    </div>
+
+                    <div class="table-center min-height-325"></div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer"></div>
+
+</body>
+
+<script src="../../../js/libs/require.js"></script>
+<script src="../../../js/base.js"></script>
+
+<script type="text/javascript">
+    require(['jquery', 'tplUtil', 'text!../template/modules/base.rac', 'popup', 'alert', 'confirm', 'pagination', 'timeoutButton', 'bootstrap', 'multiselect', 'inputHelper'],
+            function ($, TplUtil, BaseTpl, Popup, Alert, Confirm, Pagination) {
+
+                $('.input-helper').inputHelper({
+                    integer: true
+                });
+
+                var modules = [
+                    {selected: true, name: '资源管理'},
+                    {name: '交易管理'},
+                    {name: '渠道管理'},
+                    {name: '定价管理'}
+                ];
+
+                TplUtil.loadTpl({
+                    el: '.header',
+                    template: $(BaseTpl).filter('#header-content').html(),
+                    data: {
+                        logoText: '华伟薄板',
+                        modules: modules
+                    }
+                });
+
+                TplUtil.loadTpl({
+                    el: '.footer',
+                    template: $(BaseTpl).filter('#footer-content').html()
+                });
+
+                var leftModules = [
+                    {name: '可售资源', className: 'icon-shopping-cart', link: '../resource-manage/resourceOrder.html', selected: true},
+                    {name: '挂单资源', className: 'icon-order', link: '../resource-manage/resourceOnSale.html'},
+                    {name: '资源设置', className: 'icon-settings', link: '../settings-manage/baseSettings.html'}
+                ];
+
+                TplUtil.loadTpl({
+                    el: '.slider',
+                    template: $(BaseTpl).filter('#slider-content').html(),
+                    data: { leftModules: leftModules }
+                });
+
+                var tabModules = [
+                    {selected: true, name: '可售资源库'},
+                    {name: '待审资源'},
+                    {name: '批量导入'}
+                ];
+
+                TplUtil.loadTpl({
+                    el: '.tabs',
+                    template: $(BaseTpl).filter('#tabs-content').html(),
+                    data: { tabModules: tabModules }
+                });
+
+
+                var items = [
+                    {"availableQuantity":58,"availableQuantityStr":"58","availableWeight":3,"availableWeightStr":"3.000","brandName":"工字钢","calculateDesc":"磅计","calculateType":2,"cityName":"北京市","createTime":1444962172000,"creator":2,"deleted":false,"deleted_desc":"可用","fromWay":1,"listingFlag":0,"listingFlagName":"未挂单","listingQuantity":58,"listingRatio":100,"listingWeight":3,"meterageType":1,"meterageTypeName":"吨","modifier":11,"modifyTime":1445860189000,"modifyTimeStr":"2015-10-26 19:49:49","resId":446,"resType":1,"salePrice":300024,"salePriceStr":"3000","skuId":10000005,"specificationName":"1.0*1250*C","steelworksName":"泰钢","supResCode":"020020","supplierId":8,"textureName":"HRB400E","unitWeight":0.24,"unitWeightStr":"0.240","warehouseAbbr":"高星","warehouseDisplayName":"高星物流（北京市）","warehouseId":1,"warehouseName":"高星物流"},
+                    {"availableQuantity":59,"availableQuantityStr":"58","availableWeight":3,"availableWeightStr":"3.000","brandName":"工字钢","calculateDesc":"磅计","calculateType":2,"cityName":"北京市","createTime":1444962172000,"creator":2,"deleted":false,"deleted_desc":"可用","fromWay":1,"listingFlag":0,"listingFlagName":"未挂单","listingQuantity":58,"listingRatio":100,"listingWeight":3,"meterageType":1,"meterageTypeName":"吨","modifier":11,"modifyTime":1445860189000,"modifyTimeStr":"2015-10-26 19:49:49","resId":446,"resType":1,"salePrice":300024,"salePriceStr":"3000","skuId":10000005,"specificationName":"1.0*1250*C","steelworksName":"泰钢","supResCode":"020020","supplierId":8,"textureName":"HRB400E","unitWeight":0.24,"unitWeightStr":"0.240","warehouseAbbr":"高星","warehouseDisplayName":"高星物流（北京市）","warehouseId":1,"warehouseName":"高星物流"},
+                    {"availableQuantity":51,"availableQuantityStr":"58","availableWeight":3,"availableWeightStr":"3.000","brandName":"工字钢","calculateDesc":"磅计","calculateType":2,"cityName":"北京市","createTime":1444962172000,"creator":2,"deleted":false,"deleted_desc":"可用","fromWay":1,"listingFlag":0,"listingFlagName":"未挂单","listingQuantity":58,"listingRatio":100,"listingWeight":3,"meterageType":1,"meterageTypeName":"吨","modifier":11,"modifyTime":1445860189000,"modifyTimeStr":"2015-10-26 19:49:49","resId":446,"resType":1,"salePrice":300024,"salePriceStr":"3000","skuId":10000005,"specificationName":"1.0*1250*C","steelworksName":"泰钢","supResCode":"020020","supplierId":8,"textureName":"HRB400E","unitWeight":0.24,"unitWeightStr":"0.240","warehouseAbbr":"高星","warehouseDisplayName":"高星物流（北京市）","warehouseId":1,"warehouseName":"高星物流"},
+                    {"availableQuantity":52,"availableQuantityStr":"58","availableWeight":3,"availableWeightStr":"3.000","brandName":"工字钢","calculateDesc":"磅计","calculateType":2,"cityName":"北京市","createTime":1444962172000,"creator":2,"deleted":false,"deleted_desc":"可用","fromWay":1,"listingFlag":0,"listingFlagName":"未挂单","listingQuantity":58,"listingRatio":100,"listingWeight":3,"meterageType":1,"meterageTypeName":"吨","modifier":11,"modifyTime":1445860189000,"modifyTimeStr":"2015-10-26 19:49:49","resId":446,"resType":1,"salePrice":300024,"salePriceStr":"3000","skuId":10000005,"specificationName":"1.0*1250*C","steelworksName":"泰钢","supResCode":"020020","supplierId":8,"textureName":"HRB400E","unitWeight":0.24,"unitWeightStr":"0.240","warehouseAbbr":"高星","warehouseDisplayName":"高星物流（北京市）","warehouseId":1,"warehouseName":"高星物流"},
+                    {"availableQuantity":53,"availableQuantityStr":"58","availableWeight":3,"availableWeightStr":"3.000","brandName":"工字钢","calculateDesc":"磅计","calculateType":2,"cityName":"北京市","createTime":1444962172000,"creator":2,"deleted":false,"deleted_desc":"可用","fromWay":1,"listingFlag":0,"listingFlagName":"未挂单","listingQuantity":58,"listingRatio":100,"listingWeight":3,"meterageType":1,"meterageTypeName":"吨","modifier":11,"modifyTime":1445860189000,"modifyTimeStr":"2015-10-26 19:49:49","resId":446,"resType":1,"salePrice":300024,"salePriceStr":"3000","skuId":10000005,"specificationName":"1.0*1250*C","steelworksName":"泰钢","supResCode":"020020","supplierId":8,"textureName":"HRB400E","unitWeight":0.24,"unitWeightStr":"0.240","warehouseAbbr":"高星","warehouseDisplayName":"高星物流（北京市）","warehouseId":1,"warehouseName":"高星物流"}
+                ];
+
+                // build 提醒收款 tip
+                for (var i = 0; i < items.length; i++) {
+                    var item = items[i];
+                    items[i].tipTable = remindReceiveMoney(item);
+                }
+
+                function remindReceiveMoney (item) {
+                    var tipText = "可用数量：" + item.availableQuantity + " - 可用重量：" + item.availableWeight;
+                    return "<table class='mgt-5'>" +
+                                "<tr>" +
+                                    "<td style='padding: 0 12px;'><span class='vertical-line-point-container'><i class='vertical-line border-gray-medium'></i><i class='point'></i></span></td>" +
+                                    "<td class='text-left'>" + item.modifyTimeStr + "<br/>" + tipText + "</td>" +
+                                "</tr>" +
+                                "<tr>" +
+                                    "<td style='padding: 0 12px;'><span class='vertical-line-point-container'><i class='vertical-line border-gray-medium'></i><i class='point'></i></span></td>" +
+                                    "<td class='text-left'>" + item.modifyTimeStr + "<br/>已汇款12000到招商银行，先优先发订单【订单号】的货物</td>" +
+                                "</tr>" +
+                                "<tr>" +
+                                    "<td style='padding: 0 12px;'><span class='vertical-line-point-container'><i class='vertical-line border-gray-medium'></i><i class='point'></i></span></td>" +
+                                    "<td class='text-left'>" + item.modifyTimeStr + "<br/>尽快收款</td>" +
+                                "</tr>" +
+                            "</table>"
+                }
+
+
+
+                var inventorys = {
+                    "total":    5,
+                    "sortAsc":  true,
+                    "items": items,
+                    "tipUl": "<ul><li>hahaha</li><li>hahaha</li><li>hahaha</li><li>hahaha</li></ul>"
+                };
+
+                new Pagination($.extend({
+                    target: '.table-center',
+                    template: '#inventoryResListTpl'
+                }, inventorys));
+
+
+                var multiselect = $('.muliselect');
+                multiselect.multiselect({
+                    /*onDropdownShow: function(event) {
+                        alert('Show event invoked!');
+                    },
+                    onDropdownHide: function (event) {
+                        alert('hide!!!');
+                    }*/
+                });
+
+                $('#btn1').click(function () {
+                    var popup = new Popup({
+                        title: '警告',
+                        template: '<p>统设成功！</p>'
+                    });
+                });
+
+                //$('.btn').timeoutButton();
+
+                $('#btn2').click(function () {
+                    var aa = new Alert('删除成功！！', 'hahah');
+                    aa.on('yes', function () {
+                        alert('成功！！');
+                    });
+                });
+
+                $('#btn3').click(function () {
+                    var confirm = new Confirm('测试成功了吗？');
+                    confirm.on('yes', function () {
+                        new Alert('成功！');
+                    });
+                    confirm.on('no', function () {
+                        new Alert('失败！');
+                    });
+                });
+
+            });
+</script>
+
+<style>
+
+</style>
+<script type="text/ractive" id="inventoryResListTpl">
+<table class="ui_table">
+    <tbody>
+        <tr class="title">
+            <th width="4%"><input type="checkbox" id="checkAll" checked='{{allChecked}}' on-click='checkAll' /></th>
+            <th decorator="sort:品名" width="10%">品名</th>
+            <th decorator="sort:材质" width="8%">材质</th>
+            <th decorator="sort:规格" width="8%">规格</th>
+            <th decorator="sort:钢厂" width="10%">钢厂</th>
+            <th decorator="sort:仓库" width="10%">仓库</th>
+            <th decorator="sort:交货地" width="8%">交货地</th>
+            <th decorator="sort:可售重量" width="12%">可售数量/重量</th>
+            <th width="7%">单件重量</th>
+            <th width="7%">计量方式</th>
+            <th decorator="sort:状态" width="8%">状态</th>
+            <th width="8%">操作</th>
+        </tr>
+        {{#items:index}}
+            <tr class="{{index%2==0 ? 'odd' : 'even'}}" >
+                <td>
+                    <input type="checkbox" name="resId" value="{{resId}}" checked='{{this.checked}}' on-click='checkSingle' />
+                    <input type="hidden" name="listingFlag" value="{{listingFlag}}"/>
+                </td>
+                <td><span decorator='tooltip:sahfjksajdlkfjsladfjl哈桑的空间里飞拉萨的房间里阿萨德发撒的发生的发顺丰'>{{brandName}}</span></td>
+                <td>
+                    <span decorator='tooltip:{{tipUl}}'>{{textureName}}</span><br/>
+                    <span decorator='tooltip:{{tipTable}}'>提醒收款<span>
+                </td>
+                <td>{{specificationName}}</td>
+                <td>{{steelworksName}}</td>
+                <td>{{warehouseAbbr}}</td>
+                <td>{{cityName}}</td>
+                <td>{{availableQuantityStr}}/{{availableWeightStr}}</td>
+                <td>{{unitWeightStr}}</td>
+                <td>{{calculateDesc}}</td>
+                <td>{{listingFlagName}}</td>
+                <td><a href="javascript:void(0);" on-click="showDetail:{{index}}">明细<span id="detailStyle_{{index}}" flag="expand" class="faicon faicon-angle-down mgl-5"/></a></td>
+            </tr>
+        {{/items}}
+    </tbody>
+</table>
+</script>
+
+
+</html>               

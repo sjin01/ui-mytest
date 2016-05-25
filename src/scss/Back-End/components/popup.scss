@@ -1,0 +1,304 @@
+@charset "utf-8";
+
+@import "../partials/variables";
+@import "../partials/mixins";
+
+$title-height: 35px;
+
+.popup_container {
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .5);
+  z-index: 999;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+.popup_center {
+  position: relative;
+  margin: 0 auto;
+}
+
+.popup_wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 6px solid $blue;
+  border-top: none;
+}
+
+.popup_close {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  right: 0;
+  top: 0.5em;
+  cursor: pointer;
+  background: image-url("component/popup_bg.png") no-repeat;
+}
+
+.popup_title {
+  width: 100%;
+  color: #fff;
+  background-color: $blue;
+  font-size: 14px;
+  font-weight: 400;
+  height: $title-height;
+  line-height: $title-height;
+  text-align: center;
+}
+
+.popup_content {
+  position: absolute;
+  top: $title-height;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  overflow: auto;
+
+  .container-fluid {
+    padding: 15px 30px;
+  }
+
+  .row {
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+    div {
+      line-height: 32px;
+    }
+
+    .button-group {
+      button,
+      a {
+        width: 6em;
+        margin-right: 1em;
+      }
+    }
+
+    .radio-group {
+      label {
+        margin-right: 1em;
+      }
+    }
+  }
+
+  .checkbox-groups {
+    width: 100%;
+    div {
+      line-height: 32px;
+
+      .checkbox-group-1,
+      .checkbox-group-2 {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+
+      .checkbox-group-1 {
+        width: 19%;
+      }
+
+      .checkbox-group-2 {
+        width: 38%;
+      }
+    }
+  }
+
+  .buttons-bar {
+    text-align: center;
+
+    button {
+      width: 8em;
+      &:first-child {
+        margin-right: 1em;
+      }
+    }
+  }
+
+  .default {
+    position: relative;
+    height: 100%;
+    padding: 0;
+
+    .default-content,
+    .default-content-row {
+
+      .label,
+      .input {
+        padding: 0 0.5em;
+      }
+
+      .label {
+        text-align: right;
+      }
+
+      .input {
+        text-align: left;
+
+        input[type="text"],
+        input[type="password"],
+        select {
+          display: inline-block;
+          width: 8em;
+          margin: 0;
+        }
+      }
+    }
+
+    .default-content {
+      position: absolute;
+      top: 0;
+      height: 139px;
+      line-height: 139px;
+      width: 100%;
+      overflow: auto;
+      text-align: center;
+
+      > .content-wrapper {
+        display: inline-block;
+        line-height: normal;
+        text-align: left;
+        vertical-align: middle;
+        margin: 0 2em;
+      }
+    }
+
+    .default-content-row {
+      height: 4em;
+      line-height: 4em;
+      margin: 2em 4em;
+
+      input[type="text"],
+      select {
+        display: inline-block;
+        width: 8em;
+        margin: 0;
+      }
+      select {
+        margin-top: 1px;
+      }
+    }
+
+    .default-button-bar {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      height: 60px;
+      line-height: 60px;
+      background-color: #f1f2f3;
+      border-top: 1px solid #dedcdc;
+
+      button {
+        width: 8em;
+        margin: 0 0.5em;
+      }
+    }
+
+    .emphasize {
+      color: #2994cf;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+  }
+
+  // alert's styles
+
+  > .content-wrapper {
+    height: 199px;
+    text-align: center;
+
+    .content-center {
+      height: 139px;
+      line-height: 139px;
+      overflow-y: auto;
+    }
+
+    .content-center-inner {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1.8;
+      padding: 1em 2em;
+    }
+
+    .content-bottom {
+      height: 60px;
+      line-height: 60px;
+      border-top: 1px solid #dedcdc;
+
+      button {
+        min-width: 6em;
+        margin: 0 0.5em;
+      }
+    }
+  }
+}
+
+// 多行垂直居中
+
+.inner-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  .inner-center,
+  .inner-bottom {
+    position: absolute;
+    width: 100%;
+  }
+
+  .inner-center {
+    top: 0;
+    bottom: 60px;
+    overflow: auto;
+    text-align: center;
+
+    > .inner-center-content {
+      display: inline-block;
+      width: 100%;
+      line-height: normal;
+      vertical-align: middle;
+      text-align: left;
+
+      > div {
+        @include clearfix;
+        line-height: 32px;
+        margin-top: 1em;
+        margin-bottom: 1em;
+
+        &.second-title {
+          line-height: 1.2;
+          margin-top: 1.5em;
+        }
+
+        > label {
+          display: inline-block;
+          text-align: right;
+        }
+      }
+
+      [type="radio"],
+      [type="checkbox"] {
+        vertical-align: sub;
+      }
+    }
+  }
+
+  .inner-bottom {
+    bottom: 0;
+    height: 60px;
+    line-height: 60px;
+    border-top: 1px solid $gray;
+    background-color: #f8f9f8;
+  }
+}
+
+
+

@@ -1,0 +1,43 @@
+<script id="top-nav" type="text/ractive">
+    <div class="logo">
+        <img src="../../images/base/logo.png"/>
+        <span>中钢信</span>
+    </div>
+    <ul>
+        {{#each modules}}
+            <li><a href="{{link}}" class="{{selected ? 'selected' : '' }}">{{name}}</a></li>
+        {{/each}}
+        <li class="last"><a href="#logout"><i class="i_logout"></i><span class="logout">退出</span></a></li>
+        <li class="last_2">
+            <div class="profile_wrapper">
+                <i class="i_user"></i>
+                <a class="user_name">邓姗姗</a>
+                <div class="user_menu">
+                    <i class="arrow_down"></i>
+                    <div class="arrow_up"></div>
+                    <ul>
+                        <li><a id="passwd_edit">修改密码</a></li>
+                        <li><a class="edit_personInfo">个人信息</a></li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div class="clearfix"></div>
+</script>
+
+<script id="side-nav" type="text/ractive">
+    {{#each items}}
+        <li>
+            <a href="{{link}}" class="{{selected ? 'selected' : '' }}">
+                <i class="mgr-10 back-icon {{selected ? className + '-blue' : className + '-gray' }}"></i>{{name}}
+            </a>
+        </li>
+    {{/each}}
+</script>
+
+<script id="feature-nav" type="text/ractive">
+    {{#each items}}
+        <li><a href="{{link}}" class="{{selected ? 'selected' : '' }}">{{name}}</a></li>
+    {{/each}}
+</script>

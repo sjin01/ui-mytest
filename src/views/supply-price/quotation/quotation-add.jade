@@ -1,0 +1,252 @@
+//
+   Created by shijing.guan on 2016/3/10.
+
+extends quotation-layout
+
+block content
+    form
+        .main-title 新增定价模板
+        .container-fluid.add-res-price-form
+            .col-sm-4
+                label.star-before 钢厂：
+                input.form-control(type="text")
+            .col-sm-4
+                label.star-before.text-orange 品种：
+                input.form-control(type="text")
+            .col-sm-4
+                label 基价：
+                input.form-control.hightlight-orange(type="text", value="2016")
+
+        .second-title 材质调价
+        .table-block
+            .table-center.table-adjust-price-8
+                table
+                    tr.title
+                        th(width="40%") 材质
+                        th(width="40%") 调价幅度
+                        th(width="20%") 操作
+                    tr
+                        td Q235B-1
+                        td
+                            input.form-control(type="text", placeholder="限整数，整数为加价，负数为减价")
+                        td
+                            button.btn.btn-link 删除
+                    tr
+                        td Q235B-1
+                        td
+                            input.form-control(type="text", placeholder="限整数，整数为加价，负数为减价")
+                        td
+                            button.btn.btn-link 删除
+                    tr
+                        td
+                            input.form-control(type="text")
+                        td
+                            input.form-control(type="text", placeholder="限整数，整数为加价，负数为减价")
+                        td
+                            button.btn.btn-link 删除
+                            button.btn.btn-link 新增行
+        .second-title 规格调价
+        .table-block
+            .table-center.table-adjust-price-8
+                table
+                    tr.title
+                        th(width="18%") 规格名称
+                        th(width="18%") 规格名称
+                        th(width="18%") 规格名称
+                        th(width="26%") 规格名称
+                        th(width="20%") 规格名称
+                    tr
+                        td 厚度
+                        td 6
+                        td 7.999
+                        td
+                            input.form-control(type="text", placeholder="限整数，整数为加价，负数为减价")
+                        td
+                            button.btn.btn-link 删除
+                    tr
+                        td 厚度
+                        td 6
+                        td 7.999
+                        td
+                            input.form-control(type="text", placeholder="限整数，整数为加价，负数为减价")
+                        td
+                            button.btn.btn-link 删除
+                    tr
+                        td
+                            select.form-control
+                                option 请选择
+                                option 厚度
+                                option 宽度
+                        td
+                            input.form-control(type="text", placeholder="支持三位小数")
+                        td
+                            input.form-control(type="text", placeholder="支持三位小数")
+                        td
+                            input.form-control(type="text", placeholder="限整数，整数为加价，负数为减价")
+                        td
+                            button.btn.btn-link 删除
+                            button.btn.btn-link 新增行
+        .second-title 其他调价
+        .table-block
+            .table-center.table-adjust-price-8
+                table
+                    tr.title
+                        th(width="54%") 调价规则
+                        th(width="26%") 调价幅度
+                        th(width="20%") 操作
+                    tr
+                        td
+                            .row
+                                .col-xs-9
+                                    input.form-control(type="text", placeholder="请点击新增规则进行设置")
+                                .col-xs-2
+                                    button.btn.btn-link(type="button", name="addRule") 新增规则
+                        td
+                            input.form-control(type="text", placeholder="限整数，整数为加价，负数为减价")
+                        td
+                            button.btn.btn-link 删除
+                    tr
+                        td
+                            .row
+                                .col-xs-9
+                                    input.form-control(type="text", placeholder="请点击新增规则进行设置")
+                                .col-xs-2
+                                    button.btn.btn-link(type="button", name="editRule") 编辑规则
+                        td
+                            input.form-control(type="text", placeholder="限整数，整数为加价，负数为减价")
+                        td
+                            button.btn.btn-link 删除
+                            button.btn.btn-link 新增行
+
+        .buttons-foot-bar
+            button.btn.btn-form-search.no-radius(type="button") 新增模板
+            button.btn.btn-cancel.no-radius(type="button") 取消
+
+
+    script(type='text/javascript').
+        require(['jquery', 'popup'], function ($, Popup) {
+            locate('定价管理', '资源定价', '资源定价','123123');
+
+            $('.btn[name="addRule"]').on('click', function (){
+                var info = new Popup({
+                    title: '新增调价规则',
+                    width: '462px',
+                    height: '426px',
+                    template: '#add-quotation-dialog'
+                });
+            });
+
+            $('.btn[name="editRule"]').on('click', function () {
+                var info = new Popup({
+                    title: '编辑调价规则',
+                    width: '462px',
+                    height: '426px',
+                    template: '#edit-quotation-dialog'
+                });
+            });
+
+        });
+
+    // 新增调价规则 modal
+    script#add-quotation-dialog(type="text/ractive")
+        .quotation-modal
+            .table-block
+                .table-center.table-adjust-price-3
+                    table
+                        tr.title
+                            th(width="40%") 资源属性
+                            th(width="40%") 属性值
+                            th(width="20%") 操作
+                .table-center.table-adjust-price-3.height-165
+                    table
+
+                        tr
+                            td(width="40%")
+                                select.form-control
+                                    option 请选择
+                            td(width="40%")
+                                select.form-control
+                                    option 请选择
+                            td(width="20%")
+                                button.btn.btn-link 删除
+                        tr
+                            td
+                                select.form-control
+                                    option 请选择
+                            td
+                                select.form-control
+                                    option 请选择
+                            td
+                                button.btn.btn-link 删除
+                        tr
+                            td
+                                select.form-control
+                                    option 请选择
+                            td
+                                select.form-control
+                                    option 请选择
+                            td
+                                button.btn.btn-link 删除
+                        tr
+                            td
+                                select.form-control
+                                    option 请选择
+                            td
+                                select.form-control
+                                    option 请选择
+                            td
+                                button.btn.btn-link 删除
+                        tr
+                            td
+                                select.form-control
+                                    option 请选择
+                            td
+                                select.form-control
+                                    option 请选择
+                            td
+                                button.btn.btn-link 删除
+                                button.btn.btn-link 新增行
+
+            .quotation-rule
+                textarea.form-control
+
+            .buttons-foot-bar
+                button.btn.btn-form-search.no-radius(type="button") 保存
+                button.btn.btn-cancel.no-radius(type="button") 取消
+
+    // 编辑调价规则 modal
+    script#edit-quotation-dialog(type="text/ractive")
+        .quotation-modal
+            .table-block
+                .table-center.table-adjust-price-3
+                    table
+                        tr.title
+                            th(width="40%") 资源属性
+                            th(width="40%") 属性值
+                            th(width="20%") 操作
+                .table-center.table-adjust-price-3.height-165
+                    table
+
+                        tr
+                            td(width="40%") 切边
+
+                            td(width="40%") 二切
+                            td(width="20%")
+                                button.btn.btn-link 删除
+                        tr
+                            td
+                                select.form-control
+                                    option 请选择
+                            td
+                                select.form-control
+                                    option 请选择
+                            td
+                                button.btn.btn-link 删除
+                                button.btn.btn-link 新增行
+
+            .quotation-rule
+                textarea.form-control
+
+            .buttons-foot-bar
+                button.btn.btn-form-search.no-radius(type="button") 保存
+                button.btn.btn-cancel.no-radius(type="button") 取消

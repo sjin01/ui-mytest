@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>中钢信管理平台</title>
+    <link href="../../../css/back-end/workspace.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/back-end/modules/basedata.css" rel="stylesheet" type="text/css">
+    <script src="../../../js/libs/require.js"></script>
+    <script src="../../../js/base.js"></script>
+    <link href="../../../css/components/lightbox.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="top_nav">
+        <div class="logo"><img src="../../../images/base/logo.png"><span>中钢信</span></div>
+        <ul>
+          <li><a href="/html/backstage-base-data/sku/sku-lib.html">基础数据</a></li>
+          <li><a href="/html/backstage-member/member/member-mgt.html">会员</a></li>
+          <li><a href="#3">销售</a></li>
+          <li><a href="/html/backstage-system/privilege/role-mgt.html">系统</a></li>
+          <li><a href="/html/backstage-interface/interface-setting/interface-setting.html">接口</a></li>
+          <li class="last"><a href="#logout"><i class="i_logout"></i><span class="logout">登出</span></a></li>
+          <li class="last_2">
+            <div class="profile_wrapper"><i class="i_user"></i><a class="user_name">邓姗姗</a>
+              <div class="user_menu"><i class="arrow_down"></i>
+                <div class="arrow_up">
+                  <ul>
+                    <li><a id="passwd_edit">修改密码</a></li>
+                    <li><a class="edit_personInfo">个人信息</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="clearfix"></div>
+      </div>
+      <div class="body_box">
+        <ul class="side_nav">
+          <li><a href="/html/backstage-base-data/sku/sku-lib.html"><i class="mgr-10 back-icon back-sku-gray"></i><span>SKU</span></a></li>
+          <li><a href="/html/backstage-base-data/enterprise/enterprise-list.html"><i class="mgr-10 back-icon back-enterprise-lib-gray"></i><span>企业库</span></a></li>
+          <li><a href="/html/backstage-base-data/supplier/supplier-list.html"><i class="mgr-10 back-icon back-supplier-gray"></i><span>供应商</span></a></li>
+          <li><a href="/html/backstage-base-data/distributor/distributor-list.html"><i class="mgr-10 back-icon back-distributor-gray"></i><span>渠道商</span></a></li>
+          <li><a href="/html/backstage-base-data/warehouse/warehouse-list.html"><i class="mgr-10 back-icon back-warehouse-gray"></i><span>仓库</span></a></li>
+          <li><a href="/html/backstage-base-data/settings/settings.html"><i class="mgr-10 back-icon back-settings-gray"></i><span>常用项设置</span></a></li>
+        </ul>
+        <ul class="feature_nav">
+          <li><a href="/html/backstage-base-data/settings/settings.html">常用项设置</a></li>
+        </ul>
+        <div class="main_content">
+          <div class="container-fluid option-settings-content">
+            <div class="col-md-3">
+              <div class="content-block">
+                <div class="input-group">
+                  <input type="text" class="form-widget no-radius">
+                  <button type="button" class="btn btn-red no-radius">查询</button>
+                </div>
+                <div class="mgt-20">
+                  <ul class="ui_tree">
+                    <li><span class="close_triangle"></span><a href="javascript:void(0);">基础数据</a></li>
+                    <li><span class="close_triangle"></span><a href="javascript:void(0);">资源采购-采</a></li>
+                    <li><span class="close_triangle"></span><a href="javascript:void(0);">会员</a></li>
+                    <li><span class="close_triangle"></span><a href="javascript:void(0);">交易管理-供</a></li>
+                    <li><span class="close_triangle"></span><a href="javascript:void(0);">渠道管理</a></li>
+                    <li><span class="close_triangle"></span><a href="javascript:void(0);">销售</a></li>
+                    <li><span class="close_triangle"></span><a href="javascript:void(0);">定价管理</a></li>
+                    <li><span class="close_triangle"></span><a href="javascript:void(0);">设置中心</a></li>
+                    <li><span class="close_triangle"></span><a href="javascript:void(0);">系统</a></li>
+                    <li><span class="close_triangle"></span><a href="javascript:void(0);">销售</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-9">
+              <div class="content-block">
+                <div class="row">
+                  <label class="col-md-2 star-before">常用项：</label>
+                  <input placeholder="请从左侧点选常用项" class="col-md-4 form-widget no-radius">
+                </div>
+                <div class="row">
+                  <label class="col-md-2 star-before">参数描述：</label>
+                  <input class="col-md-4 form-widget no-radius">
+                  <div class="col-md-2">
+                    <input type="checkbox">设为默认
+                  </div>
+                </div>
+                <div class="row">
+                  <label class="col-md-2 star-before">参数代码：</label>
+                  <input placeholder="自定规则系统自动生成" class="col-md-4 form-widget no-radius">
+                </div>
+                <div class="row">
+                  <label class="col-md-2 star-before">参数值：</label>
+                  <input placeholder="自定规则系统自动生成" class="col-md-4 form-widget no-radius">
+                </div>
+                <div class="row">
+                  <div class="col-md-4 col-md-offset-2 pdl-0 mgt-10">
+                    <button type="button" class="btn btn-blue no-radius width-90">保存</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <script type="text/javascript">
+            require(['jquery', 'pagination', 'confirm'], function ($, Pagination, Confirm) {
+                locate('基础数据', '常用项设置', '常用项设置', 'back-settings');
+            
+            
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      require(['jquery'], function($) {
+          $(function () {
+              var adjustHeight = function () {
+                  var viewportHeight = $(window).height();
+                  var topNavHeight = $(".top_nav").outerHeight();
+                  var featureNavHeight = $(".feature_nav").outerHeight();
+                  var minHeight = viewportHeight - topNavHeight - featureNavHeight;
+                  var mainContentHeight = $(".main_content").outerHeight();
+                  if (mainContentHeight < minHeight) {
+                      $(".main_content").css("min-height", minHeight);
+                  }
+                  $(".side_nav").css("min-height", $(".main_content").outerHeight() + featureNavHeight + "px");
+              };
+              adjustHeight();
+              $(window).resize(adjustHeight);
+          });
+      });
+      
+      // 公共方法
+      function locate(topName, sideName, tabName, iconClass) {
+          $('.top_nav').find('a').each(function () {
+              var a = this, $a = $(a), name = $a.text();
+              if (topName === $.trim(name)) {
+                  $a.addClass('selected');
+              }
+          });
+      
+          $('.side_nav').find('a').each(function () {
+              var a = this, $a = $(a), name = $a.find('span').text();
+              if (sideName === $.trim(name)) {
+                  $a.addClass('selected');
+                  if (iconClass) {
+                      $a.find('i').removeClass(iconClass+'-gray').addClass(iconClass+'-blue');
+                  }
+              }
+          });
+      
+          $('.feature_nav').find('a').each(function () {
+              var a = this, $a = $(a), name = $a.text();
+              if (tabName === $.trim(name)) {
+                  $a.addClass('selected');
+              }
+          });
+      }
+    </script>
+  </body>
+</html>

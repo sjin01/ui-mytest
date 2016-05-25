@@ -1,0 +1,40 @@
+{
+  "name": "steel-sky",
+  "version": "0.1.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "xiufu.yuan",
+  "license": "ISC",
+  "devDependencies": {
+    "amd-optimize": "^0.6.1",
+    "browser-sync": "^2.11.0",
+    "del": "^2.2.0",
+    "extend": "^3.0.0",
+    "fs": "0.0.2",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "*",
+    "gulp-cache": "*",
+    "gulp-cached": "^1.1.0",
+    "gulp-clean": "*",
+    "gulp-compass": "^2.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^2.3.1",
+    "gulp-csso": "^1.0.1",
+    "gulp-data": "^1.2.1",
+    "gulp-imagemin": "*",
+    "gulp-jade": "^1.1.0",
+    "gulp-jshint": "*",
+    "gulp-livereload": "*",
+    "gulp-minify-css": "*",
+    "gulp-notify": "*",
+    "gulp-rename": "^1.2.2",
+    "gulp-ruby-sass": "*",
+    "gulp-uglify": "^1.5.1",
+    "gulp-util": "^3.0.7",
+    "gulp-watch": "*",
+    "path": "^0.12.7"
+  }
+}

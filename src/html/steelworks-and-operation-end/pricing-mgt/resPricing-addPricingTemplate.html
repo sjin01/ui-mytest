@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>中钢信</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/steelworks-and-operation-end/base.css">
+    <link rel="stylesheet" type="text/css" href="../../css/steelworks-and-operation-end/modules/price-manage.css">
+</head>
+<body>
+<div class="header">
+    <div class="container-24 nav">
+        <span class="grid-4 logo">中钢信</span>
+        <span class="grid-2 selected">资源管理</span>
+        <span class="grid-2">交易管理</span>
+        <span class="grid-2">渠道管理</span>
+        <span class="grid-2">定价管理</span>
+        <span class="grid-2">统计分析</span>
+        <span class="grid-2">设置中心</span>
+			<span class="grid-2 push-4 user personal-menu-root">
+				<i class="icon icon-user"></i>戴永明<i class="caret mgl-5"></i>
+                <ul class="personal-menu list-unstyled">
+                    <li><a href="#">修改密码</a></li>
+                    <li><a href="#">个人信息</a></li>
+                </ul>
+			</span>
+			<span class="grid-2 push-4 logoff">
+                <i class="glyphicon glyphicon-off mgr-5"></i>注销
+            </span>
+    </div>
+</div>
+
+<div class="body">
+    <div class="container-24">
+        <div class="grid-4">
+            <div class="slider">
+                <div class="slider-switch">|||</div>
+                <ul class="list-unstyled">
+                    <li class="icon-resource-price selected"><i class="icon"></i>资源定价</li>
+                    <li class="icon-custom-price-makeup"><i class="icon"></i>定制加价</li>
+                    <li class="icon-area-price-makeup"><i class="icon"></i>区域加价</li>
+                    <li class="icon-pay-price-makeup"><i class="icon"></i>支付加价</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="main" class="grid-20">
+            <div class="tabs">
+                <span class="grid-3 selected">资源定价</span>
+            </div>
+
+            <div class="main-title">新增定价模板</span></div>
+
+            <div class="container-fluid add-res-price-form">
+                <div class="col-sm-4">
+                    <label><em>*</em>钢厂：</label>
+                    <input type="text" class="form-control" value="塘沽钢厂">
+                </div>
+                <div class="col-sm-4">
+                    <label><em>*</em>品种：</label>
+                    <input type="text" class="form-control" value="盘螺">
+                </div>
+                <div class="col-sm-4">
+                    <label>基价：</label>
+                    <input type="text" class="form-control hightlight-orange" value="2160">
+                </div>
+
+            </div>
+
+            <div class="second-title">材质调价</div>
+
+            <div class="table-block">
+                <div class="table-center table-adjust-price-8">
+                    <table class="">
+                        <tr class="title">
+                            <th width="40%">材质</th>
+                            <th width="40%">调价幅度</th>
+                            <th width="20%">操作</th>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><button class="btn btn-link">删除</button></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><button class="btn btn-link">删除</button></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><button class="btn btn-link">删除</button></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><button class="btn btn-link">删除</button></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><button class="btn btn-link">删除</button></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><button class="btn btn-link">删除</button></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td>
+                                <button class="btn btn-link">删除</button>
+                                <button class="btn btn-link">新增行</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="second-title">规格调价</div>
+
+            <div class="table-block">
+                <div class="table-center table-adjust-price-8">
+                    <table class="">
+                        <tr class="title">
+                            <th width="22%">规格名称</th>
+                            <th width="18%">取值下限</th>
+                            <th width="18%">取值上限</th>
+                            <th width="22%">调价幅度</th>
+                            <th width="20%">操作</th>
+                        </tr>
+                        <tr>
+                            <td>厚度</td>
+                            <td>6</td>
+                            <td>7.999</td>
+                            <td><input type="text" class="form-control" value="2000"></td>
+                            <td><button class="btn btn-link">删除</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="form-control">
+                                    <option>厚度</option>
+                                    <option>硬度</option>
+                                </select>
+                            </td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><button class="btn btn-link">删除</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="form-control">
+                                    <option>厚度</option>
+                                    <option>硬度</option>
+                                </select>
+                            </td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><button class="btn btn-link">删除</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="form-control">
+                                    <option>厚度</option>
+                                    <option>硬度</option>
+                                </select>
+                            </td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><button class="btn btn-link">删除</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="form-control">
+                                    <option>厚度</option>
+                                    <option>硬度</option>
+                                </select>
+                            </td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><button class="btn btn-link">删除</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="form-control">
+                                    <option>厚度</option>
+                                    <option>硬度</option>
+                                </select>
+                            </td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><button class="btn btn-link">删除</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="form-control">
+                                    <option>厚度</option>
+                                    <option>硬度</option>
+                                </select>
+                            </td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><button class="btn btn-link">删除</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="form-control">
+                                    <option>厚度</option>
+                                    <option>硬度</option>
+                                </select>
+                            </td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><button class="btn btn-link">删除</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="form-control">
+                                    <option>厚度</option>
+                                    <option>硬度</option>
+                                </select>
+                            </td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><button class="btn btn-link">删除</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="form-control">
+                                    <option>厚度</option>
+                                    <option>硬度</option>
+                                </select>
+                            </td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><button class="btn btn-link">删除</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="form-control">
+                                    <option>厚度</option>
+                                    <option>硬度</option>
+                                </select>
+                            </td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><button class="btn btn-link">删除</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="form-control">
+                                    <option>厚度</option>
+                                    <option>硬度</option>
+                                </select>
+                            </td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td>
+                                <button class="btn btn-link">删除</button>
+                                <button class="btn btn-link">新增行</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="second-title">其他调价</div>
+
+            <div class="table-block">
+                <div class="table-center table-adjust-price-5">
+                    <table class="">
+                        <tr class="title">
+                            <th width="26%">品名</th>
+                            <th width="26%">计量方式</th>
+                            <th width="26%">调价幅度</th>
+                            <th width="20%">操作</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="form-control">
+                                    <option>厚度</option>
+                                    <option>硬度</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="form-control">
+                                    <option>厚度</option>
+                                    <option>硬度</option>
+                                </select>
+                            </td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><button class="btn btn-link">删除</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="form-control">
+                                    <option>厚度</option>
+                                    <option>硬度</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="form-control">
+                                    <option>厚度</option>
+                                    <option>硬度</option>
+                                </select>
+                            </td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><button class="btn btn-link">删除</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="form-control">
+                                    <option>厚度</option>
+                                    <option>硬度</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="form-control">
+                                    <option>厚度</option>
+                                    <option>硬度</option>
+                                </select>
+                            </td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><button class="btn btn-link">删除</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="form-control">
+                                    <option>厚度</option>
+                                    <option>硬度</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="form-control">
+                                    <option>厚度</option>
+                                    <option>硬度</option>
+                                </select>
+                            </td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><button class="btn btn-link">删除</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="form-control">
+                                    <option>厚度</option>
+                                    <option>硬度</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="form-control">
+                                    <option>厚度</option>
+                                    <option>硬度</option>
+                                </select>
+                            </td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><button class="btn btn-link">删除</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="form-control">
+                                    <option>厚度</option>
+                                    <option>硬度</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="form-control">
+                                    <option>厚度</option>
+                                    <option>硬度</option>
+                                </select>
+                            </td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><button class="btn btn-link">删除</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="form-control">
+                                    <option>厚度</option>
+                                    <option>硬度</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="form-control">
+                                    <option>厚度</option>
+                                    <option>硬度</option>
+                                </select>
+                            </td>
+                            <td><input type="text" class="form-control"></td>
+                            <td>
+                                <button class="btn btn-link">删除</button>
+                                <button class="btn btn-link">新增行</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="buttons-foot-bar">
+                <button type="button" class="btn btn-form-search no-radius">新增模板</button>
+                <button type="button" class="btn btn-cancel no-radius">取消</button>
+            </div>
+
+        </div>
+    </div>
+    <div class="body-footer"></div>
+</div>
+
+<div class="footer">
+    <div class="container-24"></div>
+</div>
+
+<script src="../../js/libs/require.js"></script>
+<script src="../../js/main.js"></script>
+<script>
+    require(['jquery', 'icheck'], function ($) {
+        $('input').iCheck({
+            checkboxClass: 'icheckbox_minimal-green',
+            radioClass: 'iradio_minimal-green',
+            increaseArea: '20%' // optional
+        });
+    });
+</script>
+
+</body>
+</html>

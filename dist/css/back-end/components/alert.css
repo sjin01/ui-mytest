@@ -1,0 +1,36 @@
+.popup_content > .content-wrapper .content-bottom {
+  background-color: #f8f9f8;
+}
+
+.alert-wrapper,
+.confirm-wrapper {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.btn-yes {
+  background: #ea5a5a;
+}
+.btn-yes:hover {
+  background: #f74343;
+}
+
+.btn-no {
+  background: #bfbfbf;
+}
+.btn-no:hover {
+  background: #AAAAAA;
+}
+
+.glyphicon {
+  font-size: 35px;
+}
+.glyphicon.orange {
+  color: orange;
+}
+.glyphicon.green {
+  color: green;
+}
+.glyphicon.red {
+  color: #ea5a5a;
+}

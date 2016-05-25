@@ -1,0 +1,83 @@
+extends channel-classification-layout
+
+block content
+    form#search-res.search-form.search-channel.form-inline
+        .container-fluid
+            .row
+                .col-md-12
+                    label(for='') 分组名称：
+                    input.form-control(type='text')
+                    label.mgl-15(for='') 渠道商：
+                    input.form-control(type='text')
+                    .form-button-group.pull-right
+                        button.btn.btn-form-clear(type='button') 清空
+                        button.btn.btn-form-search(type='button') 查询
+    .table-block
+        .table-top
+            div
+                label.mgl-10
+                    | 已创建
+                    em.hightlight-orange 2
+                    | 条规则
+                span#button-group
+                    a.btn.btn-table-operation(href='channel-classification-add.html') 新增分组
+        .table-center.min-height-325a
+            table
+                tr.title
+                    th(width='15%') 渠道商编码
+                    th(width='20%') 渠道商全称
+                    th(width='10%') 渠道商简称
+                    th(width='10%')
+                        | 类型
+                        span.caret
+                    th(width='10%')
+                        | 系统对接
+                        span.caret
+                    th(width='15%') 开通/关闭时间
+                    th(width='20%')
+                        | 状态
+                        span.caret
+                tr.odd
+                    td 10000017
+                    td 上海钢富电子商务有限公司
+                    td 找钢网
+                    td 电商
+                    td 是
+                    td 2015-07-22 10:40
+                    td
+                        span 待开通
+                        | |
+                        button.btn.btn-link 开通渠道
+                tr.even
+                    td 1
+                    td 找钢网
+                    td 电商
+                    td 是
+                    td 全部
+                    td 全部
+                    td
+                        button.btn.btn-link 授权
+                tr.odd
+                    td 1
+                    td 找钢网
+                    td 电商
+                    td 是
+                    td 全部
+                    td 全部
+                    td
+                        button.btn.btn-link 授权
+                tr.even
+                    td 1
+                    td 找钢网
+                    td 电商
+                    td 是
+                    td 全部
+                    td 全部
+                    td
+                        button.btn.btn-link 授权
+        .table-bottom
+
+    script(type='text/javascript').
+        require(['jquery'], function ($) {
+            locate('渠道管理', '渠道分级', '渠道分级');
+        });

@@ -1,0 +1,165 @@
+extends res-sale-layout
+
+block content
+    .import-row
+        label 1、请先下载模板，并按我方提供的品名、材质、规格、钢厂、计量方式、仓库标准描述录入模板文件：
+        a.btn.btn-form-search.no-radius(href='#')
+            i.icon.icon-donwload
+            | 下载模板
+    .import-row.form-inline
+        label 2、选择本地的模板文件（已录入资源数据）：
+        .input-group
+            input.form-control.no-radius(type='text', placeholder='上传文件')
+            span.input-group-btn
+                button.btn.btn-cancel.no-radius(type='button')
+                    i.icon.icon-search-white
+                    | 浏览
+        button.btn.btn-common.no-radius(type='button') 导入
+    .table-block
+        .table-top
+            div
+                label.mgl-10
+                    i.faicon.faicon-search.mgr-10
+                    |                                 查询到
+                    em.hightlight-orange 454
+                    | 条资源，共计
+                    em.hightlight-orange 54
+                    | 件
+                    em.hightlight-orange 23546
+                    | 吨
+                span#button-group
+                    button.btn.btn-table-operation(type='button') 确认导入
+                    button.btn.btn-table-operation(type='button') 取消导入
+        .table-center
+            table
+                tr.title
+                    th(width='5%')
+                        input(type='checkbox')
+                    th(width='10%') 品名
+                    th(width='10%') 材质
+                    th(width='5%') 规格
+                    th(width='10%') 钢厂
+                    th(width='10%') 仓库
+                    th(width='5%') 地区
+                    th(width='10%') 可售数量
+                    th(width='10%') 可售重量
+                    th(width='5%') 件重
+                    th(width='10%') 记重方式
+                    th(width='10%') 状态
+                tr.odd.selected
+                    td
+                        input(type='checkbox')
+                    td 螺纹钢
+                    td HRB400
+                    td 16*9
+                    td 湘钢
+                    td 铁四局库
+                    td 上海
+                    td 100
+                    td 256.800
+                    td 2.568
+                    td 理记
+                    td 已挂单
+                tr.even
+                    td
+                        input(type='checkbox')
+                    td 螺纹钢
+                    td HRB400
+                    td 16*9
+                    td 湘钢
+                    td 铁四局库
+                    td 上海
+                    td 100
+                    td 256.800
+                    td 2.568
+                    td 理记
+                    td 已挂单
+                tr.odd
+                    td
+                        input(type='checkbox')
+                    td 螺纹钢
+                    td HRB400
+                    td 16*9
+                    td 湘钢
+                    td 铁四局库
+                    td 上海
+                    td 100
+                    td 256.800
+                    td 2.568
+                    td 理记
+                    td 已挂单
+                tr.even
+                    td
+                        input(type='checkbox')
+                    td 螺纹钢
+                    td HRB400
+                    td 16*9
+                    td 湘钢
+                    td 铁四局库
+                    td 上海
+                    td 100
+                    td 256.800
+                    td 2.568
+                    td 理记
+                    td 已挂单
+                tr.odd
+                    td
+                        input(type='checkbox')
+                    td 螺纹钢
+                    td HRB400
+                    td 16*9
+                    td 湘钢
+                    td 铁四局库
+                    td 上海
+                    td 100
+                    td 256.800
+                    td 2.568
+                    td 理记
+                    td 已挂单
+                tr.even
+                    td
+                        input(type='checkbox')
+                    td 螺纹钢
+                    td HRB400
+                    td 16*9
+                    td 湘钢
+                    td 铁四局库
+                    td 上海
+                    td 100
+                    td 256.800
+                    td 2.568
+                    td 理记
+                    td 已挂单
+                tr.odd
+                    td
+                        input(type='checkbox')
+                    td 螺纹钢
+                    td HRB400
+                    td 16*9
+                    td 湘钢
+                    td 铁四局库
+                    td 上海
+                    td 100
+                    td 256.800
+                    td 2.568
+                    td 理记
+                    td 已挂单
+                tr.even
+                    td
+                        input(type='checkbox')
+                    td 螺纹钢
+                    td HRB400
+                    td 16*9
+                    td 湘钢
+                    td 铁四局库
+                    td 上海
+                    td 100
+                    td 256.800
+                    td 2.568
+                    td 理记
+                    td 已挂单
+        .table-bottom
+    script(type='text/javascript').
+        require(['jquery'], function ($) {
+            locate('资源管理', '可售资源', '批量导入');
+        });

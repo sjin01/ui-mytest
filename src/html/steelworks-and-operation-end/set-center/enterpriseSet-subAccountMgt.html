@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>中钢信</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/steelworks-and-operation-end/base.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/steelworks-and-operation-end/modules/enterprise-settings.css">
+</head>
+
+<body>
+
+<div class="header"></div>
+
+<div class="body">
+    <div class="container-24">
+
+        <div class="grid-3 no-padding">
+            <div class="slider"></div>
+        </div>
+
+        <div id="main" class="grid-21">
+
+            <div class="tabs"></div>
+
+            <form id="search-res" class="search-form search-subaccount-form form-inline">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <select class="form-control">
+                                <option>登录名：</option>
+                            </select>
+                            <input type="text" class="form-control mgr-20">
+
+                            <select class="form-control">
+                                <option>创建时间</option>
+                                <option>登录时间</option>
+                            </select>
+                            <input type="text" class="form-control" id="from" placeholder="">
+                            <input type="text" class="form-control mgr-20" id="to" placeholder="">
+
+                            <label for="">状态：</label>
+                            <select class="form-control">
+                                <option>全部</option>
+                            </select>
+                            <div class="form-button-group pull-right">
+                                <button type="button" class="btn btn-form-clear">清空</button>
+                                <button type="button" class="btn btn-form-search">查询</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div class="table-block">
+                <div class="table-top">
+                    <label class="mgl-10">
+                        <i class="faicon faicon-search mgr-10"></i>
+                        查询到
+                        <em class="hightlight-orange">8</em>
+                        条记录
+                    </label>
+                    <span id="button-group">
+                        <button type="button" class="btn btn-table-operation" id="createAccount">创建账号</button>
+                    </span>
+                </div>
+
+                <div class="table-center min-height-325"></div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="footer"></div>
+
+<script src="../../../js/libs/require.js"></script>
+<script src="../../../js/base.js"></script>
+<script>
+    require(['jquery', 'tplUtil', 'text!../template/modules/base.rac', 'pagination', 'general', 'pikadaytime'], function ($, TplUtil, BaseTpl, Pagination, General) {
+        var modules = [
+            {name: '资源管理'},
+            {name: '交易管理'},
+            {name: '渠道管理'},
+            {name: '定价管理'},
+            {name: '设置中心', selected: true}
+        ];
+
+        TplUtil.loadTpl({
+            el: '.header',
+            template: $(BaseTpl).filter('#header-content').html(),
+            data: {
+                logoText: '华伟薄板',
+                modules: modules
+            }
+        });
+
+        TplUtil.loadTpl({
+            el: '.footer',
+            template: $(BaseTpl).filter('#footer-content').html()
+        });
+
+        var leftModules = [
+            {name: '账户设置', className: 'icon-account-setting', link: 'accountSettingInfo.html'},
+            {name: '企业设置', className: 'icon-enterprise-setting', link: 'enterpriseSettingInfo.html', selected: true},
+            {name: '消息设置', className: 'icon-message-setting', link: ''}
+        ];
+
+        TplUtil.loadTpl({
+            el: '.slider',
+            template: $(BaseTpl).filter('#slider-content').html(),
+            data: { leftModules: leftModules }
+        });
+
+        var tabModules = [
+            {name: '企业信息', link: 'enterpriseSettingInfo.html'},
+            {name: '子账号管理', link: 'enterpriseSettingSubAccountMgt.html', selected: true}
+        ];
+
+        TplUtil.loadTpl({
+            el: '.tabs',
+            template: $(BaseTpl).filter('#tabs-content').html(),
+            data: { tabModules: tabModules }
+        });
+
+        $('#from').pikaday();
+        $('#to').pikaday();
+        General.bindDateRange('#from', '#to');
+
+        var subaccounts = {
+            "total":    5,
+            "sortAsc":  true,
+            "items": [
+                { loginName: 'jerry', realName:'洪平', phoneNumber: '13900001111', mail: 'jerry@163.com', state: '启用', createTime: '2015-9-1 17:01', lastLoginTime: '2015-9-1 17:01'},
+                { loginName: 'jerry', realName:'洪平', phoneNumber: '13900001111', mail: 'jerry@163.com', state: '启用', createTime: '2015-9-1 17:01', lastLoginTime: '2015-9-1 17:01'},
+                { loginName: 'jerry', realName:'洪平', phoneNumber: '13900001111', mail: 'jerry@163.com', state: '启用', createTime: '2015-9-1 17:01', lastLoginTime: '2015-9-1 17:01'},
+                { loginName: 'jerry', realName:'洪平', phoneNumber: '13900001111', mail: 'jerry@163.com', state: '启用', createTime: '2015-9-1 17:01', lastLoginTime: '2015-9-1 17:01'},
+                { loginName: 'jerry', realName:'洪平', phoneNumber: '13900001111', mail: 'jerry@163.com', state: '启用', createTime: '2015-9-1 17:01', lastLoginTime: '2015-9-1 17:01'},
+                { loginName: 'jerry', realName:'洪平', phoneNumber: '13900001111', mail: 'jerry@163.com', state: '启用', createTime: '2015-9-1 17:01', lastLoginTime: '2015-9-1 17:01'},
+                { loginName: 'jerry', realName:'洪平', phoneNumber: '13900001111', mail: 'jerry@163.com', state: '启用', createTime: '2015-9-1 17:01', lastLoginTime: '2015-9-1 17:01'},
+                { loginName: 'jerry', realName:'洪平', phoneNumber: '13900001111', mail: 'jerry@163.com', state: '启用', createTime: '2015-9-1 17:01', lastLoginTime: '2015-9-1 17:01'}
+            ]
+        };
+        new Pagination($.extend({
+            target: '.table-center',
+            template: '#subaccounts'
+        }, subaccounts));
+
+        $('#createAccount').click(function () {
+            location.href = 'enterpriseSettingSubAccountMgt-add.html';
+        });
+
+    });
+
+</script>
+
+<script type="text/ractive" id="subaccounts">
+<table class="ui_table">
+    <tbody>
+        <tr class="title">
+            <th width="7%">序号</th>
+            <th width="10%">登录名</th>
+            <th width="10%">姓名</th>
+            <th width="15%">手机</th>
+            <th width="15%">邮箱</th>
+            <th decorator="sort:状态" width="7%">状态</th>
+            <th decorator="sort:创建时间" width="12%">创建时间</th>
+            <th decorator="sort:最后登录时间" width="12%">最后登录时间</th>
+            <th width="7%">操作</th>
+        </tr>
+        {{#items:index}}
+            <tr class="{{index%2==0 ? 'odd' : 'even'}}" >
+                <td>{{index + 1}}</td>
+                <td>{{loginName}}</td>
+                <td>{{realName}}</td>
+                <td>{{phoneNumber}}</td>
+                <td>{{mail}}</td>
+                <td>{{state}}</td>
+                <td>{{createTime}}</td>
+                <td>{{lastLoginTime}}</td>
+                <td><a href="javascript:void(0);" on-click="showDetail:{{index}}">详情</a></td>
+            </tr>
+        {{/items}}
+    </tbody>
+</table>
+</script>
+
+</body>
+</html>

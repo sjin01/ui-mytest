@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>中钢信</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/steelworks-and-operation-end/base.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/steelworks-and-operation-end/modules/message-settings.css">
+</head>
+
+<body>
+
+<div class="header"></div>
+
+<div class="body">
+    <div class="container-24">
+
+        <div id="main" class="grid-24">
+
+            <div class="tabs"></div>
+
+            <div class="clearfix">
+
+                <table id="messageTable" class="">
+                    <tr class="border-gray-medium bgc-gray-light">
+                        <th width="5%"><input type="checkbox" id="allCheckbox"></th>
+                        <th width="10%">序号</th>
+                        <th width="50%">内容</th>
+                        <th width="20%">时间</th>
+                        <th width="15%">操作</th>
+                    </tr>
+                    <tr class="border-gray-medium">
+                        <td><input type="checkbox" name="single"></td>
+                        <td>1</td>
+                        <td>企业简称-账号姓名 提交订单 【20151111144246422013307】</td>
+                        <td>2015-12-11 16:58</td>
+                        <td>
+                            <button name="more" class="btn btn-sm btn-link mgl-5">
+                                <span>查看</span>
+                                <i class="faicon faicon-angle-down"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr class="border-gray-medium">
+                        <td><input type="checkbox" name="single"></td>
+                        <td>2</td>
+                        <td>企业简称-账号姓名 提交订单 【20151111144246422013307】</td>
+                        <td>2015-12-11 16:58</td>
+                        <td>
+                            <button name="more" class="btn btn-sm btn-link mgl-5">
+                                <span>查看</span>
+                                <i class="faicon faicon-angle-down"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr class="border-gray-medium">
+                        <td><input type="checkbox" name="single"></td>
+                        <td>3</td>
+                        <td>企业简称-账号姓名 提交订单 【20151111144246422013307】</td>
+                        <td>2015-12-11 16:58</td>
+                        <td>
+                            <button name="more" class="btn btn-sm btn-link mgl-5">
+                                <span>查看</span>
+                                <i class="faicon faicon-angle-down"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr class="border-gray-medium">
+                        <td colspan="5" class="text-left pd-all-10">
+                            <button class="btn btn-primary no-radius mgl-10">清空已读</button>
+                            <button class="btn btn-primary no-radius mgl-10">全部已读</button>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer"></div>
+
+<script src="../../../js/libs/require.js"></script>
+<script src="../../../js/base.js"></script>
+<script>
+    require(['jquery', 'tplUtil', 'text!../template/modules/base.rac'], function ($, TplUtil, BaseTpl) {
+
+        $('#messageTable').on('click', '[type="checkbox"]', function () {
+            var self = this,
+                $self = $(this);
+
+            var cbs = $('#messageTable').find('[name="single"]');
+
+            if (self.id == 'allCheckbox') {
+                cbs.prop('checked', $self.prop('checked'));
+            } else {
+                var checkedCbs = $('#messageTable').find('[name="single"]:checked');
+                $('#allCheckbox').prop('checked', cbs.length == checkedCbs.length);
+            }
+        });
+
+        var template = '<tr class="border-gray-medium">' +
+                        '<td colspan="3" class="bgc-gray-lighter">' +
+                            '<div class="line-height-28">' +
+                                '<div>尊敬的用户：</div>' +
+                                '<div class="pdl-25 pdr-25">杀菌浪费就卡死老房间卡拉斯加福利撒娇快放假了撒娇疯狂了撒娇佛罗伦萨的健康和</div>' +
+                                '<div class="pdl-25 pdr-25">杀菌浪费就卡死老房间卡拉斯加福利撒娇快放假了撒娇疯狂了撒娇佛罗伦萨的健康和</div>' +
+                                '<div class="pdl-25 pdr-25">杀菌浪费就卡死老房间卡拉斯加福利撒娇快放假了撒娇疯狂了撒娇佛罗伦萨的健康和</div>' +
+                                '<div class="pdl-25 pdr-25">杀菌浪费就卡死老房间卡拉斯加福利撒娇快放假了撒娇疯狂了撒娇佛罗伦萨的健康和</div>' +
+                                '<div class="pdl-25 pdr-25">杀菌浪费就卡死老房间卡拉斯加福利撒娇快放假了撒娇疯狂了撒娇佛罗伦萨的健康和</div>' +
+                                '<div class="pdl-25 pdr-25 text-right">中钢信</div>' +
+                                '<div class="pdl-25 pdr-25 text-right">2015年11月25日</div>' +
+                            '</div>' +
+                        '</td>' +
+                    '</tr>';
+
+        $('.platform-notice-table').on('click', '[name="more"]', function () {
+            var self = $(this),
+                $span = self.find('span'),
+                $i = self.find('i');
+
+            if ($.trim($span.text()) == '查看') {
+                $span.text('收起');
+                self.parents('tr').after(template);
+            } else {
+                $span.text('查看');
+                self.parents('tr').next().remove();
+            }
+
+            $i.toggleClass('faicon-angle-down').toggleClass('faicon-angle-up');
+        });
+
+        var modules = [
+            {name: '资源管理'},
+            {name: '交易管理'},
+            {name: '渠道管理'},
+            {name: '定价管理'},
+            {name: '设置中心', selected: true}
+        ];
+        TplUtil.loadTpl({
+            el: '.header',
+            template: $(BaseTpl).filter('#header-content').html(),
+            data: {
+                logoText: '华伟薄板',
+                modules: modules
+            }
+        });
+
+        TplUtil.loadTpl({
+            el: '.footer',
+            template: $(BaseTpl).filter('#footer-content').html()
+        });
+
+        var tabModules = [
+            {name: '业务消息', link: 'accountSettingInfo.html', selected: true},
+            {name: '平台公告', link: 'accountSettingInfo.html'}
+        ];
+        TplUtil.loadTpl({
+            el: '.tabs',
+            template: $(BaseTpl).filter('#tabs-content').html(),
+            data: { tabModules: tabModules }
+        });
+
+    });
+
+</script>
+
+</body>
+</html>

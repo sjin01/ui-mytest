@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>中钢信管理平台</title>
+    <link href="../../../css/back-end/workspace.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="wrapper">
+
+    <div class="top_nav"></div>
+
+    <div class="body_box">
+
+        <ul class="side_nav" style="min-height: 681px;"></ul>
+
+        <ul class="feature_nav"></ul>
+
+        <div class="main_content">
+
+            <div class="query-form container-fluid">
+
+                <div class="row">
+                    <select class="form-widget mgl-20">
+                        <option>登录名：</option>
+                    </select>
+                    <input type="text" class="form-widget">
+
+                    <select class="form-widget mgl-20">
+                        <option>创建时间：</option>
+                    </select>
+                    <input type="text" class="form-widget">
+                    <input type="text" class="form-widget">
+
+                    <label for="" class="mgl-20">状态：</label>
+                    <select class="form-widget">
+                        <option>全部</option>
+                    </select>
+
+                    <a class="blue_button mgl-20 mgr-5" href="javascript:void(0);" id="skuQueryBtn">查询</a>
+                    <a class="red_button" href="javascript:void(0);" id="skuAddBtn">新增角色</a>
+                </div>
+
+            </div>
+
+            <div id="skuListBox"></div>
+
+        </div>
+
+    </div>
+</div>
+
+<script src="../../../js/libs/require.js"></script>
+<script src="../../../js/base.js"></script>
+
+<script>
+    require(["jquery", 'tplUtil', "text!../template/modules/workspace.rac", "popup", 'alert', 'pagination'], function ($, TplUtil, WSTpl, Popup, Alert, Pagination) {
+
+        var items1 = [
+            {link: '#1', name: '基础数据'},
+            {link: '#2', name: '会员'},
+            {link: '#3', name: '销售'},
+            {link: '#4', name: '系统', selected: true}
+        ],
+        items2 = [
+            { link: 'privilege-mgt.html', name: '权限管理', className: 'back-privilege'},
+            { link: 'backstage-account-mgt.html', name: '后台账号管理', className: 'back-backstage', selected: true}
+        ],
+        items3 = [
+            { link: '#1', name: '运营账号', selected: true },
+            { link: '#1', name: '接口账号'}
+        ];
+
+        TplUtil.loadTpl({
+            el: '.top_nav',
+            template: $(WSTpl).filter('#top-nav').html(),
+            data: {
+                modules: items1
+            }
+        });
+
+        TplUtil.loadTpl({
+            el: '.side_nav',
+            template: $(WSTpl).filter('#side-nav').html(),
+            data: {
+                items: items2
+            }
+        });
+
+        TplUtil.loadTpl({
+            el: '.feature_nav',
+            template: $(WSTpl).filter('#feature-nav').html(),
+            data: {
+                items: items3
+            }
+        });
+
+        var items = {
+            "total":    5,
+            "sortAsc":  true,
+            "items": [
+                {"availableQuantity":58,"availableQuantityStr":"58","availableWeight":3,"availableWeightStr":"3.000","className":"型材","brandName":"工字钢","calculateDesc":"磅计","calculateType":2,"cityName":"北京市","createTime":1444962172000,"creator":2,"deleted":false,"deleted_desc":"可用","fromWay":1,"listingFlag":0,"listingFlagName":"未挂单","listingQuantity":58,"listingRatio":100,"listingWeight":3,"meterageType":1,"meterageTypeName":"吨","modifier":11,"modifyTime":1445860189000,"modifyTimeStr":"2015-10-26 19:49:49","resId":446,"resType":1,"salePrice":300024,"salePriceStr":"3000","skuId":10000005,"specificationName":"1.0*1250*C","steelworksName":"泰钢","supResCode":"020020","supplierId":8,"textureName":"HRB400E","unitWeight":0.24,"unitWeightStr":"0.240","warehouseAbbr":"高星","warehouseDisplayName":"高星物流（北京市）","warehouseId":1,"warehouseName":"高星物流"},
+                {"availableQuantity":58,"availableQuantityStr":"58","availableWeight":3,"availableWeightStr":"3.000","className":"型材","brandName":"工字钢","calculateDesc":"磅计","calculateType":2,"cityName":"北京市","createTime":1444962172000,"creator":2,"deleted":false,"deleted_desc":"可用","fromWay":1,"listingFlag":0,"listingFlagName":"未挂单","listingQuantity":58,"listingRatio":100,"listingWeight":3,"meterageType":1,"meterageTypeName":"吨","modifier":11,"modifyTime":1445860189000,"modifyTimeStr":"2015-10-26 19:49:49","resId":446,"resType":1,"salePrice":300024,"salePriceStr":"3000","skuId":10000005,"specificationName":"1.0*1250*C","steelworksName":"泰钢","supResCode":"020020","supplierId":8,"textureName":"HRB400E","unitWeight":0.24,"unitWeightStr":"0.240","warehouseAbbr":"高星","warehouseDisplayName":"高星物流（北京市）","warehouseId":1,"warehouseName":"高星物流"},
+                {"availableQuantity":58,"availableQuantityStr":"58","availableWeight":3,"availableWeightStr":"3.000","className":"型材","brandName":"工字钢","calculateDesc":"磅计","calculateType":2,"cityName":"北京市","createTime":1444962172000,"creator":2,"deleted":false,"deleted_desc":"可用","fromWay":1,"listingFlag":0,"listingFlagName":"未挂单","listingQuantity":58,"listingRatio":100,"listingWeight":3,"meterageType":1,"meterageTypeName":"吨","modifier":11,"modifyTime":1445860189000,"modifyTimeStr":"2015-10-26 19:49:49","resId":446,"resType":1,"salePrice":300024,"salePriceStr":"3000","skuId":10000005,"specificationName":"1.0*1250*C","steelworksName":"泰钢","supResCode":"020020","supplierId":8,"textureName":"HRB400E","unitWeight":0.24,"unitWeightStr":"0.240","warehouseAbbr":"高星","warehouseDisplayName":"高星物流（北京市）","warehouseId":1,"warehouseName":"高星物流"},
+                {"availableQuantity":58,"availableQuantityStr":"58","availableWeight":3,"availableWeightStr":"3.000","className":"型材","brandName":"工字钢","calculateDesc":"磅计","calculateType":2,"cityName":"北京市","createTime":1444962172000,"creator":2,"deleted":false,"deleted_desc":"可用","fromWay":1,"listingFlag":0,"listingFlagName":"未挂单","listingQuantity":58,"listingRatio":100,"listingWeight":3,"meterageType":1,"meterageTypeName":"吨","modifier":11,"modifyTime":1445860189000,"modifyTimeStr":"2015-10-26 19:49:49","resId":446,"resType":1,"salePrice":300024,"salePriceStr":"3000","skuId":10000005,"specificationName":"1.0*1250*C","steelworksName":"泰钢","supResCode":"020020","supplierId":8,"textureName":"HRB400E","unitWeight":0.24,"unitWeightStr":"0.240","warehouseAbbr":"高星","warehouseDisplayName":"高星物流（北京市）","warehouseId":1,"warehouseName":"高星物流"},
+                {"availableQuantity":58,"availableQuantityStr":"58","availableWeight":3,"availableWeightStr":"3.000","className":"型材","brandName":"工字钢","calculateDesc":"磅计","calculateType":2,"cityName":"北京市","createTime":1444962172000,"creator":2,"deleted":false,"deleted_desc":"可用","fromWay":1,"listingFlag":0,"listingFlagName":"未挂单","listingQuantity":58,"listingRatio":100,"listingWeight":3,"meterageType":1,"meterageTypeName":"吨","modifier":11,"modifyTime":1445860189000,"modifyTimeStr":"2015-10-26 19:49:49","resId":446,"resType":1,"salePrice":300024,"salePriceStr":"3000","skuId":10000005,"specificationName":"1.0*1250*C","steelworksName":"泰钢","supResCode":"020020","supplierId":8,"textureName":"HRB400E","unitWeight":0.24,"unitWeightStr":"0.240","warehouseAbbr":"高星","warehouseDisplayName":"高星物流（北京市）","warehouseId":1,"warehouseName":"高星物流"}
+            ]
+        };
+
+        new Pagination($.extend({
+            target: '#skuListBox',
+            template: '#skuListTpl'
+        }, items));
+
+        $(function () {
+            var adjustHeight = function () {
+                var viewportHeight = $(window).height();
+                var topNavHeight = $(".top_nav").outerHeight();
+                var featureNavHeight = $(".feature_nav").outerHeight();
+                var minHeight = viewportHeight - topNavHeight - featureNavHeight;
+                var mainContentHeight = $(".main_content").outerHeight();
+                if (mainContentHeight < minHeight) {
+                    $(".main_content").css("min-height", minHeight);
+                }
+                $(".side_nav").css("min-height", $(".main_content").outerHeight() + featureNavHeight + "px");
+            };
+            adjustHeight();
+            $(window).resize(adjustHeight);
+        });
+
+    });
+</script>
+
+<script type="text/ractive" id="skuListTpl">
+<table class="ui_table"><table class="ui_table">
+    <thead>
+        <tr>
+            <th>SKU编码</th>
+            <th>品类</th>
+            <th>品名</th>
+            <th>材质</th>
+            <th>规格</th>
+            <th>钢厂</th>
+            <th>计量方式</th>
+            <th decorator="sort:状态">状态 </th>
+            <th decorator="sort:更新时间">更新时间 </th>
+            <th>更新人</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#items:index}}
+        <tr class={{index%2==0 ? 'even' : 'odd'}}>
+            <td>{{skuId}}</td>
+            <td>{{className}}</td>
+            <td>{{brandName}}</td>
+            <td>{{textureName}}</td>
+            <td>{{specificationName}}</td>
+            <td>{{steelworksName}}</td>
+            <td>{{calculateDesc}}</td>
+            <td>
+                {{#if useStatus == 1}}
+                    启用
+                {{/if}}
+                {{#if useStatus == 0}}
+                    <span style="color : red;">停用</span>
+                {{/if}}
+            </td>
+            <td>{{modifyTime}}</td>
+            <td>{{modifierName}}</td>
+            <td>
+                <a href="javascript:void(0);">
+                    {{useStatus==1?'停用':'启用'}}
+                </a>
+            </td>
+        </tr>
+        {{/items}}
+    </tbody>
+</table>
+</script>
+
+</body>
+</html>

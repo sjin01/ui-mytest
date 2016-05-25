@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>中钢信</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/steelworks-and-operation-end/base.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/steelworks-and-operation-end/modules/trading-manage.css">
+</head>
+
+<body>
+
+<div class="header"></div>
+
+<div class="body">
+    <div class="container-24">
+
+        <div class="grid-3 no-padding">
+            <div class="slider"></div>
+        </div>
+
+        <div id="main" class="grid-21">
+
+            <div class="tabs"></div>
+
+            <form class="search-form search-order-manage form-inline">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="form-group col-md-2">
+                            <label for="">渠道商：</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="">状态：</label>
+                            <select class="form-control">
+                                <option>全部</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="">订单号：</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group col-md-6 date-section">
+                            <label for="" class="text-right">订单日期：</label>
+                            <input type="text" class="form-control" placeholder="起始时间">
+                            -
+                            <input type="text" class="form-control" placeholder="结束时间">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-2">
+                            <label for="">品名：</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="">材质：</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="">钢厂：</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="">钢厂：</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group col-md-2 warehouse">
+                            <label for="">仓库：</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group col-md-2 form-button-group" style="padding-right: 10px;">
+                            <button type="button" class="btn btn-form-clear">清空</button>
+                            <button type="button" class="btn btn-form-search">查询</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div class="table-block">
+                <div class="table-top">
+                    <label class="mgl-10">
+                        <i class="faicon faicon-search mgr-10"></i>
+                        查询到
+                        <em class="hightlight-orange">454</em>
+                        条资源，共计
+                        <em class="hightlight-orange">54</em>
+                        件
+                        <em class="hightlight-orange">23546</em>
+                        吨
+                    </label>
+                    <span id="button-group">
+                        <button type="button" class="btn btn-table-operation" id="btn1">撤销订单</button>
+                        <button type="button" class="btn btn-table-operation" id="btn2">提醒收款</button>
+                        <button type="button" class="btn btn-table-operation" id="btn3">拒绝订单</button>
+                        <button type="button" class="btn btn-table-operation" id="btn4">新增例外</button>
+                        <button type="button" class="btn btn-table-operation" id="btn5">同意退货</button>
+                        <button type="button" class="btn btn-table-operation" id="btn6">拒绝退货</button>
+                        <button type="button" class="btn btn-table-operation" id="btn7">批量确认收货</button>
+                        <button type="button" class="btn btn-table-operation" id="btn8">确认订单</button>
+                        <button type="button" class="btn btn-table-operation" id="btn9">提示</button>
+                        <button type="button" class="btn btn-table-operation" id="btn10">平台公告</button>
+                        <button type="button" class="btn btn-table-operation" id="btn11">添加平台公告</button>
+                        <button type="button" class="btn btn-table-operation" id="btn12">添加短信通知</button>
+                    </span>
+                </div>
+
+                <div class="table-center min-height-325">
+                    <table class="spot-order-table">
+                        <tr class="title">
+                            <th width="55%">订单明细</th>
+                            <th width="15%">订单小计</th>
+                            <th width="15%">状态</th>
+                            <th width="15%">操作</th>
+                        </tr>
+                        <tr class="content-1" style="background-color:#fafbfa;">
+                            <td class="text-left pdl-10">
+                                <span class="font-weight-bold">上海钢富电子商务有限公司</span>
+                                <span class="">（洪平 18671110020）</span>
+                            </td>
+                            <td colspan="3" class="text-right">
+                                订单：<span class="color-blue-edi">201511061747538606808</span>（2015-11-06 17:47）
+                            </td>
+                        </tr>
+                        <tr class="content-2">
+                            <td class="text-left pdl-10">
+                                <div>
+                                    <span>四切普板 Q235B 12*2200*L</span>
+                                    <span class="mgl-15">华伟 理记</span>
+                                    <span class="mgl-15">华伟厂库</span>
+                                    <span class="mgl-15">1件/2.600吨</span>
+                                    <span class="mgl-15">$ 2070元/吨</span>
+                                </div>
+                                <div>
+                                    <span>四切普板 Q235B 12*2200*L</span>
+                                    <span class="mgl-15">华伟 理记</span>
+                                    <span class="mgl-15">华伟厂库</span>
+                                    <span class="mgl-15">1件/2.600吨</span>
+                                    <span class="mgl-15">$ 2070元/吨</span>
+                                </div>
+                                <div>
+                                    <span>四切普板 Q235B 12*2200*L</span>
+                                    <span class="mgl-15">华伟 理记</span>
+                                    <span class="mgl-15">华伟厂库</span>
+                                    <span class="mgl-15">1件/2.600吨</span>
+                                    <span class="mgl-15">$ 2070元/吨</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div><span class="color-orange-deep">$ 89,580.00</span> 元</div>
+                                <div>3件 / 7.800吨</div>
+                            </td>
+                            <td>
+                                <div>待订单审核</div>
+                            </td>
+                            <td>
+                                <button class="btn btn-link color-blue-edi">订单审核</button>
+                            </td>
+                        </tr>
+                        <tr class="content-1" style="background-color:#fafbfa;">
+                            <td class="text-left pdl-10">
+                                <span class="font-weight-bold">上海钢富电子商务有限公司</span>
+                                <span class="">（洪平 18671110020）</span>
+                            </td>
+                            <td colspan="3" class="text-right">
+                                订单：<span class="color-blue-edi">201511061747538606808</span>（2015-11-06 17:47）
+                            </td>
+                        </tr>
+                        <tr class="content-2">
+                            <td class="text-left pdl-10">
+                                <div>
+                                    <span>四切普板 Q235B 12*2200*L</span>
+                                    <span class="mgl-15">华伟 理记</span>
+                                    <span class="mgl-15">华伟厂库</span>
+                                    <span class="mgl-15">1件/2.600吨</span>
+                                    <span class="mgl-15">$ 2070元/吨</span>
+                                </div>
+                                <div>
+                                    <span>四切普板 Q235B 12*2200*L</span>
+                                    <span class="mgl-15">华伟 理记</span>
+                                    <span class="mgl-15">华伟厂库</span>
+                                    <span class="mgl-15">1件/2.600吨</span>
+                                    <span class="mgl-15">$ 2070元/吨</span>
+                                </div>
+                                <div>
+                                    <span>四切普板 Q235B 12*2200*L</span>
+                                    <span class="mgl-15">华伟 理记</span>
+                                    <span class="mgl-15">华伟厂库</span>
+                                    <span class="mgl-15">1件/2.600吨</span>
+                                    <span class="mgl-15">$ 2070元/吨</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div><span class="color-orange-deep">$ 89,580.00</span> 元</div>
+                                <div>3件 / 7.800吨</div>
+                            </td>
+                            <td>
+                                <div>待收款</div>
+                                <div>
+                                    <span class="color-orange-deep tooltip tooltip-alert-money">
+                                        <i class="icon icon-warning mgr-5"></i>
+                                        提醒收款
+                                        <div class="tooltip-container">
+                                            <div class="clearfix">
+                                                <span class="vertical-line"><i class="point"></i></span>
+                                                <span class="content">
+                                                    <span class="time">2015-7-23 14:23</span>
+                                                    <br/>
+                                                    <span class="text">已汇款12000到招商银行，先优先发订单【订单号】的货物</span>
+                                                </span>
+                                            </div>
+                                            <div class="clearfix">
+                                                <span class="vertical-line"><i class="point"></i></span>
+                                                <span class="content">
+                                                    <span class="time">2015-7-23 14:23</span>
+                                                    <br/>
+                                                    <span class="text">已汇款12000到招商银行，先优先发订单【订单号】的货物已汇款12000到招商银行，先优先发订单【订单号】的货物</span>
+                                                </span>
+                                            </div>
+                                            <div class="clearfix">
+                                                <span class="vertical-line"><i class="point"></i></span>
+                                                <span class="content">
+                                                    <span class="time">2015-7-23 14:23</span>
+                                                    <br/>
+                                                    <span class="text">已汇款12000到招商银行，先优先发订单【订单号】的货物已汇款12000到招商银行，先优先发订单【订单号】的货物已汇款12000到招商银行，先优先发订单【订单号】的货物已汇款12000到招商银行，先优先发订单【订单号】的货物已汇款12000到招商银行，先优先发订单【订单号】的货物</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <i class="triangle"></i>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <button class="btn btn-link color-blue-edi">订单审核</button>
+                            </td>
+                        </tr>
+                        <tr class="content-1" style="background-color:#fafbfa;">
+                            <td class="text-left pdl-10">
+                                <span class="font-weight-bold">上海钢富电子商务有限公司</span>
+                                <span class="">（洪平 18671110020）</span>
+                            </td>
+                            <td colspan="3" class="text-right">
+                                订单：<span class="color-blue-edi">201511061747538606808</span>（2015-11-06 17:47）
+                            </td>
+                        </tr>
+                        <tr class="content-2">
+                            <td class="text-left pdl-10">
+                                <div>
+                                    <span>四切普板 Q235B 12*2200*L</span>
+                                    <span class="mgl-15">华伟 理记</span>
+                                    <span class="mgl-15">华伟厂库</span>
+                                    <span class="mgl-15">1件/2.600吨</span>
+                                    <span class="mgl-15">$ 2070元/吨</span>
+                                </div>
+                                <div>
+                                    <span>四切普板 Q235B 12*2200*L</span>
+                                    <span class="mgl-15">华伟 理记</span>
+                                    <span class="mgl-15">华伟厂库</span>
+                                    <span class="mgl-15">1件/2.600吨</span>
+                                    <span class="mgl-15">$ 2070元/吨</span>
+                                </div>
+                                <div>
+                                    <span>四切普板 Q235B 12*2200*L</span>
+                                    <span class="mgl-15">华伟 理记</span>
+                                    <span class="mgl-15">华伟厂库</span>
+                                    <span class="mgl-15">1件/2.600吨</span>
+                                    <span class="mgl-15">$ 2070元/吨</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div><span class="color-orange-deep">$ 89,580.00</span> 元</div>
+                                <div>3件 / 7.800吨</div>
+                            </td>
+                            <td>
+                                <div>待订单审核</div>
+                            </td>
+                            <td>
+                                <div><button class="btn btn-link color-blue-edi">订单审核</button></div>
+                                <div>
+                                    <span class="">
+                                        <i class="glyphicon glyphicon-time mgr-5 remaining-time"></i>
+                                        <span class="remaining-time">剩余2小时50分</span>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="content-1">
+                            <td class="text-left pdl-10">
+                                <span class="font-weight-bold">上海钢富电子商务有限公司</span>
+                                <span class="salesman">（洪平 18671110020）</span>
+                            </td>
+                            <td colspan="3" class="text-right">
+                                订单：<span class="color-blue-edi">201511061747538606808</span>（2015-11-06 17:47）
+                            </td>
+                        </tr>
+                        <tr class="content-2">
+                            <td class="text-left pdl-10">
+                                <div>
+                                    <span>四切普板 Q235B 12*2200*L</span>
+                                    <span class="mgl-15">华伟 理记</span>
+                                    <span class="mgl-15">华伟厂库</span>
+                                    <span class="mgl-15">1件/2.600吨</span>
+                                    <span class="mgl-15">$ 2070元/吨</span>
+                                    <span class="mgl-15 color-orange-deep">申请退货</span>
+                                </div>
+                                <div>
+                                    <span>四切普板 Q235B 12*2200*L</span>
+                                    <span class="mgl-15">华伟 理记</span>
+                                    <span class="mgl-15">华伟厂库</span>
+                                    <span class="mgl-15">1件/2.600吨</span>
+                                    <span class="mgl-15">$ 2070元/吨</span>
+                                </div>
+                                <div>
+                                    <span>四切普板 Q235B 12*2200*L</span>
+                                    <span class="mgl-15">华伟 理记</span>
+                                    <span class="mgl-15">华伟厂库</span>
+                                    <span class="mgl-15">1件/2.600吨</span>
+                                    <span class="mgl-15">$ 2070元/吨</span>
+                                </div>
+                            </td>
+                            <td class="total">
+                                <div><span class="color-orange-deep">$ 89,580.00</span> 元</div>
+                                <div>3件 / 7.800吨</div>
+                            </td>
+                            <td class="state">
+                                <div>待订单审核</div>
+                            </td>
+                            <td>
+                                <div><button class="btn btn-link color-blue-edi">超时作废</button></div>
+                                <div>
+                                    <span class="">
+                                        <i class="glyphicon glyphicon-time mgr-5 color-orange-deep"></i>
+                                        <span class="color-orange-deep">超过1小时50分</span>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="footer"></div>
+
+</body>
+
+<script src="../../../js/libs/require.js"></script>
+<script src="../../../js/main.js"></script>
+
+<script type="text/javascript">
+    require(['jquery', 'tplUtil', 'text!../template/modules/base.rac', 'popup', 'alert', 'confirm'], function ($, TplUtil, BaseTpl, Popup, Alert, Confirm) {
+
+        $('#btn1').click(function () {
+            var p = new Popup({ title: '撤销订单', template: '#cancel-order-dialog', height: 280 });
+            p.on('close', function () {
+                alert('关闭！');
+            });
+        });
+
+        $('#btn2').click(function () {
+            new Popup({ title: '提醒收款', template: '#remind-collect-money-dialog', height: 300, width: 440 });
+        });
+
+        $('#btn3').click(function () {
+            new Popup({ title: '拒绝订单', template: '#reject-order-dialog', height: 340, width: 440 });
+        });
+
+        $('#btn4').click(function () {
+            new Popup({ title: '新增例外', template: '#add-exception-dialog', height: 420, width: 440 });
+        });
+
+        $('#btn5').click(function () {
+            new Confirm({ title: '同意退货', content: '是否确认同意此退货申请？', imgClass: 'question-sign color-orange-deep font-size-30' });
+        });
+
+        $('#btn6').click(function () {
+            new Popup({ title: '拒绝退货', template: '#reject-cancel-goods-dialog', height: 300, width: 440 });
+        });
+
+        $('#btn7').click(function () {
+            new Popup({ title: '批量确认收款', template: '#batch-confirm-money-dialog', height: 560, width: 600 });
+        });
+
+        $('#btn8').click(function () {
+            new Popup({ title: '确认订单', template: '#confirm-order-dialog', height: 300, width: 440 });
+        });
+
+        $('#btn9').click(function () {
+            new Popup({ title: '提示', template: '#tip-dialog', height: 300, width: 440 });
+        });
+
+        $('#btn10').click(function () {
+            new Popup({ title: '平台公告', template: '#platform-notice-dialog', height: 560, width: 800 });
+        });
+
+        $('#btn12').click(function () {
+            new Popup({ title: '短信通知', template: '#sms-dialog', height: 560, width: 650 });
+
+            $('#tag-container').on('click', '.tag-close', function () {
+                $(this).parents('.tag').remove();
+            });
+        });
+
+
+        var modules = [
+            {name: '资源管理'},
+            {name: '交易管理', selected: true},
+            {name: '渠道管理'},
+            {name: '定价管理'}
+        ];
+
+        TplUtil.loadTpl({
+            el: '.header',
+            template: $(BaseTpl).filter('#header-content').html(),
+            data: {
+                logoText: '华伟薄板',
+                modules: modules
+            }
+        });
+
+        TplUtil.loadTpl({
+            el: '.footer',
+            template: $(BaseTpl).filter('#footer-content').html()
+        });
+
+        var leftModules = [
+            {name: '现货交易', className: 'icon-shopping-cart', link: '#1', selected: true},
+            {name: '交易设置', className: 'icon-order', link: '#2'}
+        ];
+
+        TplUtil.loadTpl({
+            el: '.slider',
+            template: $(BaseTpl).filter('#slider-content').html(),
+            data: { leftModules: leftModules }
+        });
+
+        var tabModules = [
+            {name: '现货订单', selected: true}
+        ];
+
+        TplUtil.loadTpl({
+            el: '.tabs',
+            template: $(BaseTpl).filter('#tabs-content').html(),
+            data: { tabModules: tabModules }
+        });
+
+    });
+</script>
+
+<script type="text/ractive" id="cancel-order-dialog">
+    <div class="inner-wrapper">
+        <div class="inner-center">
+            <div class="inner-center-content form-inline pdl-30 pdr-30">
+                <div class="font-weight-400">若确定撤销此订单，请选择或输入订单作废原因：</div>
+                <div class="line-height-1">
+                    <label>
+                        <input type="radio"/>
+                        <span class="mgr-5 font-weight-400">采购需求变更，重新下单</span>
+                    </label>
+                </div>
+                <div class="line-height-1">
+                    <label>
+                        <input type="radio"/>
+                        <span class="mgr-5 font-weight-400">采购需求变更，放弃采购</span>
+                    </label>
+                </div>
+                <div class="line-height-1">
+                    <label>
+                        <input type="radio"/>
+                        <span class="mgr-5 font-weight-400">其他</span>
+                    </label>
+                    <input type="text" class="form-control no-radius"/>
+                </div>
+            </div>
+        </div>
+        <div class="inner-bottom text-center">
+            <button class="btn btn-orange-deep no-radius mgl-10 mgr-10 pdl-30 pdr-30" on-click="close">确认</button>
+            <button class="btn btn-gray-deep no-radius mgl-10 mgr-10 pdl-30 pdr-30" on-click="close">取消</button>
+        </div>
+    </div>
+</script>
+
+<script type="text/ractive" id="remind-collect-money-dialog">
+    <div class="inner-wrapper">
+        <div class="inner-center">
+            <div class="inner-center-content pdl-30 pdr-30">
+                <div class="line-height-1">
+                    <span class="font-weight-400">提醒内容：</span>
+                    <span class="pull-right">
+                        已输入<span class="color-orange-deep">0</span>个字
+                    </span>
+                </div>
+                <div>
+                    <textarea name="" id="" rows="5" class="form-control no-radius"></textarea>
+                </div>
+                <div class="line-height-1">
+                    <span>例：已汇款12000元到招商 银行，优先发订单【订单号】的货物</span>
+                </div>
+            </div>
+        </div>
+        <div class="inner-bottom text-center">
+            <button class="btn btn-orange-deep no-radius mgl-10 mgr-10 pdl-30 pdr-30" on-click="close">确定</button>
+            <button class="btn btn-gray-deep no-radius mgl-10 mgr-10 pdl-30 pdr-30" on-click="close">取消</button>
+        </div>
+    </div>
+</script>
+
+<script type="text/ractive" id="reject-order-dialog">
+    <div class="inner-wrapper">
+        <div class="inner-center">
+            <div class="inner-center-content pdl-30 pdr-30">
+                <div class="font-weight-400">拒绝订单操作不可恢复，若确定拒绝此订单请选择或输入拒绝理由：</div>
+                <div class="line-height-1">
+                    <label>
+                        <input type="radio"/>
+                        <span class="mgr-5 font-weight-400">缺货</span>
+                    </label>
+                </div>
+                <div class="line-height-1">
+                    <label>
+                        <input type="radio"/>
+                        <span class="mgr-5 font-weight-400">其他</span>
+                    </label>
+                </div>
+                <div class="line-height-1">
+                    <span class="font-weight-400"></span>
+                    <span class="pull-right">
+                        已输入<span class="color-orange-deep">0</span>个字
+                    </span>
+                </div>
+                <div>
+                    <textarea name="" id="" rows="3" class="form-control no-radius"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="inner-bottom text-center">
+            <button class="btn btn-orange-deep no-radius mgl-10 mgr-10 pdl-30 pdr-30" on-click="close">确认</button>
+            <button class="btn btn-gray-deep no-radius mgl-10 mgr-10 pdl-30 pdr-30" on-click="close">取消</button>
+        </div>
+    </div>
+</script>
+
+<script type="text/ractive" id="add-exception-dialog">
+    <div class="inner-wrapper">
+        <div class="inner-center">
+            <div class="inner-center-content form-inline pdl-30 pdr-30">
+                <div class="clearfix">
+                    <span class="col-md-3 text-right">产地：</span>
+                    <span class="col-md-9">
+                        <input type="text" class="form-control no-radius width-full"/>
+                    </span>
+                </div>
+                <div class="clearfix">
+                    <span class="col-md-3 text-right">品名：</span>
+                    <span class="col-md-9">
+                        <input type="text" class="form-control no-radius width-full"/>
+                    </span>
+                </div>
+                <div class="clearfix">
+                    <span class="col-md-3 text-right">材质：</span>
+                    <span class="col-md-9">
+                        <input type="text" class="form-control no-radius width-full"/>
+                    </span>
+                </div>
+                <div class="clearfix">
+                    <span class="col-md-3 text-right">仓库：</span>
+                    <span class="col-md-9">
+                        <input type="text" class="form-control no-radius width-full"/>
+                    </span>
+                </div>
+                <div class="clearfix">
+                    <span class="col-md-3 text-right">计量方式：</span>
+                    <span class="col-md-9">
+                        <select class="form-control no-radius width-full">
+                            <option>请选择</option>
+                        </select>
+                    </span>
+                </div>
+                <div class="clearfix">
+                    <span class="col-md-3 text-right star-before-orange">交货参考：</span>
+                    <span class="col-md-9">
+                        <select class="form-control no-radius width-full">
+                            <option>请选择</option>
+                        </select>
+                    </span>
+                </div>          
+
+            </div>
+        </div>
+        <div class="inner-bottom text-center">
+            <button class="btn btn-orange-deep no-radius mgl-10 mgr-10 pdl-30 pdr-30" on-click="close">新增</button>
+            <button class="btn btn-gray-deep no-radius mgl-10 mgr-10 pdl-30 pdr-30" on-click="close">取消</button>
+        </div>
+    </div>
+</script>
+
+<script type="text/ractive" id="reject-cancel-goods-dialog">
+    <div class="inner-wrapper">
+        <div class="inner-center">
+            <div class="inner-center-content pdl-30 pdr-30">
+                <div class="line-height-1">
+                    <span class="font-weight-400">请输入拒绝此退货申请的理由：</span>
+                    <span class="pull-right">
+                        已输入<span class="color-orange-deep">0</span>个字
+                    </span>
+                </div>
+                <div>
+                    <textarea name="" id="" rows="5" class="form-control no-radius"></textarea>
+                </div>
+                <div class="line-height-1">
+                    <span>例：已汇款12000元到招商 银行，优先发订单【订单号】的货物</span>
+                </div>
+            </div>
+        </div>
+        <div class="inner-bottom text-center">
+            <button class="btn btn-orange-deep no-radius mgl-10 mgr-10 pdl-30 pdr-30" on-click="close">确定</button>
+            <button class="btn btn-gray-deep no-radius mgl-10 mgr-10 pdl-30 pdr-30" on-click="close">取消</button>
+        </div>
+    </div>
+</script>
+
+<script type="text/ractive" id="batch-confirm-money-dialog">
+    <div class="inner-wrapper">
+        <div class="inner-center">
+            <div class="inner-center-content pdl-30 pdr-30 form-inline">
+                <div class="">
+                    <input type="text" class="form-control no-radius mgr-0" style="width:300px;"/>
+                    <button class="btn btn-orange-deep no-radius mgl-0 pdl-20 pdr-20" style="position:absolute; margin-top:2px; margin-left:-1px;">查询</button>
+                </div>
+                <div class="confirm-money-table-container header-fixed-table">
+                    
+                    <div class="table-header">
+                        <table class="confirm-money-table width-full fixed">
+                            <tr class="border-gray-light bgc-gray-lighter">
+                                <th width="10%"><input type="checkbox"/></th>
+                                <th width="40%">买方</th>
+                                <th width="25%">采购量</th>
+                                <th width="25%">总金额</th>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="table-body">
+                        <table class="confirm-money-table width-full fixed">
+                            <tr>
+                                <td width="10%"><input type="checkbox"/></td>
+                                <td width="40%">上海钢富电子商务有限公司</td>
+                                <td width="25%">3件 / 7.800吨</td>
+                                <td width="25%">￥ 89580.00 元</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"/></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"/></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"/></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"/></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"/></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"/></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"/></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"/></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"/></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"/></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"/></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"/></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"/></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"/></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="line-height-1">
+                    已选项小计：<span class="color-orange-deep">￥ 11,121,111.00</span> 元
+                </div>
+            </div>
+        </div>
+        <div class="inner-bottom text-center">
+            <button class="btn btn-orange-deep no-radius mgl-10 mgr-10 pdl-30 pdr-30" on-click="close">确定</button>
+            <button class="btn btn-gray-deep no-radius mgl-10 mgr-10 pdl-30 pdr-30" on-click="close">取消</button>
+        </div>
+    </div>
+</script>
+
+<script type="text/ractive" id="confirm-order-dialog">
+    <div class="inner-wrapper">
+        <div class="inner-center">
+            <div class="inner-center-content pdl-30 pdr-30">
+                <div class="text-center">
+                    <i class="glyphicon glyphicon-question-sign color-orange-deep font-size-30"></i>
+                </div>
+                <div class="line-height-2">
+                    确认订单后，贵企业需要在【支付时限】期间对此订单货物进行锁货确保可供应此订单资源给采购方；是否执行【确认订单】操作？
+                </div>
+            </div>
+        </div>
+        <div class="inner-bottom text-center">
+            <button class="btn btn-orange-deep no-radius mgl-10 mgr-10 pdl-30 pdr-30" on-click="close">确定</button>
+            <button class="btn btn-gray-deep no-radius mgl-10 mgr-10 pdl-30 pdr-30" on-click="close">取消</button>
+        </div>
+    </div>
+</script>
+
+<script type="text/ractive" id="tip-dialog">
+    <div class="inner-wrapper">
+        <div class="inner-center">
+            <div class="inner-center-content pdl-30 pdr-30">
+                <div class="text-center">
+                    <i class="glyphicon glyphicon-ok-sign color-green font-size-30"></i>
+                </div>
+                <div class="line-height-2">
+                    已创建退货单【退货单号】并提交【供应商全称】！
+                </div>
+            </div>
+        </div>
+        <div class="inner-bottom text-center">
+            <button class="btn btn-orange-deep no-radius mgl-10 mgr-10 pdl-30 pdr-30" on-click="close">确定</button>
+            <button class="btn btn-gray-deep no-radius mgl-10 mgr-10 pdl-30 pdr-30" on-click="close">取消</button>
+        </div>
+    </div>
+</script>
+
+<script type="text/ractive" id="platform-notice-dialog">
+    <div class="inner-wrapper">
+        <div class="inner-center">
+            <div class="inner-center-content pdl-30 pdr-30">
+                <div class="border-gray-medium bgc-gray-lighter pdl-15 pdr-15 pdt-5 pdb-5">
+                    中钢信硬件设备升级维护公告
+                </div>
+                <div class="border-gray-medium bgc-gray-lighter pdl-15 pdr-15 pdt-5 pdb-5" style="height:360px; overflow-y:auto;">
+                    <div class="line-height-28">
+                        <div class="pdr-25">尊敬的用户：</div>
+                        <div class="pdl-25 pdr-25">杀菌浪费就卡死老房间卡拉斯加福利撒娇快放假了撒娇疯狂了撒娇佛罗伦萨的健康和</div>
+                        <div class="pdl-25 pdr-25">杀菌浪费就卡死老房间卡拉斯加福利撒娇快放假了撒娇疯狂了撒娇佛罗伦萨的健康和</div>
+                        <div class="pdl-25 pdr-25">杀菌浪费就卡死老房间卡拉斯加福利撒娇快放假了撒娇疯狂了撒娇佛罗伦萨的健康和</div>
+                        <div class="pdl-25 pdr-25">杀菌浪费就卡死老房间卡拉斯加福利撒娇快放假了撒娇疯狂了撒娇佛罗伦萨的健康和</div>
+                        <div class="pdl-25 pdr-25">杀菌浪费就卡死老房间卡拉斯加福利撒娇快放假了撒娇疯狂了撒娇佛罗伦萨的健康和</div>
+                        <div class="pdl-25 pdr-25">杀菌浪费就卡死老房间卡拉斯加福利撒娇快放假了撒娇疯狂了撒娇佛罗伦萨的健康和</div>
+                        <div class="pdl-25 pdr-25">杀菌浪费就卡死老房间卡拉斯加福利撒娇快放假了撒娇疯狂了撒娇佛罗伦萨的健康和</div>
+                        <div class="pdl-25 pdr-25">杀菌浪费就卡死老房间卡拉斯加福利撒娇快放假了撒娇疯狂了撒娇佛罗伦萨的健康和</div>
+                        <div class="pdl-25 pdr-25 text-right">中钢信</div>
+                        <div class="pdl-25 pdr-25 text-right">2015年11月25日</div>
+                    '</div>
+                </div>
+            </div>
+        </div>
+        <div class="inner-bottom text-center">
+            <button class="btn btn-gray-deep no-radius mgl-10 mgr-10 pdl-30 pdr-30" on-click="close">返回</button>
+        </div>
+    </div>
+</script>
+
+<script type="text/ractive" id="sms-dialog">
+    <div class="inner-wrapper">
+        <div class="inner-center">
+            <div class="inner-center-content form-inline">
+                <div class="clearfix">
+                    <span class="col-md-2 text-right pdr-0">发送类型：</span>
+                    <span class="col-md-3 pdr-0">
+                        <select class="form-control no-radius width-full">
+                            <option>即时发布</option>
+                        </select>
+                    </span>
+                    <span class="col-md-3 pdr-0">
+                        <input type="text" class="form-control no-radius width-full"/>
+                    </span>
+                    <span class="col-md-4 color-orange-deep">
+                        发送时间不得早于当前时间
+                    </span>
+                </div>
+                <div class="clearfi">
+                    <span class="col-md-2 text-right pdr-0">平台公告：</span>
+                    <span class="col-md-10">
+                        <input type="text" class="form-control no-radius width-full"/>
+                    </span>
+                </div>
+                <div class="clearfix" style="margin-bottom:0;">
+                    <span class="col-md-2 text-right pdr-0">通知内容：</span>
+                    <span class="col-md-10">
+                        <textarea class="form-control no-radius width-full" rows="4"></textarea>
+                    </span>
+                </div>
+                <div class="clearfix" style="margin-top:0;">
+                    <span class="col-md-12 text-right color-gray-deep">
+                        已输入75个字（2条短信）
+                    </span>
+                </div>
+                <div class="clearfix">
+                    <span class="col-md-2 text-right pdr-0">发送类型：</span>
+                    <span class="col-md-10">
+                        <select class="form-control no-radius">
+                            <option>不限会员类型</option>
+                        </select>
+
+                        <select class="form-control no-radius mgl-5">
+                            <option>不限企业</option>
+                        </select>
+
+                        <select class="form-control no-radius mgl-5">
+                            <option>不限账号类型</option>
+                        </select>
+
+                        <button class="btn btn-blue-lighter float-right">添加</button>
+                    </span>
+                </div>
+                <div class="clearfix">
+                    <div id="tag-container" class="clearfix border-gray-medium mgl-15 mgr-15 pd-all-5" style="height:144px; overflow-y:auto;">
+                        <span class="tag mg-all-5">
+                            <span class="tag-content">供应商</span>
+                            <i class="tag-close icon icon-close"></i>
+                        </span>
+                        <span class="tag mg-all-5">
+                            <span class="tag-content">华伟中板</span>
+                            <i class="tag-close icon icon-close"></i>
+                        </span>
+                        <span class="tag mg-all-5">
+                            <span class="tag-content">供应商</span>
+                            <i class="tag-close icon icon-close"></i>
+                        </span>
+                        <span class="tag mg-all-5">
+                            <span class="tag-content">供应商</span>
+                            <i class="tag-close icon icon-close"></i>
+                        </span>
+                        <span class="tag mg-all-5">
+                            <span class="tag-content">华伟中板</span>
+                            <i class="tag-close icon icon-close"></i>
+                        </span>
+                        <span class="tag mg-all-5">
+                            <span class="tag-content">供应商</span>
+                            <i class="tag-close icon icon-close"></i>
+                        </span>
+                        <span class="tag mg-all-5">
+                            <span class="tag-content">供应商</span>
+                            <i class="tag-close icon icon-close"></i>
+                        </span>
+                        <span class="tag mg-all-5">
+                            <span class="tag-content">华伟中板</span>
+                            <i class="tag-close icon icon-close"></i>
+                        </span>
+                        <span class="tag mg-all-5">
+                            <span class="tag-content">华伟中板</span>
+                            <i class="tag-close icon icon-close"></i>
+                        </span>
+                        <span class="tag mg-all-5">
+                            <span class="tag-content">供应商</span>
+                            <i class="tag-close icon icon-close"></i>
+                        </span>
+                        <span class="tag mg-all-5">
+                            <span class="tag-content">供应商</span>
+                            <i class="tag-close icon icon-close"></i>
+                        </span>
+                        <span class="tag mg-all-5">
+                            <span class="tag-content">华伟中板</span>
+                            <i class="tag-close icon icon-close"></i>
+                        </span>
+                        <span class="tag mg-all-5">
+                            <span class="tag-content">华伟中板</span>
+                            <i class="tag-close icon icon-close"></i>
+                        </span>
+                        <span class="tag mg-all-5">
+                            <span class="tag-content">供应商</span>
+                            <i class="tag-close icon icon-close"></i>
+                        </span>
+                        <span class="tag mg-all-5">
+                            <span class="tag-content">供应商</span>
+                            <i class="tag-close icon icon-close"></i>
+                        </span>
+                        <span class="tag mg-all-5">
+                            <span class="tag-content">华伟中板</span>
+                            <i class="tag-close icon icon-close"></i>
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="inner-bottom text-center">
+            <button class="btn btn-orange-deep no-radius mgl-10 mgr-10 pdl-30 pdr-30" on-click="close">保存</button>
+            <button class="btn btn-gray-deep no-radius mgl-10 mgr-10 pdl-30 pdr-30" on-click="close">取消</button>
+        </div>
+    </div>
+</script>
+
+</html>
